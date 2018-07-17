@@ -1,0 +1,118 @@
+﻿<Window x:Class="RCProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RCProject"
+        mc:Ignorable="d"
+        Title="RCProject" MinHeight="500" MinWidth="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="394*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" FontSize="16" VerticalAlignment="Center">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New"/>
+                <MenuItem Header="_Open"/>
+                <MenuItem Header="_Save"/>
+                <Separator/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="View"/>
+            <MenuItem Header="Window"/>
+            <MenuItem Header="About"/>
+        </Menu>
+        <ComboBox Name="ButDN"
+               HorizontalAlignment="Left" Margin="192,46,0,0" 
+               Grid.Row="1" VerticalAlignment="Top" 
+               MinWidth="170" Text="Диаметр номинальный" 
+               IsReadOnly="True" 
+               IsEditable="True" ToolTip="Выберите номинальный диаметр рукава" Width="169">
+            <ComboBoxItem Content="NULL"/>
+            <ComboBoxItem Content="DN4"/>
+            <ComboBoxItem Content="DN6"/>
+            <ComboBoxItem Content="DN8"/>
+            <ComboBoxItem Content="DN10"/>
+            <ComboBoxItem Content="DN12"/>
+            <ComboBoxItem Content="DN16"/>
+            <ComboBoxItem Content="DN20"/>
+            <ComboBoxItem Content="DN25"/>
+            <ComboBoxItem Content="DN32"/>
+            <ComboBoxItem Content="DN40"/>
+            <ComboBoxItem Content="DN50"/>
+            <ComboBoxItem Content="DN65"/>
+            <ComboBoxItem Content="DN80"/>
+            <ComboBoxItem Content="DN100"/>
+            <ComboBoxItem Content="DN125"/>
+        </ComboBox>
+        <ListBox HorizontalAlignment="Left" Height="360" 
+                 Margin="10,10,0,0" Grid.Row="1" 
+                 VerticalAlignment="Top" Width="170"/>
+        <ComboBox Name="ButPN"  HorizontalAlignment="Left" 
+                  Margin="395,46,0,0" Grid.Row="1" 
+                  VerticalAlignment="Top" MinWidth="250"
+                  IsEditable="True" 
+                  IsReadOnly="True" Text="Выберите давление номинальное [бар]:">
+            <ComboBoxItem Content="0,1" ToolTip="BAR"/>
+            <ComboBoxItem Content="0,16" ToolTip="BAR"/>
+            <ComboBoxItem Content="0,25" ToolTip="BAR"/>
+            <ComboBoxItem Content="0,4" ToolTip="BAR"/>
+            <ComboBoxItem Content="0,63" ToolTip="BAR"/>
+            <ComboBoxItem Content="1" ToolTip="BAR"/>
+            <ComboBoxItem Content="1,6" ToolTip="BAR"/>
+            <ComboBoxItem Content="2,5" ToolTip="BAR"/>
+            <ComboBoxItem Content="4,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="6,3" ToolTip="BAR"/>
+            <ComboBoxItem Content="10,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="16,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="25,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="40,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="63,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="80,0" ToolTip="BAR"/>
+            <ComboBoxItem Content="100,0" ToolTip="BAR"/>
+        </ComboBox>
+        <TextBox Name="TextLN" HorizontalAlignment="Left" Margin="440,84,0,0" 
+                   Grid.Row="1" TextWrapping="Wrap" ToolTip="Введите в поле значение длины"
+                   VerticalAlignment="Top" Width="80" Height="26"
+                   Padding="10,4"/>
+        <Label Content="Введите значение длины рукава в [мм]:" HorizontalAlignment="Left" 
+               Margin="192,84,0,0" Grid.Row="1" VerticalAlignment="Top" 
+               Width="248"/>
+        <ComboBox Name="TypeGO"
+            HorizontalAlignment="Left" Margin="192,10,0,0" 
+            Grid.Row="1" VerticalAlignment="Top" MinWidth="250"
+            IsEditable="True" IsReadOnly="True"
+            Text="Выберите тип гофрированной оболочки">
+            <ComboBoxItem Content="RS321"/>
+            <ComboBoxItem Content="RS331"/>
+            <ComboBoxItem Content="RS341"/>
+            <ComboBoxItem Content="RS351"/>
+            <ComboBoxItem Content="RS430"/>
+            <ComboBoxItem Content="RS439"/>
+            <ComboBoxItem Content="RS531"/>
+            <ComboBoxItem Content="RZ331"/>
+            <ComboBoxItem Content="ME539"/>
+        </ComboBox>
+        <ComboBox Name="NumberBR" 
+            HorizontalAlignment="Left" 
+            Margin="471,10,0,0" Grid.Row="1" 
+            VerticalAlignment="Top" MinWidth="170"
+            IsEditable="True" IsReadOnly="True" 
+            Text="Выберите число оплеток:">
+            <ComboBoxItem Content="L00" ToolTip="без оплеток"/>
+            <ComboBoxItem Content="L12" ToolTip="одна оплетка"/>
+            <ComboBoxItem Content="L12" ToolTip="две оплетки"/>
+        </ComboBox>
+        <Button Name="Button1"
+                Click="Click_Butt1"
+                Content="Загрузка данных" 
+                HorizontalAlignment="Left" 
+                Margin="192,350,0,0" Grid.Row="1" 
+                VerticalAlignment="Top" Width="115"/>
+
+
+
+
+    </Grid>
+</Window>

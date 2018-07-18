@@ -110,6 +110,12 @@
                 HorizontalAlignment="Left" 
                 Margin="192,350,0,0" Grid.Row="1" 
                 VerticalAlignment="Top" Width="115"/>
+        <Button Name="Button2" 
+                Click="Click_Butt2"
+                Content="Открыть РЦЗаявку" 
+                HorizontalAlignment="Left" 
+                Margin="328,350,0,0" Grid.Row="1" 
+                VerticalAlignment="Top" Width="116"/>
 
 
 

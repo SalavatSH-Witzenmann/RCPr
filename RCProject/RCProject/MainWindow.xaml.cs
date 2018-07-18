@@ -32,17 +32,18 @@ namespace RCProject
         {
             Download();
         }
-        public object mis;
+       
         public void Download()
         {
             
-            //Excel.Application ApplEx = null;
-            //Excel.Workbook WorkBookEx = null;
-            //Excel.Worksheet WorkShEx = null;
-            var ApplEx = new Excel.Application();
-            ApplEx.Workbooks.Add();
+            Excel.Application ApplEx = null;
+            Excel.Workbook WorkBookEx = null;
+            Excel.Worksheet WorkShEx = null;
+            ApplEx = new Excel.Application();
             ApplEx.Visible = true;
-            Excel.Worksheet WorkShEx = (Excel.Worksheet)ApplEx.ActiveSheet;
+            ApplEx.Workbooks.Add();
+            WorkShEx = (Excel.Worksheet)ApplEx.ActiveSheet;
+
             if (ButDN.SelectedIndex == 0)
             {
                 WorkShEx.Cells[1, 1] = "Vibor0";
@@ -55,9 +56,22 @@ namespace RCProject
             {
                 WorkShEx.Cells[1, 1] = "Vibor2";
             }
-            
+            WorkBookEx.Save();
             //WorkShEx.SaveAs(@"C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC");
             //MessageBox.Show(ButDN.Text);
+        }
+        
+        private void Click_Butt2(object sender, RoutedEventArgs e)
+        {
+            Excel.Application ApplEx = null;
+            Excel.Workbook WorkBookEx = null;
+            Excel.Worksheet WorkShEx = null;
+            ApplEx = new Excel.Application();
+            ApplEx.Visible = true;
+            ApplEx.Workbooks.Open(@"\\WITZENMANN\!Witz17\!Чтение\!РЦпроект\РЦзаявка.xlsm",
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            //\Users\Шаймарданов С М\Desktop\!!!файлы РЦзаявка\!!!файлы РЦзаявка МР\
         }
     }
     

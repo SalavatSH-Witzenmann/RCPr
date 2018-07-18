@@ -18,3 +18,6 @@ C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCPro
 C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\bin\Debug\EntityFramework.xml
 C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\RCProject.csproj.CopyComplete
+C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\bin\Debug\testCons.mdf
+C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\bin\Debug\testCons_log.ldf
+C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\RCProject_Content.g.cs

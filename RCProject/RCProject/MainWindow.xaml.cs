@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Interop;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Data.SqlClient;
 
 
 namespace RCProject
@@ -26,6 +27,7 @@ namespace RCProject
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void Click_Butt1(object sender, RoutedEventArgs e)
@@ -43,6 +45,7 @@ namespace RCProject
             ApplEx.Visible = true;
             ApplEx.Workbooks.Add();
             WorkShEx = (Excel.Worksheet)ApplEx.ActiveSheet;
+            
 
             if (ButDN.SelectedIndex == 0)
             {
@@ -73,7 +76,8 @@ namespace RCProject
                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             //\Users\Шаймарданов С М\Desktop\!!!файлы РЦзаявка\!!!файлы РЦзаявка МР\
         }
+
+
     }
     
-
 }

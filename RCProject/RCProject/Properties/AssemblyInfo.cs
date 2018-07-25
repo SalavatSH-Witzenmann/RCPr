@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("RCProject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Witzenmann")]
 [assembly: AssemblyProduct("RCProject")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

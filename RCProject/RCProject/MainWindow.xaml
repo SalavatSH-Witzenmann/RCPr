@@ -24,7 +24,7 @@
             <MenuItem Header="About"/>
         </Menu>
         <ComboBox Name="ButDN"
-               HorizontalAlignment="Left" Margin="192,46,0,0" 
+               HorizontalAlignment="Left" Margin="194,82,0,0" 
                Grid.Row="1" VerticalAlignment="Top" 
                MinWidth="170" Text="Диаметр номинальный" 
                IsReadOnly="True" 
@@ -46,11 +46,12 @@
             <ComboBoxItem Content="DN100"/>
             <ComboBoxItem Content="DN125"/>
         </ComboBox>
-        <ListBox HorizontalAlignment="Left" Height="360" 
+        <ListBox 
+                 HorizontalAlignment="Left" Height="360" 
                  Margin="10,10,0,0" Grid.Row="1" 
                  VerticalAlignment="Top" Width="170"/>
         <ComboBox Name="ButPN"  HorizontalAlignment="Left" 
-                  Margin="395,46,0,0" Grid.Row="1" 
+                  Margin="194,119,0,0" Grid.Row="1" 
                   VerticalAlignment="Top" MinWidth="250"
                   IsEditable="True" 
                   IsReadOnly="True" Text="Выберите давление номинальное [бар]:">
@@ -72,15 +73,15 @@
             <ComboBoxItem Content="80,0" ToolTip="BAR"/>
             <ComboBoxItem Content="100,0" ToolTip="BAR"/>
         </ComboBox>
-        <TextBox Name="TextLN" HorizontalAlignment="Left" Margin="440,84,0,0" 
+        <TextBox Name="TextLN" HorizontalAlignment="Left" Margin="445,159,0,0" 
                    Grid.Row="1" TextWrapping="Wrap" ToolTip="Введите в поле значение длины"
                    VerticalAlignment="Top" Width="80" Height="26"
                    Padding="10,4"/>
         <Label Content="Введите значение длины рукава в [мм]:" HorizontalAlignment="Left" 
-               Margin="192,84,0,0" Grid.Row="1" VerticalAlignment="Top" 
+               Margin="192,159,0,0" Grid.Row="1" VerticalAlignment="Top" 
                Width="248"/>
         <ComboBox Name="TypeGO"
-            HorizontalAlignment="Left" Margin="192,10,0,0" 
+            HorizontalAlignment="Left" Margin="194,46,0,0" 
             Grid.Row="1" VerticalAlignment="Top" MinWidth="250"
             IsEditable="True" IsReadOnly="True"
             Text="Выберите тип гофрированной оболочки">
@@ -96,7 +97,7 @@
         </ComboBox>
         <ComboBox Name="NumberBR" 
             HorizontalAlignment="Left" 
-            Margin="471,10,0,0" Grid.Row="1" 
+            Margin="472,46,0,0" Grid.Row="1" 
             VerticalAlignment="Top" MinWidth="170"
             IsEditable="True" IsReadOnly="True" 
             Text="Выберите число оплеток:">
@@ -116,6 +117,16 @@
                 HorizontalAlignment="Left" 
                 Margin="328,350,0,0" Grid.Row="1" 
                 VerticalAlignment="Top" Width="116"/>
+        <Button Name="Button3"
+                Content="Автозаполнение" 
+                HorizontalAlignment="Left" 
+                Margin="10,385,0,0" Grid.Row="1" 
+                VerticalAlignment="Top" Width="170"/>
+        <TextBox 
+                 HorizontalAlignment="Left" 
+                 Height="26" Margin="194,11,0,0" 
+                 Grid.Row="1" TextWrapping="Wrap" 
+                 Text="TextBox" VerticalAlignment="Top" Width="252"/>
 
 
 

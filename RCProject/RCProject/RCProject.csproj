@@ -94,6 +94,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -126,6 +128,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MetHose.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetHose.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -143,6 +150,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="MetHose.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MetHose.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MetHose.edmx.diagram">
+      <DependentUpon>MetHose.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

@@ -27,7 +27,6 @@ namespace RCProject
         public MainWindow()
         {
             InitializeComponent();
-            
         }
        
         private void Click_Butt1(object sender, RoutedEventArgs e)

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MetHose" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="MetHoseContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tMetHoseSet" EntityType="MetHose.tMetHose" />
+    <EntitySet Name="tMetHoseTransneftSet" EntityType="MetHose.tMetHoseTransneft" />
+    <EntitySet Name="tNameMHSet" EntityType="MetHose.tNameMH" />
+  </EntityContainer>
+  <EntityType Name="tMetHose">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeCorSheath" Type="String" Nullable="false" Unicode="true" />
+    <Property Name="Version" Type="String" Nullable="false" />
+    <Property Name="TypeBraid" Type="String" Nullable="false" />
+    <Property Name="VersionMat" Type="String" Nullable="true" />
+    <Property Name="AddField" Type="String" Nullable="true" />
+    <Property Name="TypeConnect" Type="String" Nullable="false" />
+    <Property Name="DN" Type="Int16" Nullable="false" />
+    <Property Name="PN" Type="Double" Nullable="false" />
+    <Property Name="LN" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tMetHoseTransneft">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenDesign" Type="String" Nullable="false" />
+    <Property Name="GenType" Type="Int16" Nullable="false" />
+    <Property Name="DN" Type="Int16" Nullable="false" />
+    <Property Name="PN" Type="Double" Nullable="false" />
+    <Property Name="LN" Type="Double" Nullable="false" />
+    <Property Name="GenName" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tNameMH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameMH" Type="String" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+    <Property Name="AlternName" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

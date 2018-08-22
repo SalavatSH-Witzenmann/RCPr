@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RCProject"
         mc:Ignorable="d"
-        Title="RCProject" MinHeight="500" Height="530.4" Width="830">
+        Title="RCProject" 
+        MinHeight="550" MinWidth="800" 
+        Height="800" Width="1250"
+        MaxHeight="950" MaxWidth="1300"
+        ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="16*"/>
-            <RowDefinition Height="237*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="646*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" 
               FontSize="16" VerticalAlignment="Center" 
@@ -26,141 +30,57 @@
             <MenuItem Header="About" Height="31"/>
         </Menu>
 
-        <Grid  ZIndex="0" Opacity="1" Grid.Row="2" IsEnabled="True">
-            <ComboBox Name="ButDN"
-               HorizontalAlignment="Left" Margin="196,139.8,0,0" 
-               Grid.Row="1" VerticalAlignment="Top" 
-               MinWidth="170" Text="Диаметр номинальный" 
-               IsReadOnly="True" 
-               IsEditable="True" ToolTip="Выберите номинальный диаметр рукава" Width="170" Height="22">
-                <ComboBoxItem Content="NULL"/>
-                <ComboBoxItem Content="DN4"/>
-                <ComboBoxItem Content="DN6"/>
-                <ComboBoxItem Content="DN8"/>
-                <ComboBoxItem Content="DN10"/>
-                <ComboBoxItem Content="DN12"/>
-                <ComboBoxItem Content="DN16"/>
-                <ComboBoxItem Content="DN20"/>
-                <ComboBoxItem Content="DN25"/>
-                <ComboBoxItem Content="DN32"/>
-                <ComboBoxItem Content="DN40"/>
-                <ComboBoxItem Content="DN50"/>
-                <ComboBoxItem Content="DN65"/>
-                <ComboBoxItem Content="DN80"/>
-                <ComboBoxItem Content="DN100"/>
-                <ComboBoxItem Content="DN125"/>
-            </ComboBox>
+        <Grid  ZIndex="0" Opacity="1" IsEnabled="True" Grid.Row="1">
             <ListBox 
                  HorizontalAlignment="Left" Height="360" 
                  Margin="10,9.8,0,0" Grid.Row="1" 
                  VerticalAlignment="Top" Width="170"/>
-            <ComboBox Name="ButPN"  HorizontalAlignment="Left" 
-                  Margin="406,139.8,0,0" Grid.Row="1" 
-                  VerticalAlignment="Top" MinWidth="190"
-                  IsEditable="True" 
-                  IsReadOnly="True" Text="Давление номинальное [бар]:" 
-                  Height="22" Width="190"
-                  ToolTip="Давление в барах!">
-                <ComboBoxItem Content="0,1" ToolTip="BAR"/>
-                <ComboBoxItem Content="0,16" ToolTip="BAR"/>
-                <ComboBoxItem Content="0,25" ToolTip="BAR"/>
-                <ComboBoxItem Content="0,4" ToolTip="BAR"/>
-                <ComboBoxItem Content="0,63" ToolTip="BAR"/>
-                <ComboBoxItem Content="1" ToolTip="BAR"/>
-                <ComboBoxItem Content="1,6" ToolTip="BAR"/>
-                <ComboBoxItem Content="2,5" ToolTip="BAR"/>
-                <ComboBoxItem Content="4,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="6,3" ToolTip="BAR"/>
-                <ComboBoxItem Content="10,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="16,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="25,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="40,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="63,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="80,0" ToolTip="BAR"/>
-                <ComboBoxItem Content="100,0" ToolTip="BAR"/>
-            </ComboBox>
-            <TextBox Name="TextLN" HorizontalAlignment="Left" Margin="436,177.8,0,0" 
-                   Grid.Row="1" TextWrapping="Wrap" ToolTip="Введите в поле значение длины"
-                   VerticalAlignment="Top" Width="112" Height="26"
+            <TextBox Name="TextLN" HorizontalAlignment="Left" Margin="427,420,0,0" TextWrapping="Wrap" ToolTip="Введите в поле значение длины"
+                   VerticalAlignment="Top" Width="80" Height="26"
                    Padding="10,4"/>
             <Label Content="Введите значение длины рукава в [мм]:" HorizontalAlignment="Left" 
-               Margin="194,177.8,0,0" Grid.Row="1" VerticalAlignment="Top" 
-               Width="248" Height="26"/>
-            <ComboBox Name="TypeGO"
-            HorizontalAlignment="Left" Margin="194,97.8,0,0" 
-            Grid.Row="1" VerticalAlignment="Top" MinWidth="250"
-            IsEditable="True" IsReadOnly="True"
-            Text="Выберите тип гофрированной оболочки" Height="22" Width="253">
-                <ComboBoxItem Content="RS321"/>
-                <ComboBoxItem Content="RS331"/>
-                <ComboBoxItem Content="RS341"/>
-                <ComboBoxItem Content="RS351"/>
-                <ComboBoxItem Content="RS430"/>
-                <ComboBoxItem Content="RS439"/>
-                <ComboBoxItem Content="RS531"/>
-                <ComboBoxItem Content="RZ331"/>
-                <ComboBoxItem Content="ME539"/>
-            </ComboBox>
-            <ComboBox Name="NumberBR" 
-            HorizontalAlignment="Left" 
-            Margin="469,97.8,0,0" Grid.Row="1" 
-            VerticalAlignment="Top" MinWidth="170"
-            IsEditable="True" IsReadOnly="True" 
-            Text="Выберите число оплеток:" Height="22" Width="170">
-                <ComboBoxItem Content="L00" ToolTip="без оплеток"/>
-                <ComboBoxItem Content="L12" ToolTip="одна оплетка"/>
-                <ComboBoxItem Content="L12" ToolTip="две оплетки"/>
-            </ComboBox>
+               Margin="194,420,0,0" VerticalAlignment="Top" 
+               Width="228" Height="26"/>
             <Button Name="Button1"
                 Click="Click_Butt1"
                 Content="Создание тех. процесса" 
                 HorizontalAlignment="Left" 
-                Margin="10,412.8,0,0" Grid.Row="1" 
+                Margin="10,415,0,0" Grid.Row="1" 
                 VerticalAlignment="Top" Width="170" Height="20"/>
             <Button Name="Button2" 
                 Click="Click_Butt2"
                 Content="Заполнить РЦЗаявку" 
                 HorizontalAlignment="Left" 
-                Margin="10,442.8,0,0" Grid.Row="1" 
+                Margin="10,600,0,0" 
                 VerticalAlignment="Top" Width="170" Height="20"/>
             <Button Name="Button3"
                 Content="Автозаполнение" 
                 HorizontalAlignment="Left" 
-                Margin="10,384.8,0,0" Grid.Row="1" 
-                VerticalAlignment="Top" Width="170" Height="19"/>
+                Margin="10,385,0,0" Grid.Row="1" 
+                VerticalAlignment="Top" Width="170" Height="20"/>
             <TextBox Name="customer"
                  HorizontalAlignment="Left" 
-                 Height="26" Margin="310,48.8,0,0" 
-                 Grid.Row="1" TextWrapping="Wrap" 
-                 Text="" VerticalAlignment="Top" Width="504"/>
-            <ComboBox Name="TypeConnect"
-            HorizontalAlignment="Left" 
-            Margin="194,218.8,0,0" Grid.Row="1" 
-            VerticalAlignment="Top" Width="216"
-            IsEditable="True" IsReadOnly="True"
-            Text="Выберите тип соединения" Height="22">
-                <ComboBoxItem Content="П12" ToolTip="Приварной тип"/>
-            </ComboBox>
+                 Height="26" Margin="292,52,0,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="379"/>
             <TextBox Name="ProjectCRM"
             HorizontalAlignment="Left" 
-            Height="26" Margin="310,9.8,0,0" 
-            Grid.Row="1" TextWrapping="Wrap" 
+            Height="26" Margin="292,10,0,0" TextWrapping="Wrap" 
             Text="" VerticalAlignment="Top" 
             Width="120"/>
             <Label 
             Content="Проект CRM:" 
             HorizontalAlignment="Left" 
-            Margin="194,9.8,0,0" Grid.Row="1" 
+            Margin="189,10,0,0" 
             VerticalAlignment="Top" Width="97" Height="26"/>
             <Label 
             Content="Заказчик:" 
             HorizontalAlignment="Left" 
-            Margin="194,48.8,0,0" Grid.Row="1" 
-            VerticalAlignment="Top" Width="111" Height="26"/>
+            Margin="189,52,0,0" 
+            VerticalAlignment="Top" Width="97" Height="26"/>
             <CheckBox Name="Coincidence"
             Content="Наименование различны" 
             HorizontalAlignment="Left" 
-            Margin="194,263.8,0,0" Grid.Row="1" 
+            Margin="194,464,0,0" 
             VerticalAlignment="Top" ToolTip="Если 
 наименование рукава от заказчика не совпадает с
 наименованием чертежа нажмите на checkbox
@@ -170,55 +90,209 @@
             Unchecked="checked_false"/>
             <TextBox Name="CustLabeling"
             HorizontalAlignment="Left" 
-            Height="23" Margin="406,255.8,0,0" 
-            Grid.Row="1" TextWrapping="Wrap" Text="" 
-            VerticalAlignment="Top" Width="408"
+            Height="21" Margin="407,464,0,0" TextWrapping="Wrap" Text="" 
+            VerticalAlignment="Top" Width="498"
             IsEnabled="False"/>
-            <ComboBox Name="SupervSubject"
-            HorizontalAlignment="Left" 
-            Margin="436,218.8,0,0" Grid.Row="1" 
-            VerticalAlignment="Top" Width="173"
-            IsReadOnly="True" IsEditable="True"
-            Text="Выберите объект надзора">
-                <ComboBoxItem Content="RS" ToolTip="Выберите тип Г/Ч"/>
-            </ComboBox>
             <TextBox Name="Cod1C"
             HorizontalAlignment="Left" 
-            Height="23" Margin="644,217.8,0,0" 
-            Grid.Row="1" TextWrapping="Wrap" 
+            Height="26" Margin="735,420,0,0" TextWrapping="Wrap" 
             Text="Введите код 1С" VerticalAlignment="Top" Width="170"/>
             <Button Name="Auto1C"
-            Content="Автообращение" 
+            Content="Автообращение к 1С" 
             HorizontalAlignment="Left" 
-            Margin="644,184.8,0,0" Grid.Row="1" 
+            Margin="550,420,0,0" 
             VerticalAlignment="Top" Width="170"
             ToolTip="Нажмите для попытки автоматического 
 ввода кода 1С на основе выбранных данных (необходимо выбрать параметры
-тип гофрированной оболочки, число оплеток, DN, PN, LN, тип соединения"/>
-            <TextBox Name="NumbMetHos"
-            HorizontalAlignment="Left" 
-            Height="23" Margin="196,292.8,0,0" 
-            Grid.Row="1" TextWrapping="Wrap" 
-            Text="Количество м/р" VerticalAlignment="Top" 
-            Width="120" ToolTip="Количество металлорукавов"/>
-            <Button Name="CheckPos"
-                    Content="Проверка позиции" 
-                    HorizontalAlignment="Left" 
-                    Margin="348,297,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="126"/>
+тип гофрированной оболочки, число оплеток, DN, PN, LN, тип соединения" RenderTransformOrigin="1.376,-3.167" Height="26"/>
             <TextBox Name="NumbPos"
                 HorizontalAlignment="Left" 
-                Height="23" Margin="761,136,0,0" 
+                Height="23" Margin="596,12,0,0" 
                 TextWrapping="Wrap" Text="" 
-                VerticalAlignment="Top" Width="53"
+                VerticalAlignment="Top" Width="75"
                 ToolTip="Введите количество позиции в заявке на производство"
                 />
             <Label 
                 Content="Количество позиции:" 
                 HorizontalAlignment="Left" 
-                Margin="627,136,0,0" 
+                Margin="452,10,0,0" 
                 VerticalAlignment="Top" Width="129"/>
+            <Button Name="ButDateBase"
+                Content="База данных" 
+                HorizontalAlignment="Left" 
+                Margin="10,634,0,0" VerticalAlignment="Top" 
+                Width="170"
+                ToolTip="Переити к заполнению базы данных"/>
+            <Button
+                Content="Проверка по заказчику" 
+                HorizontalAlignment="Left" 
+                Margin="698,54,0,0" VerticalAlignment="Top" 
+                Width="136" Height="20"/>
+            <DataGrid 
+                HorizontalAlignment="Left" 
+                Height="135" Margin="194,94,0,0" 
+                VerticalAlignment="Top" Width="711"/>
+            <Border 
+                BorderBrush="Black" 
+                BorderThickness="1" 
+                HorizontalAlignment="Left" 
+                Height="161" Margin="194,244,0,0" 
+                VerticalAlignment="Top" Width="711">
+                <Grid>
+                    <ComboBox x:Name="TypeGO"
+            HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MinWidth="250"
+            IsEditable="True" IsReadOnly="True"
+            Text="Выберите тип гофрированной оболочки" Height="22" Width="253">
+                        <ComboBoxItem Content="RS321"/>
+                        <ComboBoxItem Content="RS331"/>
+                        <ComboBoxItem Content="RS341"/>
+                        <ComboBoxItem Content="RS351"/>
+                        <ComboBoxItem Content="RS430"/>
+                        <ComboBoxItem Content="RS439"/>
+                        <ComboBoxItem Content="RS531"/>
+                        <ComboBoxItem Content="RZ331"/>
+                        <ComboBoxItem Content="ME539"/>
+                    </ComboBox>
+                    <ComboBox x:Name="TypeConnect"
+            HorizontalAlignment="Left" 
+            Margin="10,46,0,0" 
+            VerticalAlignment="Top" Width="253"
+            IsEditable="True" IsReadOnly="True"
+            Text="Выберите тип арматуры" Height="22">
+                        <ComboBoxItem Content="П12" ToolTip="Приварной тип"/>
+                    </ComboBox>
+                    <ComboBox x:Name="ButDN"
+               HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" 
+               MinWidth="170" Text="Диаметр номинальный" 
+               IsReadOnly="True" 
+               IsEditable="True" ToolTip="Выберите номинальный диаметр рукава" Width="253" Height="22">
+                        <ComboBoxItem Content="NULL"/>
+                        <ComboBoxItem Content="DN4"/>
+                        <ComboBoxItem Content="DN6"/>
+                        <ComboBoxItem Content="DN8"/>
+                        <ComboBoxItem Content="DN10"/>
+                        <ComboBoxItem Content="DN12"/>
+                        <ComboBoxItem Content="DN16"/>
+                        <ComboBoxItem Content="DN20"/>
+                        <ComboBoxItem Content="DN25"/>
+                        <ComboBoxItem Content="DN32"/>
+                        <ComboBoxItem Content="DN40"/>
+                        <ComboBoxItem Content="DN50"/>
+                        <ComboBoxItem Content="DN65"/>
+                        <ComboBoxItem Content="DN80"/>
+                        <ComboBoxItem Content="DN100"/>
+                        <ComboBoxItem Content="DN125"/>
+                    </ComboBox>
+                    <ComboBox x:Name="SupervSubject"
+            HorizontalAlignment="Left" 
+            Margin="10,119,0,0" 
+            VerticalAlignment="Top" Width="253"
+            IsReadOnly="True" IsEditable="True"
+            Text="Выберите объект надзора">
+                        <ComboBoxItem Content="RS" ToolTip="Выберите тип Г/Ч"/>
+                    </ComboBox>
+                    <ComboBox x:Name="NumberBR" 
+            HorizontalAlignment="Left" 
+            Margin="296,10,0,0" 
+            VerticalAlignment="Top" MinWidth="170"
+            IsEditable="True" IsReadOnly="True" 
+            Text="Выберите число оплеток:" Height="22" Width="198">
+                        <ComboBoxItem Content="L00" ToolTip="без оплеток"/>
+                        <ComboBoxItem Content="L12" ToolTip="одна оплетка"/>
+                        <ComboBoxItem Content="L12" ToolTip="две оплетки"/>
+                    </ComboBox>
+                    <CheckBox 
+                Content="Нестандартный тип арматуры" 
+                HorizontalAlignment="Left"
+                Margin="296,49,0,90" VerticalAlignment="Center" 
+                Height="21" Width="198"/>
+                    <ComboBox x:Name="ButPN"  HorizontalAlignment="Left" 
+                  Margin="296,82,0,0" 
+                  VerticalAlignment="Top" MinWidth="190"
+                  IsEditable="True" 
+                  IsReadOnly="True" Text="Давление номинальное [бар]:" 
+                  Height="22" Width="198"
+                  ToolTip="Давление в барах!" RenderTransformOrigin="0.789,0.582">
+                        <ComboBoxItem Content="0,1" ToolTip="BAR"/>
+                        <ComboBoxItem Content="0,16" ToolTip="BAR"/>
+                        <ComboBoxItem Content="0,25" ToolTip="BAR"/>
+                        <ComboBoxItem Content="0,4" ToolTip="BAR"/>
+                        <ComboBoxItem Content="0,63" ToolTip="BAR"/>
+                        <ComboBoxItem Content="1" ToolTip="BAR"/>
+                        <ComboBoxItem Content="1,6" ToolTip="BAR"/>
+                        <ComboBoxItem Content="2,5" ToolTip="BAR"/>
+                        <ComboBoxItem Content="4,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="6,3" ToolTip="BAR"/>
+                        <ComboBoxItem Content="10,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="16,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="25,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="40,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="63,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="80,0" ToolTip="BAR"/>
+                        <ComboBoxItem Content="100,0" ToolTip="BAR"/>
+                    </ComboBox>
+                    <TextBox x:Name="NumbMetHos"
+            HorizontalAlignment="Left" 
+            Height="23" Margin="296,118,0,0" TextWrapping="Wrap" 
+            Text="Количество м/р" VerticalAlignment="Top" 
+            Width="198" ToolTip="Количество металлорукавов"/>
+                    <Button x:Name="CheckPos"
+                    Content="Проверка позиции" 
+                    HorizontalAlignment="Left" 
+                    Margin="529,11,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="170"/>
+                </Grid>
+            </Border>
+            <DataGrid 
+                HorizontalAlignment="Left" 
+                Height="145" Margin="194,508,0,0" 
+                VerticalAlignment="Top" Width="711"/>
+            <Button 
+                Content="Следующая позиция" 
+                HorizontalAlignment="Left" 
+                Margin="755,681,0,0" VerticalAlignment="Top" 
+                Width="150"/>
+            <DatePicker 
+                HorizontalAlignment="Left" 
+                Height="24" Margin="698,12,0,0"
+                VerticalAlignment="Top" Width="194"/>
+            <Label 
+                Content="Текущая позиция:" 
+                HorizontalAlignment="Left" 
+                Margin="194,675,0,0" VerticalAlignment="Top" 
+                Width="110"/>
+            <TextBlock 
+                HorizontalAlignment="Left" 
+                Margin="328,681,0,0" TextWrapping="Wrap" 
+                Text="___Для позиции" VerticalAlignment="Top" 
+                Width="105" Height="20"/>
+            <Button 
+                Content="Предыдущая позиция" 
+                HorizontalAlignment="Left" 
+                Margin="565,681,0,0" VerticalAlignment="Top" 
+                Width="164"/>
+            <Expander Header="Элементы записываемые в РЦЗаявку" 
+                      HorizontalAlignment="Left" 
+                      Height="216" Margin="923,13,0,0" 
+                      VerticalAlignment="Top" 
+                      Width="300" IsExpanded="True">
+                <DataGrid 
+                    HorizontalAlignment="Left" 
+                    Height="194" Width="300" 
+                    Margin="0,0,-2.4,0"/>
+            </Expander>
+            <Expander 
+                Header="Содержимое выбранного элемента" 
+                HorizontalAlignment="Left" 
+                Height="278" Margin="923,422,0,0" 
+                VerticalAlignment="Top" 
+                Width="300" IsExpanded="True">
+                <DataGrid 
+                    HorizontalAlignment="Left" 
+                    Height="256" Width="300" 
+                    Margin="0,0,-2.4,0"/>
+            </Expander>
 
 
 

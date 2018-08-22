@@ -1,0 +1,176 @@
+﻿<Window x:Class="RCProject.DataBase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RCProject"
+        mc:Ignorable="d"
+        Title="DataBase" Height="800" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="545*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" FontSize="16">
+            <MenuItem Header="File"/>
+            <MenuItem Header="Project"/>
+            <MenuItem Header="Window"/>
+            <MenuItem Header="Date"/>
+        </Menu>
+        <Grid Grid.Row="1" >
+            <TabControl>
+                <TabItem Header="Режим соединения">
+                    
+                </TabItem>
+                <TabItem Header="Режим заполнения">
+                    <Grid>
+                        <TabControl>
+                            <TabItem Header="Гибкая часть">
+                                <Grid Background="Aqua">
+                                    <TabControl>
+                                        <TabItem Header="Гофрированная оболочка">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Вальцованная оболочка">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Оплетка">
+                                <Grid Background="Beige"/>
+                            </TabItem>
+                            <TabItem Header="Стакан">
+                                <Grid Background="AntiqueWhite"/>
+                            </TabItem>
+                            <TabItem Header="Кольцо (П12 и др)">
+                                <Grid Background="Beige"/>
+                            </TabItem>
+                            <TabItem Header="Фитинги">
+                                <Grid Background="Aqua">
+                                    <TabControl>
+                                        <TabItem Header="DKOL">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="DK">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Banjo">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="BSP" 
+                                     ToolTip="Фитинг по Британскому стандарту">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="BSPT and NTPF">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="DKF-W">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="JIC">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="OFRS">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="SF">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="STECK">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Double connector">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Муфты обжимные ГОСТ">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Муфты обжимные ЕВРО">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Push Lock">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+
+                                    </TabControl>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Фланцы">
+                                <Grid Background="Aqua">
+                                    <TabControl>
+                                        <TabItem Header="Воротниковый">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Поворотный">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Патрубки">
+                                <Grid Background="Beige">
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Запорная арматура">
+                                <Grid Background="Aqua">
+                                    <TabControl>
+                                        <TabItem Header="Задвижки">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Вентили">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Краны шаровые">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Стандартные изделия">
+                                <Grid Background="Aqua">
+                                    <TabControl>
+                                        <TabItem Header="Болты">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Винты">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Шайбы">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Гайки">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Прокладки">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Шпильки">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Материал">
+                                <Grid Background="Beige"/>
+                            </TabItem>
+                            <TabItem Header="Прокат">
+                                <Grid Background="Aqua">
+                                    <TabControl>
+                                        <TabItem Header="Сортовой">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                        <TabItem Header="Фасонный">
+                                            <Grid Background="Beige"/>
+                                        </TabItem>
+                                    </TabControl>
+                                </Grid>
+                            </TabItem>
+
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

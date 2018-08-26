@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\MetHose.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\MetHose.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

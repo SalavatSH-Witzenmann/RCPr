@@ -5,11 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8ffeafbb715644eaa4815733006f3689" Name="Diagram1" >
-        <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="1.5" PointX="1.125" PointY="0.5" />
-        <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="2.375" PointY="3.125" />
+        <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="1.5" PointX="1.125" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="3.625" PointY="3.375" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tCorrugSheathtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tGlass" Width="1.5" PointX="3.625" PointY="0.5" />
+        <EntityTypeShape EntityType="MetHose.tGlass" Width="1.5" PointX="3.625" PointY="0.5" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tGlasstMaterial" />
+        <EntityTypeShape EntityType="MetHose.tBraid" Width="1.5" PointX="5.75" PointY="0.5" IsExpanded="false" />
+        <AssociationConnector Association="MetHose.tBraidtMaterial" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

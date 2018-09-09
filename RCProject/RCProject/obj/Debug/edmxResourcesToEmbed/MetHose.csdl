@@ -7,6 +7,11 @@
       <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
       <End Role="tMaterial" EntitySet="tMaterialSet" />
     </AssociationSet>
+    <EntitySet Name="tGlassSet" EntityType="MetHose.tGlass" />
+    <AssociationSet Name="tGlasstMaterial" Association="MetHose.tGlasstMaterial">
+      <End Role="tGlass" EntitySet="tGlassSet" />
+      <End Role="tMaterial" EntitySet="tMaterialSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tCorrugSheath">
     <Key>
@@ -89,6 +94,7 @@
     <Property Name="PurposeSteel2" Type="String" Nullable="true" />
     <Property Name="QualitySteel" Type="String" Nullable="true" />
     <Property Name="DegreeDeoxid" Type="String" Nullable="true" />
+    <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstMaterial" FromRole="tMaterial" ToRole="tGlass" />
   </EntityType>
   <Association Name="tCorrugSheathtMaterial">
     <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="*" />
@@ -98,6 +104,33 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="tCorrugSheath">
+        <PropertyRef Name="tMaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tGlass">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DN" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Dout" Type="String" Nullable="false" />
+    <Property Name="Th" Type="String" Nullable="false" />
+    <Property Name="Ls" Type="String" Nullable="false" />
+    <Property Name="Executor" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
+    <Property Name="tMaterialID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tGlasstMaterial">
+    <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="*" />
+    <End Type="MetHose.tMaterial" Role="tMaterial" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="tMaterial">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tGlass">
         <PropertyRef Name="tMaterialID" />
       </Dependent>
     </ReferentialConstraint>

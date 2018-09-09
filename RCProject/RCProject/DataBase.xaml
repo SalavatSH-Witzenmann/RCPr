@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="DataBase" Height="800" Width="1200">
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="26*"/>
             <RowDefinition Height="545*"/>
@@ -569,7 +570,7 @@
                                         Text="Выберите типовое имя стакана">
                                         <ComboBoxItem Content="U11"/>
                                         <ComboBoxItem Content="U12"/>
-                                        <ComboBoxItem Content="U22"/>                                        
+                                        <ComboBoxItem Content="U22"/>
                                     </ComboBox>
                                     <DataGrid HorizontalAlignment="Left" Height="138" Margin="10,280,0,0" VerticalAlignment="Top" Width="580"/>
                                     <ListBox HorizontalAlignment="Left" Height="83" Margin="533,140,0,0" VerticalAlignment="Top" Width="628"/>
@@ -586,7 +587,236 @@
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Кольцо (П12 и др)">
-                                <Grid Background="Beige"/>
+                                <Grid Background="Beige">
+                                    <Border 
+                                        BorderBrush="Black" 
+                                        BorderThickness="1" 
+                                        HorizontalAlignment="Left" 
+                                        Height="97" Margin="10,62,0,0" 
+                                        VerticalAlignment="Top" Width="405">
+                                        <Grid>
+                                            <Label 
+                                                Content="Секция заполнения базовых параметров" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="87,0,0,0" 
+                                                VerticalAlignment="Top"/>
+                                            <TextBox 
+                                                HorizontalAlignment="Left" 
+                                                Height="23" Margin="139,31,0,0" 
+                                                TextWrapping="Wrap" 
+                                                Text="" 
+                                                VerticalAlignment="Top" 
+                                                Width="60"/>
+                                            <Label 
+                                                Content="Внешний диаметр, Do:" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="0,31,0,0" 
+                                                VerticalAlignment="Top" 
+                                                Width="134" Height="26"/>
+                                            <Label 
+                                                Content="Толщина стенки, h:" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="0,62,0,0" 
+                                                VerticalAlignment="Top" 
+                                                Width="134" Height="26"/>
+                                            <TextBox 
+                                                HorizontalAlignment="Left" 
+                                                Height="23" Margin="139,65,0,0" 
+                                                TextWrapping="Wrap" 
+                                                Text="" 
+                                                VerticalAlignment="Top" 
+                                                Width="60"/>
+                                            <Label 
+                                                Content="Длина кольца, L:" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="221,31,0,0" 
+                                                VerticalAlignment="Top" 
+                                                Width="103" Height="26"/>
+                                            <TextBox 
+                                                HorizontalAlignment="Left" 
+                                                Height="23" Margin="329,31,0,0" 
+                                                TextWrapping="Wrap" 
+                                                Text="" 
+                                                VerticalAlignment="Top" 
+                                                Width="60"/>
+                                            <Button 
+                                                Click="SignClick"
+                                        HorizontalAlignment="Left" 
+                                        Margin="385,0,0,0" 
+                                        VerticalAlignment="Top" Width="18" Height="21">
+                                                <Image Source="Res/ICON/sign.jpg"/>
+                                            </Button>
+                                        </Grid>
+                                    </Border>
+                                    <ComboBox 
+                                        Text="Выберите номинальный DN"
+                                        IsEditable="True" IsReadOnly="True"
+                                        HorizontalAlignment="Left" 
+                                        Margin="10,20,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="184">
+                                        <ComboBoxItem Content="DN4"/>
+                                        <ComboBoxItem Content="DN6"/>
+                                        <ComboBoxItem Content="DN8"/>
+                                        <ComboBoxItem Content="DN10"/>
+                                        <ComboBoxItem Content="DN12"/>
+                                        <ComboBoxItem Content="DN16"/>
+                                        <ComboBoxItem Content="DN20"/>
+                                        <ComboBoxItem Content="DN25"/>
+                                        <ComboBoxItem Content="DN32"/>
+                                        <ComboBoxItem Content="DN40"/>
+                                        <ComboBoxItem Content="DN50"/>
+                                        <ComboBoxItem Content="DN65"/>
+                                        <ComboBoxItem Content="DN80"/>
+                                        <ComboBoxItem Content="DN100"/>
+                                        <ComboBoxItem Content="DN125"/>
+                                        <ComboBoxItem Content="DN150"/>
+                                        <ComboBoxItem Content="DN160"/>
+                                        <ComboBoxItem Content="DN175"/>
+                                        <ComboBoxItem Content="DN200"/>
+                                        <ComboBoxItem Content="DN250"/>
+                                        <ComboBoxItem Content="DN300"/>
+                                        <ComboBoxItem Content="DN350"/>
+                                        <ComboBoxItem Content="DN400"/>
+                                        <ComboBoxItem Content="DN450"/>
+                                        <ComboBoxItem Content="DN500"/>
+                                        <ComboBoxItem Content="DN600"/>
+                                        <ComboBoxItem Content="DN700"/>
+                                        <ComboBoxItem Content="DN800"/>
+                                        <ComboBoxItem Content="DN900"/>
+                                        <ComboBoxItem Content="DN1000"/>
+                                        <ComboBoxItem Content="DN1200"/>
+                                        <ComboBoxItem Content="DN1400"/>
+                                        <ComboBoxItem Content="DN1600"/>
+                                    </ComboBox>
+                                    <ComboBox 
+                                        HorizontalAlignment="Left" 
+                                        Margin="211,20,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="178"
+                                        IsEditable="True" IsReadOnly="True"
+                                        Text="Выберите номинальное PN"
+                                        ToolTip="Давление номинальное на которое создано
+данное кольцо согласно Вашему решению, даже если реальный расчет показывает что кольцо
+держит давление больше!">
+                                        <ComboBoxItem Content="PN1,0"/>
+                                        <ComboBoxItem Content="PN1,6"/>
+                                        <ComboBoxItem Content="PN2,5"/>
+                                        <ComboBoxItem Content="PN3,0"/>
+                                        <ComboBoxItem Content="PN4,0"/>
+                                        <ComboBoxItem Content="PN6,0"/>
+                                        <ComboBoxItem Content="PN8,0"/>
+                                        <ComboBoxItem Content="PN10,0"/>
+                                        <ComboBoxItem Content="PN12,5"/>
+                                        <ComboBoxItem Content="PN16,0"/>
+                                        <ComboBoxItem Content="PN20,0"/>
+                                        <ComboBoxItem Content="PN25,0"/>
+                                        <ComboBoxItem Content="PN32,0"/>
+                                        <ComboBoxItem Content="PN40,0"/>
+                                        <ComboBoxItem Content="PN50,0"/>
+                                        <ComboBoxItem Content="PN63,0"/>
+                                        <ComboBoxItem Content="PN80,0"/>
+                                        <ComboBoxItem Content="PN100,0"/>
+                                        <ComboBoxItem Content="PN125,0"/>
+                                        <ComboBoxItem Content="PN160,0"/>
+                                        <ComboBoxItem Content="PN200,0"/>
+                                        <ComboBoxItem Content="PN250,0"/>
+                                    </ComboBox>
+                                    <Label 
+                                        Content="Наименование кольца:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="413,19,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="139" Height="24"/>
+                                    <TextBox 
+                                        HorizontalAlignment="Left" 
+                                        Height="23" Margin="557,19,0,0" 
+                                        TextWrapping="Wrap" Text="" 
+                                        VerticalAlignment="Top" Width="144"
+                                        ToolTip="В данное поле необходимо ввести
+имя кольца которое отображается в обозначении чертежа
+(пример: П.17х2х60)"/>
+                                    <ListBox 
+                                        HorizontalAlignment="Left" 
+                                        Height="82" Margin="715,47,0,0" 
+                                        VerticalAlignment="Top" Width="457"/>
+                                    <Label 
+                                        Content="Выберите сталь:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="715,18,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="139" Height="24"/>
+                                    <Border 
+                                        BorderBrush="Black" 
+                                        BorderThickness="1" 
+                                        HorizontalAlignment="Left" 
+                                        Height="118" Margin="10,174,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="148">
+                                        <Grid>
+                                            <CheckBox                                                 
+                                        Content="Фаска" 
+                                        HorizontalAlignment="Left" 
+                                        VerticalAlignment="Top" Width="142"/>
+                                            <CheckBox 
+                                                Content="Скругление" 
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Top" Width="142" Margin="0,20,0,0"/>
+                                            <CheckBox 
+                                                Content="Обжатие" 
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Top" Width="142" Margin="0,40,0,0"/>
+                                            <CheckBox 
+                                                Content="Развальцовка" 
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Top" Width="142" Margin="0,60,0,0"/>
+                                            <CheckBox 
+                                                Content="Проточка" 
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Top" Width="142" Margin="0,80,0,0"/>
+                                            <CheckBox 
+                                                Content="Отверстие" 
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Top" Width="142" Margin="0,100,0,0"/>
+                                        </Grid>
+                                    </Border>
+                                    <Border 
+                                        BorderBrush="Black" 
+                                        BorderThickness="2" 
+                                        HorizontalAlignment="Left" 
+                                        Height="167"
+                                        VerticalAlignment="Top" Width="991" 
+                                        Margin="181,174,0,0">
+                                        <Grid>
+                                            <TabControl Margin="0,0,0,0">
+                                                <TabItem Name="Chamfer"
+                                                    Header="Фаски" IsEnabled="False">
+                                                    <Grid Background="#FFE5E5E5"/>
+                                                </TabItem>
+                                                <TabItem Name="Fillet"
+                                                    Header="Скругления" IsEnabled="False">
+                                                    <Grid Background="#FFE5E5E5"/>
+                                                </TabItem>
+                                                <TabItem Name="Compression"
+                                                    Header="Обжатие" IsEnabled="False">
+                                                    <Grid Background="#FFE5E5E5"/>
+                                                </TabItem>
+                                                <TabItem Name="Flaring"
+                                                    Header="Развальцовка" IsEnabled="False">
+                                                    <Grid Background="#FFE5E5E5"/>
+                                                </TabItem>
+                                                <TabItem Name="Boring"
+                                                    Header="Проточка" IsEnabled="False">
+                                                    <Grid Background="#FFE5E5E5"/>
+                                                </TabItem>
+                                                <TabItem Name="Hole"
+                                                    Header="Отверстие" IsEnabled="False">
+                                                    <Grid Background="#FFE5E5E5"/>
+                                                </TabItem>
+                                            </TabControl>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
                             </TabItem>
                             <TabItem Header="Фитинги">
                                 <Grid Background="Aqua">

@@ -24,6 +24,11 @@
             <End Role="tGlass" EntitySet="tGlassSet" />
             <End Role="tMaterial" EntitySet="tMaterialSet" />
           </AssociationSet>
+          <EntitySet Name="tBraidSet" EntityType="MetHose.tBraid" />
+          <AssociationSet Name="tBraidtMaterial" Association="MetHose.tBraidtMaterial">
+            <End Role="tBraid" EntitySet="tBraidSet" />
+            <End Role="tMaterial" EntitySet="tMaterialSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tCorrugSheath">
           <Key>
@@ -107,6 +112,7 @@
           <Property Name="QualitySteel" Type="String" Nullable="true" />
           <Property Name="DegreeDeoxid" Type="String" Nullable="true" />
           <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstMaterial" FromRole="tMaterial" ToRole="tGlass" />
+          <NavigationProperty Name="tBraid" Relationship="MetHose.tBraidtMaterial" FromRole="tMaterial" ToRole="tBraid" />
         </EntityType>
         <Association Name="tCorrugSheathtMaterial">
           <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="*" />
@@ -143,6 +149,36 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="tGlass">
+              <PropertyRef Name="tMaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tBraid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DN" Type="String" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" />
+          <Property Name="Dout" Type="String" Nullable="false" />
+          <Property Name="Din" Type="String" Nullable="false" />
+          <Property Name="NumbStrands" Type="String" Nullable="false" />
+          <Property Name="NymbThreads" Type="String" Nullable="false" />
+          <Property Name="DThreads" Type="String" Nullable="false" />
+          <Property Name="AngleWeaving" Type="String" Nullable="false" />
+          <Property Name="Executor" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="tMaterial" Relationship="MetHose.tBraidtMaterial" FromRole="tBraid" ToRole="tMaterial" />
+          <Property Name="tMaterialID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tBraidtMaterial">
+          <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="*" />
+          <End Type="MetHose.tMaterial" Role="tMaterial" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tMaterial">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tBraid">
               <PropertyRef Name="tMaterialID" />
             </Dependent>
           </ReferentialConstraint>

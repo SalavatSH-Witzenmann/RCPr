@@ -23,5 +23,12 @@ namespace RCProject
         {
             InitializeComponent();
         }
+
+        private void SignClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Пожалуйста обратите внимание, вводить необходимо наружный диаметр заготовки до операции обжатия/развальцовки," +
+                "т.е. наружный диаметр трубы и толщину стенки трубы (не учитывая всевозможных операции)");
+        }
+                
     }
 }

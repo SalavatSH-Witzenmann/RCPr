@@ -816,6 +816,22 @@
                                             </TabControl>
                                         </Grid>
                                     </Border>
+                                    <DataGrid HorizontalAlignment="Left" Height="178" Margin="10,410,0,0" VerticalAlignment="Top" Width="827"/>
+                                    <Button 
+                                        Content="Загрузить данные" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="10,605,0,0" VerticalAlignment="Top" 
+                                        Width="113"/>
+                                    <Button 
+                                        Content="Сохранить данные" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="144,605,0,0" VerticalAlignment="Top" 
+                                        Width="113"/>
+                                    <Button 
+                                        Content="Заполнить БД" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="10,354,0,0" VerticalAlignment="Top" 
+                                        Width="113"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Фитинги">

@@ -75,3 +75,5 @@ C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\obj\Debu
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\obj\Debug\RCProject.pdb
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\obj\Debug\DataBase.g.cs
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\obj\Debug\DataBase.baml
+C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\DataBase.g.cs
+C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\DataBase.baml

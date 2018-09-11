@@ -755,27 +755,39 @@
                                         Width="148">
                                         <Grid>
                                             <CheckBox                                                 
-                                        Content="Фаска" 
-                                        HorizontalAlignment="Left" 
-                                        VerticalAlignment="Top" Width="142"/>
+                                                Content="Фаска" 
+                                                Checked="chamfer_check" 
+                                                Unchecked="chamfer_uncheck"
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Top" Width="142"/>
                                             <CheckBox 
                                                 Content="Скругление" 
+                                                Checked="fillet_check" 
+                                                Unchecked="fillet_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,20,0,0"/>
                                             <CheckBox 
                                                 Content="Обжатие" 
+                                                Checked="compression_check" 
+                                                Unchecked="compression_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,40,0,0"/>
                                             <CheckBox 
                                                 Content="Развальцовка" 
+                                                Checked="flaring_check" 
+                                                Unchecked="flaring_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,60,0,0"/>
                                             <CheckBox 
                                                 Content="Проточка" 
+                                                Checked="boring_check" 
+                                                Unchecked="boring_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,80,0,0"/>
                                             <CheckBox 
                                                 Content="Отверстие" 
+                                                Checked="hole_check" 
+                                                Unchecked="hole_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,100,0,0"/>
                                         </Grid>

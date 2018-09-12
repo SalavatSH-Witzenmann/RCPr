@@ -804,7 +804,118 @@
                                                 <TabItem Name="Chamfer"
                                                     Header="Фаски" IsEnabled="False">
                                                     <Grid Background="#FFE5E5E5">
-                                                        <Label Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                                        <Label 
+                                                            Content="Фаска внешняя R:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="0,5,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <Label 
+                                                            Content="Фаска внешняя L:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="0,31,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="112,5,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="112,33,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <Label 
+                                                            Content="Угол R:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="0,60,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="112,60,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <Label 
+                                                            Content="Угол L:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="2,88,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="112,88,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <Label 
+                                                            Content="Фаска внутр-яя R:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="177,5,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <Label 
+                                                            Content="Фаска внутр-яя L:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="177,33,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <Label 
+                                                            Content="Угол R:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="177,59,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <Label 
+                                                            Content="Угол L:" 
+                                                            HorizontalAlignment="Left" 
+                                                            Margin="177,88,0,0" 
+                                                            VerticalAlignment="Top"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="311,5,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="311,33,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="311,60,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <TextBox 
+                                                            HorizontalAlignment="Left" 
+                                                            Height="23" 
+                                                            Margin="311,88,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" Width="50"/>
+                                                        <GroupBox Header="Сторона приварки:" 
+                                                                  HorizontalAlignment="Left" Height="78" 
+                                                                  Margin="389,5,0,0" VerticalAlignment="Top" 
+                                                                  Width="147">
+                                                            <Grid 
+                                                                  Height="74" VerticalAlignment="Top" Margin="0,0,0,0">
+                                                                <RadioButton Content="Правая сторона(R)" 
+                                                                             HorizontalAlignment="Left" 
+                                                                             Margin="10,10,0,0" 
+                                                                             VerticalAlignment="Top"/>
+                                                                <RadioButton Content="Левая сторона(L)" 
+                                                                             HorizontalAlignment="Left" 
+                                                                             Margin="10,36,0,0" 
+                                                                             VerticalAlignment="Top"/>
+                                                            </Grid>
+                                                        </GroupBox>
                                                     </Grid>
                                                 </TabItem>
                                                 <TabItem Name="Fillet"

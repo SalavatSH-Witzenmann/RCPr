@@ -29,6 +29,11 @@
             <End Role="tBraid" EntitySet="tBraidSet" />
             <End Role="tMaterial" EntitySet="tMaterialSet" />
           </AssociationSet>
+          <EntitySet Name="tRingSet" EntityType="MetHose.tRing" />
+          <AssociationSet Name="tRingtMaterial" Association="MetHose.tRingtMaterial">
+            <End Role="tRing" EntitySet="tRingSet" />
+            <End Role="tMaterial" EntitySet="tMaterialSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tCorrugSheath">
           <Key>
@@ -113,6 +118,7 @@
           <Property Name="DegreeDeoxid" Type="String" Nullable="true" />
           <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstMaterial" FromRole="tMaterial" ToRole="tGlass" />
           <NavigationProperty Name="tBraid" Relationship="MetHose.tBraidtMaterial" FromRole="tMaterial" ToRole="tBraid" />
+          <NavigationProperty Name="tRing" Relationship="MetHose.tRingtMaterial" FromRole="tMaterial" ToRole="tRing" />
         </EntityType>
         <Association Name="tCorrugSheathtMaterial">
           <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="*" />
@@ -179,6 +185,27 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="tBraid">
+              <PropertyRef Name="tMaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tRing">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tMaterial" Relationship="MetHose.tRingtMaterial" FromRole="tRing" ToRole="tMaterial" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="tMaterialID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tRingtMaterial">
+          <End Type="MetHose.tRing" Role="tRing" Multiplicity="*" />
+          <End Type="MetHose.tMaterial" Role="tMaterial" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tMaterial">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tRing">
               <PropertyRef Name="tMaterialID" />
             </Dependent>
           </ReferentialConstraint>

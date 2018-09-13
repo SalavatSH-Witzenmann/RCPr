@@ -12,6 +12,8 @@
         <AssociationConnector Association="MetHose.tGlasstMaterial" />
         <EntityTypeShape EntityType="MetHose.tBraid" Width="1.5" PointX="5.75" PointY="0.5" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tBraidtMaterial" />
+        <EntityTypeShape EntityType="MetHose.tRing" Width="1.5" PointX="7.625" PointY="0.5" IsExpanded="false" />
+        <AssociationConnector Association="MetHose.tRingtMaterial" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

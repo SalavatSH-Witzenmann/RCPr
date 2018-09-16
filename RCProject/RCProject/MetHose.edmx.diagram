@@ -5,15 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8ffeafbb715644eaa4815733006f3689" Name="Diagram1" >
-        <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="1.5" PointX="1.125" PointY="0.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="3.625" PointY="3.375" IsExpanded="false" />
-        <AssociationConnector Association="MetHose.tCorrugSheathtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tGlass" Width="1.5" PointX="3.625" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="1.5" PointX="1.125" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="4" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tGlass" Width="1.5" PointX="5" PointY="2.875" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tGlasstMaterial" />
-        <EntityTypeShape EntityType="MetHose.tBraid" Width="1.5" PointX="5.75" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tBraid" Width="1.5" PointX="3" PointY="2.875" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tBraidtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tRing" Width="1.5" PointX="7.625" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tRing" Width="1.5" PointX="7.25" PointY="2.875" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tRingtMaterial" />
+        <EntityTypeShape EntityType="MetHose.tMetHose" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="false" />
+        <AssociationConnector Association="MetHose.tMetHosetBraid" />
+        <AssociationConnector Association="MetHose.tMetHosetGlass" />
+        <AssociationConnector Association="MetHose.tMetHosetRing" />
+        <AssociationConnector Association="MetHose.tMetHosetCorrugSheath" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

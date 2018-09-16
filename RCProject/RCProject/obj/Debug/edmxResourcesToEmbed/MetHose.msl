@@ -1,6 +1,183 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-  <Alias Key="Model" Value="MetHose" />
-  <Alias Key="Target" Value="MetHose.Store" />
-  <EntityContainerMapping CdmEntityContainer="MetHoseContainer" StorageEntityContainer="MetHoseTargetContainer" />
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MetHoseStoreContainer" CdmEntityContainer="MetHoseContainer">
+    <EntitySetMapping Name="tCorrugSheathSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tCorrugSheath)">
+        <MappingFragment StoreEntitySet="tCorrugSheathSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DN" ColumnName="DN" />
+          <ScalarProperty Name="PN" ColumnName="PN" />
+          <ScalarProperty Name="Dout" ColumnName="Dout" />
+          <ScalarProperty Name="Din" ColumnName="Din" />
+          <ScalarProperty Name="TPch" ColumnName="TPch" />
+          <ScalarProperty Name="Dtop" ColumnName="Dtop" />
+          <ScalarProperty Name="Dbot" ColumnName="Dbot" />
+          <ScalarProperty Name="Rmin" ColumnName="Rmin" />
+          <ScalarProperty Name="Rn" ColumnName="Rn" />
+          <ScalarProperty Name="Th" ColumnName="Th" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMaterialSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tMaterial)">
+        <MappingFragment StoreEntitySet="tMaterialSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameDIN" ColumnName="NameDIN" />
+          <ScalarProperty Name="NameGOST" ColumnName="NameGOST" />
+          <ScalarProperty Name="NameAISI" ColumnName="NameAISI" />
+          <ScalarProperty Name="NameJIS" ColumnName="NameJIS" />
+          <ScalarProperty Name="NameBS" ColumnName="NameBS" />
+          <ScalarProperty Name="NameAFNOR" ColumnName="NameAFNOR" />
+          <ScalarProperty Name="ContFe" ColumnName="ContFe" />
+          <ScalarProperty Name="ContC" ColumnName="ContC" />
+          <ScalarProperty Name="ContSi" ColumnName="ContSi" />
+          <ScalarProperty Name="ContCr" ColumnName="ContCr" />
+          <ScalarProperty Name="ContNi" ColumnName="ContNi" />
+          <ScalarProperty Name="ContNb" ColumnName="ContNb" />
+          <ScalarProperty Name="ContTa" ColumnName="ContTa" />
+          <ScalarProperty Name="ContW" ColumnName="ContW" />
+          <ScalarProperty Name="ContMn" ColumnName="ContMn" />
+          <ScalarProperty Name="ContCu" ColumnName="ContCu" />
+          <ScalarProperty Name="ContSe" ColumnName="ContSe" />
+          <ScalarProperty Name="ContCo" ColumnName="ContCo" />
+          <ScalarProperty Name="ContMo" ColumnName="ContMo" />
+          <ScalarProperty Name="ContBi" ColumnName="ContBi" />
+          <ScalarProperty Name="ContP" ColumnName="ContP" />
+          <ScalarProperty Name="ContB" ColumnName="ContB" />
+          <ScalarProperty Name="ContTi" ColumnName="ContTi" />
+          <ScalarProperty Name="ContV" ColumnName="ContV" />
+          <ScalarProperty Name="ContZr" ColumnName="ContZr" />
+          <ScalarProperty Name="ContAl" ColumnName="ContAl" />
+          <ScalarProperty Name="ContCd" ColumnName="ContCd" />
+          <ScalarProperty Name="ContAs" ColumnName="ContAs" />
+          <ScalarProperty Name="ContS" ColumnName="ContS" />
+          <ScalarProperty Name="ContCe" ColumnName="ContCe" />
+          <ScalarProperty Name="ContA" ColumnName="ContA" />
+          <ScalarProperty Name="ContSn" ColumnName="ContSn" />
+          <ScalarProperty Name="ContPb" ColumnName="ContPb" />
+          <ScalarProperty Name="ContU" ColumnName="ContU" />
+          <ScalarProperty Name="ContO" ColumnName="ContO" />
+          <ScalarProperty Name="ContH" ColumnName="ContH" />
+          <ScalarProperty Name="ContPt" ColumnName="ContPt" />
+          <ScalarProperty Name="ContAu" ColumnName="ContAu" />
+          <ScalarProperty Name="ContNa" ColumnName="ContNa" />
+          <ScalarProperty Name="ContMg" ColumnName="ContMg" />
+          <ScalarProperty Name="ContGe" ColumnName="ContGe" />
+          <ScalarProperty Name="ContRe" ColumnName="ContRe" />
+          <ScalarProperty Name="ContAr" ColumnName="ContAr" />
+          <ScalarProperty Name="ContLi" ColumnName="ContLi" />
+          <ScalarProperty Name="ContIr" ColumnName="ContIr" />
+          <ScalarProperty Name="ContPd" ColumnName="ContPd" />
+          <ScalarProperty Name="YieldStren" ColumnName="YieldStren" />
+          <ScalarProperty Name="StrenLimit" ColumnName="StrenLimit" />
+          <ScalarProperty Name="Hardness" ColumnName="Hardness" />
+          <ScalarProperty Name="YoungMod" ColumnName="YoungMod" />
+          <ScalarProperty Name="Density" ColumnName="Density" />
+          <ScalarProperty Name="ImpTough" ColumnName="ImpTough" />
+          <ScalarProperty Name="ShearModul" ColumnName="ShearModul" />
+          <ScalarProperty Name="PoissonRatio" ColumnName="PoissonRatio" />
+          <ScalarProperty Name="CoefTherConduct" ColumnName="CoefTherConduct" />
+          <ScalarProperty Name="CoefHeatCapacity" ColumnName="CoefHeatCapacity" />
+          <ScalarProperty Name="DifficultWeld" ColumnName="DifficultWeld" />
+          <ScalarProperty Name="Flxenosensitivity" ColumnName="Flxenosensitivity" />
+          <ScalarProperty Name="TempBrittleness" ColumnName="TempBrittleness" />
+          <ScalarProperty Name="AnnealedCond" ColumnName="AnnealedCond" />
+          <ScalarProperty Name="NormalizState" ColumnName="NormalizState" />
+          <ScalarProperty Name="TypeStruct" ColumnName="TypeStruct" />
+          <ScalarProperty Name="PurposeSteel" ColumnName="PurposeSteel" />
+          <ScalarProperty Name="PurposeSteel2" ColumnName="PurposeSteel2" />
+          <ScalarProperty Name="QualitySteel" ColumnName="QualitySteel" />
+          <ScalarProperty Name="DegreeDeoxid" ColumnName="DegreeDeoxid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tGlassSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tGlass)">
+        <MappingFragment StoreEntitySet="tGlassSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DN" ColumnName="DN" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dout" ColumnName="Dout" />
+          <ScalarProperty Name="Th" ColumnName="Th" />
+          <ScalarProperty Name="Ls" ColumnName="Ls" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="tMaterialID" ColumnName="tMaterialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tBraidSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tBraid)">
+        <MappingFragment StoreEntitySet="tBraidSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DN" ColumnName="DN" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Dout" ColumnName="Dout" />
+          <ScalarProperty Name="Din" ColumnName="Din" />
+          <ScalarProperty Name="NumbStrands" ColumnName="NumbStrands" />
+          <ScalarProperty Name="NymbThreads" ColumnName="NymbThreads" />
+          <ScalarProperty Name="DThreads" ColumnName="DThreads" />
+          <ScalarProperty Name="AngleWeaving" ColumnName="AngleWeaving" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="tMaterialID" ColumnName="tMaterialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tRingSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tRing)">
+        <MappingFragment StoreEntitySet="tRingSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="DN" ColumnName="DN" />
+          <ScalarProperty Name="PN" ColumnName="PN" />
+          <ScalarProperty Name="Dout" ColumnName="Dout" />
+          <ScalarProperty Name="Th" ColumnName="Th" />
+          <ScalarProperty Name="LN" ColumnName="LN" />
+          <ScalarProperty Name="WeldingSide" ColumnName="WeldingSide" />
+          <ScalarProperty Name="ChamExtR" ColumnName="ChamExtR" />
+          <ScalarProperty Name="ChamExtL" ColumnName="ChamExtL" />
+          <ScalarProperty Name="ChamIntR" ColumnName="ChamIntR" />
+          <ScalarProperty Name="ChamIntL" ColumnName="ChamIntL" />
+          <ScalarProperty Name="AngleExtR" ColumnName="AngleExtR" />
+          <ScalarProperty Name="AngleExtL" ColumnName="AngleExtL" />
+          <ScalarProperty Name="AngleIntR" ColumnName="AngleIntR" />
+          <ScalarProperty Name="AngleIntL" ColumnName="AngleIntL" />
+          <ScalarProperty Name="BoringExtR" ColumnName="BoringExtR" />
+          <ScalarProperty Name="BoringExtL" ColumnName="BoringExtL" />
+          <ScalarProperty Name="BoringIntR" ColumnName="BoringIntR" />
+          <ScalarProperty Name="BoringIntL" ColumnName="BoringIntL" />
+          <ScalarProperty Name="AngleCoupExtR" ColumnName="AngleCoupExtR" />
+          <ScalarProperty Name="AngleCoupExtL" ColumnName="AngleCoupExtL" />
+          <ScalarProperty Name="AngleCoupIntR" ColumnName="AngleCoupIntR" />
+          <ScalarProperty Name="AngleCoupIntL" ColumnName="AngleCoupIntL" />
+          <ScalarProperty Name="tMaterialID" ColumnName="tMaterialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMetHoseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tMetHose)">
+        <MappingFragment StoreEntitySet="tMetHoseSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tCorrugSheathID" ColumnName="tCorrugSheathID" />
+          <ScalarProperty Name="tBraidID" ColumnName="tBraidID" />
+          <ScalarProperty Name="tGlassID" ColumnName="tGlassID" />
+          <ScalarProperty Name="tCorrugSheathID1" ColumnName="tCorrugSheathID1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tMetHosetRing" TypeName="MetHose.tMetHosetRing" StoreEntitySet="tMetHoseSet">
+      <EndProperty Name="tRing">
+        <ScalarProperty Name="ID" ColumnName="tRing_ID" />
+      </EndProperty>
+      <EndProperty Name="tMetHose">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+      <Condition ColumnName="tRing_ID" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
 </Mapping>

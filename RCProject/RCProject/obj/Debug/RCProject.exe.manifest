@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="220632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="293336">
       <assemblyIdentity name="RCProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JxzPA3obeJ2Zg1LY/iGoVE8VQ7pO3GJSoaJqp81zKI0=</dsig:DigestValue>
+        <dsig:DigestValue>olIIeAUe4oJfLPoXRjEyg1Ylj17awXs1AurVS9YTO/o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -87,13 +87,40 @@
       <dsig:DigestValue>lVQW8k4AlwDT8Bmz/Tunvqm6q57ealkfU8bsbcyDcdQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RCProject.exe.config" size="1479">
+  <file name="MetHose.Context.tt" size="22931">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>em8fxgFsnEZ6bGPB+h7A7f6LOxSEQEPr+JU4Jf02UuU=</dsig:DigestValue>
+      <dsig:DigestValue>/QPgV1krWo13ZkG3mLlZIE4T1NCQkL2JsCjeA3AS8Bo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MetHose.edmx.sql" size="11700">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AKl5aHWPYg83FoM88bINTD4FYcfFU4qaDATfUsEBWrk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MetHose.tt" size="25276">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Dg51UFAl4D/hSihtbvP1bS0AoHIv+HSQHWv3fToUg1g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="RCProject.exe.config" size="1844">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Yoo3H2Lz6HB+uJvgH+ImSShYF8hipce+VvfZT9tRvrM=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

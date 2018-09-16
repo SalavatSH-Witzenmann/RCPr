@@ -77,3 +77,31 @@ C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\obj\Debu
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v2\RCProject\RCProject\obj\Debug\DataBase.baml
 C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\DataBase.g.cs
 C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\DataBase.baml
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.csprojAssemblyReference.cache
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\DataBase.g.cs
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\MainWindow.g.cs
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\App.g.cs
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject_MarkupCompile.cache
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject_MarkupCompile.lref
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.exe
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.pdb
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\RCProject.exe.config
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\RCProject.exe.manifest
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\RCProject.application
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\RCProject.exe
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\RCProject.pdb
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\EntityFramework.dll
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\EntityFramework.xml
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\DataBase.baml
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\MainWindow.baml
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.g.resources
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.Properties.Resources.resources
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.csproj.GenerateResource.cache
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.csproj.CoreCompileInputs.cache
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.TrustInfo.xml
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.exe.manifest
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.application
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.csproj.CopyComplete
+C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject_Content.g.cs

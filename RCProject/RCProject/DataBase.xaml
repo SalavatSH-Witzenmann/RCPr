@@ -1684,7 +1684,7 @@
                                                 Margin="668,30,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy"
+                                            <TextBox x:Name="nConO_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,30,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1695,7 +1695,7 @@
                                                 Margin="668,60,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy1"
+                                            <TextBox x:Name="nConH_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,60,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1706,7 +1706,7 @@
                                                 Margin="668,90,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy2"
+                                            <TextBox x:Name="nConPt_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,90,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1717,7 +1717,7 @@
                                                 Margin="668,120,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy3"
+                                            <TextBox x:Name="nConAu_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,120,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1728,7 +1728,7 @@
                                                 Margin="668,150,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy4"
+                                            <TextBox x:Name="nConNa_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,150,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1739,7 +1739,7 @@
                                                 Margin="668,180,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy5"
+                                            <TextBox x:Name="nConMg_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,180,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1750,7 +1750,7 @@
                                                 Margin="668,210,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy6"
+                                            <TextBox x:Name="nConGe_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,210,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1760,7 +1760,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="10,240,0,0" 
                                                 VerticalAlignment="Top" Width="80"/>
-                                            <TextBox x:Name="nConTa_kn_Copy"
+                                            <TextBox x:Name="nConAr_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="95,240,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1770,7 +1770,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="170,240,0,0" 
                                                 VerticalAlignment="Top" Width="90"/>
-                                            <TextBox x:Name="nConBi_kn_Copy"
+                                            <TextBox x:Name="nConLi_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="261,240,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1780,7 +1780,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="331,240,0,0" 
                                                 VerticalAlignment="Top" Width="90"/>
-                                            <TextBox x:Name="nConCd_kn_Copy"
+                                            <TextBox x:Name="nConIr_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="426,240,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1790,7 +1790,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="508,240,0,0" 
                                                 VerticalAlignment="Top" Width="89"/>
-                                            <TextBox x:Name="nConU_kn_Copy"
+                                            <TextBox x:Name="nConPd_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="601,240,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1801,7 +1801,7 @@
                                                 Margin="668,240,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="90"/>
-                                            <TextBox x:Name="nConAs_kn_Copy7"
+                                            <TextBox x:Name="nConRe_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,240,0,0" 
                                                 TextWrapping="Wrap" Text="" 
@@ -1823,7 +1823,8 @@
                                                 Margin="20,30,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="161"/>
-                                            <TextBox HorizontalAlignment="Left" 
+                                            <TextBox Name="nYieldStren_kn"
+                                                     HorizontalAlignment="Left" 
                                                      Height="26" 
                                                      Margin="186,30,0,0" 
                                                      TextWrapping="Wrap" 
@@ -1836,7 +1837,8 @@
                                                 Margin="20,60,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="161"/>
-                                            <TextBox HorizontalAlignment="Left" 
+                                            <TextBox Name="nStrenLimit_kn"
+                                                HorizontalAlignment="Left" 
                                                 Height="26" 
                                                 Margin="186,60,0,0" 
                                                 TextWrapping="Wrap" 
@@ -1855,20 +1857,22 @@
                                                 Margin="276,60,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="161"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="445,30,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="445,60,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
+                                            <TextBox Name="nYoungMod_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="445,30,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
+                                            <TextBox Name="nDensity_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="445,60,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
                                             <Label 
                                                 Content="Модуль сдвига [ГПа]:" 
                                                 HorizontalAlignment="Left" 
@@ -1881,33 +1885,36 @@
                                                 Margin="535,60,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="175"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="715,30,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="715,60,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
+                                            <TextBox Name="nShearModul_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="715,30,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
+                                            <TextBox Name="nPoissonRatio_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="715,60,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
                                             <Label 
                                                 Content="Коэффициент теплопроводности [Вт/(м*К)]:" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="805,30,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="252"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="1062,30,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
+                                            <TextBox Name="nCoefTherConduct_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="1062,30,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
                                             <Label 
                                                 Content="Физические параметры (при 293,15 K)" 
                                                 HorizontalAlignment="Left" 
@@ -1921,20 +1928,22 @@
                                                 Margin="805,60,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="252"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="1062,60,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
+                                            <TextBox Name="nCoefHeatCapacity_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="1062,60,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
                                             <Label 
                                                 Content="Твердость HB:" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="20,90,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="161"/>
-                                            <TextBox HorizontalAlignment="Left" 
+                                            <TextBox Name="nHardness_kn"
+                                                HorizontalAlignment="Left" 
                                                 Height="26" 
                                                 Margin="186,90,0,0" 
                                                 TextWrapping="Wrap" 
@@ -1947,13 +1956,14 @@
                                                 Margin="276,90,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="161"/>
-                                            <TextBox HorizontalAlignment="Left" 
-                                                Height="26" 
-                                                Margin="445,90,0,0" 
-                                                TextWrapping="Wrap" 
-                                                Text="" 
-                                                VerticalAlignment="Top" 
-                                                Width="77"/>
+                                            <TextBox Name="nImpTough_kn"
+                                                     HorizontalAlignment="Left" 
+                                                     Height="26" 
+                                                     Margin="445,90,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="77"/>
                                         </Grid>
                                     </Border>
                                     <Button Name="But_MatDB_filling"
@@ -1972,11 +1982,12 @@
                                         HorizontalAlignment="Left" 
                                         Margin="141,733,0,0" VerticalAlignment="Top" 
                                         Width="109"/>
-                                    <ComboBox Text="Выберите тип стали по структуре"
+                                    <ComboBox Name="nTypeSteelStructAnnealed_kn"
+                                              Text="Выберите тип стали по структуре(о)"
                                               HorizontalAlignment="Left" 
                                               Margin="10,447,0,0" 
                                               VerticalAlignment="Top" 
-                                              Width="212" IsEditable="True"
+                                              Width="222" IsEditable="True"
                                               IsReadOnly="True">
                                         <ComboBoxItem Content="Доэвтектоидный"/>
                                         <ComboBoxItem Content="Эвтектоидный"/>
@@ -1985,27 +1996,31 @@
                                         <ComboBoxItem Content="Аустенит"/>
                                         <ComboBoxItem Content="Феррит"/>
                                     </ComboBox>
-                                    <CheckBox Content="Сталь в отожженом состоянии" 
+                                    <CheckBox Name="nAnnealedCond_kn"
+                                        Content="Сталь в отожженом состоянии" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,238,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="232"/>
-                                    <CheckBox Content="Сталь в нормализованном состоянии" 
+                                    <CheckBox Name="nNormalizeState"
+                                        Content="Сталь в нормализованном состоянии" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,266,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="232"/>
-                                    <ComboBox Text="Выберите тип стали по структуре"
+                                    <ComboBox Name="nTypeSteelStructNorm_kn"
+                                        Text="Выберите тип стали по структуре(н)"
                                         HorizontalAlignment="Left" 
                                         Margin="10,488,0,0" 
                                         VerticalAlignment="Top" 
-                                        Width="212" IsEditable="True"
+                                        Width="222" IsEditable="True"
                                         IsReadOnly="True">
                                         <ComboBoxItem Content="Перлит"/>
                                         <ComboBoxItem Content="Аустенит"/>
                                         <ComboBoxItem Content="Феррит"/>
                                     </ComboBox>
-                                    <ComboBox Text="Выберите тип стали по назначению"
+                                    <ComboBox Name="nPurposeSteel_kn"
+                                        Text="Выберите тип стали по назначению"
                                         HorizontalAlignment="Left" 
                                         Margin="260,447,0,0" 
                                         VerticalAlignment="Top" 
@@ -2015,37 +2030,46 @@
                                         <ComboBoxItem Content="Инструментальная"/>
                                         <ComboBoxItem Content="Специального назначения"/>
                                     </ComboBox>
-                                    <ComboBox Text="Выберите тип стали (конструкционная)"
+                                    <ComboBox Name="nPurposeSteelConstr_kn"
+                                        Text="Выберите тип стали (конструкционная)"
                                         HorizontalAlignment="Left" 
                                         Margin="260,488,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="255" IsEditable="True" IsEnabled="False"
                                         IsReadOnly="True" Panel.ZIndex="0">
-                                        <ComboBoxItem Content=""/>
-                                        <ComboBoxItem Content=""/>
-                                        <ComboBoxItem Content=""/>
+                                        <ComboBoxItem Content="Углеродистая качественная сталь"/>
+                                        <ComboBoxItem Content="Легированная качественная сталь"/>
+                                        <ComboBoxItem Content="Низколегированная"/>
+                                        <ComboBoxItem Content="Легированная"/>
+                                        <ComboBoxItem Content="Пружинно-рессорная"/>
+                                        <ComboBoxItem Content="Теплоустойчивая"/>
+                                        <ComboBoxItem Content="Шарикоподшипниковая"/>
                                     </ComboBox>
-                                    <ComboBox Text="Выберите тип стали (инструментнальная)"
+                                    <ComboBox Name="nPurposeSteelInstr_kn"
+                                        Text="Выберите тип стали (инструментнальная)"
                                         HorizontalAlignment="Left" 
                                         Margin="260,488,0,0" 
                                         VerticalAlignment="Top" IsEnabled="False"
                                         Width="255" IsEditable="True"
                                         IsReadOnly="True" Panel.ZIndex="0">
-                                        <ComboBoxItem Content=""/>
-                                        <ComboBoxItem Content=""/>
-                                        <ComboBoxItem Content=""/>
+                                        <ComboBoxItem Content="Углеродистые"/>
+                                        <ComboBoxItem Content="Легированные"/>
+                                        <ComboBoxItem Content="Штамповые"/>
+                                        <ComboBoxItem Content="Быстрорежущие"/>
                                     </ComboBox>
-                                    <ComboBox Text="Выберите тип стали (спец. назначения)"
+                                    <ComboBox Name="nPurposeSteelSpec_kn"
+                                        Text="Выберите тип стали (спец. назначения)"
                                         HorizontalAlignment="Left" 
                                         Margin="260,488,0,0" 
                                         VerticalAlignment="Top" IsEnabled="False"
                                         Width="255" IsEditable="True"
                                         IsReadOnly="True" Panel.ZIndex="0">
-                                        <ComboBoxItem Content=""/>
-                                        <ComboBoxItem Content=""/>
-                                        <ComboBoxItem Content=""/>
+                                        <ComboBoxItem Content="Сталь рельсовая"/>
+                                        <ComboBoxItem Content="Сталь судостроительная"/>
+                                        <ComboBoxItem Content="Сталь для строительных конструкции"/>
                                     </ComboBox>
-                                    <ComboBox Text="Выберите тип стали по качеству"
+                                    <ComboBox Name="nQualitySteel_kn"
+                                        Text="Выберите тип стали по качеству"
                                         HorizontalAlignment="Left" 
                                         Margin="533,447,0,0" 
                                         VerticalAlignment="Top" 
@@ -2056,7 +2080,8 @@
                                         <ComboBoxItem Content="Высококачественные"/>
                                         <ComboBoxItem Content="Особо высококачественные"/>
                                     </ComboBox>
-                                    <ComboBox Text="Тип стали по степени раскисления"
+                                    <ComboBox Name="nDegreeDeoxid_kn"
+                                        Text="Тип стали по степени раскисления"
                                         HorizontalAlignment="Left" 
                                         Margin="533,488,0,0" 
                                         VerticalAlignment="Top" 
@@ -2073,17 +2098,20 @@
                                         VerticalAlignment="Top" 
                                         Width="231">
                                         <Grid Margin="0,0,0,0">
-                                            <CheckBox Content="Склонность к отпускной хрупкости" 
+                                            <CheckBox Name="nTempBrittleness_kn"
+                                                Content="Склонность к отпускной хрупкости" 
                                         HorizontalAlignment="Left" 
                                         Margin="0,10,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="220"/>
-                                            <CheckBox Content="Трудносвариваемая" 
+                                            <CheckBox Name="nDifficultWeld_kn"
+                                                Content="Трудносвариваемая" 
                                               HorizontalAlignment="Left" 
                                               Margin="0,54,0,0" 
                                               VerticalAlignment="Top" 
                                               Width="141"/>
-                                            <CheckBox Content="Флокеночувствительность" 
+                                            <CheckBox Name="nFlxenosensitivity_kn"
+                                                Content="Флокеночувствительность" 
                                         HorizontalAlignment="Left" 
                                         Margin="0,32,0,0" 
                                         VerticalAlignment="Top" 

@@ -128,8 +128,15 @@ namespace RCProject
         #region секция для заполнения БД Material
         private void matdb_filling_click(object sender, RoutedEventArgs e)
         {
+            string StructAnnealed = null;
+            string CheckStructAnnealed = null;
+            if(nAnnealedCond_kn.IsChecked==true)
+            {
+                StructAnnealed = nTypeSteelStructAnnealed_kn.SelectedItem.ToString().Remove(0, 38);
+            }
+            else { StructAnnealed = "No Cond"; }
             var context = new MetHoseContainer();
-
+            MessageBox.Show(StructAnnealed);
 
         }
         #endregion

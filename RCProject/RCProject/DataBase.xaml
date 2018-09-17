@@ -1999,13 +1999,13 @@
                                     <CheckBox Name="nAnnealedCond_kn"
                                         Content="Сталь в отожженом состоянии" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,238,0,0" 
+                                        Margin="10,229,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="232"/>
                                     <CheckBox Name="nNormalizeState"
                                         Content="Сталь в нормализованном состоянии" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,266,0,0" 
+                                        Margin="10,257,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="232"/>
                                     <ComboBox Name="nTypeSteelStructNorm_kn"

@@ -105,3 +105,4 @@ C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debu
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.application
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject.csproj.CopyComplete
 C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\obj\Debug\RCProject_Content.g.cs
+C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\obj\Debug\RCProject_Content.g.cs

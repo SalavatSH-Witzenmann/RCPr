@@ -328,6 +328,10 @@
             <End Role="tMetHose" EntitySet="tMetHoseSet" />
             <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
           </AssociationSet>
+          <AssociationSet Name="tCorrugSheathtMaterial" Association="MetHose.tCorrugSheathtMaterial">
+            <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
+            <End Role="tMaterial" EntitySet="tMaterialSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tCorrugSheath">
           <Key>
@@ -348,6 +352,7 @@
           <Property Name="Executor" Type="String" Nullable="true" />
           <Property Name="Description" Type="String" Nullable="true" />
           <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetCorrugSheath" FromRole="tCorrugSheath" ToRole="tMetHose" />
+          <NavigationProperty Name="tMaterial" Relationship="MetHose.tCorrugSheathtMaterial" FromRole="tCorrugSheath" ToRole="tMaterial" />
         </EntityType>
         <EntityType Name="tMaterial">
           <Key>
@@ -423,6 +428,7 @@
           <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstMaterial" FromRole="tMaterial" ToRole="tGlass" />
           <NavigationProperty Name="tBraid" Relationship="MetHose.tBraidtMaterial" FromRole="tMaterial" ToRole="tBraid" />
           <NavigationProperty Name="tRing" Relationship="MetHose.tRingtMaterial" FromRole="tMaterial" ToRole="tRing" />
+          <NavigationProperty Name="tCorrugSheath" Relationship="MetHose.tCorrugSheathtMaterial" FromRole="tMaterial" ToRole="tCorrugSheath" />
         </EntityType>
         <EntityType Name="tGlass">
           <Key>
@@ -581,6 +587,10 @@
               <PropertyRef Name="tCorrugSheathID1" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="tCorrugSheathtMaterial">
+          <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="*" />
+          <End Type="MetHose.tMaterial" Role="tMaterial" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>

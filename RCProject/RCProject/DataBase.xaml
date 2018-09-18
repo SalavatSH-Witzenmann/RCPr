@@ -1988,7 +1988,8 @@
                                               Margin="10,447,0,0" 
                                               VerticalAlignment="Top" 
                                               Width="222" IsEditable="True"
-                                              IsReadOnly="True">
+                                              IsReadOnly="True"
+                                              IsEnabled="False">
                                         <ComboBoxItem Content="Доэвтектоидный"/>
                                         <ComboBoxItem Content="Эвтектоидный"/>
                                         <ComboBoxItem Content="Заэвтектоидный"/>
@@ -1997,24 +1998,29 @@
                                         <ComboBoxItem Content="Феррит"/>
                                     </ComboBox>
                                     <CheckBox Name="nAnnealedCond_kn"
-                                        Content="Сталь в отожженом состоянии" 
-                                        HorizontalAlignment="Left" 
-                                        Margin="10,229,0,0" 
-                                        VerticalAlignment="Top" 
-                                        Width="232"/>
+                                              Content="Сталь в отожженом состоянии" 
+                                              HorizontalAlignment="Left" 
+                                              Margin="10,229,0,0" 
+                                              VerticalAlignment="Top" 
+                                              Width="232"
+                                              Checked="nAnnealedCond_kn_Checked"
+                                              Unchecked="nAnnealedCond_kn_Unchecked"/>
                                     <CheckBox Name="nNormalizeState"
                                         Content="Сталь в нормализованном состоянии" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,257,0,0" 
                                         VerticalAlignment="Top" 
-                                        Width="232"/>
+                                        Width="232"
+                                        Checked="nNormalizeState_Checked"
+                                        Unchecked="nNormalizeState_Unchecked"/>
                                     <ComboBox Name="nTypeSteelStructNorm_kn"
                                         Text="Выберите тип стали по структуре(н)"
                                         HorizontalAlignment="Left" 
                                         Margin="10,488,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="222" IsEditable="True"
-                                        IsReadOnly="True">
+                                        IsReadOnly="True"
+                                        IsEnabled="False">
                                         <ComboBoxItem Content="Перлит"/>
                                         <ComboBoxItem Content="Аустенит"/>
                                         <ComboBoxItem Content="Феррит"/>
@@ -2026,9 +2032,15 @@
                                         VerticalAlignment="Top" 
                                         Width="255" IsEditable="True"
                                         IsReadOnly="True">
-                                        <ComboBoxItem Content="Конструкционная"/>
-                                        <ComboBoxItem Content="Инструментальная"/>
-                                        <ComboBoxItem Content="Специального назначения"/>
+                                        <ComboBoxItem 
+                                            Selected="nPurposeSteel_kn_constr" 
+                                            Content="Конструкционная"/>
+                                        <ComboBoxItem 
+                                            Selected="nPurposeSteel_kn_instr"
+                                            Content="Инструментальная"/>
+                                        <ComboBoxItem 
+                                            Selected="nPurposeSteel_kn_spec"
+                                            Content="Специального назначения"/>
                                     </ComboBox>
                                     <ComboBox Name="nPurposeSteelConstr_kn"
                                         Text="Выберите тип стали (конструкционная)"
@@ -2036,7 +2048,7 @@
                                         Margin="260,488,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="255" IsEditable="True" IsEnabled="False"
-                                        IsReadOnly="True" Panel.ZIndex="0">
+                                        IsReadOnly="True"  Visibility="Hidden">
                                         <ComboBoxItem Content="Углеродистая качественная сталь"/>
                                         <ComboBoxItem Content="Легированная качественная сталь"/>
                                         <ComboBoxItem Content="Низколегированная"/>
@@ -2051,7 +2063,7 @@
                                         Margin="260,488,0,0" 
                                         VerticalAlignment="Top" IsEnabled="False"
                                         Width="255" IsEditable="True"
-                                        IsReadOnly="True" Panel.ZIndex="0">
+                                        IsReadOnly="True" Visibility="Hidden">
                                         <ComboBoxItem Content="Углеродистые"/>
                                         <ComboBoxItem Content="Легированные"/>
                                         <ComboBoxItem Content="Штамповые"/>
@@ -2063,7 +2075,7 @@
                                         Margin="260,488,0,0" 
                                         VerticalAlignment="Top" IsEnabled="False"
                                         Width="255" IsEditable="True"
-                                        IsReadOnly="True" Panel.ZIndex="0">
+                                        IsReadOnly="True" Visibility="Hidden">
                                         <ComboBoxItem Content="Сталь рельсовая"/>
                                         <ComboBoxItem Content="Сталь судостроительная"/>
                                         <ComboBoxItem Content="Сталь для строительных конструкции"/>

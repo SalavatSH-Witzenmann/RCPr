@@ -128,6 +128,8 @@ namespace RCProject
         #region секция для заполнения БД Оплетка
         private void BraidDB_filling_click(object sender, RoutedEventArgs e)
         {
+
+
             var context = new MetHoseContainer();
             var BraidDB_filling = new tBraid
             {
@@ -351,8 +353,32 @@ namespace RCProject
             nPurposeSteelSpec_kn.Visibility = Visibility.Visible;
         }
 
+
         #endregion
 
-        
+        #region checked and unchecked для CheckBox определяющего нетиповое имя в разделе Стакан
+        private void ATypicalBraidCB_check(object sender, RoutedEventArgs e)
+        {
+            ATypicalNameCB.IsEnabled = true;
+        }
+        private void ATypicalBraidCB_uncheck(object sender, RoutedEventArgs e)
+        {
+            ATypicalNameCB.IsEnabled = false;
+            ATypicalNameCB.Text = null;
+        }
+        #endregion
+
+        private void ButNullRadioBut_click(object sender, RoutedEventArgs e)
+        {
+            ExpanRing_Glass.IsChecked = false;
+            ComprRing_Glass.IsChecked = false;
+            nDinGlassAfterOper_kn.Text = null;
+            nDinGlassAfterOper_kn.IsEnabled = false;
+        }
+
+        private void DinRing_Glass(object sender, RoutedEventArgs e)
+        {
+            nDinGlassAfterOper_kn.IsEnabled = true;
+        }
     }
 }

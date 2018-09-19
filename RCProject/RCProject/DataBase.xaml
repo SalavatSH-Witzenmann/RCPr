@@ -609,17 +609,20 @@
                                         VerticalAlignment="Top" 
                                         Width="203">
                                         <Grid Margin="0,0,0,0">
-                                            <CheckBox Name="NotypeBraidCB"
+                                            <CheckBox Name="ATypicalBraidCB"
                                                       Content="Нетиповой стакан" 
                                                       HorizontalAlignment="Left" 
-                                                      Margin="0,10,0,0" VerticalAlignment="Top" 
-                                                      Width="130"/>
+                                                      Margin="0,10,0,0" 
+                                                      VerticalAlignment="Top" 
+                                                      Width="130"
+                                                      Checked="ATypicalBraidCB_check"
+                                                      Unchecked="ATypicalBraidCB_uncheck"/>
                                             <Label 
                                         Content="Введите нетиповое имя стакана:" 
                                         HorizontalAlignment="Left" 
                                         Margin="0,30,0,0" 
                                         VerticalAlignment="Top"/>
-                                            <TextBox 
+                                            <TextBox Name="ATypicalNameCB"
                                                 HorizontalAlignment="Left" 
                                                 Height="25" 
                                                 Margin="0,60,0,0" 
@@ -636,17 +639,19 @@
                                         VerticalAlignment="Top" 
                                         Width="250">
                                         <Grid Margin="0,0,0,0">
-                                            <RadioButton 
+                                            <RadioButton Name="ExpanRing_Glass"
                                                 Content="Раздача кольца" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="10,10,0,0" 
-                                                VerticalAlignment="Top"/>
-                                            <RadioButton 
+                                                VerticalAlignment="Top"
+                                                Checked="DinRing_Glass"/>
+                                            <RadioButton Name="ComprRing_Glass"
                                                 Content="Обжатие кольца" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="10,30,0,0" 
-                                                VerticalAlignment="Top"/>
-                                            <TextBox 
+                                                VerticalAlignment="Top"
+                                                Checked="DinRing_Glass"/>
+                                            <TextBox Name="nDinGlassAfterOper_kn"
                                         HorizontalAlignment="Left" 
                                         Height="25" 
                                         Margin="182,55,0,0" 
@@ -655,10 +660,17 @@
                                         VerticalAlignment="Top" 
                                         Width="46" IsEnabled="False"/>
                                             <Label 
-                                        Content="Внутренний диаметр, nDout:" 
+                                        Content="Внутренний диаметр, Din:" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,55,0,0" 
                                         VerticalAlignment="Top"/>
+                                            <Button Name="ButNullRadioBut"
+                                                    Click="ButNullRadioBut_click"
+                                                    Content="Обнулить" 
+                                                    HorizontalAlignment="Left" 
+                                                    Margin="162,0,-0.2,0" 
+                                                    VerticalAlignment="Top" 
+                                                    Width="75"/>
                                         </Grid>
                                     </GroupBox>
                                 </Grid>

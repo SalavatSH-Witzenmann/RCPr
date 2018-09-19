@@ -21,14 +21,14 @@ namespace RCProject
         }
     
         public int ID { get; set; }
-        public string DN { get; set; }
-        public string Type { get; set; }
-        public string Dout { get; set; }
-        public string Din { get; set; }
-        public string NumbStrands { get; set; }
-        public string NymbThreads { get; set; }
-        public string DThreads { get; set; }
-        public string AngleWeaving { get; set; }
+        public short DN { get; set; }
+        public string TypeBr { get; set; }
+        public double Dout { get; set; }
+        public double Din { get; set; }
+        public Nullable<short> NumbStrands { get; set; }
+        public Nullable<short> NymbThreads { get; set; }
+        public double DThreads { get; set; }
+        public Nullable<double> AngleWeaving { get; set; }
         public string Executor { get; set; }
         public string Description { get; set; }
         public int tMaterialID { get; set; }

@@ -313,27 +313,27 @@
                                                 Margin="575,32,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="96"/>
-                                            <TextBox 
+                                            <TextBox Name="Dout_braid_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="188,36,0,0" 
                                                 TextWrapping="Wrap" Text="" 
                                                 VerticalAlignment="Top" Width="77"/>
-                                            <TextBox 
+                                            <TextBox Name="Din_braid_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="188,73,0,0" 
                                                 TextWrapping="Wrap" Text="" 
                                                 VerticalAlignment="Top" Width="77"/>
-                                            <TextBox 
+                                            <TextBox Name="NumbStrands_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="476,36,0,0" 
                                                 TextWrapping="Wrap" Text="" 
                                                 VerticalAlignment="Top" Width="77"/>
-                                            <TextBox 
+                                            <TextBox Name="NumbThreads_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="476,72,0,0" 
                                                 TextWrapping="Wrap" Text=""
                                                 VerticalAlignment="Top" Width="77"/>
-                                            <TextBox 
+                                            <TextBox Name="Dthreads_kn"
                                                 HorizontalAlignment="Left" Height="23" 
                                                 Margin="676,36,0,0" TextWrapping="Wrap" 
                                                 Text="" VerticalAlignment="Top" 
@@ -344,14 +344,15 @@
                                                 Margin="575,69,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="96"/>
-                                            <TextBox 
+                                            <TextBox Name="AngleWeaving_kn"
                                                 HorizontalAlignment="Left" Height="23" 
                                                 Margin="676,72,0,0" TextWrapping="Wrap" 
                                                 Text="" VerticalAlignment="Top" 
                                                 Width="77"/>
                                         </Grid>
                                     </Border>
-                                    <ComboBox Text="Выберите номинальный диаметр"
+                                    <ComboBox Name="DNBraid_kn"
+                                        Text="Выберите номинальный диаметр"
                                         HorizontalAlignment="Left" 
                                         Margin="10,21,0,0" 
                                         VerticalAlignment="Top" 
@@ -391,7 +392,8 @@
                                         <ComboBoxItem Content="DN1400"/>
                                         <ComboBoxItem Content="DN1600"/>
                                     </ComboBox>
-                                    <ComboBox Text="Выберите тип оплетки"
+                                    <ComboBox Name="TypeBraid_kn"
+                                        Text="Выберите тип оплетки"
                                         HorizontalAlignment="Left" 
                                         Margin="253,21,0,0" 
                                         VerticalAlignment="Top" 
@@ -402,18 +404,22 @@
                                         <ComboBoxItem Content="S22"/>
                                         <ComboBoxItem Content="S32"/>
                                     </ComboBox>
-                                    <Button 
+                                    <Button Name="But_BraidDB_filling"
                                         Content="Заполнить БД" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,265,0,0" 
-                                        VerticalAlignment="Top" Width="95"/>
+                                        VerticalAlignment="Top" Width="95"
+                                        Click="BraidDB_filling_click"/>
                                     <DataGrid HorizontalAlignment="Left" Height="195" Margin="10,299,0,0" VerticalAlignment="Top" Width="774"/>
                                     <Label 
                                         Content="Выберите материал:" 
                                         HorizontalAlignment="Left" 
                                         Margin="811,18,0,0" 
                                         VerticalAlignment="Top" Width="132"/>
-                                    <ListBox HorizontalAlignment="Left" Height="119" Margin="811,65,0,0" VerticalAlignment="Top" Width="361"/>
+                                    <ListBox Name="MaterialBraid_kn"
+                                        HorizontalAlignment="Left" 
+                                        Height="119" Margin="811,65,0,0" 
+                                        VerticalAlignment="Top" Width="361"/>
                                     <Button Content="Загрузить данные" HorizontalAlignment="Left" Margin="10,526,0,0" VerticalAlignment="Top" Width="125"/>
                                     <Button Content="Сохранить данные" HorizontalAlignment="Left" Margin="174,526,0,0" VerticalAlignment="Top" Width="125"/>
                                     <Label 
@@ -421,7 +427,7 @@
                                         HorizontalAlignment="Left" 
                                         Margin="10,202,0,0" 
                                         VerticalAlignment="Top" Width="95"/>
-                                    <TextBox 
+                                    <TextBox Name="DescriptionBraid_kn"
                                         HorizontalAlignment="Left" 
                                         Height="47" Margin="110,204,0,0" 
                                         TextWrapping="Wrap" Text="" 
@@ -431,7 +437,7 @@
                                         HorizontalAlignment="Left" 
                                         Margin="517,204,0,0" 
                                         VerticalAlignment="Top" Width="85"/>
-                                    <TextBox 
+                                    <TextBox Name="ExecutorBraid_kn"
                                         HorizontalAlignment="Left" 
                                         Height="26" Margin="607,204,0,0" 
                                         TextWrapping="Wrap" Text="" 
@@ -534,7 +540,7 @@
                                         VerticalAlignment="Top"/>
                                     <TextBox 
                                         HorizontalAlignment="Left" 
-                                        Height="41" Margin="533,63,0,0" 
+                                        Height="41" Margin="533,64,0,0" 
                                         TextWrapping="Wrap" 
                                         Text="" 
                                         VerticalAlignment="Top" 
@@ -542,49 +548,119 @@
                                     <Label 
                                         Content="Выберите сталь:" 
                                         HorizontalAlignment="Left" 
-                                        Margin="533,109,0,0" 
+                                        Margin="533,110,0,0" 
                                         VerticalAlignment="Top"/>
                                     <Button 
                                         Content="Заполнить БД" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,237,0,0" 
+                                        Margin="10,341,0,0" 
                                         VerticalAlignment="Top" Width="93"/>
                                     <Label 
                                         Content="Исполнитель:" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,198,0,0" 
+                                        Margin="10,201,0,0" 
                                         VerticalAlignment="Top"/>
                                     <TextBox 
                                         HorizontalAlignment="Left" 
                                         Height="25" 
-                                        Margin="111,198,0,0" 
+                                        Margin="111,202,0,0" 
                                         TextWrapping="Wrap" 
                                         Text="" 
                                         VerticalAlignment="Top" 
                                         Width="394"/>
                                     <ComboBox 
                                         HorizontalAlignment="Left" 
-                                        Margin="294,18,0,0" 
+                                        Margin="10,248,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="211" IsEditable="True"
                                         IsReadOnly="True"
                                         Text="Выберите типовое имя стакана">
                                         <ComboBoxItem Content="U11"/>
                                         <ComboBoxItem Content="U12"/>
+                                        <ComboBoxItem Content="U21"/>
                                         <ComboBoxItem Content="U22"/>
+                                        <ComboBoxItem Content="U28"/>
+                                        <ComboBoxItem Content="U29"/>
+                                        <ComboBoxItem Content="U38"/>
+                                        <ComboBoxItem Content="U42"/>
                                     </ComboBox>
-                                    <DataGrid HorizontalAlignment="Left" Height="138" Margin="10,280,0,0" VerticalAlignment="Top" Width="580"/>
-                                    <ListBox HorizontalAlignment="Left" Height="83" Margin="533,140,0,0" VerticalAlignment="Top" Width="628"/>
+                                    <DataGrid 
+                                        HorizontalAlignment="Left" 
+                                        Height="138" Margin="10,403,0,0" 
+                                        VerticalAlignment="Top" Width="580"/>
+                                    <ListBox 
+                                        HorizontalAlignment="Left" 
+                                        Height="91" Margin="533,136,0,0" 
+                                        VerticalAlignment="Top" Width="628"/>
                                     <Button 
                                         Content="Загрузить данные" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,439,0,0" 
+                                        Margin="10,560,0,0" 
                                         VerticalAlignment="Top" Width="123"/>
                                     <Button 
                                         Content="Сохранить данные" 
                                         HorizontalAlignment="Left" 
-                                        Margin="176,439,0,0" 
+                                        Margin="184,560,0,0" 
                                         VerticalAlignment="Top" Width="117"/>
+                                    <GroupBox 
+                                        Header="Нестандартный стакан" 
+                                        HorizontalAlignment="Left" 
+                                        Height="113" Margin="244,248,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="203">
+                                        <Grid Margin="0,0,0,0">
+                                            <CheckBox Name="NotypeBraidCB"
+                                                      Content="Нетиповой стакан" 
+                                                      HorizontalAlignment="Left" 
+                                                      Margin="0,10,0,0" VerticalAlignment="Top" 
+                                                      Width="130"/>
+                                            <Label 
+                                        Content="Введите нетиповое имя стакана:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="0,30,0,0" 
+                                        VerticalAlignment="Top"/>
+                                            <TextBox 
+                                                HorizontalAlignment="Left" 
+                                                Height="25" 
+                                                Margin="0,60,0,0" 
+                                                TextWrapping="Wrap" 
+                                                Text="" 
+                                                VerticalAlignment="Top" 
+                                                Width="181" IsEnabled="False"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox 
+                                        Header="Технологические операции" 
+                                        HorizontalAlignment="Left" 
+                                        Height="113" Margin="503,248,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="250">
+                                        <Grid Margin="0,0,0,0">
+                                            <RadioButton 
+                                                Content="Раздача кольца" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="10,10,0,0" 
+                                                VerticalAlignment="Top"/>
+                                            <RadioButton 
+                                                Content="Обжатие кольца" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="10,30,0,0" 
+                                                VerticalAlignment="Top"/>
+                                            <TextBox 
+                                        HorizontalAlignment="Left" 
+                                        Height="25" 
+                                        Margin="182,55,0,0" 
+                                        TextWrapping="Wrap" 
+                                        Text="" 
+                                        VerticalAlignment="Top" 
+                                        Width="46" IsEnabled="False"/>
+                                            <Label 
+                                        Content="Внутренний диаметр, nDout:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="10,55,0,0" 
+                                        VerticalAlignment="Top"/>
+                                        </Grid>
+                                    </GroupBox>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Кольцо (П12 и др)">
@@ -2088,9 +2164,9 @@
                                         Width="219" IsEditable="True"
                                         IsReadOnly="True">
                                         <ComboBoxItem Content="Обыкновенного качества"/>
-                                        <ComboBoxItem Content="Качественные"/>
-                                        <ComboBoxItem Content="Высококачественные"/>
-                                        <ComboBoxItem Content="Особо высококачественные"/>
+                                        <ComboBoxItem Content="Качественная"/>
+                                        <ComboBoxItem Content="Высококачественная"/>
+                                        <ComboBoxItem Content="Особо высококачественная"/>
                                     </ComboBox>
                                     <ComboBox Name="nDegreeDeoxid_kn"
                                         Text="Тип стали по степени раскисления"
@@ -2099,9 +2175,9 @@
                                         VerticalAlignment="Top" 
                                         Width="219" IsEditable="True"
                                         IsReadOnly="True">
-                                        <ComboBoxItem Content="Спокойные (сп)"/>
-                                        <ComboBoxItem Content="Полуспокойные (пс)"/>
-                                        <ComboBoxItem Content="Кипящие (кп)"/>
+                                        <ComboBoxItem Content="Спокойная (сп)"/>
+                                        <ComboBoxItem Content="Полуспокойная (пс)"/>
+                                        <ComboBoxItem Content="Кипящая (кп)"/>
                                     </ComboBox>
                                     <GroupBox 
                                         Header="Дополнительные свойства стали" 

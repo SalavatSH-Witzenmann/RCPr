@@ -142,13 +142,15 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DN" Type="String" Nullable="false" />
+    <Property Name="DN" Type="Int16" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Dout" Type="String" Nullable="false" />
-    <Property Name="Th" Type="String" Nullable="false" />
-    <Property Name="Ls" Type="String" Nullable="false" />
-    <Property Name="Executor" Type="String" Nullable="false" />
-    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="UntypicalName" Type="String" Nullable="true" />
+    <Property Name="UntypicalCheck" Type="Boolean" Nullable="true" />
+    <Property Name="Dout" Type="Double" Nullable="false" />
+    <Property Name="Th" Type="Double" Nullable="false" />
+    <Property Name="Ls" Type="Double" Nullable="false" />
+    <Property Name="Executor" Type="String" Nullable="true" />
+    <Property Name="Description" Type="String" Nullable="true" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetGlass" FromRole="tGlass" ToRole="tMetHose" />
@@ -170,16 +172,16 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DN" Type="String" Nullable="false" />
-    <Property Name="Type" Type="String" Nullable="false" />
-    <Property Name="Dout" Type="String" Nullable="false" />
-    <Property Name="Din" Type="String" Nullable="false" />
-    <Property Name="NumbStrands" Type="String" Nullable="false" />
-    <Property Name="NymbThreads" Type="String" Nullable="false" />
-    <Property Name="DThreads" Type="String" Nullable="false" />
-    <Property Name="AngleWeaving" Type="String" Nullable="false" />
-    <Property Name="Executor" Type="String" Nullable="false" />
-    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="DN" Type="Int16" Nullable="false" />
+    <Property Name="TypeBr" Type="String" Nullable="false" />
+    <Property Name="Dout" Type="Double" Nullable="false" />
+    <Property Name="Din" Type="Double" Nullable="false" />
+    <Property Name="NumbStrands" Type="Int16" Nullable="true" />
+    <Property Name="NymbThreads" Type="Int16" Nullable="true" />
+    <Property Name="DThreads" Type="Double" Nullable="false" />
+    <Property Name="AngleWeaving" Type="Double" Nullable="true" />
+    <Property Name="Executor" Type="String" Nullable="true" />
+    <Property Name="Description" Type="String" Nullable="true" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tBraidtMaterial" FromRole="tBraid" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetBraid" FromRole="tBraid" ToRole="tMetHose" />
@@ -204,7 +206,7 @@
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tRingtMaterial" FromRole="tRing" ToRole="tMaterial" />
     <Property Name="Name" Type="String" Nullable="false" />
     <Property Name="Designation" Type="String" Nullable="false" />
-    <Property Name="DN" Type="String" Nullable="false" />
+    <Property Name="DN" Type="Int16" Nullable="false" />
     <Property Name="PN" Type="String" Nullable="false" />
     <Property Name="Dout" Type="String" Nullable="false" />
     <Property Name="Th" Type="String" Nullable="false" />

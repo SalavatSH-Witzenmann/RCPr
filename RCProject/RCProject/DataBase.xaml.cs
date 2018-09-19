@@ -125,12 +125,32 @@ namespace RCProject
         }
         #endregion
 
+        #region секция для заполнения БД Оплетка
+        private void BraidDB_filling_click(object sender, RoutedEventArgs e)
+        {
+            var context = new MetHoseContainer();
+            var BraidDB_filling = new tBraid
+            {
+                DN = Int16.Parse(DNBraid_kn.Text),
+                TypeBr = TypeBraid_kn.SelectedItem.ToString().Remove(0, 38),
+                Dout = Double.Parse(Dout_braid_kn.Text),
+                Din = Double.Parse(Din_braid_kn.Text),
+                NumbStrands = Int16.Parse(NumbStrands_kn.Text),
+                NymbThreads = Int16.Parse(NumbThreads_kn.Text),
+                DThreads = Double.Parse(Dthreads_kn.Text),
+                AngleWeaving = Double.Parse(AngleWeaving_kn.Text),
+                Executor = ExecutorBraid_kn.Text,
+                Description = DescriptionBraid_kn.Text
+            };
+        }
+        #endregion
+
         #region секция для заполнения БД Материал
-        
+
         private void matdb_filling_click(object sender, RoutedEventArgs e)
         {
             #region секция определения длятипа структуры стали
-            string StructType = null;
+            string StructType;
             bool CheckAnnealedCond;
             bool CheckNormalState;
             if (nAnnealedCond_kn.IsChecked == true && nNormalizeState.IsChecked == false)
@@ -138,27 +158,33 @@ namespace RCProject
                 StructType = nTypeSteelStructAnnealed_kn.SelectedItem.ToString().Remove(0, 38);
                 CheckAnnealedCond = true;
                 CheckNormalState = false;
-            } else if (nAnnealedCond_kn.IsChecked == false && nNormalizeState.IsChecked == true)
+            }
+            else if (nAnnealedCond_kn.IsChecked == false && nNormalizeState.IsChecked == true)
             {
                 StructType = nTypeSteelStructNorm_kn.SelectedItem.ToString().Remove(0, 38);
                 CheckAnnealedCond = false;
                 CheckNormalState = true;
-            } else if (nAnnealedCond_kn.IsChecked == true && nNormalizeState.IsChecked == true)
-            {
-                MessageBox.Show("Не выбирайте два CheckBox-а: сталь в отоженном состоянии и сталь в нормализованном состоянии одновременно. Заполнение БД не произойдет", "Обратите внимание!!!");
-                return;
-            } else if(nAnnealedCond_kn.IsChecked == false && nNormalizeState.IsChecked == false)
-            {
-                MessageBox.Show("Не выбраны CheckBox-ы состояния стали, при данном варианте заполнение БД произойдет но не рекомендуется. " +
-                    "Нажмите No если хотите выбрать какое либо состояние. Нажмите Yes если Вам по барабану.", "Обратите внимание!!!",
-                    button: MessageBoxButton.YesNo);
             }
-            
+            else if (nAnnealedCond_kn.IsChecked == true && nNormalizeState.IsChecked == true)
+            {
+                MessageBox.Show("Не выбирайте два CheckBox-а: сталь в отоженном состоянии и сталь в нормализованном состоянии одновременно. Заполнение БД не произойдет", "ATTENTION!!!");
+                return;
+            }
+            else 
+            {
+                var result = (int) MessageBox.Show("Не выбраны CheckBox-ы состояния стали, при данном варианте заполнение БД произойдет но не рекомендуется. " +
+                    "Нажмите НЕТ если хотите выбрать какое либо состояние. Нажмите ДА если Вам по барабану.", "ATTENTION!!!",
+                    button: MessageBoxButton.YesNo);
+                if(result==2 || result ==7) { return; }
+                StructType = null;
+                CheckAnnealedCond = false;
+                CheckNormalState = false;
+            }
             #endregion
 
             #region секция определения типа стали
-            string typeStPurp = null;
-            string typeStPurp2 = null;
+            string typeStPurp;
+            string typeStPurp2;
             if (nPurposeSteel_kn.SelectedIndex == 1)
             {
                 typeStPurp = nPurposeSteel_kn.SelectedItem.ToString().Remove(0, 38);
@@ -177,7 +203,7 @@ namespace RCProject
                 typeStPurp2 = "No Condition";
             }
             #endregion
-
+            
             string QSteel = nQualitySteel_kn.SelectedItem.ToString().Remove(0, 38);
             string DegDeox = nDegreeDeoxid_kn.SelectedItem.ToString().Remove(0, 38);
 
@@ -189,39 +215,80 @@ namespace RCProject
             if (nDifficultWeld_kn.IsChecked == true) { DiffWeld = true; } else { DiffWeld = false; }
             if (nFlxenosensitivity_kn.IsChecked == true) { FlxSens = true; } else { FlxSens = false; }
             #endregion
+            
+            #region создание и заполнение БД материалов информацией
             var context = new MetHoseContainer();
-            /*var MatDB_filling = new tMaterial { NameDIN = nDIN_kn.Text, NameGOST = nGOST_kn.Text,
-                NameAISI = nAISI_kn.Text, NameJIS = nJIS_kn.Text, NameBS = nBS_kn.Text, NameAFNOR = nAFNOR_kn.Text,
-                ContFe = Double.Parse(nConFe_kn.Text), ContC = Double.Parse(nConC_kn.Text),
-                ContSi = Double.Parse(nConSi_kn.Text), ContCr = Double.Parse(nConCr_kn.Text),
-                ContNi = Double.Parse(nConNi_kn.Text), ContNb = Double.Parse(nConNb_kn.Text),
-                ContTa = Double.Parse(nConTa_kn.Text), ContW = Double.Parse(nConW_kn.Text),
-                ContMn = Double.Parse(nConMn_kn.Text), ContCu = Double.Parse(nConCu_kn.Text),
-                ContSe = Double.Parse(nConSe_kn.Text), ContCo = Double.Parse(nConCo_kn.Text),
-                ContMo = Double.Parse(nConMo_kn.Text), ContBi = Double.Parse(nConBi_kn.Text),
-                ContP = Double.Parse(nConP_kn.Text), ContB = Double.Parse(nConB_kn.Text),
-                ContTi = Double.Parse(nConTi_kn.Text), ContV = Double.Parse(nConV_kn.Text),
-                ContZr = Double.Parse(nConZr_kn.Text), ContAl = Double.Parse(nConAl_kn.Text),
-                ContCd = Double.Parse(nConCd_kn.Text), ContAs = Double.Parse(nConAs_kn.Text),
-                ContS = Double.Parse(nConS_kn.Text), ContCe = Double.Parse(nConCe_kn.Text),
-                ContA = Double.Parse(nConA_kn.Text), ContSn = Double.Parse(nConSn_kn.Text),
-                ContPb = Double.Parse(nConPb_kn.Text), ContU = Double.Parse(nConU_kn.Text),
-                ContO = Double.Parse(nConO_kn.Text), ContH = Double.Parse(nConH_kn.Text),
-                ContPt = Double.Parse(nConPt_kn.Text), ContAu = Double.Parse(nConAu_kn.Text),
-                ContNa = Double.Parse(nConNa_kn.Text), ContMg = Double.Parse(nConMg_kn.Text),
-                ContGe = Double.Parse(nConGe_kn.Text), ContRe = Double.Parse(nConRe_kn.Text),
-                ContAr = Double.Parse(nConAr_kn.Text), ContLi = Double.Parse(nConLi_kn.Text),
-                ContIr = Double.Parse(nConIr_kn.Text), ContPd = Double.Parse(nConPd_kn.Text),
-                YieldStren = Double.Parse(nYieldStren_kn.Text), StrenLimit = Double.Parse(nStrenLimit_kn.Text),
-                Hardness = Int16.Parse(nHardness_kn.Text), YoungMod = Double.Parse(nYoungMod_kn.Text),
-                Density = Double.Parse(nDensity_kn.Text), ImpTough = Double.Parse(nImpTough_kn.Text),
-                ShearModul = Double.Parse(nShearModul_kn.Text), PoissonRatio = Double.Parse(nPoissonRatio_kn.Text),
+            var MatDB_filling = new tMaterial
+            {
+                NameDIN = nDIN_kn.Text,
+                NameGOST = nGOST_kn.Text,
+                NameAISI = nAISI_kn.Text,
+                NameJIS = nJIS_kn.Text,
+                NameBS = nBS_kn.Text,
+                NameAFNOR = nAFNOR_kn.Text,
+                ContFe = Double.Parse(nConFe_kn.Text),
+                ContC = Double.Parse(nConC_kn.Text),
+                ContSi = Double.Parse(nConSi_kn.Text),
+                ContCr = Double.Parse(nConCr_kn.Text),
+                ContNi = Double.Parse(nConNi_kn.Text),
+                ContNb = Double.Parse(nConNb_kn.Text),
+                ContTa = Double.Parse(nConTa_kn.Text),
+                ContW = Double.Parse(nConW_kn.Text),
+                ContMn = Double.Parse(nConMn_kn.Text),
+                ContCu = Double.Parse(nConCu_kn.Text),
+                ContSe = Double.Parse(nConSe_kn.Text),
+                ContCo = Double.Parse(nConCo_kn.Text),
+                ContMo = Double.Parse(nConMo_kn.Text),
+                ContBi = Double.Parse(nConBi_kn.Text),
+                ContP = Double.Parse(nConP_kn.Text),
+                ContB = Double.Parse(nConB_kn.Text),
+                ContTi = Double.Parse(nConTi_kn.Text),
+                ContV = Double.Parse(nConV_kn.Text),
+                ContZr = Double.Parse(nConZr_kn.Text),
+                ContAl = Double.Parse(nConAl_kn.Text),
+                ContCd = Double.Parse(nConCd_kn.Text),
+                ContAs = Double.Parse(nConAs_kn.Text),
+                ContS = Double.Parse(nConS_kn.Text),
+                ContCe = Double.Parse(nConCe_kn.Text),
+                ContA = Double.Parse(nConA_kn.Text),
+                ContSn = Double.Parse(nConSn_kn.Text),
+                ContPb = Double.Parse(nConPb_kn.Text),
+                ContU = Double.Parse(nConU_kn.Text),
+                ContO = Double.Parse(nConO_kn.Text),
+                ContH = Double.Parse(nConH_kn.Text),
+                ContPt = Double.Parse(nConPt_kn.Text),
+                ContAu = Double.Parse(nConAu_kn.Text),
+                ContNa = Double.Parse(nConNa_kn.Text),
+                ContMg = Double.Parse(nConMg_kn.Text),
+                ContGe = Double.Parse(nConGe_kn.Text),
+                ContRe = Double.Parse(nConRe_kn.Text),
+                ContAr = Double.Parse(nConAr_kn.Text),
+                ContLi = Double.Parse(nConLi_kn.Text),
+                ContIr = Double.Parse(nConIr_kn.Text),
+                ContPd = Double.Parse(nConPd_kn.Text),
+                YieldStren = Double.Parse(nYieldStren_kn.Text),
+                StrenLimit = Double.Parse(nStrenLimit_kn.Text),
+                Hardness = Int16.Parse(nHardness_kn.Text),
+                YoungMod = Double.Parse(nYoungMod_kn.Text),
+                Density = Double.Parse(nDensity_kn.Text),
+                ImpTough = Double.Parse(nImpTough_kn.Text),
+                ShearModul = Double.Parse(nShearModul_kn.Text),
+                PoissonRatio = Double.Parse(nPoissonRatio_kn.Text),
                 CoefTherConduct = Double.Parse(nCoefTherConduct_kn.Text),
-                CoefHeatCapacity = Double.Parse(nCoefHeatCapacity_kn.Text), DifficultWeld = DiffWeld,
-                Flxenosensitivity = FlxSens, TempBrittleness = TempBrit,
-            }*/
-       
-    }
+                CoefHeatCapacity = Double.Parse(nCoefHeatCapacity_kn.Text),
+                DifficultWeld = DiffWeld,
+                Flxenosensitivity = FlxSens,
+                TempBrittleness = TempBrit,
+                AnnealedCond = CheckAnnealedCond,
+                NormalizState = CheckNormalState,
+                TypeStruct = StructType,
+                PurposeSteel = typeStPurp,
+                PurposeSteel2 = typeStPurp2,
+                QualitySteel=QSteel,
+                DegreeDeoxid=DegDeox
+            };
+            #endregion
+        }
         #endregion
 
         private void DataBase_loaded(object sender, RoutedEventArgs e)
@@ -229,7 +296,6 @@ namespace RCProject
             /*var context = new MetHoseContainer();
             var corsheath = context.tCorrugSheathSet.ToList();
             DateGridCS.ItemsSource = corsheath;*/
-
         }
 
         #region Checked and Unchecked для CheckBox определяющих нормализованное и отоженное состояние
@@ -284,8 +350,9 @@ namespace RCProject
             nPurposeSteelSpec_kn.IsEnabled = true;
             nPurposeSteelSpec_kn.Visibility = Visibility.Visible;
         }
+
         #endregion
 
-
+        
     }
 }

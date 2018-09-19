@@ -114,7 +114,7 @@
         <MappingFragment StoreEntitySet="tBraidSet">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="DN" ColumnName="DN" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeBr" ColumnName="Type" />
           <ScalarProperty Name="Dout" ColumnName="Dout" />
           <ScalarProperty Name="Din" ColumnName="Din" />
           <ScalarProperty Name="NumbStrands" ColumnName="NumbStrands" />

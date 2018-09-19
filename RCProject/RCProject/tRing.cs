@@ -23,7 +23,7 @@ namespace RCProject
         public int ID { get; set; }
         public string Name { get; set; }
         public string Designation { get; set; }
-        public string DN { get; set; }
+        public short DN { get; set; }
         public string PN { get; set; }
         public string Dout { get; set; }
         public string Th { get; set; }

@@ -21,11 +21,13 @@ namespace RCProject
         }
     
         public int ID { get; set; }
-        public string DN { get; set; }
+        public short DN { get; set; }
         public string Name { get; set; }
-        public string Dout { get; set; }
-        public string Th { get; set; }
-        public string Ls { get; set; }
+        public string UntypicalName { get; set; }
+        public Nullable<bool> UntypicalCheck { get; set; }
+        public double Dout { get; set; }
+        public double Th { get; set; }
+        public double Ls { get; set; }
         public string Executor { get; set; }
         public string Description { get; set; }
         public int tMaterialID { get; set; }

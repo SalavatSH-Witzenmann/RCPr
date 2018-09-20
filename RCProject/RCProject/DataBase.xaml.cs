@@ -27,10 +27,10 @@ namespace RCProject
             InitializeComponent();
         }
 
-        private void SignClick(object sender, RoutedEventArgs e)
+        private void SignClick(object sender, RoutedEventArgs e) //В разделе Кольцо комментарии к заполнению внешнего диаметра
         {
             MessageBox.Show("Пожалуйста обратите внимание, вводить необходимо наружный диаметр заготовки до операции обжатия/развальцовки," +
-                "т.е. наружный диаметр трубы и толщину стенки трубы (не учитывая всевозможных операции)");
+                "т.е. наружный диаметр трубы и толщину стенки трубы (не учитывая всевозможных операции)","Note!");
         }
 
         #region check_box для выбора доп операции
@@ -129,7 +129,7 @@ namespace RCProject
         private void BraidDB_filling_click(object sender, RoutedEventArgs e)
         {
 
-
+            /*
             var context = new MetHoseContainer();
             var BraidDB_filling = new tBraid
             {
@@ -143,6 +143,66 @@ namespace RCProject
                 AngleWeaving = Double.Parse(AngleWeaving_kn.Text),
                 Executor = ExecutorBraid_kn.Text,
                 Description = DescriptionBraid_kn.Text
+            };*/
+        }
+        #endregion
+
+        #region секция для заполнения БД Стакана
+        private void ButtGlass_filling_click(object sender, RoutedEventArgs e)
+        {
+            
+            /*
+            var context = new MetHoseContainer();
+            var glass_filling = new tGlass
+            {
+                DN = Int16.Parse(nDNGlass_kn.SelectedItem.ToString().Remove(0, 40)),
+                Name = nTypeNameGlass_kn.SelectedItem.ToString().Remove(0, 38),
+                UntypicalName = ATypicalNameGlass.Text,
+                UntypicalCheck = ATypicalGlassCB.IsChecked,
+                Dout = Double.Parse(nDoutGlass_kn.Text),
+                Th = Double.Parse(nThGlass_kn.Text),
+                Ls = Double.Parse(nLsGlass_kn.Text),
+                ExpanRing = ExpanRing_Glass.IsChecked,
+                CompressRing = ComprRing_Glass.IsChecked,
+                Din = Double.Parse(nDinGlassAfterOper_kn.Text),
+                Executor = nExecutorGlass_kn.Text,
+                Description = nDescriptionGlass_kn.Text
+            };*/
+        }
+        #endregion
+
+        #region секция для заполнения БД Кольцо(П12 и др.)
+        private void ButtFillRingBD_click(object sender, RoutedEventArgs e)
+        {
+            string SideWeldRing;
+            if (RightSideWelding_kn.IsChecked == true) { SideWeldRing = "R"; }
+            else if (LeftSideWelding_kn.IsChecked == true) { SideWeldRing = "L"; }
+            else { SideWeldRing = null; }
+
+            var context = new MetHoseContainer();
+            var GlassFillingBD = new tRing
+            {
+                DN = Int16.Parse(nDNRing_kn.Text),
+                PN = Double.Parse(nPNRing_kn.Text),
+                Dout = Double.Parse(nDoutRing_kn.Text),
+                Th=Double.Parse(NThRing_kn.Text),
+                LN=Double.Parse(nLNRing_kn.Text),
+                WeldingSide = SideWeldRing,
+                ChamExtR=Double.Parse(nChamfExtR_kn.Text),
+                ChamExtL=Double.Parse(nChamfExtL_kn.Text),
+                ChamIntR=Double.Parse(nChamfIntR_kn.Text),
+                ChamIntL=Double.Parse(nChamfIntL_kn.Text),
+                AngleExtR=Double.Parse(nAngleExtR_kn.Text),
+                AngleExtL=Double.Parse(nAngleExtL_kn.Text),
+                AngleIntR=Double.Parse(nAngleIntR_kn.Text),
+                AngleIntL=Double.Parse(nAngleIntL_kn.Text),
+                BoringExtR=Double.Parse(nBoringExtR_kn.Text),
+                BoringExtL=Double.Parse(nBoringEntL_kn.Text),
+                BoringIntR=Double.Parse(nBoringIntR_kn.Text),
+                AngleCoupExtR=Double.Parse(nAngleCoupExtR_kn.Text),
+                AngleCoupExtL=Double.Parse(nAngleCoupExtL_kn.Text),
+                AngleCoupIntR=Double.Parse(nAngleCoupIntR_kn.Text),
+                AngleCoupIntL=Double.Parse(nAngleCoupIntL_kn.Text)
             };
         }
         #endregion
@@ -151,6 +211,7 @@ namespace RCProject
 
         private void matdb_filling_click(object sender, RoutedEventArgs e)
         {
+            /*
             #region секция определения длятипа структуры стали
             string StructType;
             bool CheckAnnealedCond;
@@ -290,6 +351,7 @@ namespace RCProject
                 DegreeDeoxid=DegDeox
             };
             #endregion
+            */
         }
         #endregion
 
@@ -357,18 +419,18 @@ namespace RCProject
         #endregion
 
         #region checked and unchecked для CheckBox определяющего нетиповое имя в разделе Стакан
-        private void ATypicalBraidCB_check(object sender, RoutedEventArgs e)
+        private void ATypicalGlassCB_check(object sender, RoutedEventArgs e)
         {
-            ATypicalNameCB.IsEnabled = true;
+            ATypicalNameGlass.IsEnabled = true;
         }
-        private void ATypicalBraidCB_uncheck(object sender, RoutedEventArgs e)
+        private void ATypicalGlassCB_uncheck(object sender, RoutedEventArgs e)
         {
-            ATypicalNameCB.IsEnabled = false;
-            ATypicalNameCB.Text = null;
+            ATypicalNameGlass.IsEnabled = false;
+            ATypicalNameGlass.Text = null;
         }
         #endregion
 
-        private void ButNullRadioBut_click(object sender, RoutedEventArgs e)
+        private void ButNullRadioBut_click(object sender, RoutedEventArgs e)   //Очищает в разделе стакан внутренний диаметр и снимает RadioButton
         {
             ExpanRing_Glass.IsChecked = false;
             ComprRing_Glass.IsChecked = false;
@@ -376,9 +438,18 @@ namespace RCProject
             nDinGlassAfterOper_kn.IsEnabled = false;
         }
 
-        private void DinRing_Glass(object sender, RoutedEventArgs e)
+        private void DinRing_Glass(object sender, RoutedEventArgs e)           //На данное событие подписаны RadioButton в разделе Стакан. Включает TextBlock для внутреннего диаметра 
         {
             nDinGlassAfterOper_kn.IsEnabled = true;
         }
+
+        private void NameMaterial_click(object sender, RoutedEventArgs e)      //пояснения по заполнению полей Наименование в разделе Материал
+        {
+            MessageBox.Show("Для унификации заполнения и минимизации дальнейших ошибок, просьба заполнять данные поля следующим образом:" +
+                "стали у которых наименование типа: Сталь 3 и т.д - вносить только цифру 3, стали нержавеющие и т.д. заполнять только обозначение по ГОСТ: 12Х18Н10Т, 10Х17Н13М2. Для AISI 316 - заполнять 316." +
+                "В графу GOST вносить только цифры и буквы используя КИРИЛЛИЦУ!!! В остальные графы, наименование материала прописываем используя цифры и буквы, однако тип букв - ЛАТИНИЦА!!!", "Note!");
+        }
+
+        
     }
 }

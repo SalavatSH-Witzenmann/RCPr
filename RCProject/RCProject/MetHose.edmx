@@ -442,6 +442,9 @@
           <Property Name="Dout" Type="Double" Nullable="false" />
           <Property Name="Th" Type="Double" Nullable="false" />
           <Property Name="Ls" Type="Double" Nullable="false" />
+          <Property Name="ExpanRing" Type="Boolean" Nullable="true" />
+          <Property Name="CompressRing" Type="Boolean" Nullable="true" />
+          <Property Name="Din" Type="Double" Nullable="true" />
           <Property Name="Executor" Type="String" Nullable="true" />
           <Property Name="Description" Type="String" Nullable="true" />
           <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
@@ -500,10 +503,10 @@
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Designation" Type="String" Nullable="false" />
           <Property Name="DN" Type="Int16" Nullable="false" />
-          <Property Name="PN" Type="String" Nullable="false" />
-          <Property Name="Dout" Type="String" Nullable="false" />
-          <Property Name="Th" Type="String" Nullable="false" />
-          <Property Name="LN" Type="String" Nullable="false" />
+          <Property Name="PN" Type="Double" Nullable="false" />
+          <Property Name="Dout" Type="Double" Nullable="false" />
+          <Property Name="Th" Type="Double" Nullable="false" />
+          <Property Name="LN" Type="Double" Nullable="false" />
           <Property Name="WeldingSide" Type="String" Nullable="true" />
           <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetRing" FromRole="tRing" ToRole="tMetHose" />
           <Property Name="ChamExtR" Type="Double" Nullable="true" />

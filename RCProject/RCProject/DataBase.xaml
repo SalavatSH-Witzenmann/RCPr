@@ -463,14 +463,14 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="0,71,0,0" 
                                                 VerticalAlignment="Top" Width="146"/>
-                                            <TextBox 
+                                            <TextBox Name="nDoutGlass_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="162,38,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="77"/>
-                                            <TextBox 
+                                            <TextBox Name="nThGlass_kn"
                                                 HorizontalAlignment="Left"
                                                 Height="23" Margin="162,74,0,0" 
                                                 TextWrapping="Wrap" 
@@ -482,7 +482,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="258,35,0,0" 
                                                 VerticalAlignment="Top"/>
-                                            <TextBox 
+                                            <TextBox Name="nLsGlass_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" 
                                                 Margin="381,38,0,0" 
@@ -492,7 +492,7 @@
                                                 Width="77"/>
                                         </Grid>
                                     </Border>
-                                    <ComboBox 
+                                    <ComboBox Name="nDNGlass_kn"
                                         HorizontalAlignment="Left" 
                                         Margin="10,18,0,0" 
                                         VerticalAlignment="Top" 
@@ -538,7 +538,7 @@
                                         HorizontalAlignment="Left" 
                                         Margin="533,33,0,0" 
                                         VerticalAlignment="Top"/>
-                                    <TextBox 
+                                    <TextBox Name="nDescriptionGlass_kn"
                                         HorizontalAlignment="Left" 
                                         Height="41" Margin="533,64,0,0" 
                                         TextWrapping="Wrap" 
@@ -550,17 +550,19 @@
                                         HorizontalAlignment="Left" 
                                         Margin="533,110,0,0" 
                                         VerticalAlignment="Top"/>
-                                    <Button 
-                                        Content="Заполнить БД" 
-                                        HorizontalAlignment="Left" 
-                                        Margin="10,341,0,0" 
-                                        VerticalAlignment="Top" Width="93"/>
+                                    <Button Name="ButtGlass_filling"
+                                            Content="Заполнить БД" 
+                                            HorizontalAlignment="Left" 
+                                            Margin="10,341,0,0" 
+                                            VerticalAlignment="Top" 
+                                            Width="93"
+                                            Click="ButtGlass_filling_click"/>
                                     <Label 
                                         Content="Исполнитель:" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,201,0,0" 
                                         VerticalAlignment="Top"/>
-                                    <TextBox 
+                                    <TextBox Name="nExecutorGlass_kn"
                                         HorizontalAlignment="Left" 
                                         Height="25" 
                                         Margin="111,202,0,0" 
@@ -568,7 +570,7 @@
                                         Text="" 
                                         VerticalAlignment="Top" 
                                         Width="394"/>
-                                    <ComboBox 
+                                    <ComboBox Name="nTypeNameGlass_kn"
                                         HorizontalAlignment="Left" 
                                         Margin="10,248,0,0" 
                                         VerticalAlignment="Top" 
@@ -609,20 +611,20 @@
                                         VerticalAlignment="Top" 
                                         Width="203">
                                         <Grid Margin="0,0,0,0">
-                                            <CheckBox Name="ATypicalBraidCB"
+                                            <CheckBox Name="ATypicalGlassCB"
                                                       Content="Нетиповой стакан" 
                                                       HorizontalAlignment="Left" 
                                                       Margin="0,10,0,0" 
                                                       VerticalAlignment="Top" 
                                                       Width="130"
-                                                      Checked="ATypicalBraidCB_check"
-                                                      Unchecked="ATypicalBraidCB_uncheck"/>
+                                                      Checked="ATypicalGlassCB_check"
+                                                      Unchecked="ATypicalGlassCB_uncheck"/>
                                             <Label 
                                         Content="Введите нетиповое имя стакана:" 
                                         HorizontalAlignment="Left" 
                                         Margin="0,30,0,0" 
                                         VerticalAlignment="Top"/>
-                                            <TextBox Name="ATypicalNameCB"
+                                            <TextBox Name="ATypicalNameGlass"
                                                 HorizontalAlignment="Left" 
                                                 Height="25" 
                                                 Margin="0,60,0,0" 
@@ -640,25 +642,25 @@
                                         Width="250">
                                         <Grid Margin="0,0,0,0">
                                             <RadioButton Name="ExpanRing_Glass"
-                                                Content="Раздача кольца" 
+                                                Content="Раздача стакана" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="10,10,0,0" 
                                                 VerticalAlignment="Top"
                                                 Checked="DinRing_Glass"/>
                                             <RadioButton Name="ComprRing_Glass"
-                                                Content="Обжатие кольца" 
+                                                Content="Обжатие стакана" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="10,30,0,0" 
                                                 VerticalAlignment="Top"
                                                 Checked="DinRing_Glass"/>
                                             <TextBox Name="nDinGlassAfterOper_kn"
-                                        HorizontalAlignment="Left" 
-                                        Height="25" 
-                                        Margin="182,55,0,0" 
-                                        TextWrapping="Wrap" 
-                                        Text="" 
-                                        VerticalAlignment="Top" 
-                                        Width="46" IsEnabled="False"/>
+                                                     HorizontalAlignment="Left" 
+                                                     Height="25" 
+                                                     Margin="182,55,0,0" 
+                                                     TextWrapping="Wrap" 
+                                                     Text="" 
+                                                     VerticalAlignment="Top" 
+                                                     Width="46" IsEnabled="False"/>
                                             <Label 
                                         Content="Внутренний диаметр, Din:" 
                                         HorizontalAlignment="Left" 
@@ -689,28 +691,28 @@
                                                 HorizontalAlignment="Left" 
                                                 Margin="87,0,0,0" 
                                                 VerticalAlignment="Top"/>
-                                            <TextBox 
+                                            <TextBox Name="nDoutRing_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="139,31,0,0" 
+                                                Height="23" Margin="156,31,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="60"/>
                                             <Label 
-                                                Content="Внешний диаметр, Do:" 
+                                                Content="Внешний диаметр, Dout:" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="0,31,0,0" 
                                                 VerticalAlignment="Top" 
-                                                Width="134" Height="26"/>
+                                                Width="151" Height="26"/>
                                             <Label 
-                                                Content="Толщина стенки, h:" 
+                                                Content="Толщина стенки, Th:" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="0,62,0,0" 
                                                 VerticalAlignment="Top" 
-                                                Width="134" Height="26"/>
-                                            <TextBox 
+                                                Width="151" Height="26"/>
+                                            <TextBox Name="NThRing_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="139,65,0,0" 
+                                                Height="23" Margin="156,65,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
@@ -721,7 +723,7 @@
                                                 Margin="221,31,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="103" Height="26"/>
-                                            <TextBox 
+                                            <TextBox Name="nLNRing_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="329,31,0,0" 
                                                 TextWrapping="Wrap" 
@@ -737,7 +739,7 @@
                                             </Button>
                                         </Grid>
                                     </Border>
-                                    <ComboBox 
+                                    <ComboBox Name="nDNRing_kn"
                                         Text="Выберите номинальный DN"
                                         IsEditable="True" IsReadOnly="True"
                                         HorizontalAlignment="Left" 
@@ -778,7 +780,7 @@
                                         <ComboBoxItem Content="DN1400"/>
                                         <ComboBoxItem Content="DN1600"/>
                                     </ComboBox>
-                                    <ComboBox 
+                                    <ComboBox Name="nPNRing_kn"
                                         HorizontalAlignment="Left" 
                                         Margin="237,20,0,0" 
                                         VerticalAlignment="Top" 
@@ -829,49 +831,49 @@
                                         VerticalAlignment="Top" 
                                         Width="148">
                                         <Grid>
-                                            <CheckBox                                                 
+                                            <CheckBox Name="nChamferRingCB_kn"                                                
                                                 Content="Фаска" 
                                                 Checked="chamfer_check" 
                                                 Unchecked="chamfer_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nFilletRingCB_kn"
                                                 Content="Скругление" 
                                                 Checked="fillet_check" 
                                                 Unchecked="fillet_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,20,0,0"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nCompressionRingCB_kn"
                                                 Content="Обжатие" 
                                                 Checked="compression_check" 
                                                 Unchecked="compression_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,40,0,0"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nFlaringRingCB_kn"
                                                 Content="Развальцовка" 
                                                 Checked="flaring_check" 
                                                 Unchecked="flaring_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,60,0,0"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nBoringRingCB_kn"
                                                 Content="Проточка" 
                                                 Checked="boring_check" 
                                                 Unchecked="boring_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,80,0,0"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nHoleRingCB_kn"
                                                 Content="Отверстие" 
                                                 Checked="hole_check" 
                                                 Unchecked="hole_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,100,0,0"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nThreadRingCB_kn"
                                                 Content="Резьба" 
                                                 Checked="thread_check" 
                                                 Unchecked="thread_uncheck"
                                                 HorizontalAlignment="Left" 
                                                 VerticalAlignment="Top" Width="142" Margin="0,120,0,0"/>
-                                            <CheckBox 
+                                            <CheckBox Name="nNoteRingCB_kn"
                                                 Content="Примечание" 
                                                 Checked="note_check" 
                                                 Unchecked="note_uncheck"
@@ -985,14 +987,14 @@
                                                             HorizontalAlignment="Left" 
                                                             Margin="0,31,0,0" 
                                                             VerticalAlignment="Top"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nChamfExtR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="112,5,0,0" 
                                                             TextWrapping="Wrap" 
                                                             Text="" 
                                                             VerticalAlignment="Top" Width="50"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nChamfExtL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="112,33,0,0" 
@@ -1004,7 +1006,7 @@
                                                             HorizontalAlignment="Left" 
                                                             Margin="0,60,0,0" 
                                                             VerticalAlignment="Top"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleExtR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="112,60,0,0" 
@@ -1016,7 +1018,7 @@
                                                             HorizontalAlignment="Left" 
                                                             Margin="2,88,0,0" 
                                                             VerticalAlignment="Top"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleExtL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="112,88,0,0" 
@@ -1043,28 +1045,28 @@
                                                             HorizontalAlignment="Left" 
                                                             Margin="177,88,0,0" 
                                                             VerticalAlignment="Top"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nChamfIntR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,5,0,0" 
                                                             TextWrapping="Wrap" 
                                                             Text="" 
                                                             VerticalAlignment="Top" Width="50"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nChamfIntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,33,0,0" 
                                                             TextWrapping="Wrap" 
                                                             Text="" 
                                                             VerticalAlignment="Top" Width="50"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleIntR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,60,0,0" 
                                                             TextWrapping="Wrap" 
                                                             Text="" 
                                                             VerticalAlignment="Top" Width="50"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleIntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,88,0,0" 
@@ -1097,7 +1099,7 @@
                                                             Margin="10,10,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="124"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nBoringExtR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="148,10,0,0" 
                                                             TextWrapping="Wrap" Text="" 
@@ -1105,12 +1107,12 @@
                                                         <Label 
                                                             Content="Проточка внутр. R" 
                                                             HorizontalAlignment="Left" 
-                                                            Margin="10,41,0,0" 
+                                                            Margin="10,40,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="124"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nBoringIntR_kn"
                                                             HorizontalAlignment="Left" 
-                                                            Height="23" Margin="148,41,0,0" 
+                                                            Height="23" Margin="148,40,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
@@ -1122,61 +1124,61 @@
                                                         <Label 
                                                             Content="Проточка внутр. L" 
                                                             HorizontalAlignment="Left" 
-                                                            Margin="230,41,0,0" 
+                                                            Margin="230,40,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="124"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nBoringEntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="359,10,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="77"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nBoringIntL_kn"
                                                             HorizontalAlignment="Left" 
-                                                            Height="23" Margin="359,38,0,0" 
+                                                            Height="23" Margin="359,40,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="77"/>
                                                         <Label 
                                                             Content="Угол сопряжения внешн. R" 
                                                             HorizontalAlignment="Left" 
-                                                            Margin="10,72,0,0" 
+                                                            Margin="10,70,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="159"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleCoupExtR_kn"
                                                             HorizontalAlignment="Left" 
-                                                            Height="23" Margin="174,72,0,0" 
+                                                            Height="23" Margin="174,70,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
                                                             Content="Угол сопряжения внутр. R" 
                                                             HorizontalAlignment="Left" 
-                                                            Margin="10,103,0,0" 
+                                                            Margin="10,100,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="159"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleCoupIntR_kn"
                                                             HorizontalAlignment="Left" 
-                                                            Height="23" Margin="174,103,0,0" 
+                                                            Height="23" Margin="174,100,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
                                                             Content="Угол сопряжения внешн. L" 
                                                             HorizontalAlignment="Left" 
-                                                            Margin="253,72,0,0" 
+                                                            Margin="253,70,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="159"/>
                                                         <Label 
                                                             Content="Угол сопряжения внешн. L" 
                                                             HorizontalAlignment="Left" 
-                                                            Margin="253,103,0,0" 
+                                                            Margin="253,100,0,0" 
                                                             VerticalAlignment="Top" 
                                                             Width="159"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleCoupExtL_kn"
                                                             HorizontalAlignment="Left" 
-                                                            Height="23" Margin="417,75,0,0" 
+                                                            Height="23" Margin="417,70,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="65"/>
-                                                        <TextBox 
+                                                        <TextBox Name="nAngleCoupIntL_kn"
                                                             HorizontalAlignment="Left" 
-                                                            Height="23" Margin="417,103,0,0" 
+                                                            Height="23" Margin="417,100,0,0" 
                                                             TextWrapping="Wrap" Text="" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                     </Grid>
@@ -1196,7 +1198,11 @@
                                             </TabControl>
                                         </Grid>
                                     </Border>
-                                    <DataGrid HorizontalAlignment="Left" Height="178" Margin="10,531,0,0" VerticalAlignment="Top" Width="1141"/>
+                                    <DataGrid 
+                                        HorizontalAlignment="Left" 
+                                        Height="178" Margin="10,531,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="1141"/>
                                     <Button 
                                         Content="Загрузить данные" 
                                         HorizontalAlignment="Left" 
@@ -1207,11 +1213,13 @@
                                         HorizontalAlignment="Left" 
                                         Margin="151,724,0,0" VerticalAlignment="Top" 
                                         Width="113"/>
-                                    <Button 
-                                        Content="Заполнить БД" 
-                                        HorizontalAlignment="Left" 
-                                        Margin="10,375,0,0" VerticalAlignment="Top" 
-                                        Width="148"/>
+                                    <Button Name="ButtFillRingBD"
+                                            Content="Заполнить БД" 
+                                            HorizontalAlignment="Left" 
+                                            Margin="10,375,0,0" 
+                                            VerticalAlignment="Top" 
+                                            Width="148"
+                                            Click="ButtFillRingBD_click"/>
                                     <GroupBox 
                                         Header="Сторона приварки" 
                                         HorizontalAlignment="Left" 
@@ -1219,18 +1227,18 @@
                                         VerticalAlignment="Top" 
                                         Width="141">
                                         <Grid Margin="0,0,0,0">
-                                            <RadioButton 
+                                            <RadioButton Name="RightSideWelding_kn"
                                                 Content="Правая сторона (R)" 
                                                 HorizontalAlignment="Left" 
                                                 Margin="0,10,0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="128"/>
-                                            <RadioButton 
+                                            <RadioButton Name="LeftSideWelding_kn"
                                                 Content="Левая сторона (L)" 
                                                 HorizontalAlignment="Left" 
-                                                Margin="0,32,0,0" 
+                                                Margin="0,30,0,0" 
                                                 VerticalAlignment="Top" 
-                                                Width="128" RenderTransformOrigin="0.455,0.461"/>
+                                                Width="128"/>
                                         </Grid>
                                     </GroupBox>
                                     <GroupBox 
@@ -1248,7 +1256,7 @@
                                         VerticalAlignment="Top" 
                                         Width="139" Height="24"
                                         ToolTip="Имя по типу: Кольцо, патрубок, штуцер...."/>
-                                            <TextBox 
+                                            <TextBox Name="nNameRing1_kn"
                                         HorizontalAlignment="Left" 
                                         Height="23" Margin="151,10,0,0" 
                                         TextWrapping="Wrap" Text="" 
@@ -1261,7 +1269,7 @@
                                         VerticalAlignment="Top" 
                                         Width="139" Height="24"
                                         ToolTip="Типа П.12х56х65"/>
-                                            <TextBox 
+                                            <TextBox Name="nNameRing2_kn"
                                         HorizontalAlignment="Left" 
                                         Height="23" Margin="151,43,0,0" 
                                         TextWrapping="Wrap" Text="" 
@@ -1416,46 +1424,51 @@
                                                 Width="136"/>
                                             <TextBox Name="nDIN_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="172,12,0,0" 
+                                                Height="23" Margin="155,12,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="120"/>
                                             <TextBox Name="nGOST_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="172,43,0,0" 
+                                                Height="23" Margin="155,43,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="120"/>
                                             <TextBox Name="nAISI_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="172,75,0,0" 
+                                                Height="23" Margin="155,75,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="120"/>
                                             <TextBox Name="nJIS_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="172,106,0,0" 
+                                                Height="23" Margin="155,106,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="120"/>
                                             <TextBox Name="nBS_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="172,134,0,0" 
+                                                Height="23" Margin="155,134,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="120"/>
                                             <TextBox Name="nAFNOR_kn"
                                                 HorizontalAlignment="Left" 
-                                                Height="23" Margin="172,165,0,0" 
+                                                Height="23" Margin="155,165,0,0" 
                                                 TextWrapping="Wrap" 
                                                 Text="" 
                                                 VerticalAlignment="Top" 
                                                 Width="120"/>
+                                            <Button 
+                                                 Click="NameMaterial_click" 
+                                                 Margin="298,0,0,172">
+                                                <Image Source="Res/ICON/sign.jpg"/>
+                                            </Button>
                                         </Grid>
                                     </Border>
                                     <Border 

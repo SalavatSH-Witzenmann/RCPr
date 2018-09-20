@@ -6,12 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8ffeafbb715644eaa4815733006f3689" Name="Diagram1" >
         <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="1.5" PointX="1.125" PointY="2.875" IsExpanded="false" />
-        <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="3.875" PointY="7.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="3.875" PointY="8" IsExpanded="false" />
         <EntityTypeShape EntityType="MetHose.tGlass" Width="1.5" PointX="5" PointY="2.875" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tGlasstMaterial" />
         <EntityTypeShape EntityType="MetHose.tBraid" Width="1.5" PointX="3" PointY="2.875" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tBraidtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tRing" Width="1.5" PointX="7.25" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tRing" Width="1.5" PointX="7.25" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="MetHose.tRingtMaterial" />
         <EntityTypeShape EntityType="MetHose.tMetHose" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tMetHosetBraid" />

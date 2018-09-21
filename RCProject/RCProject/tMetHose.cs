@@ -15,14 +15,20 @@ namespace RCProject
     public partial class tMetHose
     {
         public int ID { get; set; }
-        public int tCorrugSheathID { get; set; }
+        public short DN { get; set; }
+        public double PN { get; set; }
+        public string NamePrimary { get; set; }
+        public string NameSecondary { get; set; }
+        public Nullable<double> PHydTest { get; set; }
+        public Nullable<double> PPneumTest { get; set; }
+        public string Description { get; set; }
+        public string Executor { get; set; }
+        public Nullable<int> tCorrugSheathID { get; set; }
         public Nullable<int> tBraidID { get; set; }
-        public Nullable<int> tGlassID { get; set; }
-        public Nullable<int> tCorrugSheathID1 { get; set; }
     
+        public virtual tCorrugSheath tCorrugSheath { get; set; }
         public virtual tBraid tBraid { get; set; }
         public virtual tGlass tGlass { get; set; }
         public virtual tRing tRing { get; set; }
-        public virtual tCorrugSheath tCorrugSheath { get; set; }
     }
 }

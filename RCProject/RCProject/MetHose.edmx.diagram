@@ -13,12 +13,12 @@
         <AssociationConnector Association="MetHose.tBraidtMaterial" />
         <EntityTypeShape EntityType="MetHose.tRing" Width="1.5" PointX="7.25" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="MetHose.tRingtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tMetHose" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tMetHose" Width="1.5" PointX="4.125" PointY="0.625" IsExpanded="false" />
+        <AssociationConnector Association="MetHose.tCorrugSheathtMaterial" />
+        <AssociationConnector Association="MetHose.tMetHosetCorrugSheath" />
         <AssociationConnector Association="MetHose.tMetHosetBraid" />
         <AssociationConnector Association="MetHose.tMetHosetGlass" />
-        <AssociationConnector Association="MetHose.tMetHosetRing" />
-        <AssociationConnector Association="MetHose.tMetHosetCorrugSheath" />
-        <AssociationConnector Association="MetHose.tCorrugSheathtMaterial" />
+        <AssociationConnector Association="MetHose.tRingtMetHose" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

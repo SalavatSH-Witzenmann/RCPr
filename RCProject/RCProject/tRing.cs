@@ -45,6 +45,7 @@ namespace RCProject
         public Nullable<double> AngleCoupExtL { get; set; }
         public Nullable<double> AngleCoupIntR { get; set; }
         public Nullable<double> AngleCoupIntL { get; set; }
+        public string Description { get; set; }
         public int tMaterialID { get; set; }
     
         public virtual tMaterial tMaterial { get; set; }

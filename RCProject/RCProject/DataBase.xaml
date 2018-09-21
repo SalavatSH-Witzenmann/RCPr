@@ -12,7 +12,11 @@
             <RowDefinition Height="846*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" FontSize="16" Margin="0,0,0,0">
-            <MenuItem Header="File"/>
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
             <MenuItem Header="Project"/>
             <MenuItem Header="Window"/>
             <MenuItem Header="Date"/>
@@ -25,7 +29,7 @@
                 <TabItem Header="Режим заполнение/редактирование">
                     <Grid>
                         <TabControl>
-                            <TabItem Header="Гибкая часть">
+                            <TabItem Header="Гофрированная оболочка">
                                 <Grid Background="Aqua">
                                     <TabControl>
                                         <TabItem Header="Гофрированная оболочка">
@@ -1193,7 +1197,15 @@
                                                 </TabItem>
                                                 <TabItem Name="Note"
                                                     Header="Примечание" IsEnabled="False">
-                                                    <Grid Background="#FFE5E5E5"/>
+                                                    <Grid Background="#FFE5E5E5">
+                                                        <TextBox Name="nDescriptionRing_kn"
+                                                            HorizontalAlignment="Left" 
+                                                            Height="112" Margin="10,10,0,0" 
+                                                            TextWrapping="Wrap" 
+                                                            Text="" 
+                                                            VerticalAlignment="Top" 
+                                                            Width="1005"/>
+                                                    </Grid>
                                                 </TabItem>
                                             </TabControl>
                                         </Grid>

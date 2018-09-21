@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="307160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="304088">
       <assemblyIdentity name="RCProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Un3DXJA8VOZMuJcL5y1OBFLo6KHO/qr+u+1llZXGwuE=</dsig:DigestValue>
+        <dsig:DigestValue>x5DmnwXUbNTt1nUvwjLxUHUgc7veA2ZTVge7amIbyDE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -25,6 +25,7 @@ namespace RCProject
         public DataBase()
         {
             InitializeComponent();
+            ThCS_kn.PreviewTextInput += new TextCompositionEventHandler(text_input_mask);
         }
 
         private void SignClick(object sender, RoutedEventArgs e) //В разделе Кольцо комментарии к заполнению внешнего диаметра
@@ -202,7 +203,8 @@ namespace RCProject
                 AngleCoupExtR=Double.Parse(nAngleCoupExtR_kn.Text),
                 AngleCoupExtL=Double.Parse(nAngleCoupExtL_kn.Text),
                 AngleCoupIntR=Double.Parse(nAngleCoupIntR_kn.Text),
-                AngleCoupIntL=Double.Parse(nAngleCoupIntL_kn.Text)
+                AngleCoupIntL=Double.Parse(nAngleCoupIntL_kn.Text),
+                Description=nDescriptionRing_kn.Text
             };
         }
         #endregion
@@ -450,6 +452,14 @@ namespace RCProject
                 "В графу GOST вносить только цифры и буквы используя КИРИЛЛИЦУ!!! В остальные графы, наименование материала прописываем используя цифры и буквы, однако тип букв - ЛАТИНИЦА!!!", "Note!");
         }
 
-        
+        #region Раздел для создания масок заполнения форм
+
+        private void text_input_mask(object sender, TextCompositionEventArgs e)  // в разделе Гофрированная оболочка для толщины
+        {
+            if (Char.IsDigit(e.Text, 0) || e.Text == ",") { e.Handled = false; } else { e.Handled = true; MessageBox.Show("Число либо запятая!!!"); } 
+        }
+
+        #endregion
+
     }
 }

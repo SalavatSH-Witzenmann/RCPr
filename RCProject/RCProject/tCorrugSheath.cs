@@ -34,9 +34,10 @@ namespace RCProject
         public Nullable<double> Th { get; set; }
         public string Executor { get; set; }
         public string Description { get; set; }
+        public int tMaterialID { get; set; }
     
+        public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tMetHose> tMetHose { get; set; }
-        public virtual tMaterial tMaterial { get; set; }
     }
 }

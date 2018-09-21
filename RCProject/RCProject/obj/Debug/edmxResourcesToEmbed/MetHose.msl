@@ -163,21 +163,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(MetHose.tMetHose)">
         <MappingFragment StoreEntitySet="tMetHoseSet">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="tCorrugSheathID" ColumnName="tCorrugSheathID" />
-          <ScalarProperty Name="tBraidID" ColumnName="tBraidID" />
-          <ScalarProperty Name="tGlassID" ColumnName="tGlassID" />
-          <ScalarProperty Name="tCorrugSheathID1" ColumnName="tCorrugSheathID1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="tMetHosetRing" TypeName="MetHose.tMetHosetRing" StoreEntitySet="tMetHoseSet">
-      <EndProperty Name="tRing">
-        <ScalarProperty Name="ID" ColumnName="tRing_ID" />
-      </EndProperty>
-      <EndProperty Name="tMetHose">
-        <ScalarProperty Name="ID" ColumnName="ID" />
-      </EndProperty>
-      <Condition ColumnName="tRing_ID" IsNull="false" />
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

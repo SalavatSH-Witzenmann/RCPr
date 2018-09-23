@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/16/2018 23:09:08
+-- Date Created: 09/23/2018 21:19:02
 -- Generated from EDMX file: C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\MetHose.edmx
 -- --------------------------------------------------
 
@@ -17,50 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_tGlasstMaterial]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tGlassSet] DROP CONSTRAINT [FK_tGlasstMaterial];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tBraidtMaterial]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tBraidSet] DROP CONSTRAINT [FK_tBraidtMaterial];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tRingtMaterial]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tRingSet] DROP CONSTRAINT [FK_tRingtMaterial];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tMetHosetBraid]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetBraid];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tMetHosetGlass]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetGlass];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tMetHosetRing]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetRing];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tMetHosetCorrugSheath]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetCorrugSheath];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[tCorrugSheathSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tCorrugSheathSet];
-GO
-IF OBJECT_ID(N'[dbo].[tMaterialSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tMaterialSet];
-GO
-IF OBJECT_ID(N'[dbo].[tGlassSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tGlassSet];
-GO
-IF OBJECT_ID(N'[dbo].[tBraidSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tBraidSet];
-GO
-IF OBJECT_ID(N'[dbo].[tRingSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tRingSet];
-GO
-IF OBJECT_ID(N'[dbo].[tMetHoseSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[tMetHoseSet];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -81,7 +42,8 @@ CREATE TABLE [dbo].[tCorrugSheathSet] (
     [Rn] smallint  NULL,
     [Th] float  NULL,
     [Executor] nvarchar(max)  NULL,
-    [Description] nvarchar(max)  NULL
+    [Description] nvarchar(max)  NULL,
+    [tMaterialID] int  NOT NULL
 );
 GO
 
@@ -160,13 +122,18 @@ GO
 -- Creating table 'tGlassSet'
 CREATE TABLE [dbo].[tGlassSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
-    [DN] nvarchar(max)  NOT NULL,
+    [DN] smallint  NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Dout] nvarchar(max)  NOT NULL,
-    [Th] nvarchar(max)  NOT NULL,
-    [Ls] nvarchar(max)  NOT NULL,
-    [Executor] nvarchar(max)  NOT NULL,
-    [Description] nvarchar(max)  NOT NULL,
+    [UntypicalName] nvarchar(max)  NULL,
+    [UntypicalCheck] bit  NULL,
+    [Dout] float  NOT NULL,
+    [Th] float  NOT NULL,
+    [Ls] float  NOT NULL,
+    [ExpanRing] bit  NULL,
+    [CompressRing] bit  NULL,
+    [Din] float  NULL,
+    [Executor] nvarchar(max)  NULL,
+    [Description] nvarchar(max)  NULL,
     [tMaterialID] int  NOT NULL
 );
 GO
@@ -174,16 +141,16 @@ GO
 -- Creating table 'tBraidSet'
 CREATE TABLE [dbo].[tBraidSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
-    [DN] nvarchar(max)  NOT NULL,
-    [Type] nvarchar(max)  NOT NULL,
-    [Dout] nvarchar(max)  NOT NULL,
-    [Din] nvarchar(max)  NOT NULL,
-    [NumbStrands] nvarchar(max)  NOT NULL,
-    [NymbThreads] nvarchar(max)  NOT NULL,
-    [DThreads] nvarchar(max)  NOT NULL,
-    [AngleWeaving] nvarchar(max)  NOT NULL,
-    [Executor] nvarchar(max)  NOT NULL,
-    [Description] nvarchar(max)  NOT NULL,
+    [DN] smallint  NOT NULL,
+    [TypeBr] nvarchar(max)  NOT NULL,
+    [Dout] float  NOT NULL,
+    [Din] float  NOT NULL,
+    [NumbStrands] smallint  NULL,
+    [NymbThreads] smallint  NULL,
+    [DThreads] float  NOT NULL,
+    [AngleWeaving] float  NULL,
+    [Executor] nvarchar(max)  NULL,
+    [Description] nvarchar(max)  NULL,
     [tMaterialID] int  NOT NULL
 );
 GO
@@ -193,11 +160,11 @@ CREATE TABLE [dbo].[tRingSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Designation] nvarchar(max)  NOT NULL,
-    [DN] nvarchar(max)  NOT NULL,
-    [PN] nvarchar(max)  NOT NULL,
-    [Dout] nvarchar(max)  NOT NULL,
-    [Th] nvarchar(max)  NOT NULL,
-    [LN] nvarchar(max)  NOT NULL,
+    [DN] smallint  NOT NULL,
+    [PN] float  NOT NULL,
+    [Dout] float  NOT NULL,
+    [Th] float  NOT NULL,
+    [LN] float  NOT NULL,
     [WeldingSide] nvarchar(max)  NULL,
     [ChamExtR] float  NULL,
     [ChamExtL] float  NULL,
@@ -215,6 +182,7 @@ CREATE TABLE [dbo].[tRingSet] (
     [AngleCoupExtL] float  NULL,
     [AngleCoupIntR] float  NULL,
     [AngleCoupIntL] float  NULL,
+    [Description] nvarchar(max)  NULL,
     [tMaterialID] int  NOT NULL
 );
 GO
@@ -222,10 +190,17 @@ GO
 -- Creating table 'tMetHoseSet'
 CREATE TABLE [dbo].[tMetHoseSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
-    [tCorrugSheathID] int  NOT NULL,
+    [DN] smallint  NOT NULL,
+    [PN] float  NOT NULL,
+    [NamePrimary] nvarchar(max)  NULL,
+    [NameSecondary] nvarchar(max)  NULL,
+    [PHydTest] float  NULL,
+    [PPneumTest] float  NULL,
+    [Description] nvarchar(max)  NULL,
+    [Executor] nvarchar(max)  NULL,
+    [tCorrugSheathID] int  NULL,
     [tBraidID] int  NULL,
-    [tGlassID] int  NULL,
-    [tCorrugSheathID1] int  NULL,
+    [tGlass_ID] int  NULL,
     [tRing_ID] int  NULL
 );
 GO
@@ -319,6 +294,36 @@ ON [dbo].[tRingSet]
     ([tMaterialID]);
 GO
 
+-- Creating foreign key on [tMaterialID] in table 'tCorrugSheathSet'
+ALTER TABLE [dbo].[tCorrugSheathSet]
+ADD CONSTRAINT [FK_tCorrugSheathtMaterial]
+    FOREIGN KEY ([tMaterialID])
+    REFERENCES [dbo].[tMaterialSet]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tCorrugSheathtMaterial'
+CREATE INDEX [IX_FK_tCorrugSheathtMaterial]
+ON [dbo].[tCorrugSheathSet]
+    ([tMaterialID]);
+GO
+
+-- Creating foreign key on [tCorrugSheathID] in table 'tMetHoseSet'
+ALTER TABLE [dbo].[tMetHoseSet]
+ADD CONSTRAINT [FK_tMetHosetCorrugSheath]
+    FOREIGN KEY ([tCorrugSheathID])
+    REFERENCES [dbo].[tCorrugSheathSet]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tMetHosetCorrugSheath'
+CREATE INDEX [IX_FK_tMetHosetCorrugSheath]
+ON [dbo].[tMetHoseSet]
+    ([tCorrugSheathID]);
+GO
+
 -- Creating foreign key on [tBraidID] in table 'tMetHoseSet'
 ALTER TABLE [dbo].[tMetHoseSet]
 ADD CONSTRAINT [FK_tMetHosetBraid]
@@ -334,10 +339,10 @@ ON [dbo].[tMetHoseSet]
     ([tBraidID]);
 GO
 
--- Creating foreign key on [tGlassID] in table 'tMetHoseSet'
+-- Creating foreign key on [tGlass_ID] in table 'tMetHoseSet'
 ALTER TABLE [dbo].[tMetHoseSet]
 ADD CONSTRAINT [FK_tMetHosetGlass]
-    FOREIGN KEY ([tGlassID])
+    FOREIGN KEY ([tGlass_ID])
     REFERENCES [dbo].[tGlassSet]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -346,37 +351,22 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_tMetHosetGlass'
 CREATE INDEX [IX_FK_tMetHosetGlass]
 ON [dbo].[tMetHoseSet]
-    ([tGlassID]);
+    ([tGlass_ID]);
 GO
 
 -- Creating foreign key on [tRing_ID] in table 'tMetHoseSet'
 ALTER TABLE [dbo].[tMetHoseSet]
-ADD CONSTRAINT [FK_tMetHosetRing]
+ADD CONSTRAINT [FK_tRingtMetHose]
     FOREIGN KEY ([tRing_ID])
     REFERENCES [dbo].[tRingSet]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_tMetHosetRing'
-CREATE INDEX [IX_FK_tMetHosetRing]
+-- Creating non-clustered index for FOREIGN KEY 'FK_tRingtMetHose'
+CREATE INDEX [IX_FK_tRingtMetHose]
 ON [dbo].[tMetHoseSet]
     ([tRing_ID]);
-GO
-
--- Creating foreign key on [tCorrugSheathID1] in table 'tMetHoseSet'
-ALTER TABLE [dbo].[tMetHoseSet]
-ADD CONSTRAINT [FK_tMetHosetCorrugSheath]
-    FOREIGN KEY ([tCorrugSheathID1])
-    REFERENCES [dbo].[tCorrugSheathSet]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tMetHosetCorrugSheath'
-CREATE INDEX [IX_FK_tMetHosetCorrugSheath]
-ON [dbo].[tMetHoseSet]
-    ([tCorrugSheathID1]);
 GO
 
 -- --------------------------------------------------

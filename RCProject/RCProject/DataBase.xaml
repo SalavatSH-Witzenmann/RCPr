@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RCProject"
+        xmlns:Sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d" Loaded="DataBase_loaded"
-        Title="DataBase" Height="900" Width="1250">
+        Title="DataBase" Height="828" Width="1250">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"/>
@@ -218,12 +219,28 @@
                                                     Margin="755,53,0,0" 
                                                     VerticalAlignment="Top" 
                                                     Width="87"/>
-                                                <ListBox 
-                                                    HorizontalAlignment="Left" 
-                                                    Height="94" 
-                                                    Margin="755,176,0,0" 
-                                                    VerticalAlignment="Top" 
-                                                    Width="313"/>
+                                                <ScrollViewer                                                    
+                                                    ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                                                    Margin="755,170,10,450">
+                                                  <Grid>
+                                                     <ListView Name="MaterialCorSh_kn"
+                                                          Margin="0,0,0,0" SelectedItem="CorrigSH_SelectedItem" SelectionChanged="MaterialCorSh_kn_SelectionChanged">                                                        
+                                                        <ListView.View>                                                        
+                                                           <GridView>                                                            
+                                                              <GridView.Columns>
+                                                                        <GridViewColumn Header="ID" Width="60"/>
+                                                                        <GridViewColumn Header="DIN" Width="60"/>
+                                                                        <GridViewColumn Header="AISI" Width="60"/>
+                                                                        <GridViewColumn Header="GOST" Width="60"/>
+                                                                        <GridViewColumn Header="JIS" Width="60"/>
+                                                                        <GridViewColumn Header="BS" Width="60"/>
+                                                                        <GridViewColumn Header="AFNOR" Width="60"/>
+                                                              </GridView.Columns>                                                            
+                                                           </GridView>                                                        
+                                                        </ListView.View>                                                            
+                                                        </ListView>
+                                                   </Grid>
+                                                </ScrollViewer>
                                                 <Label 
                                                     Content="Выберите материал ГЧ:" 
                                                     HorizontalAlignment="Left" 
@@ -420,7 +437,7 @@
                                         HorizontalAlignment="Left" 
                                         Margin="811,18,0,0" 
                                         VerticalAlignment="Top" Width="132"/>
-                                    <ListBox Name="MaterialBraid_kn"
+                                    <ListView Name="MaterialBraid_kn"
                                         HorizontalAlignment="Left" 
                                         Height="119" Margin="811,65,0,0" 
                                         VerticalAlignment="Top" Width="361"/>
@@ -594,7 +611,7 @@
                                         HorizontalAlignment="Left" 
                                         Height="138" Margin="10,403,0,0" 
                                         VerticalAlignment="Top" Width="580"/>
-                                    <ListBox 
+                                    <ListView 
                                         HorizontalAlignment="Left" 
                                         Height="91" Margin="533,136,0,0" 
                                         VerticalAlignment="Top" Width="628"/>
@@ -817,7 +834,7 @@
                                         <ComboBoxItem Content="PN200,0"/>
                                         <ComboBoxItem Content="PN250,0"/>
                                     </ComboBox>
-                                    <ListBox 
+                                    <ListView 
                                         HorizontalAlignment="Left" 
                                         Height="82" Margin="781,49,0,0" 
                                         VerticalAlignment="Top" Width="440"/>
@@ -1497,7 +1514,7 @@
                                             <TextBox Name="nConFe_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="95,30,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Углерод C:" 
@@ -1508,7 +1525,7 @@
                                             <TextBox Name="nConC_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="95,60,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Кремний Si:" 
@@ -1519,7 +1536,7 @@
                                             <TextBox Name="nConSi_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="95,90,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Хром Cr:" 
@@ -1530,7 +1547,7 @@
                                             <TextBox Name="nConCr_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="95,120,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Никель Ni:" 
@@ -1541,7 +1558,7 @@
                                             <TextBox Name="nConNi_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="95,150,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" Width="55"/>
                                             <Label Content="Ниобий Nb:" 
                                                    HorizontalAlignment="Left" 
@@ -1550,7 +1567,7 @@
                                             <TextBox Name="nConNb_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="95,180,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Вольфрам W:" 
@@ -1561,7 +1578,7 @@
                                             <TextBox Name="nConW_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="261,30,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Марганец Mn:" 
@@ -1572,7 +1589,7 @@
                                             <TextBox Name="nConMn_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="261,60,0,0" 
-                                                     TextWrapping="Wrap" Text=""
+                                                     TextWrapping="Wrap" Text="0,0"
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Медь Cu:" 
@@ -1583,7 +1600,7 @@
                                             <TextBox Name="nConCu_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="261,90,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" Width="55"/>
                                             <Label Content="Селен Se:" 
                                                    HorizontalAlignment="Left" 
@@ -1592,7 +1609,7 @@
                                             <TextBox Name="nConSe_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="261,120,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Кобальт Co:" 
@@ -1603,7 +1620,7 @@
                                             <TextBox Name="nConCo_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="261,150,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Молибден Mo:" 
@@ -1614,7 +1631,7 @@
                                             <TextBox Name="nConMo_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="261,180,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Фосфор P:" 
@@ -1625,7 +1642,7 @@
                                             <TextBox Name="nConP_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="426,30,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Бор B:" 
@@ -1636,7 +1653,7 @@
                                             <TextBox Name="nConB_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="426,60,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Титан Ti:" 
@@ -1647,7 +1664,7 @@
                                             <TextBox Name="nConTi_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="426,90,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Ванадий V:" 
@@ -1658,7 +1675,7 @@
                                             <TextBox Name="nConV_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="426,120,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Цирконий Zr:" 
@@ -1669,7 +1686,7 @@
                                             <TextBox Name="nConZr_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="426,150,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Алюминий Al:" 
@@ -1680,7 +1697,7 @@
                                             <TextBox Name="nConAl_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="426,180,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Мышьяк As:" 
@@ -1691,7 +1708,7 @@
                                             <TextBox Name="nConAs_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="601,30,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Сера S:" 
@@ -1702,7 +1719,7 @@
                                             <TextBox Name="nConS_kn"
                                                      HorizontalAlignment="Left"
                                                      Height="23" Margin="601,60,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Церий Ce:" 
@@ -1713,7 +1730,7 @@
                                             <TextBox Name="nConCe_kn"
                                                      HorizontalAlignment="Left" 
                                                      Height="23" Margin="601,90,0,0" 
-                                                     TextWrapping="Wrap" Text="" 
+                                                     TextWrapping="Wrap" Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="55"/>
                                             <Label Content="Азот A:" 
@@ -1725,7 +1742,7 @@
                                                      HorizontalAlignment="Left" 
                                                      Height="23" 
                                                      Margin="601,120,0,0" 
-                                                     TextWrapping="Wrap" Text=""
+                                                     TextWrapping="Wrap" Text="0,0"
                                                      VerticalAlignment="Top"
                                                      Width="55"/>
                                             <Label Content="Олово Sn:" 
@@ -1737,7 +1754,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Height="23" 
                                                 Margin="601,150,0,0" 
-                                                TextWrapping="Wrap" Text=""
+                                                TextWrapping="Wrap" Text="0,0"
                                                 VerticalAlignment="Top"
                                                 Width="55"/>
                                             <Label Content="Свинец Pb:" 
@@ -1749,7 +1766,7 @@
                                                 HorizontalAlignment="Left" 
                                                 Height="23" 
                                                 Margin="601,180,0,0" 
-                                                TextWrapping="Wrap" Text=""
+                                                TextWrapping="Wrap" Text="0,0"
                                                 VerticalAlignment="Top"
                                                 Width="55"/>
                                             <Label Content="Тантал Ta:" 
@@ -1759,7 +1776,7 @@
                                             <TextBox Name="nConTa_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="95,210,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Висмут Bi:" 
@@ -1769,7 +1786,7 @@
                                             <TextBox Name="nConBi_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="261,210,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Кадмий Cd:" 
@@ -1779,7 +1796,7 @@
                                             <TextBox Name="nConCd_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="426,210,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Уран U:" 
@@ -1789,7 +1806,7 @@
                                             <TextBox Name="nConU_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="601,210,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Кислород O:" 
@@ -1800,7 +1817,7 @@
                                             <TextBox x:Name="nConO_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,30,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Водород H:" 
@@ -1811,7 +1828,7 @@
                                             <TextBox x:Name="nConH_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,60,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Платина Pt:" 
@@ -1822,7 +1839,7 @@
                                             <TextBox x:Name="nConPt_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,90,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Золото Au:" 
@@ -1833,7 +1850,7 @@
                                             <TextBox x:Name="nConAu_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,120,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Натрий Na:" 
@@ -1844,7 +1861,7 @@
                                             <TextBox x:Name="nConNa_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,150,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Магний Mg:" 
@@ -1855,7 +1872,7 @@
                                             <TextBox x:Name="nConMg_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,180,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Германий Ge:" 
@@ -1866,7 +1883,7 @@
                                             <TextBox x:Name="nConGe_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,210,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Аргон Ar:" 
@@ -1876,7 +1893,7 @@
                                             <TextBox x:Name="nConAr_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="95,240,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Литий Li:" 
@@ -1886,7 +1903,7 @@
                                             <TextBox x:Name="nConLi_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="261,240,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Иридий Ir:" 
@@ -1896,7 +1913,7 @@
                                             <TextBox x:Name="nConIr_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="426,240,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Паладий Pd:" 
@@ -1906,7 +1923,7 @@
                                             <TextBox x:Name="nConPd_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="601,240,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                             <Label Content="Рений Re:" 
@@ -1917,7 +1934,7 @@
                                             <TextBox x:Name="nConRe_kn"
                                                 HorizontalAlignment="Left" 
                                                 Height="23" Margin="772,240,0,0" 
-                                                TextWrapping="Wrap" Text="" 
+                                                TextWrapping="Wrap" Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="55"/>
                                         </Grid>
@@ -1941,7 +1958,7 @@
                                                      Height="26" 
                                                      Margin="186,30,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <Label 
@@ -1955,7 +1972,7 @@
                                                 Height="26" 
                                                 Margin="186,60,0,0" 
                                                 TextWrapping="Wrap" 
-                                                Text="" 
+                                                Text="0,0" 
                                                 VerticalAlignment="Top" 
                                                 Width="77"/>
                                             <Label 
@@ -1975,7 +1992,7 @@
                                                      Height="26" 
                                                      Margin="445,30,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <TextBox Name="nDensity_kn"
@@ -1983,7 +2000,7 @@
                                                      Height="26" 
                                                      Margin="445,60,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <Label 
@@ -2003,7 +2020,7 @@
                                                      Height="26" 
                                                      Margin="715,30,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <TextBox Name="nPoissonRatio_kn"
@@ -2011,7 +2028,7 @@
                                                      Height="26" 
                                                      Margin="715,60,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <Label 
@@ -2025,7 +2042,7 @@
                                                      Height="26" 
                                                      Margin="1062,30,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <Label 
@@ -2046,7 +2063,7 @@
                                                      Height="26" 
                                                      Margin="1062,60,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                             <Label 
@@ -2060,7 +2077,7 @@
                                                 Height="26" 
                                                 Margin="186,90,0,0" 
                                                 TextWrapping="Wrap" 
-                                                Text="" 
+                                                Text="0" 
                                                 VerticalAlignment="Top" 
                                                 Width="77"/>
                                             <Label 
@@ -2074,7 +2091,7 @@
                                                      Height="26" 
                                                      Margin="445,90,0,0" 
                                                      TextWrapping="Wrap" 
-                                                     Text="" 
+                                                     Text="0,0" 
                                                      VerticalAlignment="Top" 
                                                      Width="77"/>
                                         </Grid>
@@ -2086,14 +2103,14 @@
                                             Margin="10,532,0,0" 
                                             VerticalAlignment="Top" 
                                             Width="109"/>
-                                    <DataGrid HorizontalAlignment="Left" Height="109" Margin="10,614,0,0" VerticalAlignment="Top" Width="1162"/>
+                                    <DataGrid HorizontalAlignment="Left" Height="109" Margin="10,564,0,0" VerticalAlignment="Top" Width="1162"/>
                                     <Button Content="Загрузить БД" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,733,0,0" VerticalAlignment="Top" 
+                                        Margin="10,687,0,0" VerticalAlignment="Top" 
                                         Width="109"/>
                                     <Button Content="Сохранить изм." 
                                         HorizontalAlignment="Left" 
-                                        Margin="141,733,0,0" VerticalAlignment="Top" 
+                                        Margin="146,687,0,0" VerticalAlignment="Top" 
                                         Width="109"/>
                                     <ComboBox Name="nTypeSteelStructAnnealed_kn"
                                               Text="Выберите тип стали по структуре(о)"

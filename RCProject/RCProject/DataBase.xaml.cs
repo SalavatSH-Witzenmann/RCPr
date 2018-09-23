@@ -28,13 +28,17 @@ namespace RCProject
             ThCS_kn.PreviewTextInput += new TextCompositionEventHandler(text_input_mask);
         }
 
+        
+
+
+
         private void SignClick(object sender, RoutedEventArgs e) //В разделе Кольцо комментарии к заполнению внешнего диаметра
         {
             MessageBox.Show("Пожалуйста обратите внимание, вводить необходимо наружный диаметр заготовки до операции обжатия/развальцовки," +
                 "т.е. наружный диаметр трубы и толщину стенки трубы (не учитывая всевозможных операции)","Note!");
         }
 
-        #region check_box для выбора доп операции
+        #region check_box для выбора доп операции в разделе Гофрированная оболочка
         private void chamfer_check(object sender, RoutedEventArgs e)
         {
             Chamfer.IsEnabled = true;
@@ -112,7 +116,7 @@ namespace RCProject
         #region секция для заполнения БД Гибкая часть
         private void filling_click(object sender, RoutedEventArgs e)
         {
-            /*var context = new MetHoseContainer();
+            var context = new MetHoseContainer();
             var CorrugSheath = new tCorrugSheath {Type=CorrugSheath_kn.SelectedItem.ToString().Remove(0,38),
                 DN=Int16.Parse(DNCorSh_kn.SelectedItem.ToString().Remove(0,40)),
                 PN=Double.Parse(PNCorSh_kn.SelectedItem.ToString().Remove(0,40)), Dout=Double.Parse(DoutCS_kn.Text),
@@ -122,7 +126,7 @@ namespace RCProject
                 Th=Double.Parse(ThCS_kn.Text), Description=DescriptionCS_kn.Text,
                 Executor = ExecutorCS_kn.Text};                                                                        //учитывать локализацию для типа string
             context.tCorrugSheathSet.Add(CorrugSheath);
-            context.SaveChanges();*/
+            context.SaveChanges();
         }
         #endregion
 
@@ -130,7 +134,7 @@ namespace RCProject
         private void BraidDB_filling_click(object sender, RoutedEventArgs e)
         {
 
-            /*
+            
             var context = new MetHoseContainer();
             var BraidDB_filling = new tBraid
             {
@@ -144,7 +148,7 @@ namespace RCProject
                 AngleWeaving = Double.Parse(AngleWeaving_kn.Text),
                 Executor = ExecutorBraid_kn.Text,
                 Description = DescriptionBraid_kn.Text
-            };*/
+            };
         }
         #endregion
 
@@ -152,7 +156,7 @@ namespace RCProject
         private void ButtGlass_filling_click(object sender, RoutedEventArgs e)
         {
             
-            /*
+            
             var context = new MetHoseContainer();
             var glass_filling = new tGlass
             {
@@ -168,7 +172,7 @@ namespace RCProject
                 Din = Double.Parse(nDinGlassAfterOper_kn.Text),
                 Executor = nExecutorGlass_kn.Text,
                 Description = nDescriptionGlass_kn.Text
-            };*/
+            };
         }
         #endregion
 
@@ -213,7 +217,7 @@ namespace RCProject
 
         private void matdb_filling_click(object sender, RoutedEventArgs e)
         {
-            /*
+            
             #region секция определения длятипа структуры стали
             string StructType;
             bool CheckAnnealedCond;
@@ -250,15 +254,15 @@ namespace RCProject
             #region секция определения типа стали
             string typeStPurp;
             string typeStPurp2;
-            if (nPurposeSteel_kn.SelectedIndex == 1)
+            if (nPurposeSteel_kn.SelectedIndex == 0)
             {
                 typeStPurp = nPurposeSteel_kn.SelectedItem.ToString().Remove(0, 38);
                 typeStPurp2 = nPurposeSteelConstr_kn.SelectedItem.ToString().Remove(0, 38);
-            } else if (nPurposeSteel_kn.SelectedIndex == 2)
+            } else if (nPurposeSteel_kn.SelectedIndex == 1)
             {
                 typeStPurp = nPurposeSteel_kn.SelectedItem.ToString().Remove(0, 38);
                 typeStPurp2 = nPurposeSteelInstr_kn.SelectedItem.ToString().Remove(0, 38);
-            } else if (nPurposeSteel_kn.SelectedIndex == 3)
+            } else if (nPurposeSteel_kn.SelectedIndex == 2)
             {
                 typeStPurp = nPurposeSteel_kn.SelectedItem.ToString().Remove(0, 38);
                 typeStPurp2 = nPurposeSteelSpec_kn.SelectedItem.ToString().Remove(0, 38);
@@ -352,16 +356,19 @@ namespace RCProject
                 QualitySteel=QSteel,
                 DegreeDeoxid=DegDeox
             };
+            context.tMaterialSet.Add(MatDB_filling);
+            context.SaveChanges();
             #endregion
-            */
+            
         }
         #endregion
 
         private void DataBase_loaded(object sender, RoutedEventArgs e)
         {
-            /*var context = new MetHoseContainer();
-            var corsheath = context.tCorrugSheathSet.ToList();
-            DateGridCS.ItemsSource = corsheath;*/
+            var context = new MetHoseContainer();
+            var corsheath = context.tCorrugSheathSet.ToList();            
+            DateGridCS.ItemsSource = corsheath;
+            
         }
 
         #region Checked and Unchecked для CheckBox определяющих нормализованное и отоженное состояние
@@ -461,5 +468,9 @@ namespace RCProject
 
         #endregion
 
+        private void MaterialCorSh_kn_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

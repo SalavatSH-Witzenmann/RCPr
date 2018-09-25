@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Data.Entity.Core.Objects;
 using System.Windows;
 using System.Linq;
+using System.Data.Entity;
 
 namespace RCProject
 {
@@ -368,6 +369,9 @@ namespace RCProject
             var context = new MetHoseContainer();
             var corsheath = context.tCorrugSheathSet.ToList();            
             DateGridCS.ItemsSource = corsheath;
+
+            context.tMaterialSet.Load();
+            MaterialCorSh_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
             
         }
 

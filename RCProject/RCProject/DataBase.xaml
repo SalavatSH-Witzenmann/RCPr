@@ -224,12 +224,14 @@
                                                     Margin="755,170,10,450">
                                                   <Grid>
                                                      <ListView Name="MaterialCorSh_kn"
-                                                          Margin="0,0,0,0" SelectedItem="CorrigSH_SelectedItem" SelectionChanged="MaterialCorSh_kn_SelectionChanged">                                                        
+                                                          Margin="0,0,0,0" 
+                                                               SelectedItem="CorrigSH_SelectedItem" 
+                                                               SelectionChanged="MaterialCorSh_kn_SelectionChanged">                                                        
                                                         <ListView.View>                                                        
                                                            <GridView>                                                            
                                                               <GridView.Columns>
-                                                                        <GridViewColumn Header="ID" Width="60"/>
-                                                                        <GridViewColumn Header="DIN" Width="60"/>
+                                                                        <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=DN}"/>
+                                                                        <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
                                                                         <GridViewColumn Header="AISI" Width="60"/>
                                                                         <GridViewColumn Header="GOST" Width="60"/>
                                                                         <GridViewColumn Header="JIS" Width="60"/>

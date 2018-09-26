@@ -232,11 +232,11 @@
                                                               <GridView.Columns>
                                                                         <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=DN}"/>
                                                                         <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
-                                                                        <GridViewColumn Header="AISI" Width="60"/>
-                                                                        <GridViewColumn Header="GOST" Width="60"/>
-                                                                        <GridViewColumn Header="JIS" Width="60"/>
-                                                                        <GridViewColumn Header="BS" Width="60"/>
-                                                                        <GridViewColumn Header="AFNOR" Width="60"/>
+                                                                        <GridViewColumn Header="AISI" Width="60" DisplayMemberBinding="{Binding Path=NameAISI}"/>
+                                                                        <GridViewColumn Header="GOST" Width="60" DisplayMemberBinding="{Binding Path=NameGOST}"/>
+                                                                        <GridViewColumn Header="JIS" Width="60" DisplayMemberBinding="{Binding Path=NameJIS}"/>
+                                                                        <GridViewColumn Header="BS" Width="60" DisplayMemberBinding="{Binding Path=NameBS}"/>
+                                                                        <GridViewColumn Header="AFNOR" Width="60" DisplayMemberBinding="{Binding Path=NameAFNOR}"/>
                                                               </GridView.Columns>                                                            
                                                            </GridView>                                                        
                                                         </ListView.View>                                                            

@@ -45,7 +45,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="DN" Type="Int16" Nullable="false" />
     <Property Name="PN" Type="Double" Nullable="false" />
     <Property Name="Dout" Type="Double" Nullable="true" />
@@ -56,8 +56,8 @@
     <Property Name="Rmin" Type="Int16" Nullable="true" />
     <Property Name="Rn" Type="Int16" Nullable="true" />
     <Property Name="Th" Type="Double" Nullable="true" />
-    <Property Name="Executor" Type="String" Nullable="true" />
-    <Property Name="Description" Type="String" Nullable="true" />
+    <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tCorrugSheathtMaterial" FromRole="tCorrugSheath" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetCorrugSheath" FromRole="tCorrugSheath" ToRole="tMetHose" />
@@ -67,12 +67,12 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NameDIN" Type="String" Nullable="true" />
-    <Property Name="NameGOST" Type="String" Nullable="true" />
-    <Property Name="NameAISI" Type="String" Nullable="true" />
-    <Property Name="NameJIS" Type="String" Nullable="true" />
-    <Property Name="NameBS" Type="String" Nullable="true" />
-    <Property Name="NameAFNOR" Type="String" Nullable="true" />
+    <Property Name="NameDIN" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameGOST" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameAISI" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameJIS" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameBS" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameAFNOR" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="ContFe" Type="Double" Nullable="true" />
     <Property Name="ContC" Type="Double" Nullable="true" />
     <Property Name="ContSi" Type="Double" Nullable="true" />
@@ -128,11 +128,11 @@
     <Property Name="TempBrittleness" Type="Boolean" Nullable="true" />
     <Property Name="AnnealedCond" Type="Boolean" Nullable="true" />
     <Property Name="NormalizState" Type="Boolean" Nullable="true" />
-    <Property Name="TypeStruct" Type="String" Nullable="true" />
-    <Property Name="PurposeSteel" Type="String" Nullable="true" />
-    <Property Name="PurposeSteel2" Type="String" Nullable="true" />
-    <Property Name="QualitySteel" Type="String" Nullable="true" />
-    <Property Name="DegreeDeoxid" Type="String" Nullable="true" />
+    <Property Name="TypeStruct" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PurposeSteel" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PurposeSteel2" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="QualitySteel" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DegreeDeoxid" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstMaterial" FromRole="tMaterial" ToRole="tGlass" />
     <NavigationProperty Name="tBraid" Relationship="MetHose.tBraidtMaterial" FromRole="tMaterial" ToRole="tBraid" />
     <NavigationProperty Name="tRing" Relationship="MetHose.tRingtMaterial" FromRole="tMaterial" ToRole="tRing" />
@@ -144,8 +144,8 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DN" Type="Int16" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="UntypicalName" Type="String" Nullable="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UntypicalName" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="UntypicalCheck" Type="Boolean" Nullable="true" />
     <Property Name="Dout" Type="Double" Nullable="false" />
     <Property Name="Th" Type="Double" Nullable="false" />
@@ -153,8 +153,8 @@
     <Property Name="ExpanRing" Type="Boolean" Nullable="true" />
     <Property Name="CompressRing" Type="Boolean" Nullable="true" />
     <Property Name="Din" Type="Double" Nullable="true" />
-    <Property Name="Executor" Type="String" Nullable="true" />
-    <Property Name="Description" Type="String" Nullable="true" />
+    <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetGlass" FromRole="tGlass" ToRole="tMetHose" />
@@ -177,15 +177,15 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DN" Type="Int16" Nullable="false" />
-    <Property Name="TypeBr" Type="String" Nullable="false" />
+    <Property Name="TypeBr" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Dout" Type="Double" Nullable="false" />
     <Property Name="Din" Type="Double" Nullable="false" />
     <Property Name="NumbStrands" Type="Int16" Nullable="true" />
     <Property Name="NymbThreads" Type="Int16" Nullable="true" />
     <Property Name="DThreads" Type="Double" Nullable="false" />
     <Property Name="AngleWeaving" Type="Double" Nullable="true" />
-    <Property Name="Executor" Type="String" Nullable="true" />
-    <Property Name="Description" Type="String" Nullable="true" />
+    <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tBraidtMaterial" FromRole="tBraid" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetBraid" FromRole="tBraid" ToRole="tMetHose" />
@@ -208,14 +208,14 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tRingtMaterial" FromRole="tRing" ToRole="tMaterial" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Designation" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Designation" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="DN" Type="Int16" Nullable="false" />
     <Property Name="PN" Type="Double" Nullable="false" />
     <Property Name="Dout" Type="Double" Nullable="false" />
     <Property Name="Th" Type="Double" Nullable="false" />
     <Property Name="LN" Type="Double" Nullable="false" />
-    <Property Name="WeldingSide" Type="String" Nullable="true" />
+    <Property Name="WeldingSide" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="ChamExtR" Type="Double" Nullable="true" />
     <Property Name="ChamExtL" Type="Double" Nullable="true" />
     <Property Name="ChamIntR" Type="Double" Nullable="true" />
@@ -232,7 +232,7 @@
     <Property Name="AngleCoupExtL" Type="Double" Nullable="true" />
     <Property Name="AngleCoupIntR" Type="Double" Nullable="true" />
     <Property Name="AngleCoupIntL" Type="Double" Nullable="true" />
-    <Property Name="Description" Type="String" Nullable="true" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tRingtMetHose" FromRole="tRing" ToRole="tMetHose" />
   </EntityType>
@@ -255,12 +255,12 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DN" Type="Int16" Nullable="false" />
     <Property Name="PN" Type="Double" Nullable="false" />
-    <Property Name="NamePrimary" Type="String" Nullable="true" cg:SetterAccess="Public" />
-    <Property Name="NameSecondary" Type="String" Nullable="true" ConcurrencyMode="None" MaxLength="Max" />
+    <Property Name="NamePrimary" Type="String" Nullable="true" cg:SetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameSecondary" Type="String" Nullable="true" ConcurrencyMode="None" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="PHydTest" Type="Double" Nullable="true" />
     <Property Name="PPneumTest" Type="Double" Nullable="true" />
-    <Property Name="Description" Type="String" Nullable="true" />
-    <Property Name="Executor" Type="String" Nullable="true" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tCorrugSheath" Relationship="MetHose.tMetHosetCorrugSheath" FromRole="tMetHose" ToRole="tCorrugSheath" />
     <Property Name="tCorrugSheathID" Type="Int32" Nullable="true" />
     <NavigationProperty Name="tBraid" Relationship="MetHose.tMetHosetBraid" FromRole="tMetHose" ToRole="tBraid" />

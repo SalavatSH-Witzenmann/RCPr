@@ -474,7 +474,7 @@ namespace RCProject
 
         private void MaterialCorSh_kn_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+           
         }
     }
 }

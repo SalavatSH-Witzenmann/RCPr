@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yinmQDO0lrDkGkMp6eEjLe8w5cscAAF51VpEFjuyx5o=</dsig:DigestValue>
+        <dsig:DigestValue>TtwfmL6J7Nx8Ij3NSwzp/+QQVj5yUM7j0yCuaFN351Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -96,13 +96,13 @@
       <dsig:DigestValue>/QPgV1krWo13ZkG3mLlZIE4T1NCQkL2JsCjeA3AS8Bo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MetHose.edmx.sql" size="10944">
+  <file name="MetHose.edmx.sql" size="12675">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ug2WJ6lEhwpNMuHoCKA8C8NHjlO/9pCnShhx3LjI5ec=</dsig:DigestValue>
+      <dsig:DigestValue>SQuSHKoCWj7nnLDjEu9s72eQ/hDKQ0RJABSlY5fFp8c=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MetHose.tt" size="25276">
@@ -114,13 +114,13 @@
       <dsig:DigestValue>Dg51UFAl4D/hSihtbvP1bS0AoHIv+HSQHWv3fToUg1g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RCProject.exe.config" size="1865">
+  <file name="RCProject.exe.config" size="2017">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6mp7v1t6nsxfgy5dFvN22UGrSIhIgKoFsE52wjprmIY=</dsig:DigestValue>
+      <dsig:DigestValue>KG6J1vjz00lIFTfvuQXoFWLY2w+RgNh7EukZ5ccBO00=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

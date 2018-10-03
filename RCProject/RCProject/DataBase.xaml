@@ -221,7 +221,7 @@
                                                     Width="87"/>
                                                 <ScrollViewer                                                    
                                                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                                                    Margin="755,170,10,450">
+                                                    Margin="755,170,10,380">
                                                   <Grid>
                                                      <ListView Name="MaterialCorSh_kn"
                                                           Margin="0,0,0,0" 

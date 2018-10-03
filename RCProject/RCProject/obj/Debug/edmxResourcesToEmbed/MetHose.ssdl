@@ -1,156 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MetHose.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="MetHoseStoreContainer">
-    <EntitySet Name="tCorrugSheathSet" EntityType="MetHose.Store.tCorrugSheathSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tMaterialSet" EntityType="MetHose.Store.tMaterialSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tGlassSet" EntityType="MetHose.Store.tGlassSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tBraidSet" EntityType="MetHose.Store.tBraidSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tRingSet" EntityType="MetHose.Store.tRingSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tMetHoseSet" EntityType="MetHose.Store.tMetHoseSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="tGlasstMaterial" Association="MetHose.Store.tGlasstMaterial">
-      <End Role="tGlass" EntitySet="tGlassSet" />
-      <End Role="tMaterial" EntitySet="tMaterialSet" />
-    </AssociationSet>
-    <AssociationSet Name="tBraidtMaterial" Association="MetHose.Store.tBraidtMaterial">
-      <End Role="tBraid" EntitySet="tBraidSet" />
-      <End Role="tMaterial" EntitySet="tMaterialSet" />
-    </AssociationSet>
-    <AssociationSet Name="tRingtMaterial" Association="MetHose.Store.tRingtMaterial">
-      <End Role="tRing" EntitySet="tRingSet" />
-      <End Role="tMaterial" EntitySet="tMaterialSet" />
-    </AssociationSet>
-    <AssociationSet Name="tCorrugSheathtMaterial" Association="MetHose.Store.tCorrugSheathtMaterial">
-      <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
-      <End Role="tMaterial" EntitySet="tMaterialSet" />
-    </AssociationSet>
-    <AssociationSet Name="tMetHosetCorrugSheath" Association="MetHose.Store.tMetHosetCorrugSheath">
-      <End Role="tMetHose" EntitySet="tMetHoseSet" />
-      <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
-    </AssociationSet>
-    <AssociationSet Name="tMetHosetBraid" Association="MetHose.Store.tMetHosetBraid">
-      <End Role="tMetHose" EntitySet="tMetHoseSet" />
-      <End Role="tBraid" EntitySet="tBraidSet" />
-    </AssociationSet>
-    <AssociationSet Name="tMetHosetGlass" Association="MetHose.Store.tMetHosetGlass">
-      <End Role="tMetHose" EntitySet="tMetHoseSet" />
-      <End Role="tGlass" EntitySet="tGlassSet" />
-    </AssociationSet>
-    <AssociationSet Name="tRingtMetHose" Association="MetHose.Store.tRingtMetHose">
-      <End Role="tMetHose" EntitySet="tMetHoseSet" />
-      <End Role="tRing" EntitySet="tRingSet" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="tCorrugSheathSet">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DN" Type="smallint" Nullable="false" />
-    <Property Name="PN" Type="float" Nullable="false" />
-    <Property Name="Dout" Type="float" Nullable="true" />
-    <Property Name="Din" Type="float" Nullable="true" />
-    <Property Name="TPch" Type="float" Nullable="true" />
-    <Property Name="Dtop" Type="float" Nullable="true" />
-    <Property Name="Dbot" Type="float" Nullable="true" />
-    <Property Name="Rmin" Type="smallint" Nullable="true" />
-    <Property Name="Rn" Type="smallint" Nullable="true" />
-    <Property Name="Th" Type="float" Nullable="true" />
-    <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="tMaterialID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tMaterialSet">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NameDIN" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NameGOST" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NameAISI" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NameJIS" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NameBS" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NameAFNOR" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ContFe" Type="float" Nullable="true" />
-    <Property Name="ContC" Type="float" Nullable="true" />
-    <Property Name="ContSi" Type="float" Nullable="true" />
-    <Property Name="ContCr" Type="float" Nullable="true" />
-    <Property Name="ContNi" Type="float" Nullable="true" />
-    <Property Name="ContNb" Type="float" Nullable="true" />
-    <Property Name="ContTa" Type="float" Nullable="true" />
-    <Property Name="ContW" Type="float" Nullable="true" />
-    <Property Name="ContMn" Type="float" Nullable="true" />
-    <Property Name="ContCu" Type="float" Nullable="true" />
-    <Property Name="ContSe" Type="float" Nullable="true" />
-    <Property Name="ContCo" Type="float" Nullable="true" />
-    <Property Name="ContMo" Type="float" Nullable="true" />
-    <Property Name="ContBi" Type="float" Nullable="true" />
-    <Property Name="ContP" Type="float" Nullable="true" />
-    <Property Name="ContB" Type="float" Nullable="true" />
-    <Property Name="ContTi" Type="float" Nullable="true" />
-    <Property Name="ContV" Type="float" Nullable="true" />
-    <Property Name="ContZr" Type="float" Nullable="true" />
-    <Property Name="ContAl" Type="float" Nullable="true" />
-    <Property Name="ContCd" Type="float" Nullable="true" />
-    <Property Name="ContAs" Type="float" Nullable="true" />
-    <Property Name="ContS" Type="float" Nullable="true" />
-    <Property Name="ContCe" Type="float" Nullable="true" />
-    <Property Name="ContA" Type="float" Nullable="true" />
-    <Property Name="ContSn" Type="float" Nullable="true" />
-    <Property Name="ContPb" Type="float" Nullable="true" />
-    <Property Name="ContU" Type="float" Nullable="true" />
-    <Property Name="ContO" Type="float" Nullable="true" />
-    <Property Name="ContH" Type="float" Nullable="true" />
-    <Property Name="ContPt" Type="float" Nullable="true" />
-    <Property Name="ContAu" Type="float" Nullable="true" />
-    <Property Name="ContNa" Type="float" Nullable="true" />
-    <Property Name="ContMg" Type="float" Nullable="true" />
-    <Property Name="ContGe" Type="float" Nullable="true" />
-    <Property Name="ContRe" Type="float" Nullable="true" />
-    <Property Name="ContAr" Type="float" Nullable="true" />
-    <Property Name="ContLi" Type="float" Nullable="true" />
-    <Property Name="ContIr" Type="float" Nullable="true" />
-    <Property Name="ContPd" Type="float" Nullable="true" />
-    <Property Name="YieldStren" Type="float" Nullable="true" />
-    <Property Name="StrenLimit" Type="float" Nullable="true" />
-    <Property Name="Hardness" Type="smallint" Nullable="true" />
-    <Property Name="YoungMod" Type="float" Nullable="true" />
-    <Property Name="Density" Type="float" Nullable="true" />
-    <Property Name="ImpTough" Type="float" Nullable="true" />
-    <Property Name="ShearModul" Type="float" Nullable="true" />
-    <Property Name="PoissonRatio" Type="float" Nullable="true" />
-    <Property Name="CoefTherConduct" Type="float" Nullable="true" />
-    <Property Name="CoefHeatCapacity" Type="float" Nullable="true" />
-    <Property Name="DifficultWeld" Type="bit" Nullable="true" />
-    <Property Name="Flxenosensitivity" Type="bit" Nullable="true" />
-    <Property Name="TempBrittleness" Type="bit" Nullable="true" />
-    <Property Name="AnnealedCond" Type="bit" Nullable="true" />
-    <Property Name="NormalizState" Type="bit" Nullable="true" />
-    <Property Name="TypeStruct" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PurposeSteel" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PurposeSteel2" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="QualitySteel" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="DegreeDeoxid" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="tGlassSet">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DN" Type="smallint" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="UntypicalName" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="UntypicalCheck" Type="bit" Nullable="true" />
-    <Property Name="Dout" Type="float" Nullable="false" />
-    <Property Name="Th" Type="float" Nullable="false" />
-    <Property Name="Ls" Type="float" Nullable="false" />
-    <Property Name="ExpanRing" Type="bit" Nullable="true" />
-    <Property Name="CompressRing" Type="bit" Nullable="true" />
-    <Property Name="Din" Type="float" Nullable="true" />
-    <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="tMaterialID" Type="int" Nullable="false" />
-  </EntityType>
+<Schema Namespace="MetHose.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="tBraidSet">
     <Key>
       <PropertyRef Name="ID" />
@@ -160,13 +9,142 @@
     <Property Name="TypeBr" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Dout" Type="float" Nullable="false" />
     <Property Name="Din" Type="float" Nullable="false" />
-    <Property Name="NumbStrands" Type="smallint" Nullable="true" />
-    <Property Name="NymbThreads" Type="smallint" Nullable="true" />
+    <Property Name="NumbStrands" Type="smallint" />
+    <Property Name="NymbThreads" Type="smallint" />
     <Property Name="DThreads" Type="float" Nullable="false" />
-    <Property Name="AngleWeaving" Type="float" Nullable="true" />
-    <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AngleWeaving" Type="float" />
+    <Property Name="Executor" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="tMaterialID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tCorrugSheathSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DN" Type="smallint" Nullable="false" />
+    <Property Name="PN" Type="float" Nullable="false" />
+    <Property Name="Dout" Type="float" />
+    <Property Name="Din" Type="float" />
+    <Property Name="TPch" Type="float" />
+    <Property Name="Dtop" Type="float" />
+    <Property Name="Dbot" Type="float" />
+    <Property Name="Rmin" Type="smallint" />
+    <Property Name="Rn" Type="smallint" />
+    <Property Name="Th" Type="float" />
+    <Property Name="Executor" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="tMaterialID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tGlassSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DN" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UntypicalName" Type="nvarchar(max)" />
+    <Property Name="UntypicalCheck" Type="bit" />
+    <Property Name="Dout" Type="float" Nullable="false" />
+    <Property Name="Th" Type="float" Nullable="false" />
+    <Property Name="Ls" Type="float" Nullable="false" />
+    <Property Name="ExpanRing" Type="bit" />
+    <Property Name="CompressRing" Type="bit" />
+    <Property Name="Din" Type="float" />
+    <Property Name="Executor" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="tMaterialID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tMaterialSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameDIN" Type="nvarchar(max)" />
+    <Property Name="NameGOST" Type="nvarchar(max)" />
+    <Property Name="NameAISI" Type="nvarchar(max)" />
+    <Property Name="NameJIS" Type="nvarchar(max)" />
+    <Property Name="NameBS" Type="nvarchar(max)" />
+    <Property Name="NameAFNOR" Type="nvarchar(max)" />
+    <Property Name="ContFe" Type="float" />
+    <Property Name="ContC" Type="float" />
+    <Property Name="ContSi" Type="float" />
+    <Property Name="ContCr" Type="float" />
+    <Property Name="ContNi" Type="float" />
+    <Property Name="ContNb" Type="float" />
+    <Property Name="ContTa" Type="float" />
+    <Property Name="ContW" Type="float" />
+    <Property Name="ContMn" Type="float" />
+    <Property Name="ContCu" Type="float" />
+    <Property Name="ContSe" Type="float" />
+    <Property Name="ContCo" Type="float" />
+    <Property Name="ContMo" Type="float" />
+    <Property Name="ContBi" Type="float" />
+    <Property Name="ContP" Type="float" />
+    <Property Name="ContB" Type="float" />
+    <Property Name="ContTi" Type="float" />
+    <Property Name="ContV" Type="float" />
+    <Property Name="ContZr" Type="float" />
+    <Property Name="ContAl" Type="float" />
+    <Property Name="ContCd" Type="float" />
+    <Property Name="ContAs" Type="float" />
+    <Property Name="ContS" Type="float" />
+    <Property Name="ContCe" Type="float" />
+    <Property Name="ContA" Type="float" />
+    <Property Name="ContSn" Type="float" />
+    <Property Name="ContPb" Type="float" />
+    <Property Name="ContU" Type="float" />
+    <Property Name="ContO" Type="float" />
+    <Property Name="ContH" Type="float" />
+    <Property Name="ContPt" Type="float" />
+    <Property Name="ContAu" Type="float" />
+    <Property Name="ContNa" Type="float" />
+    <Property Name="ContMg" Type="float" />
+    <Property Name="ContGe" Type="float" />
+    <Property Name="ContRe" Type="float" />
+    <Property Name="ContAr" Type="float" />
+    <Property Name="ContLi" Type="float" />
+    <Property Name="ContIr" Type="float" />
+    <Property Name="ContPd" Type="float" />
+    <Property Name="YieldStren" Type="float" />
+    <Property Name="StrenLimit" Type="float" />
+    <Property Name="Hardness" Type="smallint" />
+    <Property Name="YoungMod" Type="float" />
+    <Property Name="Density" Type="float" />
+    <Property Name="ImpTough" Type="float" />
+    <Property Name="ShearModul" Type="float" />
+    <Property Name="PoissonRatio" Type="float" />
+    <Property Name="CoefTherConduct" Type="float" />
+    <Property Name="CoefHeatCapacity" Type="float" />
+    <Property Name="DifficultWeld" Type="bit" />
+    <Property Name="Flxenosensitivity" Type="bit" />
+    <Property Name="TempBrittleness" Type="bit" />
+    <Property Name="AnnealedCond" Type="bit" />
+    <Property Name="NormalizState" Type="bit" />
+    <Property Name="TypeStruct" Type="nvarchar(max)" />
+    <Property Name="PurposeSteel" Type="nvarchar(max)" />
+    <Property Name="PurposeSteel2" Type="nvarchar(max)" />
+    <Property Name="QualitySteel" Type="nvarchar(max)" />
+    <Property Name="DegreeDeoxid" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tMetHoseSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DN" Type="smallint" Nullable="false" />
+    <Property Name="PN" Type="float" Nullable="false" />
+    <Property Name="NamePrimary" Type="nvarchar(max)" />
+    <Property Name="NameSecondary" Type="nvarchar(max)" />
+    <Property Name="PHydTest" Type="float" />
+    <Property Name="PPneumTest" Type="float" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Executor" Type="nvarchar(max)" />
+    <Property Name="tCorrugSheathID" Type="int" />
+    <Property Name="tBraidID" Type="int" />
+    <Property Name="tGlass_ID" Type="int" />
+    <Property Name="tRing_ID" Type="int" />
   </EntityType>
   <EntityType Name="tRingSet">
     <Key>
@@ -180,138 +158,160 @@
     <Property Name="Dout" Type="float" Nullable="false" />
     <Property Name="Th" Type="float" Nullable="false" />
     <Property Name="LN" Type="float" Nullable="false" />
-    <Property Name="WeldingSide" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ChamExtR" Type="float" Nullable="true" />
-    <Property Name="ChamExtL" Type="float" Nullable="true" />
-    <Property Name="ChamIntR" Type="float" Nullable="true" />
-    <Property Name="ChamIntL" Type="float" Nullable="true" />
-    <Property Name="AngleExtR" Type="float" Nullable="true" />
-    <Property Name="AngleExtL" Type="float" Nullable="true" />
-    <Property Name="AngleIntR" Type="float" Nullable="true" />
-    <Property Name="AngleIntL" Type="float" Nullable="true" />
-    <Property Name="BoringExtR" Type="float" Nullable="true" />
-    <Property Name="BoringExtL" Type="float" Nullable="true" />
-    <Property Name="BoringIntR" Type="float" Nullable="true" />
-    <Property Name="BoringIntL" Type="float" Nullable="true" />
-    <Property Name="AngleCoupExtR" Type="float" Nullable="true" />
-    <Property Name="AngleCoupExtL" Type="float" Nullable="true" />
-    <Property Name="AngleCoupIntR" Type="float" Nullable="true" />
-    <Property Name="AngleCoupIntL" Type="float" Nullable="true" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="WeldingSide" Type="nvarchar(max)" />
+    <Property Name="ChamExtR" Type="float" />
+    <Property Name="ChamExtL" Type="float" />
+    <Property Name="ChamIntR" Type="float" />
+    <Property Name="ChamIntL" Type="float" />
+    <Property Name="AngleExtR" Type="float" />
+    <Property Name="AngleExtL" Type="float" />
+    <Property Name="AngleIntR" Type="float" />
+    <Property Name="AngleIntL" Type="float" />
+    <Property Name="BoringExtR" Type="float" />
+    <Property Name="BoringExtL" Type="float" />
+    <Property Name="BoringIntR" Type="float" />
+    <Property Name="BoringIntL" Type="float" />
+    <Property Name="AngleCoupExtR" Type="float" />
+    <Property Name="AngleCoupExtL" Type="float" />
+    <Property Name="AngleCoupIntR" Type="float" />
+    <Property Name="AngleCoupIntL" Type="float" />
+    <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="tMaterialID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="tMetHoseSet">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DN" Type="smallint" Nullable="false" />
-    <Property Name="PN" Type="float" Nullable="false" />
-    <Property Name="NamePrimary" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NameSecondary" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PHydTest" Type="float" Nullable="true" />
-    <Property Name="PPneumTest" Type="float" Nullable="true" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="tCorrugSheathID" Type="int" Nullable="true" />
-    <Property Name="tBraidID" Type="int" Nullable="true" />
-    <Property Name="tGlass_ID" Type="int" Nullable="true" />
-    <Property Name="tRing_ID" Type="int" Nullable="true" />
-  </EntityType>
-  <Association Name="tGlasstMaterial">
-    <End Role="tGlass" Type="MetHose.Store.tGlassSet" Multiplicity="*" />
-    <End Role="tMaterial" Type="MetHose.Store.tMaterialSet" Multiplicity="1" />
+  <Association Name="FK_tBraidtMaterial">
+    <End Role="tMaterialSet" Type="Self.tMaterialSet" Multiplicity="1" />
+    <End Role="tBraidSet" Type="Self.tBraidSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tMaterial">
+      <Principal Role="tMaterialSet">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tGlass">
+      <Dependent Role="tBraidSet">
         <PropertyRef Name="tMaterialID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tBraidtMaterial">
-    <End Role="tBraid" Type="MetHose.Store.tBraidSet" Multiplicity="*" />
-    <End Role="tMaterial" Type="MetHose.Store.tMaterialSet" Multiplicity="1" />
+  <Association Name="FK_tCorrugSheathtMaterial">
+    <End Role="tMaterialSet" Type="Self.tMaterialSet" Multiplicity="1" />
+    <End Role="tCorrugSheathSet" Type="Self.tCorrugSheathSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tMaterial">
+      <Principal Role="tMaterialSet">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tBraid">
+      <Dependent Role="tCorrugSheathSet">
         <PropertyRef Name="tMaterialID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tRingtMaterial">
-    <End Role="tRing" Type="MetHose.Store.tRingSet" Multiplicity="*" />
-    <End Role="tMaterial" Type="MetHose.Store.tMaterialSet" Multiplicity="1" />
+  <Association Name="FK_tGlasstMaterial">
+    <End Role="tMaterialSet" Type="Self.tMaterialSet" Multiplicity="1" />
+    <End Role="tGlassSet" Type="Self.tGlassSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tMaterial">
+      <Principal Role="tMaterialSet">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tRing">
+      <Dependent Role="tGlassSet">
         <PropertyRef Name="tMaterialID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tCorrugSheathtMaterial">
-    <End Role="tCorrugSheath" Type="MetHose.Store.tCorrugSheathSet" Multiplicity="*" />
-    <End Role="tMaterial" Type="MetHose.Store.tMaterialSet" Multiplicity="1" />
+  <Association Name="FK_tMetHosetBraid">
+    <End Role="tBraidSet" Type="Self.tBraidSet" Multiplicity="0..1" />
+    <End Role="tMetHoseSet" Type="Self.tMetHoseSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tMaterial">
+      <Principal Role="tBraidSet">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tCorrugSheath">
-        <PropertyRef Name="tMaterialID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tMetHosetCorrugSheath">
-    <End Role="tMetHose" Type="MetHose.Store.tMetHoseSet" Multiplicity="*" />
-    <End Role="tCorrugSheath" Type="MetHose.Store.tCorrugSheathSet" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tCorrugSheath">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="tMetHose">
-        <PropertyRef Name="tCorrugSheathID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tMetHosetBraid">
-    <End Role="tMetHose" Type="MetHose.Store.tMetHoseSet" Multiplicity="*" />
-    <End Role="tBraid" Type="MetHose.Store.tBraidSet" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tBraid">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="tMetHose">
+      <Dependent Role="tMetHoseSet">
         <PropertyRef Name="tBraidID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tMetHosetGlass">
-    <End Role="tMetHose" Type="MetHose.Store.tMetHoseSet" Multiplicity="*" />
-    <End Role="tGlass" Type="MetHose.Store.tGlassSet" Multiplicity="0..1" />
+  <Association Name="FK_tMetHosetCorrugSheath">
+    <End Role="tCorrugSheathSet" Type="Self.tCorrugSheathSet" Multiplicity="0..1" />
+    <End Role="tMetHoseSet" Type="Self.tMetHoseSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tGlass">
+      <Principal Role="tCorrugSheathSet">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tMetHose">
+      <Dependent Role="tMetHoseSet">
+        <PropertyRef Name="tCorrugSheathID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tMetHosetGlass">
+    <End Role="tGlassSet" Type="Self.tGlassSet" Multiplicity="0..1" />
+    <End Role="tMetHoseSet" Type="Self.tMetHoseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tGlassSet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tMetHoseSet">
         <PropertyRef Name="tGlass_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tRingtMetHose">
-    <End Role="tMetHose" Type="MetHose.Store.tMetHoseSet" Multiplicity="*" />
-    <End Role="tRing" Type="MetHose.Store.tRingSet" Multiplicity="0..1" />
+  <Association Name="FK_tRingtMaterial">
+    <End Role="tMaterialSet" Type="Self.tMaterialSet" Multiplicity="1" />
+    <End Role="tRingSet" Type="Self.tRingSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tRing">
+      <Principal Role="tMaterialSet">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tMetHose">
+      <Dependent Role="tRingSet">
+        <PropertyRef Name="tMaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tRingtMetHose">
+    <End Role="tRingSet" Type="Self.tRingSet" Multiplicity="0..1" />
+    <End Role="tMetHoseSet" Type="Self.tMetHoseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tRingSet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tMetHoseSet">
         <PropertyRef Name="tRing_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="MetHoseStoreContainer">
+    <EntitySet Name="tBraidSet" EntityType="Self.tBraidSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tCorrugSheathSet" EntityType="Self.tCorrugSheathSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tGlassSet" EntityType="Self.tGlassSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tMaterialSet" EntityType="Self.tMaterialSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tMetHoseSet" EntityType="Self.tMetHoseSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tRingSet" EntityType="Self.tRingSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tBraidtMaterial" Association="Self.FK_tBraidtMaterial">
+      <End Role="tMaterialSet" EntitySet="tMaterialSet" />
+      <End Role="tBraidSet" EntitySet="tBraidSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tCorrugSheathtMaterial" Association="Self.FK_tCorrugSheathtMaterial">
+      <End Role="tMaterialSet" EntitySet="tMaterialSet" />
+      <End Role="tCorrugSheathSet" EntitySet="tCorrugSheathSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tGlasstMaterial" Association="Self.FK_tGlasstMaterial">
+      <End Role="tMaterialSet" EntitySet="tMaterialSet" />
+      <End Role="tGlassSet" EntitySet="tGlassSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tMetHosetBraid" Association="Self.FK_tMetHosetBraid">
+      <End Role="tBraidSet" EntitySet="tBraidSet" />
+      <End Role="tMetHoseSet" EntitySet="tMetHoseSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tMetHosetCorrugSheath" Association="Self.FK_tMetHosetCorrugSheath">
+      <End Role="tCorrugSheathSet" EntitySet="tCorrugSheathSet" />
+      <End Role="tMetHoseSet" EntitySet="tMetHoseSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tMetHosetGlass" Association="Self.FK_tMetHosetGlass">
+      <End Role="tGlassSet" EntitySet="tGlassSet" />
+      <End Role="tMetHoseSet" EntitySet="tMetHoseSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tRingtMaterial" Association="Self.FK_tRingtMaterial">
+      <End Role="tMaterialSet" EntitySet="tMaterialSet" />
+      <End Role="tRingSet" EntitySet="tRingSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tRingtMetHose" Association="Self.FK_tRingtMetHose">
+      <End Role="tRingSet" EntitySet="tRingSet" />
+      <End Role="tMetHoseSet" EntitySet="tMetHoseSet" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

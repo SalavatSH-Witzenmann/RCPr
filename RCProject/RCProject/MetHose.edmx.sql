@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/23/2018 21:19:02
--- Generated from EDMX file: C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\MetHose.edmx
+-- Date Created: 10/03/2018 14:56:23
+-- Generated from EDMX file: C:\Users\Шаймарданов С М\Desktop\PROJECT_VS\work\RC\RCProject\RCProject\MetHose.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [MyDBExp2];
+USE [MetallHose];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,53 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_tGlasstMaterial]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tGlassSet] DROP CONSTRAINT [FK_tGlasstMaterial];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tBraidtMaterial]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tBraidSet] DROP CONSTRAINT [FK_tBraidtMaterial];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tRingtMaterial]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tRingSet] DROP CONSTRAINT [FK_tRingtMaterial];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tCorrugSheathtMaterial]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tCorrugSheathSet] DROP CONSTRAINT [FK_tCorrugSheathtMaterial];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tMetHosetCorrugSheath]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetCorrugSheath];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tMetHosetBraid]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetBraid];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tMetHosetGlass]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetGlass];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tRingtMetHose]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tRingtMetHose];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[tCorrugSheathSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tCorrugSheathSet];
+GO
+IF OBJECT_ID(N'[dbo].[tMaterialSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tMaterialSet];
+GO
+IF OBJECT_ID(N'[dbo].[tGlassSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tGlassSet];
+GO
+IF OBJECT_ID(N'[dbo].[tBraidSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tBraidSet];
+GO
+IF OBJECT_ID(N'[dbo].[tRingSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tRingSet];
+GO
+IF OBJECT_ID(N'[dbo].[tMetHoseSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tMetHoseSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables

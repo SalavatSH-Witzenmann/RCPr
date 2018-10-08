@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TtwfmL6J7Nx8Ij3NSwzp/+QQVj5yUM7j0yCuaFN351Y=</dsig:DigestValue>
+        <dsig:DigestValue>+hS5eZyTdsctUl9lmmJhORkCFiIbclWV4aSirweLqM8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,13 +114,13 @@
       <dsig:DigestValue>Dg51UFAl4D/hSihtbvP1bS0AoHIv+HSQHWv3fToUg1g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RCProject.exe.config" size="2017">
+  <file name="RCProject.exe.config" size="2041">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KG6J1vjz00lIFTfvuQXoFWLY2w+RgNh7EukZ5ccBO00=</dsig:DigestValue>
+      <dsig:DigestValue>fwYiCAf6zlRbnfGQ9XF9TyidLwF0AbExJkO37Pj2GMo=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

@@ -15,6 +15,8 @@ using System.Data.Entity.Core.Objects;
 using System.Windows;
 using System.Linq;
 using System.Data.Entity;
+using System.Data;
+using System.Collections.ObjectModel;
 
 namespace RCProject
 {
@@ -23,16 +25,14 @@ namespace RCProject
     /// </summary>
     public partial class DataBase : Window
     {
+        
         public DataBase()
         {
-            InitializeComponent();
+            InitializeComponent();                        
             ThCS_kn.PreviewTextInput += new TextCompositionEventHandler(text_input_mask);
         }
 
         
-
-
-
         private void SignClick(object sender, RoutedEventArgs e) //В разделе Кольцо комментарии к заполнению внешнего диаметра
         {
             MessageBox.Show("Пожалуйста обратите внимание, вводить необходимо наружный диаметр заготовки до операции обжатия/развальцовки," +
@@ -125,7 +125,7 @@ namespace RCProject
                 Dtop=Double.Parse(DtopCS_kn.Text), Dbot=Double.Parse(DbotCS_kn.Text),
                 Rmin=Int16.Parse(RminCS_kn.Text), Rn=Int16.Parse(RnCS_kn.Text),
                 Th=Double.Parse(ThCS_kn.Text), Description=DescriptionCS_kn.Text,
-                Executor = ExecutorCS_kn.Text};                                                                        //учитывать локализацию для типа string
+                Executor = ExecutorCS_kn.Text, tMaterialID=Int16.Parse(IDMaterailCS_kn_Copy.Text)}; //учитывать локализацию для типа string
             context.tCorrugSheathSet.Add(CorrugSheath);
             context.SaveChanges();
         }
@@ -367,11 +367,12 @@ namespace RCProject
         private void DataBase_loaded(object sender, RoutedEventArgs e)
         {
             var context = new MetHoseContainer();
-            var corsheath = context.tCorrugSheathSet.ToList();            
-            DateGridCS.ItemsSource = corsheath;
+            //var corsheath = context.tCorrugSheathSet.ToList();
+            //DateGridCS.ItemsSource = corsheath;
+           
 
-            context.tMaterialSet.Load();
-            MaterialCorSh_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
+            //context.tMaterialSet.Load();
+            //MaterialCorSh_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
             
         }
 
@@ -472,9 +473,10 @@ namespace RCProject
 
         #endregion
 
-        private void MaterialCorSh_kn_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        /*private void MaterialCorSh_kn_SelectionChanged(object sender, SelectionChangedEventArgs e)   //выбор в разделе гофрированной оболочки ListView с элементами - На данный момент консервация
         {
-           
-        }
+            var strk = MaterialCorSh_kn.SelectedItem.ToString();
+            MessageBox.Show(strk);
+        }*/
     }
 }

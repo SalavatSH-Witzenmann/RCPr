@@ -223,14 +223,12 @@
                                                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
                                                     Margin="755,170,10,380">
                                                   <Grid>
-                                                     <ListView Name="MaterialCorSh_kn"
-                                                          Margin="0,0,0,0" 
-                                                               SelectedItem="CorrigSH_SelectedItem" 
-                                                               SelectionChanged="MaterialCorSh_kn_SelectionChanged">                                                        
+                                                        <ListView Name="MaterialCorSh_kn"
+                                                               Margin="0,0,0,0">
                                                         <ListView.View>                                                        
                                                            <GridView>                                                            
                                                               <GridView.Columns>
-                                                                        <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=DN}"/>
+                                                                        <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=ID}"/>
                                                                         <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
                                                                         <GridViewColumn Header="AISI" Width="60" DisplayMemberBinding="{Binding Path=NameAISI}"/>
                                                                         <GridViewColumn Header="GOST" Width="60" DisplayMemberBinding="{Binding Path=NameGOST}"/>
@@ -259,27 +257,27 @@
                                                 <DataGrid Name="DateGridCS"
                                                     HorizontalAlignment="Left" 
                                                     Height="132" 
-                                                    Margin="10,329,0,0" 
+                                                    Margin="10,378,0,0" 
                                                     VerticalAlignment="Top" 
                                                     Width="1058"/>
                                                 <Button 
                                                     Content="Загрузить данные" 
                                                     HorizontalAlignment="Left" 
-                                                    Margin="10,486,0,0" 
+                                                    Margin="10,529,0,0" 
                                                     VerticalAlignment="Top" 
                                                     Width="117"/>
                                                 <Button 
                                                     Content="Сохранить изменения" 
                                                     HorizontalAlignment="Left" 
-                                                    Margin="164,486,0,0" 
+                                                    Margin="164,528,0,0" 
                                                     VerticalAlignment="Top" 
                                                     Width="150"/>
                                                 <Label 
-                                                    Content="Исполнитель:" 
+                                                    Content="Введите существующий ID:" 
                                                     HorizontalAlignment="Left" 
-                                                    Margin="10,284,0,0" 
+                                                    Margin="755,314,0,0" 
                                                     VerticalAlignment="Top" 
-                                                    Width="90"/>
+                                                    Width="160"/>
                                                 <TextBox Name="ExecutorCS_kn"
                                                     HorizontalAlignment="Left" 
                                                     Height="23" 
@@ -288,6 +286,20 @@
                                                     Text="" 
                                                     VerticalAlignment="Top" 
                                                     Width="289"/>
+                                                <TextBox x:Name="IDMaterailCS_kn_Copy"
+                                                    HorizontalAlignment="Left" 
+                                                    Height="23" 
+                                                    Margin="920,316,0,0" 
+                                                    TextWrapping="Wrap" 
+                                                    Text="" 
+                                                    VerticalAlignment="Top" 
+                                                    Width="60"/>
+                                                <Label 
+                                                    Content="Исполнитель:" 
+                                                    HorizontalAlignment="Left" 
+                                                    Margin="10,285,0,0" 
+                                                    VerticalAlignment="Top" 
+                                                    Width="88"/>
                                             </Grid>
                                         </TabItem>
                                         <TabItem Header="Вальцованная оболочка">

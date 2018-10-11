@@ -233,6 +233,7 @@
     <Property Name="AngleCoupIntR" Type="Double" Nullable="true" />
     <Property Name="AngleCoupIntL" Type="Double" Nullable="true" />
     <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Executor" Type="String" Nullable="true" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tRingtMetHose" FromRole="tRing" ToRole="tMetHose" />
   </EntityType>

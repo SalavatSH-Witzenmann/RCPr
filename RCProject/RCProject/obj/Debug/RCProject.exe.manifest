@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="319448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="326104">
       <assemblyIdentity name="RCProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+hS5eZyTdsctUl9lmmJhORkCFiIbclWV4aSirweLqM8=</dsig:DigestValue>
+        <dsig:DigestValue>NWuS2FJXgCDDEicB3kU1AkKbuM66KywiDw+/IPUvSSg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -96,13 +96,13 @@
       <dsig:DigestValue>/QPgV1krWo13ZkG3mLlZIE4T1NCQkL2JsCjeA3AS8Bo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MetHose.edmx.sql" size="12675">
+  <file name="MetHose.edmx.sql" size="12697">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>SQuSHKoCWj7nnLDjEu9s72eQ/hDKQ0RJABSlY5fFp8c=</dsig:DigestValue>
+      <dsig:DigestValue>6ge8IQ0GPEW5E2HgLo5Lw+OlPY6AfbA0LIqt3+9zq0Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MetHose.tt" size="25276">

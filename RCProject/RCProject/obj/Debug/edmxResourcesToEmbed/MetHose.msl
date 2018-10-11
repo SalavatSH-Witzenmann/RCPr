@@ -162,6 +162,7 @@
           <ScalarProperty Name="AngleCoupIntR" ColumnName="AngleCoupIntR" />
           <ScalarProperty Name="AngleCoupIntL" ColumnName="AngleCoupIntL" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
           <ScalarProperty Name="tMaterialID" ColumnName="tMaterialID" />
         </MappingFragment>
       </EntityTypeMapping>

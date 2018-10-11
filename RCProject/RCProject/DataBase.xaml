@@ -222,12 +222,12 @@
                                                 <ScrollViewer                                                    
                                                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
                                                     Margin="755,170,10,380">
-                                                  <Grid>
+                                                    <Grid>
                                                         <ListView Name="MaterialCorSh_kn"
                                                                Margin="0,0,0,0">
-                                                        <ListView.View>                                                        
-                                                           <GridView>                                                            
-                                                              <GridView.Columns>
+                                                            <ListView.View>
+                                                                <GridView>
+                                                                    <GridView.Columns>
                                                                         <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=ID}"/>
                                                                         <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
                                                                         <GridViewColumn Header="AISI" Width="60" DisplayMemberBinding="{Binding Path=NameAISI}"/>
@@ -235,11 +235,11 @@
                                                                         <GridViewColumn Header="JIS" Width="60" DisplayMemberBinding="{Binding Path=NameJIS}"/>
                                                                         <GridViewColumn Header="BS" Width="60" DisplayMemberBinding="{Binding Path=NameBS}"/>
                                                                         <GridViewColumn Header="AFNOR" Width="60" DisplayMemberBinding="{Binding Path=NameAFNOR}"/>
-                                                              </GridView.Columns>                                                            
-                                                           </GridView>                                                        
-                                                        </ListView.View>                                                            
+                                                                    </GridView.Columns>
+                                                                </GridView>
+                                                            </ListView.View>
                                                         </ListView>
-                                                   </Grid>
+                                                    </Grid>
                                                 </ScrollViewer>
                                                 <Label 
                                                     Content="Выберите материал ГЧ:" 
@@ -286,7 +286,7 @@
                                                     Text="" 
                                                     VerticalAlignment="Top" 
                                                     Width="289"/>
-                                                <TextBox x:Name="IDMaterailCS_kn_Copy"
+                                                <TextBox x:Name="IDMaterailCS_kn"
                                                     HorizontalAlignment="Left" 
                                                     Height="23" 
                                                     Margin="920,316,0,0" 
@@ -442,21 +442,39 @@
                                     <Button Name="But_BraidDB_filling"
                                         Content="Заполнить БД" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,265,0,0" 
+                                        Margin="10,341,0,0" 
                                         VerticalAlignment="Top" Width="95"
                                         Click="BraidDB_filling_click"/>
-                                    <DataGrid HorizontalAlignment="Left" Height="195" Margin="10,299,0,0" VerticalAlignment="Top" Width="774"/>
+                                    <DataGrid HorizontalAlignment="Left" Height="195" Margin="10,381,0,0" VerticalAlignment="Top" Width="774"/>
                                     <Label 
                                         Content="Выберите материал:" 
                                         HorizontalAlignment="Left" 
-                                        Margin="811,18,0,0" 
+                                        Margin="799,26,0,0" 
                                         VerticalAlignment="Top" Width="132"/>
-                                    <ListView Name="MaterialBraid_kn"
-                                        HorizontalAlignment="Left" 
-                                        Height="119" Margin="811,65,0,0" 
-                                        VerticalAlignment="Top" Width="361"/>
-                                    <Button Content="Загрузить данные" HorizontalAlignment="Left" Margin="10,526,0,0" VerticalAlignment="Top" Width="125"/>
-                                    <Button Content="Сохранить данные" HorizontalAlignment="Left" Margin="174,526,0,0" VerticalAlignment="Top" Width="125"/>
+                                    <ScrollViewer                                                    
+                                            ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                                            Margin="799,65,10.2,533.6">
+                                        <Grid>
+                                            <ListView Name="MaterialBraid_kn"
+                                                      Margin="0,0,0,0">
+                                                <ListView.View>
+                                                    <GridView>
+                                                        <GridView.Columns>
+                                                            <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=ID}"/>
+                                                            <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
+                                                            <GridViewColumn Header="AISI" Width="60" DisplayMemberBinding="{Binding Path=NameAISI}"/>
+                                                            <GridViewColumn Header="GOST" Width="60" DisplayMemberBinding="{Binding Path=NameGOST}"/>
+                                                            <GridViewColumn Header="JIS" Width="60" DisplayMemberBinding="{Binding Path=NameJIS}"/>
+                                                            <GridViewColumn Header="BS" Width="60" DisplayMemberBinding="{Binding Path=NameBS}"/>
+                                                            <GridViewColumn Header="AFNOR" Width="60" DisplayMemberBinding="{Binding Path=NameAFNOR}"/>
+                                                        </GridView.Columns>
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Grid>
+                                    </ScrollViewer>
+                                    <Button Content="Загрузить данные" HorizontalAlignment="Left" Margin="10,592,0,0" VerticalAlignment="Top" Width="125"/>
+                                    <Button Content="Сохранить данные" HorizontalAlignment="Left" Margin="168,591,0,0" VerticalAlignment="Top" Width="125"/>
                                     <Label 
                                         Content="Примечание:" 
                                         HorizontalAlignment="Left" 
@@ -470,13 +488,23 @@
                                     <Label 
                                         Content="Исполнитель:" 
                                         HorizontalAlignment="Left" 
-                                        Margin="517,204,0,0" 
+                                        Margin="10,278,0,0" 
                                         VerticalAlignment="Top" Width="85"/>
                                     <TextBox Name="ExecutorBraid_kn"
                                         HorizontalAlignment="Left" 
-                                        Height="26" Margin="607,204,0,0" 
+                                        Height="26" Margin="110,278,0,0" 
                                         TextWrapping="Wrap" Text="" 
                                         VerticalAlignment="Top" Width="387"/>
+                                    <Label 
+                                        Content="Введите существующий ID:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="811,201,0,0" 
+                                        VerticalAlignment="Top" Width="161"/>
+                                    <TextBox Name="IDMaterialBraid_kn"
+                                        HorizontalAlignment="Left" 
+                                        Height="26" Margin="977,201,0,0" 
+                                        TextWrapping="Wrap" Text="" 
+                                        VerticalAlignment="Top" Width="100"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Стакан">
@@ -575,20 +603,20 @@
                                         VerticalAlignment="Top"/>
                                     <TextBox Name="nDescriptionGlass_kn"
                                         HorizontalAlignment="Left" 
-                                        Height="41" Margin="533,64,0,0" 
+                                        Height="41" Margin="621,18,0,0" 
                                         TextWrapping="Wrap" 
                                         Text="" 
                                         VerticalAlignment="Top" 
-                                        Width="628"/>
+                                        Width="577"/>
                                     <Label 
                                         Content="Выберите сталь:" 
                                         HorizontalAlignment="Left" 
-                                        Margin="533,110,0,0" 
+                                        Margin="533,76,0,0" 
                                         VerticalAlignment="Top"/>
                                     <Button Name="ButtGlass_filling"
                                             Content="Заполнить БД" 
                                             HorizontalAlignment="Left" 
-                                            Margin="10,341,0,0" 
+                                            Margin="10,355,0,0" 
                                             VerticalAlignment="Top" 
                                             Width="93"
                                             Click="ButtGlass_filling_click"/>
@@ -607,7 +635,7 @@
                                         Width="394"/>
                                     <ComboBox Name="nTypeNameGlass_kn"
                                         HorizontalAlignment="Left" 
-                                        Margin="10,248,0,0" 
+                                        Margin="10,257,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="211" IsEditable="True"
                                         IsReadOnly="True"
@@ -623,26 +651,44 @@
                                     </ComboBox>
                                     <DataGrid 
                                         HorizontalAlignment="Left" 
-                                        Height="138" Margin="10,403,0,0" 
+                                        Height="138" Margin="10,401,0,0" 
                                         VerticalAlignment="Top" Width="580"/>
-                                    <ListView 
-                                        HorizontalAlignment="Left" 
-                                        Height="91" Margin="533,136,0,0" 
-                                        VerticalAlignment="Top" Width="628"/>
+                                    <ScrollViewer                                                    
+                                                    ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                                                    Margin="533,102,240.2,476.6">
+                                        <Grid>
+                                            <ListView Name="MaterialGlass_kn"
+                                                               Margin="0,0,0,0">
+                                                <ListView.View>
+                                                    <GridView>
+                                                        <GridView.Columns>
+                                                            <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=ID}"/>
+                                                            <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
+                                                            <GridViewColumn Header="AISI" Width="60" DisplayMemberBinding="{Binding Path=NameAISI}"/>
+                                                            <GridViewColumn Header="GOST" Width="60" DisplayMemberBinding="{Binding Path=NameGOST}"/>
+                                                            <GridViewColumn Header="JIS" Width="60" DisplayMemberBinding="{Binding Path=NameJIS}"/>
+                                                            <GridViewColumn Header="BS" Width="60" DisplayMemberBinding="{Binding Path=NameBS}"/>
+                                                            <GridViewColumn Header="AFNOR" Width="60" DisplayMemberBinding="{Binding Path=NameAFNOR}"/>
+                                                        </GridView.Columns>
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Grid>
+                                    </ScrollViewer>
                                     <Button 
                                         Content="Загрузить данные" 
                                         HorizontalAlignment="Left" 
-                                        Margin="10,560,0,0" 
+                                        Margin="10,562,0,0" 
                                         VerticalAlignment="Top" Width="123"/>
                                     <Button 
                                         Content="Сохранить данные" 
                                         HorizontalAlignment="Left" 
-                                        Margin="184,560,0,0" 
+                                        Margin="170,561,0,0" 
                                         VerticalAlignment="Top" Width="117"/>
                                     <GroupBox 
                                         Header="Нестандартный стакан" 
                                         HorizontalAlignment="Left" 
-                                        Height="113" Margin="244,248,0,0" 
+                                        Height="113" Margin="241,257,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="203">
                                         <Grid Margin="0,0,0,0">
@@ -672,7 +718,7 @@
                                     <GroupBox 
                                         Header="Технологические операции" 
                                         HorizontalAlignment="Left" 
-                                        Height="113" Margin="503,248,0,0" 
+                                        Height="113" Margin="462,257,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="250">
                                         <Grid Margin="0,0,0,0">
@@ -710,6 +756,18 @@
                                                     Width="75"/>
                                         </Grid>
                                     </GroupBox>
+                                    <TextBox Name="IDMaterialGlass_kn"
+                                        HorizontalAlignment="Left" 
+                                        Height="26" Margin="1007,142,0,0" 
+                                        TextWrapping="Wrap" 
+                                        Text="" 
+                                        VerticalAlignment="Top" 
+                                        Width="113"/>
+                                    <Label 
+                                        Content="Введите существуюший ID:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="1007,102,0,0" 
+                                        VerticalAlignment="Top"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Кольцо (П12 и др)">
@@ -848,10 +906,28 @@
                                         <ComboBoxItem Content="PN200,0"/>
                                         <ComboBoxItem Content="PN250,0"/>
                                     </ComboBox>
-                                    <ListView 
-                                        HorizontalAlignment="Left" 
-                                        Height="82" Margin="781,49,0,0" 
-                                        VerticalAlignment="Top" Width="440"/>
+                                    <ScrollViewer                                                    
+                                                    ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                                                    Margin="781,47,10.2,541.2">
+                                        <Grid>
+                                            <ListView Name="MaterialRing_kn"
+                                                               Margin="0,0,0,0">
+                                                <ListView.View>
+                                                    <GridView>
+                                                        <GridView.Columns>
+                                                            <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=ID}"/>
+                                                            <GridViewColumn Header="DIN" Width="60" DisplayMemberBinding="{Binding Path=NameDIN}"/>
+                                                            <GridViewColumn Header="AISI" Width="60" DisplayMemberBinding="{Binding Path=NameAISI}"/>
+                                                            <GridViewColumn Header="GOST" Width="60" DisplayMemberBinding="{Binding Path=NameGOST}"/>
+                                                            <GridViewColumn Header="JIS" Width="60" DisplayMemberBinding="{Binding Path=NameJIS}"/>
+                                                            <GridViewColumn Header="BS" Width="60" DisplayMemberBinding="{Binding Path=NameBS}"/>
+                                                            <GridViewColumn Header="AFNOR" Width="60" DisplayMemberBinding="{Binding Path=NameAFNOR}"/>
+                                                        </GridView.Columns>
+                                                    </GridView>
+                                                </ListView.View>
+                                            </ListView>
+                                        </Grid>
+                                    </ScrollViewer>
                                     <Label 
                                         Content="Выберите сталь:" 
                                         HorizontalAlignment="Left" 
@@ -862,7 +938,7 @@
                                         BorderBrush="Black" 
                                         BorderThickness="1" 
                                         HorizontalAlignment="Left" 
-                                        Height="164" Margin="10,196,0,0" 
+                                        Height="164" Margin="10,234,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="148">
                                         <Grid>
@@ -922,7 +998,7 @@
                                         HorizontalAlignment="Left" 
                                         Height="164"
                                         VerticalAlignment="Top" Width="1047" 
-                                        Margin="174,196,0,0">
+                                        Margin="174,234,0,0">
                                         <Grid>
                                             <TabControl Margin="0,0,0,0" Style="{DynamicResource TabControlStyle1}">
                                                 <TabControl.Resources>
@@ -1243,7 +1319,7 @@
                                     </Border>
                                     <DataGrid 
                                         HorizontalAlignment="Left" 
-                                        Height="178" Margin="10,531,0,0" 
+                                        Height="178" Margin="10,471,0,0" 
                                         VerticalAlignment="Top" 
                                         Width="1141"/>
                                     <Button 
@@ -1259,7 +1335,7 @@
                                     <Button Name="ButtFillRingBD"
                                             Content="Заполнить БД" 
                                             HorizontalAlignment="Left" 
-                                            Margin="10,375,0,0" 
+                                            Margin="10,412,0,0" 
                                             VerticalAlignment="Top" 
                                             Width="148"
                                             Click="ButtFillRingBD_click"/>
@@ -1320,6 +1396,39 @@
                                         ToolTip="В данное поле необходимо ввести имя кольца которое отображается в обозначении чертежа (пример: П.17х2х60)"/>
                                         </Grid>
                                     </GroupBox>
+                                    <Button Name="ButtFillRingBD_Load"
+                                        Content="Загрузить БД" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="10,671,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="148"/>
+                                    <Button Name="ButtFillRingBD_Save"
+                                        Content="Сохранить БД" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="188,671,0,0" 
+                                        VerticalAlignment="Top" 
+                                        Width="148"/>
+                                    <Label 
+                                        Content="Исполнитель:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="174,406,0,0" 
+                                        VerticalAlignment="Top"/>
+                                    <TextBox Name="nExecutorRing_kn"
+                                        HorizontalAlignment="Left" 
+                                        Height="23" Margin="280,406,0,0" 
+                                        TextWrapping="Wrap" Text="" 
+                                        VerticalAlignment="Top" Width="320"/>
+                                    <Label 
+                                        Content="Введите существующий ID:" 
+                                        HorizontalAlignment="Left" 
+                                        Margin="781,194,0,0" 
+                                        VerticalAlignment="Top" Width="161"/>
+                                    <TextBox x:Name="IDMaterialRing_kn"
+                                        HorizontalAlignment="Left" 
+                                        Height="23" Margin="955,194,0,0" 
+                                        TextWrapping="Wrap" Text="" 
+                                        VerticalAlignment="Top" Width="97"/>
+
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Фитинги">

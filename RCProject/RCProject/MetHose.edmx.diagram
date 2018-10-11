@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ffeafbb715644eaa4815733006f3689" Name="Diagram1" ZoomLevel="90" >
+      <Diagram DiagramId="8ffeafbb715644eaa4815733006f3689" Name="Diagram1" ZoomLevel="87" >
         <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="1.5" PointX="1.125" PointY="2.875" IsExpanded="false" />
         <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="3.875" PointY="8" IsExpanded="false" />
         <EntityTypeShape EntityType="MetHose.tGlass" Width="1.5" PointX="5" PointY="2.875" IsExpanded="false" />

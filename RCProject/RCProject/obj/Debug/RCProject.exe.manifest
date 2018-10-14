@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="326104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="327128">
       <assemblyIdentity name="RCProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NWuS2FJXgCDDEicB3kU1AkKbuM66KywiDw+/IPUvSSg=</dsig:DigestValue>
+        <dsig:DigestValue>X/nO5WximdRyGMoM79UuKsW5uIi1Ay9LBq/Xe9qLfw0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,7 +102,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6ge8IQ0GPEW5E2HgLo5Lw+OlPY6AfbA0LIqt3+9zq0Y=</dsig:DigestValue>
+      <dsig:DigestValue>1Ogs0r6jf/lLu/fmqM7J14dFS89OZvfhYqJ90TdmBrw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MetHose.tt" size="25276">

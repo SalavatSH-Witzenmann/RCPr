@@ -17,6 +17,9 @@ namespace RCProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tGlass()
         {
+            this.UntypicalCheck = false;
+            this.ExpanRing = false;
+            this.CompressRing = false;
             this.tMetHose = new HashSet<tMetHose>();
         }
     

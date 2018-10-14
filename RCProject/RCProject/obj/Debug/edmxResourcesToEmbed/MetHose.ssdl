@@ -140,12 +140,12 @@
     <Property Name="DN" Type="smallint" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UntypicalName" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="UntypicalCheck" Type="bit" Nullable="true" />
+    <Property Name="UntypicalCheck" Type="bit" Nullable="true" DefaultValue="false" />
     <Property Name="Dout" Type="float" Nullable="false" />
     <Property Name="Th" Type="float" Nullable="false" />
     <Property Name="Ls" Type="float" Nullable="false" />
-    <Property Name="ExpanRing" Type="bit" Nullable="true" />
-    <Property Name="CompressRing" Type="bit" Nullable="true" />
+    <Property Name="ExpanRing" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="CompressRing" Type="bit" Nullable="true" DefaultValue="false" />
     <Property Name="Din" Type="float" Nullable="true" />
     <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="true" />

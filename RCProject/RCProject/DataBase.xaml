@@ -445,7 +445,10 @@
                                         Margin="10,341,0,0" 
                                         VerticalAlignment="Top" Width="95"
                                         Click="BraidDB_filling_click"/>
-                                    <DataGrid HorizontalAlignment="Left" Height="195" Margin="10,381,0,0" VerticalAlignment="Top" Width="774"/>
+                                    <DataGrid Name="DataGridBraid"
+                                        HorizontalAlignment="Left" 
+                                        Height="160" Margin="10,381,0,0" 
+                                        VerticalAlignment="Top" Width="921"/>
                                     <Label 
                                         Content="Выберите материал:" 
                                         HorizontalAlignment="Left" 
@@ -649,10 +652,10 @@
                                         <ComboBoxItem Content="U38"/>
                                         <ComboBoxItem Content="U42"/>
                                     </ComboBox>
-                                    <DataGrid 
+                                    <DataGrid Name="DataGridGlass"
                                         HorizontalAlignment="Left" 
                                         Height="138" Margin="10,401,0,0" 
-                                        VerticalAlignment="Top" Width="580"/>
+                                        VerticalAlignment="Top" Width="702"/>
                                     <ScrollViewer                                                    
                                                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
                                                     Margin="533,102,240.2,476.6">
@@ -743,10 +746,10 @@
                                                      VerticalAlignment="Top" 
                                                      Width="46" IsEnabled="False"/>
                                             <Label 
-                                        Content="Внутренний диаметр, Din:" 
-                                        HorizontalAlignment="Left" 
-                                        Margin="10,55,0,0" 
-                                        VerticalAlignment="Top"/>
+                                                Content="Внутренний диаметр, Din:" 
+                                                HorizontalAlignment="Left" 
+                                                Margin="10,55,0,0" 
+                                                VerticalAlignment="Top"/>
                                             <Button Name="ButNullRadioBut"
                                                     Click="ButNullRadioBut_click"
                                                     Content="Обнулить" 
@@ -767,7 +770,7 @@
                                         Content="Введите существуюший ID:" 
                                         HorizontalAlignment="Left" 
                                         Margin="1007,102,0,0" 
-                                        VerticalAlignment="Top"/>
+                                        VerticalAlignment="Top" Height="25"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Кольцо (П12 и др)">
@@ -1317,11 +1320,11 @@
                                             </TabControl>
                                         </Grid>
                                     </Border>
-                                    <DataGrid 
+                                    <DataGrid Name="DataGridRing"
                                         HorizontalAlignment="Left" 
                                         Height="178" Margin="10,471,0,0" 
                                         VerticalAlignment="Top" 
-                                        Width="1141"/>
+                                        Width="855"/>
                                     <Button 
                                         Content="Загрузить данные" 
                                         HorizontalAlignment="Left" 
@@ -2226,7 +2229,10 @@
                                             Margin="10,532,0,0" 
                                             VerticalAlignment="Top" 
                                             Width="109"/>
-                                    <DataGrid HorizontalAlignment="Left" Height="109" Margin="10,564,0,0" VerticalAlignment="Top" Width="1162"/>
+                                    <DataGrid Name="DataGridMaterial"
+                                        HorizontalAlignment="Left" 
+                                        Height="109" Margin="10,564,0,0" 
+                                        VerticalAlignment="Top" Width="1162"/>
                                     <Button Content="Загрузить БД" 
                                         HorizontalAlignment="Left" 
                                         Margin="10,687,0,0" VerticalAlignment="Top" 

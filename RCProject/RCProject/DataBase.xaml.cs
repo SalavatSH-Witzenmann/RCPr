@@ -23,18 +23,18 @@ namespace RCProject
     /// </summary>
     public partial class DataBase : Window
     {
-        
+
         public DataBase()
         {
-            InitializeComponent();                        
+            InitializeComponent();
             ThCS_kn.PreviewTextInput += new TextCompositionEventHandler(text_input_mask);
         }
 
-        
+
         private void SignClick(object sender, RoutedEventArgs e) //В разделе Кольцо комментарии к заполнению внешнего диаметра
         {
             MessageBox.Show("Пожалуйста обратите внимание, вводить необходимо наружный диаметр заготовки до операции обжатия/развальцовки," +
-                "т.е. наружный диаметр трубы и толщину стенки трубы (не учитывая всевозможных операции)","Note!");
+                "т.е. наружный диаметр трубы и толщину стенки трубы (не учитывая всевозможных операции)", "Note!");
         }
 
         #region check_box для выбора доп операции в разделе Гофрированная оболочка
@@ -116,14 +116,14 @@ namespace RCProject
         private void filling_click(object sender, RoutedEventArgs e)
         {
             var context = new MetHoseContainer();
-            var CorrugSheath = new tCorrugSheath {Type=CorrugSheath_kn.SelectedItem.ToString().Remove(0,38),
-                DN=Int16.Parse(DNCorSh_kn.SelectedItem.ToString().Remove(0,40)),
-                PN=Double.Parse(PNCorSh_kn.SelectedItem.ToString().Remove(0,40)), Dout=Double.Parse(DoutCS_kn.Text),
-                Din=Double.Parse(DinCS_kn.Text), TPch=Double.Parse(TPchCS_kn.Text),
-                Dtop=Double.Parse(DtopCS_kn.Text), Dbot=Double.Parse(DbotCS_kn.Text),
-                Rmin=Int16.Parse(RminCS_kn.Text), Rn=Int16.Parse(RnCS_kn.Text),
-                Th=Double.Parse(ThCS_kn.Text), Description=DescriptionCS_kn.Text,
-                Executor = ExecutorCS_kn.Text, tMaterialID=Int16.Parse(IDMaterailCS_kn.Text)}; //учитывать локализацию для типа string
+            var CorrugSheath = new tCorrugSheath { Type = CorrugSheath_kn.SelectedItem.ToString().Remove(0, 38),
+                DN = Int16.Parse(DNCorSh_kn.SelectedItem.ToString().Remove(0, 40)),
+                PN = Double.Parse(PNCorSh_kn.SelectedItem.ToString().Remove(0, 40)), Dout = Double.Parse(DoutCS_kn.Text),
+                Din = Double.Parse(DinCS_kn.Text), TPch = Double.Parse(TPchCS_kn.Text),
+                Dtop = Double.Parse(DtopCS_kn.Text), Dbot = Double.Parse(DbotCS_kn.Text),
+                Rmin = Int16.Parse(RminCS_kn.Text), Rn = Int16.Parse(RnCS_kn.Text),
+                Th = Double.Parse(ThCS_kn.Text), Description = DescriptionCS_kn.Text,
+                Executor = ExecutorCS_kn.Text, tMaterialID = Int16.Parse(IDMaterailCS_kn.Text) }; //учитывать локализацию для типа string
             context.tCorrugSheathSet.Add(CorrugSheath);
             context.SaveChanges();
         }
@@ -133,11 +133,11 @@ namespace RCProject
         private void BraidDB_filling_click(object sender, RoutedEventArgs e)
         {
 
-            
+
             var context = new MetHoseContainer();
             var BraidDB_filling = new tBraid
             {
-                DN = Int16.Parse(DNBraid_kn.Text),
+                DN = Int16.Parse(DNBraid_kn.SelectedItem.ToString().Remove(0, 40)),
                 TypeBr = TypeBraid_kn.SelectedItem.ToString().Remove(0, 38),
                 Dout = Double.Parse(Dout_braid_kn.Text),
                 Din = Double.Parse(Din_braid_kn.Text),
@@ -157,24 +157,44 @@ namespace RCProject
         #region секция для заполнения БД Стакана
         private void ButtGlass_filling_click(object sender, RoutedEventArgs e)
         {
+            bool checkBoxAtypName;
+            if (ATypicalGlassCB.IsChecked == true) { checkBoxAtypName = true; }
+            else { checkBoxAtypName = false; }
+
+            string ATypGlassName;
+            if (ATypicalNameGlass.Text != null) { ATypGlassName = ATypicalNameGlass.Text; }
+               else { ATypGlassName = null; }
+
+            
+            double DinGlassAfter;
+            if (nDinGlassAfterOper_kn.IsEnabled == true) { DinGlassAfter = Double.Parse(nDinGlassAfterOper_kn.Text); }
+                else { DinGlassAfter = -1; };
+               
             
             
+            bool ExpRing;
+            bool ComprRing;
+            if (ExpanRing_Glass.IsChecked == true & ComprRing_Glass.IsChecked ==false) { ExpRing = true; ComprRing = false;}
+               else if (ExpanRing_Glass.IsChecked == false & ComprRing_Glass.IsChecked == true) { ExpRing = false; ComprRing = true;}
+                    else { ExpRing = false; ComprRing = false; }
+           
+
             var context = new MetHoseContainer();
             var glass_filling = new tGlass
             {
                 DN = Int16.Parse(nDNGlass_kn.SelectedItem.ToString().Remove(0, 40)),
                 Name = nTypeNameGlass_kn.SelectedItem.ToString().Remove(0, 38),
-                UntypicalName = ATypicalNameGlass.Text,
-                UntypicalCheck = ATypicalGlassCB.IsChecked,
+                UntypicalName = ATypGlassName,
+                UntypicalCheck = checkBoxAtypName,
                 Dout = Double.Parse(nDoutGlass_kn.Text),
                 Th = Double.Parse(nThGlass_kn.Text),
                 Ls = Double.Parse(nLsGlass_kn.Text),
-                ExpanRing = ExpanRing_Glass.IsChecked,
-                CompressRing = ComprRing_Glass.IsChecked,
-                Din = Double.Parse(nDinGlassAfterOper_kn.Text),
+                ExpanRing = ExpRing,
+                CompressRing = ComprRing,
+                Din = DinGlassAfter,
                 Executor = nExecutorGlass_kn.Text,
                 Description = nDescriptionGlass_kn.Text,
-                tMaterialID = Convert.ToInt16(IDMaterialGlass_kn.Text)
+                tMaterialID = Int16.Parse(IDMaterialGlass_kn.Text)
             };
             context.tGlassSet.Add(glass_filling);
             context.SaveChanges();
@@ -376,8 +396,15 @@ namespace RCProject
         {
             var context = new MetHoseContainer();
             var corsheath = context.tCorrugSheathSet.ToList();
+            var braid = context.tBraidSet.ToList();
+            var glass = context.tGlassSet.ToList();
+            var ring = context.tRingSet.ToList();
+            var material = context.tMaterialSet.ToList();
             DateGridCS.ItemsSource = corsheath;
-           
+            DataGridBraid.ItemsSource = braid;
+            DataGridGlass.ItemsSource = glass;
+            DataGridRing.ItemsSource = ring;
+            DataGridMaterial.ItemsSource = material;
 
             context.tMaterialSet.Load();
             MaterialCorSh_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();            

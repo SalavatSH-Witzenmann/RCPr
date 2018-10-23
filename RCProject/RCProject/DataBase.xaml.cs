@@ -208,12 +208,14 @@ namespace RCProject
             if (RightSideWelding_kn.IsChecked == true) { SideWeldRing = "R"; }
             else if (LeftSideWelding_kn.IsChecked == true) { SideWeldRing = "L"; }
             else { SideWeldRing = null; }
-
+                        
             var context = new MetHoseContainer();
             var GlassFillingBD = new tRing
             {
-                DN = Int16.Parse(nDNRing_kn.Text),
-                PN = Double.Parse(nPNRing_kn.Text),
+                DN = Int16.Parse(nDNRing_kn.SelectedItem.ToString().Remove(0,40)),
+                PN = Double.Parse(nPNRing_kn.SelectedItem.ToString().Remove(0,40)),
+                Name = nNameRing1_kn.Text,
+                Designation= nNameRing2_kn.Text,
                 Dout = Double.Parse(nDoutRing_kn.Text),
                 Th=Double.Parse(NThRing_kn.Text),
                 LN=Double.Parse(nLNRing_kn.Text),
@@ -506,6 +508,12 @@ namespace RCProject
         private void text_input_mask(object sender, TextCompositionEventArgs e)  // в разделе Гофрированная оболочка для толщины
         {
             if (Char.IsDigit(e.Text, 0) || e.Text == ",") { e.Handled = false; } else { e.Handled = true; MessageBox.Show("Число либо запятая!!!"); } 
+        }
+
+        private void Click_RingName(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Графа Наименование кольца заполняется соответственно именем, по типу - Кольцо, Оболочка, Втулка."+
+                 "Графа Обозначение кольца заполняется по типу - П12 DN32, П.65x1x36(x - латинская буква), RS325.001 DN25","Note!");           
         }
 
         #endregion

@@ -1106,14 +1106,14 @@
                                                             Height="23" 
                                                             Margin="112,5,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <TextBox Name="nChamfExtL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="112,33,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <Label 
                                                             Content="Угол внешней R:" 
@@ -1125,7 +1125,7 @@
                                                             Height="23" 
                                                             Margin="112,60,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <Label 
                                                             Content="Угол внешней L:" 
@@ -1137,7 +1137,7 @@
                                                             Height="23" 
                                                             Margin="112,88,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <Label 
                                                             Content="Фаска внутр-яя R:" 
@@ -1164,28 +1164,28 @@
                                                             Height="23" 
                                                             Margin="311,5,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <TextBox Name="nChamfIntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,33,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <TextBox Name="nAngleIntR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,60,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                         <TextBox Name="nAngleIntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" 
                                                             Margin="311,88,0,0" 
                                                             TextWrapping="Wrap" 
-                                                            Text="" 
+                                                            Text="0,0" 
                                                             VerticalAlignment="Top" Width="50"/>
                                                     </Grid>
                                                 </TabItem>
@@ -1216,7 +1216,7 @@
                                                         <TextBox Name="nBoringExtR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="148,10,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
                                                             Content="Проточка внутр. R" 
@@ -1227,7 +1227,7 @@
                                                         <TextBox Name="nBoringIntR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="148,40,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
                                                             Content="Проточка внешн. L" 
@@ -1244,12 +1244,12 @@
                                                         <TextBox Name="nBoringEntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="359,10,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="77"/>
                                                         <TextBox Name="nBoringIntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="359,40,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="77"/>
                                                         <Label 
                                                             Content="Угол сопряжения внешн. R" 
@@ -1260,7 +1260,7 @@
                                                         <TextBox Name="nAngleCoupExtR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="174,70,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
                                                             Content="Угол сопряжения внутр. R" 
@@ -1271,7 +1271,7 @@
                                                         <TextBox Name="nAngleCoupIntR_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="174,100,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <Label 
                                                             Content="Угол сопряжения внешн. L" 
@@ -1288,12 +1288,12 @@
                                                         <TextBox Name="nAngleCoupExtL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="417,70,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                         <TextBox Name="nAngleCoupIntL_kn"
                                                             HorizontalAlignment="Left" 
                                                             Height="23" Margin="417,100,0,0" 
-                                                            TextWrapping="Wrap" Text="" 
+                                                            TextWrapping="Wrap" Text="0,0" 
                                                             VerticalAlignment="Top" Width="65"/>
                                                     </Grid>
                                                 </TabItem>
@@ -1368,7 +1368,7 @@
                                         HorizontalAlignment="Left" 
                                         Height="92" Margin="424,22,0,0" 
                                         VerticalAlignment="Top" 
-                                        Width="339">
+                                        Width="352">
                                         <Grid 
                                             Margin="0,0,0,0">
                                             <Label 
@@ -1382,7 +1382,7 @@
                                         HorizontalAlignment="Left" 
                                         Height="23" Margin="151,10,0,0" 
                                         TextWrapping="Wrap" Text="" 
-                                        VerticalAlignment="Top" Width="170"
+                                        VerticalAlignment="Top" Width="166"
                                         ToolTip="В данное поле необходимо ввести имя кольца которое отображается в обозначении чертежа (пример: П.17х2х60)"/>
                                             <Label 
                                         Content="Обозначение кольца:" 
@@ -1395,8 +1395,15 @@
                                         HorizontalAlignment="Left" 
                                         Height="23" Margin="151,43,0,0" 
                                         TextWrapping="Wrap" Text="" 
-                                        VerticalAlignment="Top" Width="170"
+                                        VerticalAlignment="Top" Width="166"
                                         ToolTip="В данное поле необходимо ввести имя кольца которое отображается в обозначении чертежа (пример: П.17х2х60)"/>
+                                            <Button 
+                                        Click="Click_RingName"
+                                        HorizontalAlignment="Left" 
+                                        Margin="322,0,0,0" 
+                                        VerticalAlignment="Top" Width="18" Height="21">
+                                            <Image Source="Res/ICON/sign.jpg"/>
+                                            </Button>
                                         </Grid>
                                     </GroupBox>
                                     <Button Name="ButtFillRingBD_Load"
@@ -1430,8 +1437,7 @@
                                         HorizontalAlignment="Left" 
                                         Height="23" Margin="955,194,0,0" 
                                         TextWrapping="Wrap" Text="" 
-                                        VerticalAlignment="Top" Width="97"/>
-
+                                        VerticalAlignment="Top" Width="97"/>  
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Фитинги">

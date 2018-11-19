@@ -25,7 +25,24 @@
         <Grid Grid.Row="1" Margin="0,0,0,0">
             <TabControl>
                 <TabItem Header="Режим соединения">
-
+                    <Grid>
+                        <DataGrid 
+                            HorizontalAlignment="Left" 
+                            Height="104" Margin="10,63,0,0" 
+                            VerticalAlignment="Top" 
+                            Width="541"/>
+                        <DataGrid 
+                            HorizontalAlignment="Left" 
+                            Height="104" Margin="600,63,0,0" 
+                            VerticalAlignment="Top" 
+                            Width="541"/>
+                        <Button 
+                            Content="Connection" 
+                            HorizontalAlignment="Left" 
+                            Margin="10,225,0,0" 
+                            VerticalAlignment="Top" 
+                            Width="75"/>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="Режим заполнение/редактирование">
                     <Grid>
@@ -1402,7 +1419,7 @@
                                         HorizontalAlignment="Left" 
                                         Margin="322,0,0,0" 
                                         VerticalAlignment="Top" Width="18" Height="21">
-                                            <Image Source="Res/ICON/sign.jpg"/>
+                                                <Image Source="Res/ICON/sign.jpg"/>
                                             </Button>
                                         </Grid>
                                     </GroupBox>
@@ -1437,7 +1454,7 @@
                                         HorizontalAlignment="Left" 
                                         Height="23" Margin="955,194,0,0" 
                                         TextWrapping="Wrap" Text="" 
-                                        VerticalAlignment="Top" Width="97"/>  
+                                        VerticalAlignment="Top" Width="97"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Фитинги">

@@ -14,6 +14,15 @@ namespace RCProject
     
     public partial class tMetHose
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tMetHose()
+        {
+            this.tCorrugSheath = new HashSet<tCorrugSheath>();
+            this.tBraid = new HashSet<tBraid>();
+            this.tGlass = new HashSet<tGlass>();
+            this.tRing = new HashSet<tRing>();
+        }
+    
         public int ID { get; set; }
         public short DN { get; set; }
         public double PN { get; set; }
@@ -25,10 +34,16 @@ namespace RCProject
         public string Executor { get; set; }
         public Nullable<int> tCorrugSheathID { get; set; }
         public Nullable<int> tBraidID { get; set; }
+        public Nullable<int> tGlassID { get; set; }
+        public Nullable<int> tRingID { get; set; }
     
-        public virtual tCorrugSheath tCorrugSheath { get; set; }
-        public virtual tBraid tBraid { get; set; }
-        public virtual tGlass tGlass { get; set; }
-        public virtual tRing tRing { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tCorrugSheath> tCorrugSheath { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tBraid> tBraid { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tGlass> tGlass { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tRing> tRing { get; set; }
     }
 }

@@ -17,10 +17,7 @@ namespace RCProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tMetHose()
         {
-            this.tCorrugSheath = new HashSet<tCorrugSheath>();
-            this.tBraid = new HashSet<tBraid>();
-            this.tGlass = new HashSet<tGlass>();
-            this.tRing = new HashSet<tRing>();
+            this.tMetHose_tCorrugSheath = new HashSet<tMetHose_tCorrugSheath>();
         }
     
         public int ID { get; set; }
@@ -38,12 +35,6 @@ namespace RCProject
         public Nullable<int> tRingID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tCorrugSheath> tCorrugSheath { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tBraid> tBraid { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tGlass> tGlass { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tRing> tRing { get; set; }
+        public virtual ICollection<tMetHose_tCorrugSheath> tMetHose_tCorrugSheath { get; set; }
     }
 }

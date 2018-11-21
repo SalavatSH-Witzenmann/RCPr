@@ -20,7 +20,6 @@ namespace RCProject
             this.UntypicalCheck = false;
             this.ExpanRing = false;
             this.CompressRing = false;
-            this.tMetHose = new HashSet<tMetHose>();
         }
     
         public int ID { get; set; }
@@ -39,7 +38,5 @@ namespace RCProject
         public int tMaterialID { get; set; }
     
         public virtual tMaterial tMaterial { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose> tMetHose { get; set; }
     }
 }

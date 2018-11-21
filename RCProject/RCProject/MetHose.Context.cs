@@ -31,5 +31,6 @@ namespace RCProject
         public virtual DbSet<tBraid> tBraidSet { get; set; }
         public virtual DbSet<tRing> tRingSet { get; set; }
         public virtual DbSet<tMetHose> tMetHoseSet { get; set; }
+        public virtual DbSet<tMetHose_tCorrugSheath> tMetHose_tCorrugSheathSet { get; set; }
     }
 }

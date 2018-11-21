@@ -138,6 +138,9 @@
     <Compile Include="tMetHose.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Compile Include="tMetHose_tCorrugSheath.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
     <Compile Include="tRing.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>

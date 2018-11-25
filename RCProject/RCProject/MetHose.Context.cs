@@ -32,5 +32,8 @@ namespace RCProject
         public virtual DbSet<tRing> tRingSet { get; set; }
         public virtual DbSet<tMetHose> tMetHoseSet { get; set; }
         public virtual DbSet<tMetHose_tCorrugSheath> tMetHose_tCorrugSheathSet { get; set; }
+        public virtual DbSet<tMetHose_tBraid> tMetHose_tBraidSet { get; set; }
+        public virtual DbSet<tMetHose_tGlass> tMetHose_tGlassSet { get; set; }
+        public virtual DbSet<tMetHose_tRing> tMetHose_tRingSet { get; set; }
     }
 }

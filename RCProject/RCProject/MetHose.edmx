@@ -356,6 +356,33 @@
             <End Role="tMetHose_tCorrugSheath" EntitySet="tMetHose_tCorrugSheathSet" />
             <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
           </AssociationSet>
+          <EntitySet Name="tMetHose_tBraidSet" EntityType="MetHose.tMetHose_tBraid" />
+          <AssociationSet Name="tMetHosetMetHose_tBraid" Association="MetHose.tMetHosetMetHose_tBraid">
+            <End Role="tMetHose" EntitySet="tMetHoseSet" />
+            <End Role="tMetHose_tBraid" EntitySet="tMetHose_tBraidSet" />
+          </AssociationSet>
+          <AssociationSet Name="tMetHose_tBraidtBraid" Association="MetHose.tMetHose_tBraidtBraid">
+            <End Role="tMetHose_tBraid" EntitySet="tMetHose_tBraidSet" />
+            <End Role="tBraid" EntitySet="tBraidSet" />
+          </AssociationSet>
+          <EntitySet Name="tMetHose_tGlassSet" EntityType="MetHose.tMetHose_tGlass" />
+          <EntitySet Name="tMetHose_tRingSet" EntityType="MetHose.tMetHose_tRing" />
+          <AssociationSet Name="tMetHosetMetHose_tGlass" Association="MetHose.tMetHosetMetHose_tGlass">
+            <End Role="tMetHose" EntitySet="tMetHoseSet" />
+            <End Role="tMetHose_tGlass" EntitySet="tMetHose_tGlassSet" />
+          </AssociationSet>
+          <AssociationSet Name="tMetHose_tGlasstGlass" Association="MetHose.tMetHose_tGlasstGlass">
+            <End Role="tMetHose_tGlass" EntitySet="tMetHose_tGlassSet" />
+            <End Role="tGlass" EntitySet="tGlassSet" />
+          </AssociationSet>
+          <AssociationSet Name="tMetHosetMetHose_tRing" Association="MetHose.tMetHosetMetHose_tRing">
+            <End Role="tMetHose" EntitySet="tMetHoseSet" />
+            <End Role="tMetHose_tRing" EntitySet="tMetHose_tRingSet" />
+          </AssociationSet>
+          <AssociationSet Name="tMetHose_tRingtRing" Association="MetHose.tMetHose_tRingtRing">
+            <End Role="tMetHose_tRing" EntitySet="tMetHose_tRingSet" />
+            <End Role="tRing" EntitySet="tRingSet" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="tCorrugSheath">
           <Key>
@@ -474,6 +501,7 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tMetHose_tGlass" Relationship="MetHose.tMetHose_tGlasstGlass" FromRole="tGlass" ToRole="tMetHose_tGlass" />
         </EntityType>
         <Association Name="tGlasstMaterial">
           <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="*" />
@@ -504,6 +532,8 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="tMaterial" Relationship="MetHose.tBraidtMaterial" FromRole="tBraid" ToRole="tMaterial" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
+          <Property Name="tMetHose_tBraidID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tMetHose_tBraid" Relationship="MetHose.tMetHose_tBraidtBraid" FromRole="tBraid" ToRole="tMetHose_tBraid" />
         </EntityType>
         <Association Name="tBraidtMaterial">
           <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="*" />
@@ -550,6 +580,7 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tMetHose_tRing" Relationship="MetHose.tMetHose_tRingtRing" FromRole="tRing" ToRole="tMetHose_tRing" />
         </EntityType>
         <Association Name="tRingtMaterial">
           <End Type="MetHose.tRing" Role="tRing" Multiplicity="*" />
@@ -581,6 +612,9 @@
           <Property Name="tGlassID" Type="Int32" Nullable="true" />
           <Property Name="tRingID" Type="Int32" Nullable="true" />
           <NavigationProperty Name="tMetHose_tCorrugSheath" Relationship="MetHose.tMetHosetMetHose_tCorrugSheath" FromRole="tMetHose" ToRole="tMetHose_tCorrugSheath" />
+          <NavigationProperty Name="tMetHose_tBraid" Relationship="MetHose.tMetHosetMetHose_tBraid" FromRole="tMetHose" ToRole="tMetHose_tBraid" />
+          <NavigationProperty Name="tMetHose_tGlass" Relationship="MetHose.tMetHosetMetHose_tGlass" FromRole="tMetHose" ToRole="tMetHose_tGlass" />
+          <NavigationProperty Name="tMetHose_tRing" Relationship="MetHose.tMetHosetMetHose_tRing" FromRole="tMetHose" ToRole="tMetHose_tRing" />
         </EntityType>
         <Association Name="tCorrugSheathtMaterial">
           <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="*" />
@@ -627,6 +661,114 @@
             </Principal>
             <Dependent Role="tMetHose_tCorrugSheath">
               <PropertyRef Name="tCorrugSheathID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tMetHose_tBraid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDMetH" Type="Int32" Nullable="false" />
+          <Property Name="IDBraid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetMetHose_tBraid" FromRole="tMetHose_tBraid" ToRole="tMetHose" />
+          <Property Name="tMetHoseID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tBraid" Relationship="MetHose.tMetHose_tBraidtBraid" FromRole="tMetHose_tBraid" ToRole="tBraid" />
+          <Property Name="tBraidID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tMetHosetMetHose_tBraid">
+          <End Type="MetHose.tMetHose" Role="tMetHose" Multiplicity="1" />
+          <End Type="MetHose.tMetHose_tBraid" Role="tMetHose_tBraid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tMetHose">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tMetHose_tBraid">
+              <PropertyRef Name="tMetHoseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tMetHose_tBraidtBraid">
+          <End Type="MetHose.tMetHose_tBraid" Role="tMetHose_tBraid" Multiplicity="*" />
+          <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tBraid">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tMetHose_tBraid">
+              <PropertyRef Name="tBraidID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tMetHose_tGlass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDMetH" Type="Int32" Nullable="false" />
+          <Property Name="IDGlass" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetMetHose_tGlass" FromRole="tMetHose_tGlass" ToRole="tMetHose" />
+          <Property Name="tMetHoseID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tGlass" Relationship="MetHose.tMetHose_tGlasstGlass" FromRole="tMetHose_tGlass" ToRole="tGlass" />
+          <Property Name="tGlassID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tMetHose_tRing">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDMetH" Type="Int32" Nullable="false" />
+          <Property Name="IDRing" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetMetHose_tRing" FromRole="tMetHose_tRing" ToRole="tMetHose" />
+          <Property Name="tMetHoseID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tRing" Relationship="MetHose.tMetHose_tRingtRing" FromRole="tMetHose_tRing" ToRole="tRing" />
+          <Property Name="tRingID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tMetHosetMetHose_tGlass">
+          <End Type="MetHose.tMetHose" Role="tMetHose" Multiplicity="1" />
+          <End Type="MetHose.tMetHose_tGlass" Role="tMetHose_tGlass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tMetHose">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tMetHose_tGlass">
+              <PropertyRef Name="tMetHoseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tMetHose_tGlasstGlass">
+          <End Type="MetHose.tMetHose_tGlass" Role="tMetHose_tGlass" Multiplicity="*" />
+          <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tGlass">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tMetHose_tGlass">
+              <PropertyRef Name="tGlassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tMetHosetMetHose_tRing">
+          <End Type="MetHose.tMetHose" Role="tMetHose" Multiplicity="1" />
+          <End Type="MetHose.tMetHose_tRing" Role="tMetHose_tRing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tMetHose">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tMetHose_tRing">
+              <PropertyRef Name="tMetHoseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tMetHose_tRingtRing">
+          <End Type="MetHose.tMetHose_tRing" Role="tMetHose_tRing" Multiplicity="*" />
+          <End Type="MetHose.tRing" Role="tRing" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tRing">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tMetHose_tRing">
+              <PropertyRef Name="tRingID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

@@ -18,6 +18,9 @@ namespace RCProject
         public tMetHose()
         {
             this.tMetHose_tCorrugSheath = new HashSet<tMetHose_tCorrugSheath>();
+            this.tMetHose_tBraid = new HashSet<tMetHose_tBraid>();
+            this.tMetHose_tGlass = new HashSet<tMetHose_tGlass>();
+            this.tMetHose_tRing = new HashSet<tMetHose_tRing>();
         }
     
         public int ID { get; set; }
@@ -36,5 +39,11 @@ namespace RCProject
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tMetHose_tCorrugSheath> tMetHose_tCorrugSheath { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tMetHose_tBraid> tMetHose_tBraid { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tMetHose_tGlass> tMetHose_tGlass { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tMetHose_tRing> tMetHose_tRing { get; set; }
     }
 }

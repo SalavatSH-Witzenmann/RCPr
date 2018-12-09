@@ -138,19 +138,22 @@
     <Compile Include="tMetHose.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
-    <Compile Include="tMetHose_tBraid.cs">
-      <DependentUpon>MetHose.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tMetHose_tCorrugSheath.cs">
-      <DependentUpon>MetHose.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tMetHose_tGlass.cs">
-      <DependentUpon>MetHose.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tMetHose_tRing.cs">
-      <DependentUpon>MetHose.tt</DependentUpon>
-    </Compile>
     <Compile Include="tRing.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSpecification.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSpecification_Braid.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSpecification_Glass.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSpecification_Ring.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSpecification_tCorrugSheath.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
     <Page Include="DataBase.xaml">

@@ -14,16 +14,7 @@ namespace RCProject
     
     public partial class tMetHose
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tMetHose()
-        {
-            this.tMetHose_tCorrugSheath = new HashSet<tMetHose_tCorrugSheath>();
-            this.tMetHose_tBraid = new HashSet<tMetHose_tBraid>();
-            this.tMetHose_tGlass = new HashSet<tMetHose_tGlass>();
-            this.tMetHose_tRing = new HashSet<tMetHose_tRing>();
-        }
-    
-        public int ID { get; set; }
+        public int ID_methose { get; set; }
         public short DN { get; set; }
         public double PN { get; set; }
         public string NamePrimary { get; set; }
@@ -32,18 +23,7 @@ namespace RCProject
         public Nullable<double> PPneumTest { get; set; }
         public string Description { get; set; }
         public string Executor { get; set; }
-        public Nullable<int> tCorrugSheathID { get; set; }
-        public Nullable<int> tBraidID { get; set; }
-        public Nullable<int> tGlassID { get; set; }
-        public Nullable<int> tRingID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tCorrugSheath> tMetHose_tCorrugSheath { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tBraid> tMetHose_tBraid { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tGlass> tMetHose_tGlass { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tRing> tMetHose_tRing { get; set; }
+        public virtual tSpecification Specification { get; set; }
     }
 }

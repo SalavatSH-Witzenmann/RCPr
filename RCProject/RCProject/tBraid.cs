@@ -17,10 +17,10 @@ namespace RCProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tBraid()
         {
-            this.tMetHose_tBraid = new HashSet<tMetHose_tBraid>();
+            this.tSpecification_Braid = new HashSet<tSpecification_Braid>();
         }
     
-        public int ID { get; set; }
+        public int ID_braid { get; set; }
         public short DN { get; set; }
         public string TypeBr { get; set; }
         public double Dout { get; set; }
@@ -32,10 +32,9 @@ namespace RCProject
         public string Executor { get; set; }
         public string Description { get; set; }
         public int tMaterialID { get; set; }
-        public int tMetHose_tBraidID { get; set; }
     
         public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tBraid> tMetHose_tBraid { get; set; }
+        public virtual ICollection<tSpecification_Braid> tSpecification_Braid { get; set; }
     }
 }

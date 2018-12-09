@@ -17,10 +17,10 @@ namespace RCProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tRing()
         {
-            this.tMetHose_tRing = new HashSet<tMetHose_tRing>();
+            this.tSpecification_Ring = new HashSet<tSpecification_Ring>();
         }
     
-        public int ID { get; set; }
+        public int ID_ring { get; set; }
         public string Name { get; set; }
         public string Designation { get; set; }
         public short DN { get; set; }
@@ -51,6 +51,6 @@ namespace RCProject
     
         public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tRing> tMetHose_tRing { get; set; }
+        public virtual ICollection<tSpecification_Ring> tSpecification_Ring { get; set; }
     }
 }

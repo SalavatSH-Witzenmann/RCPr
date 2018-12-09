@@ -184,23 +184,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="tMetHosetGlass" TypeName="MetHose.tMetHosetGlass" StoreEntitySet="tMetHoseSet">
-      <EndProperty Name="tGlass">
-        <ScalarProperty Name="ID" ColumnName="tGlass_ID" />
-      </EndProperty>
-      <EndProperty Name="tMetHose">
-        <ScalarProperty Name="ID" ColumnName="ID" />
-      </EndProperty>
-      <Condition ColumnName="tGlass_ID" IsNull="false" />
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="tRingtMetHose" TypeName="MetHose.tRingtMetHose" StoreEntitySet="tMetHoseSet">
-      <EndProperty Name="tRing">
-        <ScalarProperty Name="ID" ColumnName="tRing_ID" />
-      </EndProperty>
-      <EndProperty Name="tMetHose">
-        <ScalarProperty Name="ID" ColumnName="ID" />
-      </EndProperty>
-      <Condition ColumnName="tRing_ID" IsNull="false" />
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

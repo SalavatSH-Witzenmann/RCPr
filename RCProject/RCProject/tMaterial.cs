@@ -23,7 +23,7 @@ namespace RCProject
             this.tCorrugSheath = new HashSet<tCorrugSheath>();
         }
     
-        public int ID { get; set; }
+        public int ID_material { get; set; }
         public string NameDIN { get; set; }
         public string NameGOST { get; set; }
         public string NameAISI { get; set; }

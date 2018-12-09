@@ -20,10 +20,10 @@ namespace RCProject
             this.UntypicalCheck = false;
             this.ExpanRing = false;
             this.CompressRing = false;
-            this.tMetHose_tGlass = new HashSet<tMetHose_tGlass>();
+            this.tSpecification_Glass = new HashSet<tSpecification_Glass>();
         }
     
-        public int ID { get; set; }
+        public int ID_glass { get; set; }
         public short DN { get; set; }
         public string Name { get; set; }
         public string UntypicalName { get; set; }
@@ -40,6 +40,6 @@ namespace RCProject
     
         public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tGlass> tMetHose_tGlass { get; set; }
+        public virtual ICollection<tSpecification_Glass> tSpecification_Glass { get; set; }
     }
 }

@@ -17,10 +17,10 @@ namespace RCProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tCorrugSheath()
         {
-            this.tMetHose_tCorrugSheath = new HashSet<tMetHose_tCorrugSheath>();
+            this.tSpecification_tCorrugSheath = new HashSet<tSpecification_tCorrugSheath>();
         }
     
-        public int ID { get; set; }
+        public int ID_corrugsheath { get; set; }
         public string Type { get; set; }
         public short DN { get; set; }
         public double PN { get; set; }
@@ -38,6 +38,6 @@ namespace RCProject
     
         public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tMetHose_tCorrugSheath> tMetHose_tCorrugSheath { get; set; }
+        public virtual ICollection<tSpecification_tCorrugSheath> tSpecification_tCorrugSheath { get; set; }
     }
 }

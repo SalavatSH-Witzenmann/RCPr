@@ -12,16 +12,14 @@ namespace RCProject
     using System;
     using System.Collections.Generic;
     
-    public partial class tSpecification_Glass
+    public partial class tSpec_Sp_Assembly
     {
-        public int ID_SpecGl { get; set; }
+        public int ID_Spec_Sp_Assembly { get; set; }
+        public int ID_Sp_Assembly { get; set; }
         public int ID_specification { get; set; }
-        public string ID_glass { get; set; }
-        public int tGlassID_glass { get; set; }
         public int tSp_AssemblyID_Sp_Assembly { get; set; }
         public int tSpecificationID_Specification { get; set; }
     
-        public virtual tGlass tGlass { get; set; }
         public virtual tSp_Assembly tSp_Assembly { get; set; }
         public virtual tSpecification tSpecification { get; set; }
     }

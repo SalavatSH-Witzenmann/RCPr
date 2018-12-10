@@ -156,6 +156,12 @@
     <Compile Include="tSpecification_tCorrugSheath.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Compile Include="tSpec_Sp_Assembly.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSp_Assembly.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
     <Page Include="DataBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

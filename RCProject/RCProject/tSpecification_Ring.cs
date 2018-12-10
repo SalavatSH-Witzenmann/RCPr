@@ -17,10 +17,12 @@ namespace RCProject
         public int ID_SpecRing { get; set; }
         public int ID_specification { get; set; }
         public int ID_ring { get; set; }
-        public int tSpecificationID_specification { get; set; }
         public int tRingID_ring { get; set; }
+        public int tSp_AssemblyID_Sp_Assembly { get; set; }
+        public int tSpecificationID_Specification { get; set; }
     
-        public virtual tSpecification tSpecification { get; set; }
         public virtual tRing tRing { get; set; }
+        public virtual tSp_Assembly tSp_Assembly { get; set; }
+        public virtual tSpecification tSpecification { get; set; }
     }
 }

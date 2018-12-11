@@ -23,7 +23,5 @@ namespace RCProject
         public Nullable<double> PPneumTest { get; set; }
         public string Description { get; set; }
         public string Executor { get; set; }
-    
-        public virtual tSpecification Specification { get; set; }
     }
 }

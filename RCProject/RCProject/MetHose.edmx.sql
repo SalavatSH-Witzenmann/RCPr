@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/10/2018 23:42:54
+-- Date Created: 12/11/2018 21:02:58
 -- Generated from EDMX file: C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\MetHose.edmx
 -- --------------------------------------------------
 
@@ -32,29 +32,47 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_tMetHoseSpecification]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHoseSpecification];
 GO
-IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_tCorrugSheath]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tSpecification_CorrugSheathSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_tCorrugSheath];
-GO
 IF OBJECT_ID(N'[dbo].[FK_tSpecification_tCorrugSheathtCorrugSheath]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tSpecification_CorrugSheathSet] DROP CONSTRAINT [FK_tSpecification_tCorrugSheathtCorrugSheath];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Braid]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tSpecification_BraidSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Braid];
 GO
 IF OBJECT_ID(N'[dbo].[FK_tSpecification_BraidtBraid]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tSpecification_BraidSet] DROP CONSTRAINT [FK_tSpecification_BraidtBraid];
 GO
-IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Glass]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tSpecification_GlassSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Glass];
-GO
 IF OBJECT_ID(N'[dbo].[FK_tGlasstSpecification_Glass]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tSpecification_GlassSet] DROP CONSTRAINT [FK_tGlasstSpecification_Glass];
 GO
-IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Ring]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tSpecification_RingSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Ring];
-GO
 IF OBJECT_ID(N'[dbo].[FK_tSpecification_RingtRing]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tSpecification_RingSet] DROP CONSTRAINT [FK_tSpecification_RingtRing];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSp_AssemblytSpecification_tCorrugSheath]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_CorrugSheathSet] DROP CONSTRAINT [FK_tSp_AssemblytSpecification_tCorrugSheath];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSp_AssemblytSpecification_Braid]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_BraidSet] DROP CONSTRAINT [FK_tSp_AssemblytSpecification_Braid];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSp_AssemblytSpecification_Glass]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_GlassSet] DROP CONSTRAINT [FK_tSp_AssemblytSpecification_Glass];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSp_AssemblytSpecification_Ring]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_RingSet] DROP CONSTRAINT [FK_tSp_AssemblytSpecification_Ring];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSp_AssemblytSpec_Sp_Assembly]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpec_Sp_AssemblySet] DROP CONSTRAINT [FK_tSp_AssemblytSpec_Sp_Assembly];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpec_Sp_Assembly]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpec_Sp_AssemblySet] DROP CONSTRAINT [FK_tSpecificationtSpec_Sp_Assembly];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_tCorrugSheath]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_CorrugSheathSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_tCorrugSheath];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Braid]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_BraidSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Braid];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Glass]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_GlassSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Glass];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Ring]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_RingSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Ring];
 GO
 
 -- --------------------------------------------------
@@ -93,6 +111,12 @@ IF OBJECT_ID(N'[dbo].[tSpecification_GlassSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tSpecification_RingSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tSpecification_RingSet];
+GO
+IF OBJECT_ID(N'[dbo].[tSp_AssemblySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tSp_AssemblySet];
+GO
+IF OBJECT_ID(N'[dbo].[tSpec_Sp_AssemblySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tSpec_Sp_AssemblySet];
 GO
 
 -- --------------------------------------------------

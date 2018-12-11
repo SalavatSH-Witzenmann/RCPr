@@ -40,7 +40,6 @@ namespace RCProject
         public bool IsOtherProd { get; set; }
         public bool IsMaterials { get; set; }
     
-        public virtual tMetHose tMetHose { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tSpec_Sp_Assembly> tSpec_Sp_Assembly { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

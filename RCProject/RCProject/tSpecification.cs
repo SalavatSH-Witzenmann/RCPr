@@ -50,5 +50,6 @@ namespace RCProject
         public virtual ICollection<tSpecification_Glass> tSpecification_Glass { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tSpecification_Ring> tSpecification_Ring { get; set; }
+        public virtual tMetHose tMetHose { get; set; }
     }
 }

@@ -38,5 +38,6 @@ namespace RCProject
         public virtual DbSet<tSpecification_Ring> tSpecification_RingSet { get; set; }
         public virtual DbSet<tSp_Assembly> tSp_AssemblySet { get; set; }
         public virtual DbSet<tSpec_Sp_Assembly> tSpec_Sp_AssemblySet { get; set; }
+        public virtual DbSet<tLength> tLengthSet { get; set; }
     }
 }

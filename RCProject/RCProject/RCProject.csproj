@@ -132,6 +132,9 @@
     <Compile Include="tGlass.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Compile Include="tLength.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
     <Compile Include="tMaterial.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>

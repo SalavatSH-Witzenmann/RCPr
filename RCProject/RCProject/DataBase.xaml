@@ -26,22 +26,93 @@
             <TabControl>
                 <TabItem Header="Режим соединения">
                     <Grid>
-                        <DataGrid 
-                            HorizontalAlignment="Left" 
-                            Height="104" Margin="10,63,0,0" 
-                            VerticalAlignment="Top" 
-                            Width="541"/>
-                        <DataGrid 
-                            HorizontalAlignment="Left" 
-                            Height="104" Margin="600,63,0,0" 
-                            VerticalAlignment="Top" 
-                            Width="541"/>
                         <Button 
                             Content="Connection" 
                             HorizontalAlignment="Left" 
-                            Margin="10,225,0,0" 
+                            Margin="153,283,0,0" 
                             VerticalAlignment="Top" 
                             Width="75"/>
+                        <Border 
+                            BorderBrush="Black" 
+                            BorderThickness="3" 
+                            HorizontalAlignment="Left" 
+                            Height="215" Margin="10,25,0,0" 
+                            VerticalAlignment="Top" Width="561">
+                            <Grid>
+                                <Label Content="Основные даные металлорукава" 
+                                       HorizontalAlignment="Left" 
+                                       Margin="167,0,0,0" 
+                                       VerticalAlignment="Top" Width="210"/>
+                                <ComboBox Name="DNMetHose_kn"
+                                                    HorizontalAlignment="Left" 
+                                                    Margin="10,40,0,0" VerticalAlignment="Top" 
+                                                    Width="239" IsEditable="True" IsReadOnly="True"
+                                                    Text="Выберите номинальный диаметр">
+                                    <ComboBoxItem Content="DN4"/>
+                                    <ComboBoxItem Content="DN6"/>
+                                    <ComboBoxItem Content="DN8"/>
+                                    <ComboBoxItem Content="DN10"/>
+                                    <ComboBoxItem Content="DN12"/>
+                                    <ComboBoxItem Content="DN16"/>
+                                    <ComboBoxItem Content="DN20"/>
+                                    <ComboBoxItem Content="DN25"/>
+                                    <ComboBoxItem Content="DN32"/>
+                                    <ComboBoxItem Content="DN40"/>
+                                    <ComboBoxItem Content="DN50"/>
+                                    <ComboBoxItem Content="DN65"/>
+                                    <ComboBoxItem Content="DN80"/>
+                                    <ComboBoxItem Content="DN100"/>
+                                    <ComboBoxItem Content="DN125"/>
+                                    <ComboBoxItem Content="DN150"/>
+                                    <ComboBoxItem Content="DN160"/>
+                                    <ComboBoxItem Content="DN175"/>
+                                    <ComboBoxItem Content="DN200"/>
+                                    <ComboBoxItem Content="DN250"/>
+                                    <ComboBoxItem Content="DN300"/>
+                                    <ComboBoxItem Content="DN350"/>
+                                    <ComboBoxItem Content="DN400"/>
+                                    <ComboBoxItem Content="DN450"/>
+                                    <ComboBoxItem Content="DN500"/>
+                                    <ComboBoxItem Content="DN600"/>
+                                    <ComboBoxItem Content="DN700"/>
+                                    <ComboBoxItem Content="DN800"/>
+                                    <ComboBoxItem Content="DN900"/>
+                                    <ComboBoxItem Content="DN1000"/>
+                                    <ComboBoxItem Content="DN1200"/>
+                                    <ComboBoxItem Content="DN1400"/>
+                                    <ComboBoxItem Content="DN1600"/>
+                                </ComboBox>
+                                <ComboBox Name="PNMetHose_kn"
+                                                    HorizontalAlignment="Left" 
+                                                    Margin="281,40,0,0" VerticalAlignment="Top" 
+                                                    Width="240" IsEditable="True" IsReadOnly="True"
+                                                    Text="Выберите номинальное давление [bar]"
+                                                    ToolTip="Допускаемое давление для данной оболочки в барах">
+                                    <ComboBoxItem Content="PN1,0"/>
+                                    <ComboBoxItem Content="PN1,6"/>
+                                    <ComboBoxItem Content="PN2,5"/>
+                                    <ComboBoxItem Content="PN3,0"/>
+                                    <ComboBoxItem Content="PN4,0"/>
+                                    <ComboBoxItem Content="PN6,0"/>
+                                    <ComboBoxItem Content="PN8,0"/>
+                                    <ComboBoxItem Content="PN10,0"/>
+                                    <ComboBoxItem Content="PN12,5"/>
+                                    <ComboBoxItem Content="PN16,0"/>
+                                    <ComboBoxItem Content="PN20,0"/>
+                                    <ComboBoxItem Content="PN25,0"/>
+                                    <ComboBoxItem Content="PN32,0"/>
+                                    <ComboBoxItem Content="PN40,0"/>
+                                    <ComboBoxItem Content="PN50,0"/>
+                                    <ComboBoxItem Content="PN63,0"/>
+                                    <ComboBoxItem Content="PN80,0"/>
+                                    <ComboBoxItem Content="PN100,0"/>
+                                    <ComboBoxItem Content="PN125,0"/>
+                                    <ComboBoxItem Content="PN160,0"/>
+                                    <ComboBoxItem Content="PN200,0"/>
+                                    <ComboBoxItem Content="PN250,0"/>
+                                </ComboBox>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Режим заполнение/редактирование">
@@ -2429,7 +2500,7 @@
 
                         </TabControl>
                     </Grid>
-                </TabItem>
+                </TabItem>               
             </TabControl>
         </Grid>
     </Grid>

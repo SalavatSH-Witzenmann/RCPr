@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/11/2018 21:02:58
+-- Date Created: 12/15/2018 23:31:45
 -- Generated from EDMX file: C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\MetHose.edmx
 -- --------------------------------------------------
 
@@ -295,7 +295,7 @@ CREATE TABLE [dbo].[tMetHoseSet] (
     [PPneumTest] float  NULL,
     [Description] nvarchar(max)  NULL,
     [Executor] nvarchar(max)  NULL,
-    [Specification_ID_Specification] int  NOT NULL
+    [tSpecification_ID_Specification] int  NOT NULL
 );
 GO
 
@@ -318,8 +318,8 @@ GO
 CREATE TABLE [dbo].[tSpecification_CorrugSheathSet] (
     [ID_SpecCorSh] int IDENTITY(1,1) NOT NULL,
     [ID_specification] int  NOT NULL,
-    [ID_corrugsheath] int  NOT NULL,
-    [tCorrugSheathID_corrugsheath] int  NOT NULL,
+    [ID_length] int  NOT NULL,
+    [tLengthID_length] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
     [tSpecificationID_Specification] int  NOT NULL
 );
@@ -375,6 +375,14 @@ CREATE TABLE [dbo].[tSpec_Sp_AssemblySet] (
     [ID_specification] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
     [tSpecificationID_Specification] int  NOT NULL
+);
+GO
+
+-- Creating table 'tLengthSet'
+CREATE TABLE [dbo].[tLengthSet] (
+    [ID_length] int IDENTITY(1,1) NOT NULL,
+    [LN] float  NOT NULL,
+    [tCorrugSheathID_corrugsheath] int  NOT NULL
 );
 GO
 
@@ -460,6 +468,12 @@ ADD CONSTRAINT [PK_tSpec_Sp_AssemblySet]
     PRIMARY KEY CLUSTERED ([ID_Spec_Sp_Assembly] ASC);
 GO
 
+-- Creating primary key on [ID_length] in table 'tLengthSet'
+ALTER TABLE [dbo].[tLengthSet]
+ADD CONSTRAINT [PK_tLengthSet]
+    PRIMARY KEY CLUSTERED ([ID_length] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -522,36 +536,6 @@ GO
 CREATE INDEX [IX_FK_tCorrugSheathtMaterial]
 ON [dbo].[tCorrugSheathSet]
     ([tMaterialID]);
-GO
-
--- Creating foreign key on [Specification_ID_Specification] in table 'tMetHoseSet'
-ALTER TABLE [dbo].[tMetHoseSet]
-ADD CONSTRAINT [FK_tMetHoseSpecification]
-    FOREIGN KEY ([Specification_ID_Specification])
-    REFERENCES [dbo].[tSpecificationSet]
-        ([ID_Specification])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tMetHoseSpecification'
-CREATE INDEX [IX_FK_tMetHoseSpecification]
-ON [dbo].[tMetHoseSet]
-    ([Specification_ID_Specification]);
-GO
-
--- Creating foreign key on [tCorrugSheathID_corrugsheath] in table 'tSpecification_CorrugSheathSet'
-ALTER TABLE [dbo].[tSpecification_CorrugSheathSet]
-ADD CONSTRAINT [FK_tSpecification_tCorrugSheathtCorrugSheath]
-    FOREIGN KEY ([tCorrugSheathID_corrugsheath])
-    REFERENCES [dbo].[tCorrugSheathSet]
-        ([ID_corrugsheath])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tSpecification_tCorrugSheathtCorrugSheath'
-CREATE INDEX [IX_FK_tSpecification_tCorrugSheathtCorrugSheath]
-ON [dbo].[tSpecification_CorrugSheathSet]
-    ([tCorrugSheathID_corrugsheath]);
 GO
 
 -- Creating foreign key on [tBraidID_braid] in table 'tSpecification_BraidSet'
@@ -747,6 +731,51 @@ GO
 CREATE INDEX [IX_FK_tSpecificationtSpecification_Ring]
 ON [dbo].[tSpecification_RingSet]
     ([tSpecificationID_Specification]);
+GO
+
+-- Creating foreign key on [tCorrugSheathID_corrugsheath] in table 'tLengthSet'
+ALTER TABLE [dbo].[tLengthSet]
+ADD CONSTRAINT [FK_tLengthtCorrugSheath]
+    FOREIGN KEY ([tCorrugSheathID_corrugsheath])
+    REFERENCES [dbo].[tCorrugSheathSet]
+        ([ID_corrugsheath])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tLengthtCorrugSheath'
+CREATE INDEX [IX_FK_tLengthtCorrugSheath]
+ON [dbo].[tLengthSet]
+    ([tCorrugSheathID_corrugsheath]);
+GO
+
+-- Creating foreign key on [tLengthID_length] in table 'tSpecification_CorrugSheathSet'
+ALTER TABLE [dbo].[tSpecification_CorrugSheathSet]
+ADD CONSTRAINT [FK_tLengthtSpecification_tCorrugSheath]
+    FOREIGN KEY ([tLengthID_length])
+    REFERENCES [dbo].[tLengthSet]
+        ([ID_length])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tLengthtSpecification_tCorrugSheath'
+CREATE INDEX [IX_FK_tLengthtSpecification_tCorrugSheath]
+ON [dbo].[tSpecification_CorrugSheathSet]
+    ([tLengthID_length]);
+GO
+
+-- Creating foreign key on [tSpecification_ID_Specification] in table 'tMetHoseSet'
+ALTER TABLE [dbo].[tMetHoseSet]
+ADD CONSTRAINT [FK_tMetHosetSpecification]
+    FOREIGN KEY ([tSpecification_ID_Specification])
+    REFERENCES [dbo].[tSpecificationSet]
+        ([ID_Specification])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tMetHosetSpecification'
+CREATE INDEX [IX_FK_tMetHosetSpecification]
+ON [dbo].[tMetHoseSet]
+    ([tSpecification_ID_Specification]);
 GO
 
 -- --------------------------------------------------

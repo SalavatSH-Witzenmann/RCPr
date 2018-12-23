@@ -5,37 +5,40 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8ffeafbb715644eaa4815733006f3689" Name="Diagram1" ZoomLevel="75" >
-        <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="2" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tCorrugSheath" Width="2" PointX="0.75" PointY="9.625" IsExpanded="false" />
         <EntityTypeShape EntityType="MetHose.tMaterial" Width="1.5" PointX="4.75" PointY="16.875" IsExpanded="false" />
         <EntityTypeShape EntityType="MetHose.tGlass" Width="1.625" PointX="5.75" PointY="9.625" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tGlasstMaterial" />
-        <EntityTypeShape EntityType="MetHose.tBraid" Width="1.875" PointX="3.125" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tBraid" Width="1.875" PointX="3.125" PointY="9.625" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tBraidtMaterial" />
         <EntityTypeShape EntityType="MetHose.tRing" Width="1.625" PointX="8.125" PointY="9.625" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tRingtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tMetHose" Width="1.5" PointX="14.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tMetHose" Width="1.5" PointX="13.625" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="MetHose.tCorrugSheathtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tSpecification" Width="2.25" PointX="11.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tSpecification" Width="2.25" PointX="10.125" PointY="3.75" IsExpanded="false" />
         <EntityTypeShape EntityType="MetHose.tSpecification_tCorrugSheath" Width="2" PointX="0.75" PointY="5.375" IsExpanded="false" />
-        <AssociationConnector Association="MetHose.tSpecification_tCorrugSheathtCorrugSheath" />
         <EntityTypeShape EntityType="MetHose.tSpecification_Braid" Width="1.875" PointX="3.125" PointY="5.375" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tSpecification_BraidtBraid" />
         <EntityTypeShape EntityType="MetHose.tSpecification_Glass" Width="1.625" PointX="5.75" PointY="5.375" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tGlasstSpecification_Glass" />
         <EntityTypeShape EntityType="MetHose.tSpecification_Ring" Width="1.625" PointX="8.125" PointY="5.375" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tSpecification_RingtRing" />
-        <EntityTypeShape EntityType="MetHose.tSp_Assembly" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tSp_Assembly" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tSp_AssemblytSpecification_tCorrugSheath" />
         <AssociationConnector Association="MetHose.tSp_AssemblytSpecification_Braid" />
         <AssociationConnector Association="MetHose.tSp_AssemblytSpecification_Glass" />
         <AssociationConnector Association="MetHose.tSp_AssemblytSpecification_Ring" />
-        <EntityTypeShape EntityType="MetHose.tSpec_Sp_Assembly" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tSpec_Sp_Assembly" Width="1.5" PointX="9.75" PointY="0.5" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tSp_AssemblytSpec_Sp_Assembly" />
         <AssociationConnector Association="MetHose.tSpecificationtSpec_Sp_Assembly" />
         <AssociationConnector Association="MetHose.tSpecificationtSpecification_tCorrugSheath" />
         <AssociationConnector Association="MetHose.tSpecificationtSpecification_Braid" />
         <AssociationConnector Association="MetHose.tSpecificationtSpecification_Glass" />
         <AssociationConnector Association="MetHose.tSpecificationtSpecification_Ring" />
+        <EntityTypeShape EntityType="MetHose.tLength" Width="2" PointX="0.75" PointY="7.375" IsExpanded="false" />
+        <AssociationConnector Association="MetHose.tLengthtCorrugSheath" />
+        <AssociationConnector Association="MetHose.tLengthtSpecification_tCorrugSheath" />
+        <AssociationConnector Association="MetHose.tMetHosetSpecification" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

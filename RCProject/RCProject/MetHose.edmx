@@ -19,6 +19,7 @@
     <EntitySet Name="tSpecification_RingSet" EntityType="MetHose.Store.tSpecification_RingSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tSp_AssemblySet" EntityType="MetHose.Store.tSp_AssemblySet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tSpec_Sp_AssemblySet" EntityType="MetHose.Store.tSpec_Sp_AssemblySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tLengthSet" EntityType="MetHose.Store.tLengthSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="tGlasstMaterial" Association="MetHose.Store.tGlasstMaterial">
       <End Role="tGlass" EntitySet="tGlassSet" />
       <End Role="tMaterial" EntitySet="tMaterialSet" />
@@ -34,14 +35,6 @@
     <AssociationSet Name="tCorrugSheathtMaterial" Association="MetHose.Store.tCorrugSheathtMaterial">
       <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
       <End Role="tMaterial" EntitySet="tMaterialSet" />
-    </AssociationSet>
-    <AssociationSet Name="tMetHoseSpecification" Association="MetHose.Store.tMetHoseSpecification">
-      <End Role="tMetHose" EntitySet="tMetHoseSet" />
-      <End Role="Specification" EntitySet="tSpecificationSet" />
-    </AssociationSet>
-    <AssociationSet Name="tSpecification_tCorrugSheathtCorrugSheath" Association="MetHose.Store.tSpecification_tCorrugSheathtCorrugSheath">
-      <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
-      <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
     </AssociationSet>
     <AssociationSet Name="tSpecification_BraidtBraid" Association="MetHose.Store.tSpecification_BraidtBraid">
       <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
@@ -94,6 +87,18 @@
     <AssociationSet Name="tSpecificationtSpecification_Ring" Association="MetHose.Store.tSpecificationtSpecification_Ring">
       <End Role="tSpecification" EntitySet="tSpecificationSet" />
       <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
+    </AssociationSet>
+    <AssociationSet Name="tLengthtCorrugSheath" Association="MetHose.Store.tLengthtCorrugSheath">
+      <End Role="tLength" EntitySet="tLengthSet" />
+      <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
+    </AssociationSet>
+    <AssociationSet Name="tLengthtSpecification_tCorrugSheath" Association="MetHose.Store.tLengthtSpecification_tCorrugSheath">
+      <End Role="tLength" EntitySet="tLengthSet" />
+      <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
+    </AssociationSet>
+    <AssociationSet Name="tMetHosetSpecification" Association="MetHose.Store.tMetHosetSpecification">
+      <End Role="tMetHose" EntitySet="tMetHoseSet" />
+      <End Role="tSpecification" EntitySet="tSpecificationSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="tCorrugSheathSet">
@@ -270,7 +275,7 @@
     <Property Name="PPneumTest" Type="float" Nullable="true" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Specification_ID_Specification" Type="int" Nullable="false" />
+    <Property Name="tSpecification_ID_Specification" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tSpecificationSet">
     <Key>
@@ -293,8 +298,8 @@
     </Key>
     <Property Name="ID_SpecCorSh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_specification" Type="int" Nullable="false" />
-    <Property Name="ID_corrugsheath" Type="int" Nullable="false" />
-    <Property Name="tCorrugSheathID_corrugsheath" Type="int" Nullable="false" />
+    <Property Name="ID_length" Type="int" Nullable="false" />
+    <Property Name="tLengthID_length" Type="int" Nullable="false" />
     <Property Name="tSp_AssemblyID_Sp_Assembly" Type="int" Nullable="false" />
     <Property Name="tSpecificationID_Specification" Type="int" Nullable="false" />
   </EntityType>
@@ -351,6 +356,14 @@
     <Property Name="tSp_AssemblyID_Sp_Assembly" Type="int" Nullable="false" />
     <Property Name="tSpecificationID_Specification" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="tLengthSet">
+    <Key>
+      <PropertyRef Name="ID_length" />
+    </Key>
+    <Property Name="ID_length" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LN" Type="float" Nullable="false" />
+    <Property Name="tCorrugSheathID_corrugsheath" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="tGlasstMaterial">
     <End Role="tGlass" Type="MetHose.Store.tGlassSet" Multiplicity="*" />
     <End Role="tMaterial" Type="MetHose.Store.tMaterialSet" Multiplicity="1" />
@@ -396,30 +409,6 @@
       </Principal>
       <Dependent Role="tCorrugSheath">
         <PropertyRef Name="tMaterialID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tMetHoseSpecification">
-    <End Role="tMetHose" Type="MetHose.Store.tMetHoseSet" Multiplicity="*" />
-    <End Role="Specification" Type="MetHose.Store.tSpecificationSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Specification">
-        <PropertyRef Name="ID_Specification" />
-      </Principal>
-      <Dependent Role="tMetHose">
-        <PropertyRef Name="Specification_ID_Specification" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tSpecification_tCorrugSheathtCorrugSheath">
-    <End Role="tSpecification_tCorrugSheath" Type="MetHose.Store.tSpecification_CorrugSheathSet" Multiplicity="*" />
-    <End Role="tCorrugSheath" Type="MetHose.Store.tCorrugSheathSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="tCorrugSheath">
-        <PropertyRef Name="ID_corrugsheath" />
-      </Principal>
-      <Dependent Role="tSpecification_tCorrugSheath">
-        <PropertyRef Name="tCorrugSheathID_corrugsheath" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -579,6 +568,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="tLengthtCorrugSheath">
+    <End Role="tLength" Type="MetHose.Store.tLengthSet" Multiplicity="*" />
+    <End Role="tCorrugSheath" Type="MetHose.Store.tCorrugSheathSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="tCorrugSheath">
+        <PropertyRef Name="ID_corrugsheath" />
+      </Principal>
+      <Dependent Role="tLength">
+        <PropertyRef Name="tCorrugSheathID_corrugsheath" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tLengthtSpecification_tCorrugSheath">
+    <End Role="tLength" Type="MetHose.Store.tLengthSet" Multiplicity="1" />
+    <End Role="tSpecification_tCorrugSheath" Type="MetHose.Store.tSpecification_CorrugSheathSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tLength">
+        <PropertyRef Name="ID_length" />
+      </Principal>
+      <Dependent Role="tSpecification_tCorrugSheath">
+        <PropertyRef Name="tLengthID_length" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tMetHosetSpecification">
+    <End Role="tMetHose" Type="MetHose.Store.tMetHoseSet" Multiplicity="*" />
+    <End Role="tSpecification" Type="MetHose.Store.tSpecificationSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="tSpecification">
+        <PropertyRef Name="ID_Specification" />
+      </Principal>
+      <Dependent Role="tMetHose">
+        <PropertyRef Name="tSpecification_ID_Specification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -608,10 +633,6 @@
           </AssociationSet>
           <EntitySet Name="tSpecificationSet" EntityType="MetHose.tSpecification" />
           <EntitySet Name="tSpecification_CorrugSheathSet" EntityType="MetHose.tSpecification_tCorrugSheath" />
-          <AssociationSet Name="tSpecification_tCorrugSheathtCorrugSheath" Association="MetHose.tSpecification_tCorrugSheathtCorrugSheath">
-            <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
-            <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
-          </AssociationSet>
           <EntitySet Name="tSpecification_BraidSet" EntityType="MetHose.tSpecification_Braid" />
           <AssociationSet Name="tSpecification_BraidtBraid" Association="MetHose.tSpecification_BraidtBraid">
             <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
@@ -669,6 +690,19 @@
             <End Role="tSpecification" EntitySet="tSpecificationSet" />
             <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
           </AssociationSet>
+          <EntitySet Name="tLengthSet" EntityType="MetHose.tLength" />
+          <AssociationSet Name="tLengthtCorrugSheath" Association="MetHose.tLengthtCorrugSheath">
+            <End Role="tLength" EntitySet="tLengthSet" />
+            <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
+          </AssociationSet>
+          <AssociationSet Name="tLengthtSpecification_tCorrugSheath" Association="MetHose.tLengthtSpecification_tCorrugSheath">
+            <End Role="tLength" EntitySet="tLengthSet" />
+            <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
+          </AssociationSet>
+          <AssociationSet Name="tMetHosetSpecification" Association="MetHose.tMetHosetSpecification">
+            <End Role="tMetHose" EntitySet="tMetHoseSet" />
+            <End Role="tSpecification" EntitySet="tSpecificationSet" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="tCorrugSheath">
           <Key>
@@ -690,7 +724,7 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="tMaterial" Relationship="MetHose.tCorrugSheathtMaterial" FromRole="tCorrugSheath" ToRole="tMaterial" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tSpecification_tCorrugSheathtCorrugSheath" FromRole="tCorrugSheath" ToRole="tSpecification_tCorrugSheath" />
+          <NavigationProperty Name="tLength" Relationship="MetHose.tLengthtCorrugSheath" FromRole="tCorrugSheath" ToRole="tLength" />
         </EntityType>
         <EntityType Name="tMaterial">
           <Key>
@@ -892,6 +926,7 @@
           <Property Name="PPneumTest" Type="Double" Nullable="true" />
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tSpecification" Relationship="MetHose.tMetHosetSpecification" FromRole="tMetHose" ToRole="tSpecification" />
         </EntityType>
         <Association Name="tCorrugSheathtMaterial">
           <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="*" />
@@ -924,6 +959,7 @@
           <NavigationProperty Name="tSpecification_Braid" Relationship="MetHose.tSpecificationtSpecification_Braid" FromRole="tSpecification" ToRole="tSpecification_Braid" />
           <NavigationProperty Name="tSpecification_Glass" Relationship="MetHose.tSpecificationtSpecification_Glass" FromRole="tSpecification" ToRole="tSpecification_Glass" />
           <NavigationProperty Name="tSpecification_Ring" Relationship="MetHose.tSpecificationtSpecification_Ring" FromRole="tSpecification" ToRole="tSpecification_Ring" />
+          <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetSpecification" FromRole="tSpecification" ToRole="tMetHose" />
         </EntityType>
         <EntityType Name="tSpecification_tCorrugSheath">
           <Key>
@@ -931,26 +967,14 @@
           </Key>
           <Property Name="ID_SpecCorSh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_specification" Type="Int32" Nullable="false" />
-          <Property Name="ID_corrugsheath" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tCorrugSheath" Relationship="MetHose.tSpecification_tCorrugSheathtCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tCorrugSheath" />
-          <Property Name="tCorrugSheathID_corrugsheath" Type="Int32" Nullable="false" />
+          <Property Name="ID_length" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tSp_Assembly" Relationship="MetHose.tSp_AssemblytSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tSp_Assembly" />
+          <Property Name="tLengthID_length" Type="Int32" Nullable="false" />
           <Property Name="tSp_AssemblyID_Sp_Assembly" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tSpecification" Relationship="MetHose.tSpecificationtSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tSpecification" />
           <Property Name="tSpecificationID_Specification" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tLength" Relationship="MetHose.tLengthtSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tLength" />
         </EntityType>
-        <Association Name="tSpecification_tCorrugSheathtCorrugSheath">
-          <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
-          <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="tCorrugSheath">
-              <PropertyRef Name="ID_corrugsheath" />
-            </Principal>
-            <Dependent Role="tSpecification_tCorrugSheath">
-              <PropertyRef Name="tCorrugSheathID_corrugsheath" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tSpecification_Braid">
           <Key>
             <PropertyRef Name="ID_SpecBr" />
@@ -1176,6 +1200,44 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tLength">
+          <Key>
+            <PropertyRef Name="ID_length" />
+          </Key>
+          <Property Name="ID_length" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LN" Type="Double" Nullable="false" />
+          <NavigationProperty Name="tCorrugSheath" Relationship="MetHose.tLengthtCorrugSheath" FromRole="tLength" ToRole="tCorrugSheath" />
+          <Property Name="tCorrugSheathID_corrugsheath" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tLengthtSpecification_tCorrugSheath" FromRole="tLength" ToRole="tSpecification_tCorrugSheath" />
+        </EntityType>
+        <Association Name="tLengthtCorrugSheath">
+          <End Type="MetHose.tLength" Role="tLength" Multiplicity="*" />
+          <End Type="MetHose.tCorrugSheath" Role="tCorrugSheath" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tCorrugSheath">
+              <PropertyRef Name="ID_corrugsheath" />
+            </Principal>
+            <Dependent Role="tLength">
+              <PropertyRef Name="tCorrugSheathID_corrugsheath" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tLengthtSpecification_tCorrugSheath">
+          <End Type="MetHose.tLength" Role="tLength" Multiplicity="1" />
+          <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tLength">
+              <PropertyRef Name="ID_length" />
+            </Principal>
+            <Dependent Role="tSpecification_tCorrugSheath">
+              <PropertyRef Name="tLengthID_length" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tMetHosetSpecification">
+          <End Type="MetHose.tMetHose" Role="tMetHose" Multiplicity="1" />
+          <End Type="MetHose.tSpecification" Role="tSpecification" Multiplicity="1" />
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1384,8 +1446,8 @@
         <MappingFragment StoreEntitySet="tSpecification_CorrugSheathSet">
           <ScalarProperty Name="ID_SpecCorSh" ColumnName="ID_SpecCorSh" />
           <ScalarProperty Name="ID_specification" ColumnName="ID_specification" />
-          <ScalarProperty Name="ID_corrugsheath" ColumnName="ID_corrugsheath" />
-          <ScalarProperty Name="tCorrugSheathID_corrugsheath" ColumnName="tCorrugSheathID_corrugsheath" />
+          <ScalarProperty Name="ID_length" ColumnName="ID_length" />
+          <ScalarProperty Name="tLengthID_length" ColumnName="tLengthID_length" />
           <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
           <ScalarProperty Name="tSpecificationID_Specification" ColumnName="tSpecificationID_Specification" />
         </MappingFragment>
@@ -1449,6 +1511,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tLengthSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tLength)">
+        <MappingFragment StoreEntitySet="tLengthSet">
+          <ScalarProperty Name="ID_length" ColumnName="ID_length" />
+          <ScalarProperty Name="LN" ColumnName="LN" />
+          <ScalarProperty Name="tCorrugSheathID_corrugsheath" ColumnName="tCorrugSheathID_corrugsheath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tMetHosetSpecification" TypeName="MetHose.tMetHosetSpecification" StoreEntitySet="tMetHoseSet">
+      <EndProperty Name="tSpecification">
+        <ScalarProperty Name="ID_Specification" ColumnName="tSpecification_ID_Specification" />
+      </EndProperty>
+      <EndProperty Name="tMetHose">
+        <ScalarProperty Name="ID_methose" ColumnName="ID_methose" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

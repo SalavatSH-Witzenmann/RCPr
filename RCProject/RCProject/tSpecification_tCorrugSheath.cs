@@ -16,13 +16,13 @@ namespace RCProject
     {
         public int ID_SpecCorSh { get; set; }
         public int ID_specification { get; set; }
-        public int ID_corrugsheath { get; set; }
-        public int tCorrugSheathID_corrugsheath { get; set; }
+        public int ID_length { get; set; }
+        public int tLengthID_length { get; set; }
         public int tSp_AssemblyID_Sp_Assembly { get; set; }
         public int tSpecificationID_Specification { get; set; }
     
-        public virtual tCorrugSheath tCorrugSheath { get; set; }
         public virtual tSp_Assembly tSp_Assembly { get; set; }
         public virtual tSpecification tSpecification { get; set; }
+        public virtual tLength tLength { get; set; }
     }
 }

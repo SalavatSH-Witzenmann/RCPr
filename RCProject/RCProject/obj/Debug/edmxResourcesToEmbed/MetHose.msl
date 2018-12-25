@@ -203,8 +203,8 @@
         <MappingFragment StoreEntitySet="tSpecification_CorrugSheathSet">
           <ScalarProperty Name="ID_SpecCorSh" ColumnName="ID_SpecCorSh" />
           <ScalarProperty Name="ID_specification" ColumnName="ID_specification" />
-          <ScalarProperty Name="ID_corrugsheath" ColumnName="ID_corrugsheath" />
-          <ScalarProperty Name="tCorrugSheathID_corrugsheath" ColumnName="tCorrugSheathID_corrugsheath" />
+          <ScalarProperty Name="ID_length" ColumnName="ID_length" />
+          <ScalarProperty Name="tLengthID_length" ColumnName="tLengthID_length" />
           <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
           <ScalarProperty Name="tSpecificationID_Specification" ColumnName="tSpecificationID_Specification" />
         </MappingFragment>
@@ -268,9 +268,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="tMetHoseSpecification" TypeName="MetHose.tMetHoseSpecification" StoreEntitySet="tMetHoseSet">
-      <EndProperty Name="Specification">
-        <ScalarProperty Name="ID_Specification" ColumnName="Specification_ID_Specification" />
+    <EntitySetMapping Name="tLengthSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tLength)">
+        <MappingFragment StoreEntitySet="tLengthSet">
+          <ScalarProperty Name="ID_length" ColumnName="ID_length" />
+          <ScalarProperty Name="LN" ColumnName="LN" />
+          <ScalarProperty Name="tCorrugSheathID_corrugsheath" ColumnName="tCorrugSheathID_corrugsheath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tMetHosetSpecification" TypeName="MetHose.tMetHosetSpecification" StoreEntitySet="tMetHoseSet">
+      <EndProperty Name="tSpecification">
+        <ScalarProperty Name="ID_Specification" ColumnName="tSpecification_ID_Specification" />
       </EndProperty>
       <EndProperty Name="tMetHose">
         <ScalarProperty Name="ID_methose" ColumnName="ID_methose" />

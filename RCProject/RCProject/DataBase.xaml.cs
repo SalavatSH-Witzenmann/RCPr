@@ -516,6 +516,12 @@ namespace RCProject
                  "Графа Обозначение кольца заполняется по типу - П12 DN32, П.65x1x36(x - латинская буква), RS325.001 DN25","Note!");           
         }
 
+        private void BasicDataMH_click(object sender, RoutedEventArgs e)   //В разделе Соединение для пояснения основных параметров
+        {
+            MessageBox.Show("Заполнение полей Первичное наименование и Дополнительное наименование необязательно, но нужно если хотите в дальнейшем "+
+                            "упростить ввод данных в РЦЗаявку", "Note!");
+        }
+
         #endregion
 
         /*private void MaterialCorSh_kn_SelectionChanged(object sender, SelectionChangedEventArgs e)   //выбор в разделе гофрированной оболочки ListView с элементами - На данный момент консервация

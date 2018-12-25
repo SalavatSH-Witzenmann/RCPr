@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="377816">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="384984">
       <assemblyIdentity name="RCProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>21qgP++KEf7ksltT3yx/i42VDrTS2PD/LNyh/rHhL2Q=</dsig:DigestValue>
+        <dsig:DigestValue>UUKdaYMTAIpcQ4iFB9CyFZOqxoiy01AwwLAOmUhycZ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -96,13 +96,13 @@
       <dsig:DigestValue>/QPgV1krWo13ZkG3mLlZIE4T1NCQkL2JsCjeA3AS8Bo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MetHose.edmx.sql" size="26837">
+  <file name="MetHose.edmx.sql" size="27650">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>t9fA9m7zSPfPkBaUPXpnm/sDD9DCVFLeM/8c4KbMUw8=</dsig:DigestValue>
+      <dsig:DigestValue>EAb48/ROWhw6y7eZEQuZauoP94QLPMOv/T/1L+61r1I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MetHose.tt" size="25276">
@@ -114,13 +114,13 @@
       <dsig:DigestValue>Dg51UFAl4D/hSihtbvP1bS0AoHIv+HSQHWv3fToUg1g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RCProject.exe.config" size="1758">
+  <file name="RCProject.exe.config" size="1527">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R0o4q9Dr3USYHPyTcOun5axR483Zo+clxDquVN52HQw=</dsig:DigestValue>
+      <dsig:DigestValue>WcYquFkMPDbeaJkq1yWJ5d4QR2RHEk/ELbgIcuilLMY=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

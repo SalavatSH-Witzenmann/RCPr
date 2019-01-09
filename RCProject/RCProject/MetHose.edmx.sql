@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/15/2018 23:31:45
+-- Date Created: 01/01/2019 19:44:11
 -- Generated from EDMX file: C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\MetHose.edmx
 -- --------------------------------------------------
 
@@ -28,12 +28,6 @@ IF OBJECT_ID(N'[dbo].[FK_tRingtMaterial]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_tCorrugSheathtMaterial]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tCorrugSheathSet] DROP CONSTRAINT [FK_tCorrugSheathtMaterial];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tMetHoseSpecification]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHoseSpecification];
-GO
-IF OBJECT_ID(N'[dbo].[FK_tSpecification_tCorrugSheathtCorrugSheath]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[tSpecification_CorrugSheathSet] DROP CONSTRAINT [FK_tSpecification_tCorrugSheathtCorrugSheath];
 GO
 IF OBJECT_ID(N'[dbo].[FK_tSpecification_BraidtBraid]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tSpecification_BraidSet] DROP CONSTRAINT [FK_tSpecification_BraidtBraid];
@@ -73,6 +67,15 @@ IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Glass]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_tSpecificationtSpecification_Ring]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tSpecification_RingSet] DROP CONSTRAINT [FK_tSpecificationtSpecification_Ring];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tLengthtCorrugSheath]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tLengthSet] DROP CONSTRAINT [FK_tLengthtCorrugSheath];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tLengthtSpecification_tCorrugSheath]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecification_CorrugSheathSet] DROP CONSTRAINT [FK_tLengthtSpecification_tCorrugSheath];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tMetHosetSpecification]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetSpecification];
 GO
 
 -- --------------------------------------------------
@@ -117,6 +120,9 @@ IF OBJECT_ID(N'[dbo].[tSp_AssemblySet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tSpec_Sp_AssemblySet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tSpec_Sp_AssemblySet];
+GO
+IF OBJECT_ID(N'[dbo].[tLengthSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tLengthSet];
 GO
 
 -- --------------------------------------------------
@@ -302,59 +308,50 @@ GO
 -- Creating table 'tSpecificationSet'
 CREATE TABLE [dbo].[tSpecificationSet] (
     [ID_Specification] int IDENTITY(1,1) NOT NULL,
-    [id_item] int  NOT NULL,
-    [Name] nvarchar(max)  NULL,
-    [Position] smallint  NOT NULL,
-    [Quantity] smallint  NOT NULL,
-    [IsAssembly] bit  NOT NULL,
-    [IsDetail] bit  NOT NULL,
-    [IsStandProd] bit  NOT NULL,
-    [IsOtherProd] bit  NOT NULL,
-    [IsMaterials] bit  NOT NULL
+    [Description] nvarchar(max)  NULL,
+    [dateT] datetime DEFAULT getdate() NOT NULL,
+    [Drawing] varbinary(max)  NULL,
+    [Executor] nvarchar(max)  NULL
 );
 GO
 
 -- Creating table 'tSpecification_CorrugSheathSet'
 CREATE TABLE [dbo].[tSpecification_CorrugSheathSet] (
     [ID_SpecCorSh] int IDENTITY(1,1) NOT NULL,
-    [ID_specification] int  NOT NULL,
     [ID_length] int  NOT NULL,
     [tLengthID_length] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
-    [tSpecificationID_Specification] int  NOT NULL
+    [tPosQuantNumbID_PosQuantNumb] int  NOT NULL
 );
 GO
 
 -- Creating table 'tSpecification_BraidSet'
 CREATE TABLE [dbo].[tSpecification_BraidSet] (
     [ID_SpecBr] int IDENTITY(1,1) NOT NULL,
-    [ID_specification] int  NOT NULL,
     [ID_braid] int  NOT NULL,
     [tBraidID_braid] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
-    [tSpecificationID_Specification] int  NOT NULL
+    [tPosQuantNumbID_PosQuantNumb] int  NOT NULL
 );
 GO
 
 -- Creating table 'tSpecification_GlassSet'
 CREATE TABLE [dbo].[tSpecification_GlassSet] (
     [ID_SpecGl] int IDENTITY(1,1) NOT NULL,
-    [ID_specification] int  NOT NULL,
     [ID_glass] nvarchar(max)  NOT NULL,
     [tGlassID_glass] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
-    [tSpecificationID_Specification] int  NOT NULL
+    [tPosQuantNumbID_PosQuantNumb] int  NOT NULL
 );
 GO
 
 -- Creating table 'tSpecification_RingSet'
 CREATE TABLE [dbo].[tSpecification_RingSet] (
     [ID_SpecRing] int IDENTITY(1,1) NOT NULL,
-    [ID_specification] int  NOT NULL,
     [ID_ring] int  NOT NULL,
     [tRingID_ring] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
-    [tSpecificationID_Specification] int  NOT NULL
+    [tPosQuantNumbID_PosQuantNumb] int  NOT NULL
 );
 GO
 
@@ -372,9 +369,8 @@ GO
 CREATE TABLE [dbo].[tSpec_Sp_AssemblySet] (
     [ID_Spec_Sp_Assembly] int IDENTITY(1,1) NOT NULL,
     [ID_Sp_Assembly] int  NOT NULL,
-    [ID_specification] int  NOT NULL,
     [tSp_AssemblyID_Sp_Assembly] int  NOT NULL,
-    [tSpecificationID_Specification] int  NOT NULL
+    [tPosQuantNumbID_PosQuantNumb] int  NOT NULL
 );
 GO
 
@@ -383,6 +379,28 @@ CREATE TABLE [dbo].[tLengthSet] (
     [ID_length] int IDENTITY(1,1) NOT NULL,
     [LN] float  NOT NULL,
     [tCorrugSheathID_corrugsheath] int  NOT NULL
+);
+GO
+
+-- Creating table 'tPosQuantNumbSet'
+CREATE TABLE [dbo].[tPosQuantNumbSet] (
+    [ID_PosQuantNumb] int IDENTITY(1,1) NOT NULL,
+    [Position] int  NOT NULL,
+    [Quantity] int  NOT NULL,
+    [ID_Object] int  NOT NULL,
+    [IsAssembly] bit  NOT NULL,
+    [IsDetail] bit  NOT NULL,
+    [IsStandProd] bit  NOT NULL,
+    [IsOtherProd] bit  NOT NULL,
+    [IsMaterials] bit  NOT NULL
+);
+GO
+
+-- Creating table 'tSpecification_tPosQuantNumbSet'
+CREATE TABLE [dbo].[tSpecification_tPosQuantNumbSet] (
+    [ID_Sp_PQN] int IDENTITY(1,1) NOT NULL,
+    [tPosQuantNumbID_PosQuantNumb] int  NOT NULL,
+    [tSpecificationID_Specification] int  NOT NULL
 );
 GO
 
@@ -472,6 +490,18 @@ GO
 ALTER TABLE [dbo].[tLengthSet]
 ADD CONSTRAINT [PK_tLengthSet]
     PRIMARY KEY CLUSTERED ([ID_length] ASC);
+GO
+
+-- Creating primary key on [ID_PosQuantNumb] in table 'tPosQuantNumbSet'
+ALTER TABLE [dbo].[tPosQuantNumbSet]
+ADD CONSTRAINT [PK_tPosQuantNumbSet]
+    PRIMARY KEY CLUSTERED ([ID_PosQuantNumb] ASC);
+GO
+
+-- Creating primary key on [ID_Sp_PQN] in table 'tSpecification_tPosQuantNumbSet'
+ALTER TABLE [dbo].[tSpecification_tPosQuantNumbSet]
+ADD CONSTRAINT [PK_tSpecification_tPosQuantNumbSet]
+    PRIMARY KEY CLUSTERED ([ID_Sp_PQN] ASC);
 GO
 
 -- --------------------------------------------------
@@ -658,81 +688,6 @@ ON [dbo].[tSpec_Sp_AssemblySet]
     ([tSp_AssemblyID_Sp_Assembly]);
 GO
 
--- Creating foreign key on [tSpecificationID_Specification] in table 'tSpec_Sp_AssemblySet'
-ALTER TABLE [dbo].[tSpec_Sp_AssemblySet]
-ADD CONSTRAINT [FK_tSpecificationtSpec_Sp_Assembly]
-    FOREIGN KEY ([tSpecificationID_Specification])
-    REFERENCES [dbo].[tSpecificationSet]
-        ([ID_Specification])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtSpec_Sp_Assembly'
-CREATE INDEX [IX_FK_tSpecificationtSpec_Sp_Assembly]
-ON [dbo].[tSpec_Sp_AssemblySet]
-    ([tSpecificationID_Specification]);
-GO
-
--- Creating foreign key on [tSpecificationID_Specification] in table 'tSpecification_CorrugSheathSet'
-ALTER TABLE [dbo].[tSpecification_CorrugSheathSet]
-ADD CONSTRAINT [FK_tSpecificationtSpecification_tCorrugSheath]
-    FOREIGN KEY ([tSpecificationID_Specification])
-    REFERENCES [dbo].[tSpecificationSet]
-        ([ID_Specification])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtSpecification_tCorrugSheath'
-CREATE INDEX [IX_FK_tSpecificationtSpecification_tCorrugSheath]
-ON [dbo].[tSpecification_CorrugSheathSet]
-    ([tSpecificationID_Specification]);
-GO
-
--- Creating foreign key on [tSpecificationID_Specification] in table 'tSpecification_BraidSet'
-ALTER TABLE [dbo].[tSpecification_BraidSet]
-ADD CONSTRAINT [FK_tSpecificationtSpecification_Braid]
-    FOREIGN KEY ([tSpecificationID_Specification])
-    REFERENCES [dbo].[tSpecificationSet]
-        ([ID_Specification])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtSpecification_Braid'
-CREATE INDEX [IX_FK_tSpecificationtSpecification_Braid]
-ON [dbo].[tSpecification_BraidSet]
-    ([tSpecificationID_Specification]);
-GO
-
--- Creating foreign key on [tSpecificationID_Specification] in table 'tSpecification_GlassSet'
-ALTER TABLE [dbo].[tSpecification_GlassSet]
-ADD CONSTRAINT [FK_tSpecificationtSpecification_Glass]
-    FOREIGN KEY ([tSpecificationID_Specification])
-    REFERENCES [dbo].[tSpecificationSet]
-        ([ID_Specification])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtSpecification_Glass'
-CREATE INDEX [IX_FK_tSpecificationtSpecification_Glass]
-ON [dbo].[tSpecification_GlassSet]
-    ([tSpecificationID_Specification]);
-GO
-
--- Creating foreign key on [tSpecificationID_Specification] in table 'tSpecification_RingSet'
-ALTER TABLE [dbo].[tSpecification_RingSet]
-ADD CONSTRAINT [FK_tSpecificationtSpecification_Ring]
-    FOREIGN KEY ([tSpecificationID_Specification])
-    REFERENCES [dbo].[tSpecificationSet]
-        ([ID_Specification])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtSpecification_Ring'
-CREATE INDEX [IX_FK_tSpecificationtSpecification_Ring]
-ON [dbo].[tSpecification_RingSet]
-    ([tSpecificationID_Specification]);
-GO
-
 -- Creating foreign key on [tCorrugSheathID_corrugsheath] in table 'tLengthSet'
 ALTER TABLE [dbo].[tLengthSet]
 ADD CONSTRAINT [FK_tLengthtCorrugSheath]
@@ -776,6 +731,111 @@ GO
 CREATE INDEX [IX_FK_tMetHosetSpecification]
 ON [dbo].[tMetHoseSet]
     ([tSpecification_ID_Specification]);
+GO
+
+-- Creating foreign key on [tPosQuantNumbID_PosQuantNumb] in table 'tSpecification_tPosQuantNumbSet'
+ALTER TABLE [dbo].[tSpecification_tPosQuantNumbSet]
+ADD CONSTRAINT [FK_tPosQuantNumbtSpecification_tPosQuantNumb]
+    FOREIGN KEY ([tPosQuantNumbID_PosQuantNumb])
+    REFERENCES [dbo].[tPosQuantNumbSet]
+        ([ID_PosQuantNumb])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tPosQuantNumbtSpecification_tPosQuantNumb'
+CREATE INDEX [IX_FK_tPosQuantNumbtSpecification_tPosQuantNumb]
+ON [dbo].[tSpecification_tPosQuantNumbSet]
+    ([tPosQuantNumbID_PosQuantNumb]);
+GO
+
+-- Creating foreign key on [tSpecificationID_Specification] in table 'tSpecification_tPosQuantNumbSet'
+ALTER TABLE [dbo].[tSpecification_tPosQuantNumbSet]
+ADD CONSTRAINT [FK_tSpecificationtSpecification_tPosQuantNumb]
+    FOREIGN KEY ([tSpecificationID_Specification])
+    REFERENCES [dbo].[tSpecificationSet]
+        ([ID_Specification])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtSpecification_tPosQuantNumb'
+CREATE INDEX [IX_FK_tSpecificationtSpecification_tPosQuantNumb]
+ON [dbo].[tSpecification_tPosQuantNumbSet]
+    ([tSpecificationID_Specification]);
+GO
+
+-- Creating foreign key on [tPosQuantNumbID_PosQuantNumb] in table 'tSpecification_CorrugSheathSet'
+ALTER TABLE [dbo].[tSpecification_CorrugSheathSet]
+ADD CONSTRAINT [FK_tPosQuantNumbtSpecification_tCorrugSheath]
+    FOREIGN KEY ([tPosQuantNumbID_PosQuantNumb])
+    REFERENCES [dbo].[tPosQuantNumbSet]
+        ([ID_PosQuantNumb])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tPosQuantNumbtSpecification_tCorrugSheath'
+CREATE INDEX [IX_FK_tPosQuantNumbtSpecification_tCorrugSheath]
+ON [dbo].[tSpecification_CorrugSheathSet]
+    ([tPosQuantNumbID_PosQuantNumb]);
+GO
+
+-- Creating foreign key on [tPosQuantNumbID_PosQuantNumb] in table 'tSpecification_BraidSet'
+ALTER TABLE [dbo].[tSpecification_BraidSet]
+ADD CONSTRAINT [FK_tPosQuantNumbtSpecification_Braid]
+    FOREIGN KEY ([tPosQuantNumbID_PosQuantNumb])
+    REFERENCES [dbo].[tPosQuantNumbSet]
+        ([ID_PosQuantNumb])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tPosQuantNumbtSpecification_Braid'
+CREATE INDEX [IX_FK_tPosQuantNumbtSpecification_Braid]
+ON [dbo].[tSpecification_BraidSet]
+    ([tPosQuantNumbID_PosQuantNumb]);
+GO
+
+-- Creating foreign key on [tPosQuantNumbID_PosQuantNumb] in table 'tSpecification_GlassSet'
+ALTER TABLE [dbo].[tSpecification_GlassSet]
+ADD CONSTRAINT [FK_tPosQuantNumbtSpecification_Glass]
+    FOREIGN KEY ([tPosQuantNumbID_PosQuantNumb])
+    REFERENCES [dbo].[tPosQuantNumbSet]
+        ([ID_PosQuantNumb])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tPosQuantNumbtSpecification_Glass'
+CREATE INDEX [IX_FK_tPosQuantNumbtSpecification_Glass]
+ON [dbo].[tSpecification_GlassSet]
+    ([tPosQuantNumbID_PosQuantNumb]);
+GO
+
+-- Creating foreign key on [tPosQuantNumbID_PosQuantNumb] in table 'tSpecification_RingSet'
+ALTER TABLE [dbo].[tSpecification_RingSet]
+ADD CONSTRAINT [FK_tPosQuantNumbtSpecification_Ring]
+    FOREIGN KEY ([tPosQuantNumbID_PosQuantNumb])
+    REFERENCES [dbo].[tPosQuantNumbSet]
+        ([ID_PosQuantNumb])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tPosQuantNumbtSpecification_Ring'
+CREATE INDEX [IX_FK_tPosQuantNumbtSpecification_Ring]
+ON [dbo].[tSpecification_RingSet]
+    ([tPosQuantNumbID_PosQuantNumb]);
+GO
+
+-- Creating foreign key on [tPosQuantNumbID_PosQuantNumb] in table 'tSpec_Sp_AssemblySet'
+ALTER TABLE [dbo].[tSpec_Sp_AssemblySet]
+ADD CONSTRAINT [FK_tPosQuantNumbtSpec_Sp_Assembly]
+    FOREIGN KEY ([tPosQuantNumbID_PosQuantNumb])
+    REFERENCES [dbo].[tPosQuantNumbSet]
+        ([ID_PosQuantNumb])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tPosQuantNumbtSpec_Sp_Assembly'
+CREATE INDEX [IX_FK_tPosQuantNumbtSpec_Sp_Assembly]
+ON [dbo].[tSpec_Sp_AssemblySet]
+    ([tPosQuantNumbID_PosQuantNumb]);
 GO
 
 -- --------------------------------------------------

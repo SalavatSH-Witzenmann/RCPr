@@ -13,10 +13,6 @@
     <EntitySet Name="tRingSet" EntityType="MetHose.Store.tRingSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tMetHoseSet" EntityType="MetHose.Store.tMetHoseSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tSpecificationSet" EntityType="MetHose.Store.tSpecificationSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tSpecification_CorrugSheathSet" EntityType="MetHose.Store.tSpecification_CorrugSheathSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tSpecification_BraidSet" EntityType="MetHose.Store.tSpecification_BraidSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tSpecification_GlassSet" EntityType="MetHose.Store.tSpecification_GlassSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tSpecification_RingSet" EntityType="MetHose.Store.tSpecification_RingSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tLengthSet" EntityType="MetHose.Store.tLengthSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="tGlasstMaterial" Association="MetHose.Store.tGlasstMaterial">
       <End Role="tGlass" EntitySet="tGlassSet" />
@@ -34,25 +30,9 @@
       <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
       <End Role="tMaterial" EntitySet="tMaterialSet" />
     </AssociationSet>
-    <AssociationSet Name="tSpecification_BraidtBraid" Association="MetHose.Store.tSpecification_BraidtBraid">
-      <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
-      <End Role="tBraid" EntitySet="tBraidSet" />
-    </AssociationSet>
-    <AssociationSet Name="tGlasstSpecification_Glass" Association="MetHose.Store.tGlasstSpecification_Glass">
-      <End Role="tGlass" EntitySet="tGlassSet" />
-      <End Role="tSpecification_Glass" EntitySet="tSpecification_GlassSet" />
-    </AssociationSet>
-    <AssociationSet Name="tSpecification_RingtRing" Association="MetHose.Store.tSpecification_RingtRing">
-      <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
-      <End Role="tRing" EntitySet="tRingSet" />
-    </AssociationSet>
     <AssociationSet Name="tLengthtCorrugSheath" Association="MetHose.Store.tLengthtCorrugSheath">
       <End Role="tLength" EntitySet="tLengthSet" />
       <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
-    </AssociationSet>
-    <AssociationSet Name="tLengthtSpecification_tCorrugSheath" Association="MetHose.Store.tLengthtSpecification_tCorrugSheath">
-      <End Role="tLength" EntitySet="tLengthSet" />
-      <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
     </AssociationSet>
     <AssociationSet Name="tMetHosetSpecification" Association="MetHose.Store.tMetHosetSpecification">
       <End Role="tMetHose" EntitySet="tMetHoseSet" />
@@ -245,46 +225,6 @@
     <Property Name="Drawing" Type="varbinary(max)" Nullable="true" />
     <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
-  <EntityType Name="tSpecification_CorrugSheathSet">
-    <Key>
-      <PropertyRef Name="ID_SpecCorSh" />
-    </Key>
-    <Property Name="ID_SpecCorSh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_length" Type="int" Nullable="false" />
-    <Property Name="tLengthID_length" Type="int" Nullable="false" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="int" Nullable="false" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tSpecification_BraidSet">
-    <Key>
-      <PropertyRef Name="ID_SpecBr" />
-    </Key>
-    <Property Name="ID_SpecBr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_braid" Type="int" Nullable="false" />
-    <Property Name="tBraidID_braid" Type="int" Nullable="false" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="int" Nullable="false" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tSpecification_GlassSet">
-    <Key>
-      <PropertyRef Name="ID_SpecGl" />
-    </Key>
-    <Property Name="ID_SpecGl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_glass" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="tGlassID_glass" Type="int" Nullable="false" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="int" Nullable="false" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tSpecification_RingSet">
-    <Key>
-      <PropertyRef Name="ID_SpecRing" />
-    </Key>
-    <Property Name="ID_SpecRing" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_ring" Type="int" Nullable="false" />
-    <Property Name="tRingID_ring" Type="int" Nullable="false" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="int" Nullable="false" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="tLengthSet">
     <Key>
       <PropertyRef Name="ID_length" />
@@ -341,42 +281,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tSpecification_BraidtBraid">
-    <End Role="tSpecification_Braid" Type="MetHose.Store.tSpecification_BraidSet" Multiplicity="*" />
-    <End Role="tBraid" Type="MetHose.Store.tBraidSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="tBraid">
-        <PropertyRef Name="ID_braid" />
-      </Principal>
-      <Dependent Role="tSpecification_Braid">
-        <PropertyRef Name="tBraidID_braid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tGlasstSpecification_Glass">
-    <End Role="tGlass" Type="MetHose.Store.tGlassSet" Multiplicity="1" />
-    <End Role="tSpecification_Glass" Type="MetHose.Store.tSpecification_GlassSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tGlass">
-        <PropertyRef Name="ID_glass" />
-      </Principal>
-      <Dependent Role="tSpecification_Glass">
-        <PropertyRef Name="tGlassID_glass" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tSpecification_RingtRing">
-    <End Role="tSpecification_Ring" Type="MetHose.Store.tSpecification_RingSet" Multiplicity="*" />
-    <End Role="tRing" Type="MetHose.Store.tRingSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="tRing">
-        <PropertyRef Name="ID_ring" />
-      </Principal>
-      <Dependent Role="tSpecification_Ring">
-        <PropertyRef Name="tRingID_ring" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="tLengthtCorrugSheath">
     <End Role="tLength" Type="MetHose.Store.tLengthSet" Multiplicity="*" />
     <End Role="tCorrugSheath" Type="MetHose.Store.tCorrugSheathSet" Multiplicity="1" />
@@ -386,18 +290,6 @@
       </Principal>
       <Dependent Role="tLength">
         <PropertyRef Name="tCorrugSheathID_corrugsheath" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tLengthtSpecification_tCorrugSheath">
-    <End Role="tLength" Type="MetHose.Store.tLengthSet" Multiplicity="1" />
-    <End Role="tSpecification_tCorrugSheath" Type="MetHose.Store.tSpecification_CorrugSheathSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tLength">
-        <PropertyRef Name="ID_length" />
-      </Principal>
-      <Dependent Role="tSpecification_tCorrugSheath">
-        <PropertyRef Name="tLengthID_length" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -441,30 +333,10 @@
             <End Role="tMaterial" EntitySet="tMaterialSet" />
           </AssociationSet>
           <EntitySet Name="tSpecificationSet" EntityType="MetHose.tSpecification" />
-          <EntitySet Name="tSpecification_CorrugSheathSet" EntityType="MetHose.tSpecification_tCorrugSheath" />
-          <EntitySet Name="tSpecification_BraidSet" EntityType="MetHose.tSpecification_Braid" />
-          <AssociationSet Name="tSpecification_BraidtBraid" Association="MetHose.tSpecification_BraidtBraid">
-            <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
-            <End Role="tBraid" EntitySet="tBraidSet" />
-          </AssociationSet>
-          <EntitySet Name="tSpecification_GlassSet" EntityType="MetHose.tSpecification_Glass" />
-          <AssociationSet Name="tGlasstSpecification_Glass" Association="MetHose.tGlasstSpecification_Glass">
-            <End Role="tGlass" EntitySet="tGlassSet" />
-            <End Role="tSpecification_Glass" EntitySet="tSpecification_GlassSet" />
-          </AssociationSet>
-          <EntitySet Name="tSpecification_RingSet" EntityType="MetHose.tSpecification_Ring" />
-          <AssociationSet Name="tSpecification_RingtRing" Association="MetHose.tSpecification_RingtRing">
-            <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
-            <End Role="tRing" EntitySet="tRingSet" />
-          </AssociationSet>
           <EntitySet Name="tLengthSet" EntityType="MetHose.tLength" />
           <AssociationSet Name="tLengthtCorrugSheath" Association="MetHose.tLengthtCorrugSheath">
             <End Role="tLength" EntitySet="tLengthSet" />
             <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
-          </AssociationSet>
-          <AssociationSet Name="tLengthtSpecification_tCorrugSheath" Association="MetHose.tLengthtSpecification_tCorrugSheath">
-            <End Role="tLength" EntitySet="tLengthSet" />
-            <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
           </AssociationSet>
           <AssociationSet Name="tMetHosetSpecification" Association="MetHose.tMetHosetSpecification">
             <End Role="tMetHose" EntitySet="tMetHoseSet" />
@@ -472,22 +344,26 @@
           </AssociationSet>
           <EntitySet Name="tAssemblySpSet" EntityType="MetHose.tAssemblySp" />
           <EntitySet Name="tDetailSpSet" EntityType="MetHose.tDetailSp" />
-          <EntitySet Name="tGenSpecificationSet" EntityType="MetHose.tGenSpecification" />
-          <AssociationSet Name="tDetailSptSpecification_tCorrugSheath" Association="MetHose.tDetailSptSpecification_tCorrugSheath">
+          <EntitySet Name="tAdapterSet" EntityType="MetHose.tAdapter" />
+          <AssociationSet Name="tDetailSptAdapter" Association="MetHose.tDetailSptAdapter">
             <End Role="tDetailSp" EntitySet="tDetailSpSet" />
-            <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
+            <End Role="tAdapter" EntitySet="tAdapterSet" />
           </AssociationSet>
-          <AssociationSet Name="tDetailSptSpecification_Ring" Association="MetHose.tDetailSptSpecification_Ring">
-            <End Role="tDetailSp" EntitySet="tDetailSpSet" />
-            <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
+          <AssociationSet Name="tLengthtAdapter" Association="MetHose.tLengthtAdapter">
+            <End Role="tLength" EntitySet="tLengthSet" />
+            <End Role="tAdapter" EntitySet="tAdapterSet" />
           </AssociationSet>
-          <AssociationSet Name="tDetailSptSpecification_Braid" Association="MetHose.tDetailSptSpecification_Braid">
-            <End Role="tDetailSp" EntitySet="tDetailSpSet" />
-            <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
+          <AssociationSet Name="tBraidtAdapter" Association="MetHose.tBraidtAdapter">
+            <End Role="tBraid" EntitySet="tBraidSet" />
+            <End Role="tAdapter" EntitySet="tAdapterSet" />
           </AssociationSet>
-          <AssociationSet Name="tDetailSptSpecification_Glass" Association="MetHose.tDetailSptSpecification_Glass">
-            <End Role="tDetailSp" EntitySet="tDetailSpSet" />
-            <End Role="tSpecification_Glass" EntitySet="tSpecification_GlassSet" />
+          <AssociationSet Name="tRingtAdapter" Association="MetHose.tRingtAdapter">
+            <End Role="tRing" EntitySet="tRingSet" />
+            <End Role="tAdapter" EntitySet="tAdapterSet" />
+          </AssociationSet>
+          <AssociationSet Name="tGlasstAdapter" Association="MetHose.tGlasstAdapter">
+            <End Role="tGlass" EntitySet="tGlassSet" />
+            <End Role="tAdapter" EntitySet="tAdapterSet" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="tCorrugSheath">
@@ -607,7 +483,7 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tSpecification_Glass" Relationship="MetHose.tGlasstSpecification_Glass" FromRole="tGlass" ToRole="tSpecification_Glass" />
+          <NavigationProperty Name="tAdapter" Relationship="MetHose.tGlasstAdapter" FromRole="tGlass" ToRole="tAdapter" />
         </EntityType>
         <Association Name="tGlasstMaterial">
           <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="*" />
@@ -638,7 +514,7 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="tMaterial" Relationship="MetHose.tBraidtMaterial" FromRole="tBraid" ToRole="tMaterial" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tSpecification_Braid" Relationship="MetHose.tSpecification_BraidtBraid" FromRole="tBraid" ToRole="tSpecification_Braid" />
+          <NavigationProperty Name="tAdapter" Relationship="MetHose.tBraidtAdapter" FromRole="tBraid" ToRole="tAdapter" />
         </EntityType>
         <Association Name="tBraidtMaterial">
           <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="*" />
@@ -685,7 +561,7 @@
           <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tSpecification_Ring" Relationship="MetHose.tSpecification_RingtRing" FromRole="tRing" ToRole="tSpecification_Ring" />
+          <NavigationProperty Name="tAdapter" Relationship="MetHose.tRingtAdapter" FromRole="tRing" ToRole="tAdapter" />
         </EntityType>
         <Association Name="tRingtMaterial">
           <End Type="MetHose.tRing" Role="tRing" Multiplicity="*" />
@@ -732,71 +608,16 @@
           </Key>
           <Property Name="ID_Specification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetSpecification" FromRole="tSpecification" ToRole="tMetHose" />
-          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="AssemblyG" Type="Int32" Nullable="true" />
+          <Property Name="DetailG" Type="Int32" Nullable="true" />
+          <Property Name="StandartProductsG" Type="Int32" Nullable="true" />
+          <Property Name="OtherProductsG" Type="Int32" Nullable="true" />
+          <Property Name="KitsG" Type="Int32" Nullable="true" />
           <Property Name="dateT" Type="DateTime" Nullable="false" />
           <Property Name="Drawing" Type="Binary" Nullable="true" />
+          <Property Name="Description" Type="String" Nullable="true" />
           <Property Name="Executor" Type="String" Nullable="true" />
         </EntityType>
-        <EntityType Name="tSpecification_tCorrugSheath">
-          <Property Name="tLengthID_length" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tLength" Relationship="MetHose.tLengthtSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tLength" />
-          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tDetailSp" />
-          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tSpecification_Braid">
-          <NavigationProperty Name="tBraid" Relationship="MetHose.tSpecification_BraidtBraid" FromRole="tSpecification_Braid" ToRole="tBraid" />
-          <Property Name="tBraidID_braid" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptSpecification_Braid" FromRole="tSpecification_Braid" ToRole="tDetailSp" />
-          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
-        </EntityType>
-        <Association Name="tSpecification_BraidtBraid">
-          <End Type="MetHose.tSpecification_Braid" Role="tSpecification_Braid" Multiplicity="*" />
-          <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="tBraid">
-              <PropertyRef Name="ID_braid" />
-            </Principal>
-            <Dependent Role="tSpecification_Braid">
-              <PropertyRef Name="tBraidID_braid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tSpecification_Glass">
-          <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstSpecification_Glass" FromRole="tSpecification_Glass" ToRole="tGlass" />
-          <Property Name="tGlassID_glass" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptSpecification_Glass" FromRole="tSpecification_Glass" ToRole="tDetailSp" />
-          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
-        </EntityType>
-        <Association Name="tGlasstSpecification_Glass">
-          <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="1" />
-          <End Type="MetHose.tSpecification_Glass" Role="tSpecification_Glass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tGlass">
-              <PropertyRef Name="ID_glass" />
-            </Principal>
-            <Dependent Role="tSpecification_Glass">
-              <PropertyRef Name="tGlassID_glass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tSpecification_Ring">
-          <NavigationProperty Name="tRing" Relationship="MetHose.tSpecification_RingtRing" FromRole="tSpecification_Ring" ToRole="tRing" />
-          <Property Name="tRingID_ring" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptSpecification_Ring" FromRole="tSpecification_Ring" ToRole="tDetailSp" />
-          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
-        </EntityType>
-        <Association Name="tSpecification_RingtRing">
-          <End Type="MetHose.tSpecification_Ring" Role="tSpecification_Ring" Multiplicity="*" />
-          <End Type="MetHose.tRing" Role="tRing" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="tRing">
-              <PropertyRef Name="ID_ring" />
-            </Principal>
-            <Dependent Role="tSpecification_Ring">
-              <PropertyRef Name="tRingID_ring" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tLength">
           <Key>
             <PropertyRef Name="ID_length" />
@@ -805,7 +626,7 @@
           <Property Name="LN" Type="Double" Nullable="false" />
           <NavigationProperty Name="tCorrugSheath" Relationship="MetHose.tLengthtCorrugSheath" FromRole="tLength" ToRole="tCorrugSheath" />
           <Property Name="tCorrugSheathID_corrugsheath" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tLengthtSpecification_tCorrugSheath" FromRole="tLength" ToRole="tSpecification_tCorrugSheath" />
+          <NavigationProperty Name="tAdapter" Relationship="MetHose.tLengthtAdapter" FromRole="tLength" ToRole="tAdapter" />
         </EntityType>
         <Association Name="tLengthtCorrugSheath">
           <End Type="MetHose.tLength" Role="tLength" Multiplicity="*" />
@@ -816,18 +637,6 @@
             </Principal>
             <Dependent Role="tLength">
               <PropertyRef Name="tCorrugSheathID_corrugsheath" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tLengthtSpecification_tCorrugSheath">
-          <End Type="MetHose.tLength" Role="tLength" Multiplicity="1" />
-          <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tLength">
-              <PropertyRef Name="ID_length" />
-            </Principal>
-            <Dependent Role="tSpecification_tCorrugSheath">
-              <PropertyRef Name="tLengthID_length" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -857,64 +666,85 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PosDetail" Type="Int32" Nullable="true" />
           <Property Name="ID_Object" Type="Int32" Nullable="false" />
+          <Property Name="TypeObject" Type="String" Nullable="false" />
           <Property Name="NameDet" Type="String" Nullable="true" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tDetailSptSpecification_tCorrugSheath" FromRole="tDetailSp" ToRole="tSpecification_tCorrugSheath" />
-          <NavigationProperty Name="tSpecification_Ring" Relationship="MetHose.tDetailSptSpecification_Ring" FromRole="tDetailSp" ToRole="tSpecification_Ring" />
-          <NavigationProperty Name="tSpecification_Braid" Relationship="MetHose.tDetailSptSpecification_Braid" FromRole="tDetailSp" ToRole="tSpecification_Braid" />
-          <NavigationProperty Name="tSpecification_Glass" Relationship="MetHose.tDetailSptSpecification_Glass" FromRole="tDetailSp" ToRole="tSpecification_Glass" />
+          <NavigationProperty Name="tAdapter" Relationship="MetHose.tDetailSptAdapter" FromRole="tDetailSp" ToRole="tAdapter" />
         </EntityType>
-        <EntityType Name="tGenSpecification">
+        <EntityType Name="tAdapter">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptAdapter" FromRole="tAdapter" ToRole="tDetailSp" />
+          <Property Name="NumbElement" Type="String" Nullable="false" />
+          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tLength" Relationship="MetHose.tLengthtAdapter" FromRole="tAdapter" ToRole="tLength" />
+          <Property Name="tLengthID_length" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="tBraid" Relationship="MetHose.tBraidtAdapter" FromRole="tAdapter" ToRole="tBraid" />
+          <Property Name="tBraidID_braid" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="tRing" Relationship="MetHose.tRingtAdapter" FromRole="tAdapter" ToRole="tRing" />
+          <Property Name="tRingID_ring" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstAdapter" FromRole="tAdapter" ToRole="tGlass" />
+          <Property Name="tGlassID_glass" Type="Int32" Nullable="true" />
         </EntityType>
-        <Association Name="tDetailSptSpecification_tCorrugSheath">
+        <Association Name="tDetailSptAdapter">
           <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
-          <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
+          <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tDetailSp">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="tSpecification_tCorrugSheath">
+            <Dependent Role="tAdapter">
               <PropertyRef Name="tDetailSpID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tDetailSptSpecification_Ring">
-          <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
-          <End Type="MetHose.tSpecification_Ring" Role="tSpecification_Ring" Multiplicity="*" />
+        <Association Name="tLengthtAdapter">
+          <End Type="MetHose.tLength" Role="tLength" Multiplicity="1" />
+          <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tDetailSp">
-              <PropertyRef Name="ID" />
+            <Principal Role="tLength">
+              <PropertyRef Name="ID_length" />
             </Principal>
-            <Dependent Role="tSpecification_Ring">
-              <PropertyRef Name="tDetailSpID" />
+            <Dependent Role="tAdapter">
+              <PropertyRef Name="tLengthID_length" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tDetailSptSpecification_Braid">
-          <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
-          <End Type="MetHose.tSpecification_Braid" Role="tSpecification_Braid" Multiplicity="*" />
+        <Association Name="tBraidtAdapter">
+          <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="1" />
+          <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tDetailSp">
-              <PropertyRef Name="ID" />
+            <Principal Role="tBraid">
+              <PropertyRef Name="ID_braid" />
             </Principal>
-            <Dependent Role="tSpecification_Braid">
-              <PropertyRef Name="tDetailSpID" />
+            <Dependent Role="tAdapter">
+              <PropertyRef Name="tBraidID_braid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tDetailSptSpecification_Glass">
-          <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
-          <End Type="MetHose.tSpecification_Glass" Role="tSpecification_Glass" Multiplicity="*" />
+        <Association Name="tRingtAdapter">
+          <End Type="MetHose.tRing" Role="tRing" Multiplicity="1" />
+          <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tDetailSp">
-              <PropertyRef Name="ID" />
+            <Principal Role="tRing">
+              <PropertyRef Name="ID_ring" />
             </Principal>
-            <Dependent Role="tSpecification_Glass">
-              <PropertyRef Name="tDetailSpID" />
+            <Dependent Role="tAdapter">
+              <PropertyRef Name="tRingID_ring" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tGlasstAdapter">
+          <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="1" />
+          <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tGlass">
+              <PropertyRef Name="ID_glass" />
+            </Principal>
+            <Dependent Role="tAdapter">
+              <PropertyRef Name="tGlassID_glass" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1113,34 +943,6 @@
           <ScalarProperty Name="dateT" ColumnName="dateT" />
           <ScalarProperty Name="Drawing" ColumnName="Drawing" />
           <ScalarProperty Name="Executor" ColumnName="Executor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_CorrugSheathSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_tCorrugSheath)">
-        <MappingFragment StoreEntitySet="tSpecification_CorrugSheathSet">
-          <ScalarProperty Name="tLengthID_length" ColumnName="tLengthID_length" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_BraidSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_Braid)">
-        <MappingFragment StoreEntitySet="tSpecification_BraidSet">
-          <ScalarProperty Name="tBraidID_braid" ColumnName="tBraidID_braid" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_GlassSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_Glass)">
-        <MappingFragment StoreEntitySet="tSpecification_GlassSet">
-          <ScalarProperty Name="tGlassID_glass" ColumnName="tGlassID_glass" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_RingSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_Ring)">
-        <MappingFragment StoreEntitySet="tSpecification_RingSet">
-          <ScalarProperty Name="tRingID_ring" ColumnName="tRingID_ring" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

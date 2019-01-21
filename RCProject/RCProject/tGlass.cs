@@ -20,7 +20,7 @@ namespace RCProject
             this.UntypicalCheck = false;
             this.ExpanRing = false;
             this.CompressRing = false;
-            this.tSpecification_Glass = new HashSet<tSpecification_Glass>();
+            this.tAdapter = new HashSet<tAdapter>();
         }
     
         public int ID_glass { get; set; }
@@ -40,6 +40,6 @@ namespace RCProject
     
         public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tSpecification_Glass> tSpecification_Glass { get; set; }
+        public virtual ICollection<tAdapter> tAdapter { get; set; }
     }
 }

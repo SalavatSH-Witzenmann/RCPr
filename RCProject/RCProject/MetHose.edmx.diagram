@@ -15,15 +15,24 @@
         <AssociationConnector Association="MetHose.tRingtMaterial" />
         <EntityTypeShape EntityType="MetHose.tMetHose" Width="2.25" PointX="17.125" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="MetHose.tCorrugSheathtMaterial" />
-        <EntityTypeShape EntityType="MetHose.tSpecification" Width="2.25" PointX="17.125" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="MetHose.tLength" Width="2" PointX="3" PointY="10.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="MetHose.tSpecification" Width="2.25" PointX="14.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tLength" Width="2" PointX="2.875" PointY="9.5" IsExpanded="false" />
         <AssociationConnector Association="MetHose.tLengthtCorrugSheath" />
         <AssociationConnector Association="MetHose.tMetHosetSpecification" />
-        <EntityTypeShape EntityType="MetHose.tAssemblySp" Width="2.25" PointX="12.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MetHose.tDetailSp" Width="2" PointX="6.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MetHose.tAdapter" Width="2" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tAssemblySp" Width="2.25" PointX="8" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tDetailSp" Width="2" PointX="11.375" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MetHose.tAdapter" Width="2" PointX="8.5" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="MetHose.tDetailSptAdapter" />
-        <AssociationConnector Association="MetHose.tLengthtAdapter" />
+        <AssociationConnector Association="MetHose.tDetailSptSpecification" />
+        <EntityTypeShape EntityType="MetHose.tBufer" Width="1.5" PointX="4.125" PointY="1.5" />
+        <AssociationConnector Association="MetHose.tAssemblySptBufer" />
+        <EntityTypeShape EntityType="MetHose.tAsDet" Width="1.5" PointX="11.375" PointY="2.625" />
+        <AssociationConnector Association="MetHose.tAssemblySptAsDet" />
+        <AssociationConnector Association="MetHose.tDetailSptAsDet" />
+        <EntityTypeShape EntityType="MetHose.tAsSp" Width="1.5" PointX="13.75" PointY="0.875" />
+        <AssociationConnector Association="MetHose.tAssemblySptAsSp" />
+        <AssociationConnector Association="MetHose.tSpecificationtAsSp" />
+        <AssociationConnector Association="MetHose.tAdaptertLength" />
         <AssociationConnector Association="MetHose.tBraidtAdapter" />
         <AssociationConnector Association="MetHose.tRingtAdapter" />
         <AssociationConnector Association="MetHose.tGlasstAdapter" />

@@ -17,7 +17,7 @@ namespace RCProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tBraid()
         {
-            this.tSpecification_Braid = new HashSet<tSpecification_Braid>();
+            this.tAdapter = new HashSet<tAdapter>();
         }
     
         public int ID_braid { get; set; }
@@ -35,6 +35,6 @@ namespace RCProject
     
         public virtual tMaterial tMaterial { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tSpecification_Braid> tSpecification_Braid { get; set; }
+        public virtual ICollection<tAdapter> tAdapter { get; set; }
     }
 }

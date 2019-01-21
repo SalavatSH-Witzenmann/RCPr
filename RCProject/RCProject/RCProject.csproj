@@ -123,6 +123,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Compile Include="tAdapter.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tAsDet.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tAssemblySp.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tAsSp.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tBraid.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tBufer.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCorrugSheath.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tDetailSp.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tGlass.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tLength.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tMaterial.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tMetHose.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tRing.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tSpecification.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
     <Page Include="DataBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

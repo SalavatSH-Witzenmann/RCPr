@@ -39,5 +39,6 @@ namespace RCProject
         public virtual DbSet<tBufer> tBuferSet { get; set; }
         public virtual DbSet<tAsDet> tAsDetSet { get; set; }
         public virtual DbSet<tAsSp> tAsSpSet { get; set; }
+        public virtual DbSet<tDetSp> tDetSpSet { get; set; }
     }
 }

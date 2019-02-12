@@ -11,5 +11,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("methose.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("methose.edmx.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("methose.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("texttemplate1.tt")]
 
 

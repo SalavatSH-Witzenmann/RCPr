@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="393176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RCProject.exe" size="382936">
       <assemblyIdentity name="RCProject" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KG/o1qH6W+V7ZHeIB+9tx9MNe7OZ7CfgKMzQ98mgk+M=</dsig:DigestValue>
+        <dsig:DigestValue>dCIU8g/Guh63skIoqEY5ey58kqAXVdcFBWrt0IPrYCw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -96,13 +96,13 @@
       <dsig:DigestValue>/QPgV1krWo13ZkG3mLlZIE4T1NCQkL2JsCjeA3AS8Bo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MetHose.edmx.sql" size="29891">
+  <file name="MetHose.edmx.sql" size="23763">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mNZ1VNHr1fIThKGnYzNoRjYSkWDqFDeI/rwF0PzXuQc=</dsig:DigestValue>
+      <dsig:DigestValue>lf/Ks4IRcokMkR1YbrpLkLEQHE7tPE795MX/XA3IaY8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="MetHose.tt" size="25276">
@@ -121,6 +121,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>WcYquFkMPDbeaJkq1yWJ5d4QR2RHEk/ELbgIcuilLMY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TextTemplate1.tt" size="267">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9dmMbG2h0MrZXkov4wxpk0Iix23+nhAa5y2K+E/Y0Z4=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

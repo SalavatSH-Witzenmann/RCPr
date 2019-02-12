@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/21/2019 23:30:49
+-- Date Created: 01/28/2019 23:21:48
 -- Generated from EDMX file: C:\Users\mercu\Desktop\Project VS\WORK\RCProject\v1\RCProject\RCProject\MetHose.edmx
 -- --------------------------------------------------
 
@@ -35,6 +35,39 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_tMetHosetSpecification]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tMetHoseSet] DROP CONSTRAINT [FK_tMetHosetSpecification];
 GO
+IF OBJECT_ID(N'[dbo].[FK_tDetailSptAdapter]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAdapterSet] DROP CONSTRAINT [FK_tDetailSptAdapter];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tDetailSptSpecification]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tSpecificationSet] DROP CONSTRAINT [FK_tDetailSptSpecification];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tAssemblySptBufer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAssemblySpSet] DROP CONSTRAINT [FK_tAssemblySptBufer];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tAssemblySptAsDet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAsDetSet] DROP CONSTRAINT [FK_tAssemblySptAsDet];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tDetailSptAsDet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAsDetSet] DROP CONSTRAINT [FK_tDetailSptAsDet];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tAssemblySptAsSp]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAsSpSet] DROP CONSTRAINT [FK_tAssemblySptAsSp];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tSpecificationtAsSp]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAsSpSet] DROP CONSTRAINT [FK_tSpecificationtAsSp];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tAdaptertLength]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAdapterSet] DROP CONSTRAINT [FK_tAdaptertLength];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tBraidtAdapter]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAdapterSet] DROP CONSTRAINT [FK_tBraidtAdapter];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tRingtAdapter]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAdapterSet] DROP CONSTRAINT [FK_tRingtAdapter];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tGlasstAdapter]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tAdapterSet] DROP CONSTRAINT [FK_tGlasstAdapter];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -63,6 +96,24 @@ IF OBJECT_ID(N'[dbo].[tSpecificationSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tLengthSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tLengthSet];
+GO
+IF OBJECT_ID(N'[dbo].[tAssemblySpSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tAssemblySpSet];
+GO
+IF OBJECT_ID(N'[dbo].[tDetailSpSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tDetailSpSet];
+GO
+IF OBJECT_ID(N'[dbo].[tAdapterSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tAdapterSet];
+GO
+IF OBJECT_ID(N'[dbo].[tBuferSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tBuferSet];
+GO
+IF OBJECT_ID(N'[dbo].[tAsDetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tAsDetSet];
+GO
+IF OBJECT_ID(N'[dbo].[tAsSpSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tAsSpSet];
 GO
 
 -- --------------------------------------------------
@@ -256,8 +307,7 @@ CREATE TABLE [dbo].[tSpecificationSet] (
     [dateT] datetime  NOT NULL,
     [Drawing] varbinary(max)  NULL,
     [Description] nvarchar(max)  NULL,
-    [Executor] nvarchar(max)  NULL,
-    [tDetailSpID] int  NOT NULL
+    [Executor] nvarchar(max)  NULL
 );
 GO
 
@@ -288,18 +338,17 @@ GO
 -- Creating table 'tDetailSpSet'
 CREATE TABLE [dbo].[tDetailSpSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
-    [PosDetail] int  NULL,
-    [ID_Object] int  NOT NULL,
-    [TypeObject] nvarchar(max)  NOT NULL,
-    [NameDet] nvarchar(max)  NULL,
-    [Quantity] int  NOT NULL
+    [NumbGroup] nvarchar(max)  NOT NULL,
+    [QuantGroup] int  NOT NULL
 );
 GO
 
 -- Creating table 'tAdapterSet'
 CREATE TABLE [dbo].[tAdapterSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
-    [NumbElement] nvarchar(max)  NOT NULL,
+    [NumbGroup] int  NOT NULL,
+    [PosDetail] int  NULL,
+    [Quantity] int  NOT NULL,
     [tDetailSpID] int  NOT NULL,
     [tLengthID_length] int  NULL,
     [tBraidID_braid] int  NULL,
@@ -336,6 +385,14 @@ GO
 CREATE TABLE [dbo].[tAsSpSet] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [tAssemblySpID] int  NOT NULL,
+    [tSpecificationID_Specification] int  NOT NULL
+);
+GO
+
+-- Creating table 'tDetSpSet'
+CREATE TABLE [dbo].[tDetSpSet] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [tDetailSpID] int  NOT NULL,
     [tSpecificationID_Specification] int  NOT NULL
 );
 GO
@@ -425,6 +482,12 @@ GO
 -- Creating primary key on [ID] in table 'tAsSpSet'
 ALTER TABLE [dbo].[tAsSpSet]
 ADD CONSTRAINT [PK_tAsSpSet]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'tDetSpSet'
+ALTER TABLE [dbo].[tDetSpSet]
+ADD CONSTRAINT [PK_tDetSpSet]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
@@ -534,21 +597,6 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_tDetailSptAdapter'
 CREATE INDEX [IX_FK_tDetailSptAdapter]
 ON [dbo].[tAdapterSet]
-    ([tDetailSpID]);
-GO
-
--- Creating foreign key on [tDetailSpID] in table 'tSpecificationSet'
-ALTER TABLE [dbo].[tSpecificationSet]
-ADD CONSTRAINT [FK_tDetailSptSpecification]
-    FOREIGN KEY ([tDetailSpID])
-    REFERENCES [dbo].[tDetailSpSet]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_tDetailSptSpecification'
-CREATE INDEX [IX_FK_tDetailSptSpecification]
-ON [dbo].[tSpecificationSet]
     ([tDetailSpID]);
 GO
 
@@ -685,6 +733,36 @@ GO
 CREATE INDEX [IX_FK_tGlasstAdapter]
 ON [dbo].[tAdapterSet]
     ([tGlassID_glass]);
+GO
+
+-- Creating foreign key on [tDetailSpID] in table 'tDetSpSet'
+ALTER TABLE [dbo].[tDetSpSet]
+ADD CONSTRAINT [FK_tDetailSptDetSp]
+    FOREIGN KEY ([tDetailSpID])
+    REFERENCES [dbo].[tDetailSpSet]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tDetailSptDetSp'
+CREATE INDEX [IX_FK_tDetailSptDetSp]
+ON [dbo].[tDetSpSet]
+    ([tDetailSpID]);
+GO
+
+-- Creating foreign key on [tSpecificationID_Specification] in table 'tDetSpSet'
+ALTER TABLE [dbo].[tDetSpSet]
+ADD CONSTRAINT [FK_tSpecificationtDetSp]
+    FOREIGN KEY ([tSpecificationID_Specification])
+    REFERENCES [dbo].[tSpecificationSet]
+        ([ID_Specification])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tSpecificationtDetSp'
+CREATE INDEX [IX_FK_tSpecificationtDetSp]
+ON [dbo].[tDetSpSet]
+    ([tSpecificationID_Specification]);
 GO
 
 -- --------------------------------------------------

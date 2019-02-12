@@ -24,86 +24,69 @@
       <End Role="tMaterial" EntitySet="tMaterialSet" />
     </AssociationSet>
     <EntitySet Name="tSpecificationSet" EntityType="MetHose.tSpecification" />
-    <EntitySet Name="tSpecification_CorrugSheathSet" EntityType="MetHose.tSpecification_tCorrugSheath" />
-    <EntitySet Name="tSpecification_BraidSet" EntityType="MetHose.tSpecification_Braid" />
-    <AssociationSet Name="tSpecification_BraidtBraid" Association="MetHose.tSpecification_BraidtBraid">
-      <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
-      <End Role="tBraid" EntitySet="tBraidSet" />
-    </AssociationSet>
-    <EntitySet Name="tSpecification_GlassSet" EntityType="MetHose.tSpecification_Glass" />
-    <AssociationSet Name="tGlasstSpecification_Glass" Association="MetHose.tGlasstSpecification_Glass">
-      <End Role="tGlass" EntitySet="tGlassSet" />
-      <End Role="tSpecification_Glass" EntitySet="tSpecification_GlassSet" />
-    </AssociationSet>
-    <EntitySet Name="tSpecification_RingSet" EntityType="MetHose.tSpecification_Ring" />
-    <AssociationSet Name="tSpecification_RingtRing" Association="MetHose.tSpecification_RingtRing">
-      <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
-      <End Role="tRing" EntitySet="tRingSet" />
-    </AssociationSet>
-    <EntitySet Name="tSp_AssemblySet" EntityType="MetHose.tSp_Assembly" />
-    <AssociationSet Name="tSp_AssemblytSpecification_tCorrugSheath" Association="MetHose.tSp_AssemblytSpecification_tCorrugSheath">
-      <End Role="tSp_Assembly" EntitySet="tSp_AssemblySet" />
-      <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
-    </AssociationSet>
-    <AssociationSet Name="tSp_AssemblytSpecification_Braid" Association="MetHose.tSp_AssemblytSpecification_Braid">
-      <End Role="tSp_Assembly" EntitySet="tSp_AssemblySet" />
-      <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
-    </AssociationSet>
-    <AssociationSet Name="tSp_AssemblytSpecification_Glass" Association="MetHose.tSp_AssemblytSpecification_Glass">
-      <End Role="tSp_Assembly" EntitySet="tSp_AssemblySet" />
-      <End Role="tSpecification_Glass" EntitySet="tSpecification_GlassSet" />
-    </AssociationSet>
-    <AssociationSet Name="tSp_AssemblytSpecification_Ring" Association="MetHose.tSp_AssemblytSpecification_Ring">
-      <End Role="tSp_Assembly" EntitySet="tSp_AssemblySet" />
-      <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
-    </AssociationSet>
-    <EntitySet Name="tSpec_Sp_AssemblySet" EntityType="MetHose.tSpec_Sp_Assembly" />
-    <AssociationSet Name="tSp_AssemblytSpec_Sp_Assembly" Association="MetHose.tSp_AssemblytSpec_Sp_Assembly">
-      <End Role="tSp_Assembly" EntitySet="tSp_AssemblySet" />
-      <End Role="tSpec_Sp_Assembly" EntitySet="tSpec_Sp_AssemblySet" />
-    </AssociationSet>
     <EntitySet Name="tLengthSet" EntityType="MetHose.tLength" />
     <AssociationSet Name="tLengthtCorrugSheath" Association="MetHose.tLengthtCorrugSheath">
       <End Role="tLength" EntitySet="tLengthSet" />
       <End Role="tCorrugSheath" EntitySet="tCorrugSheathSet" />
     </AssociationSet>
-    <AssociationSet Name="tLengthtSpecification_tCorrugSheath" Association="MetHose.tLengthtSpecification_tCorrugSheath">
-      <End Role="tLength" EntitySet="tLengthSet" />
-      <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
-    </AssociationSet>
     <AssociationSet Name="tMetHosetSpecification" Association="MetHose.tMetHosetSpecification">
       <End Role="tMetHose" EntitySet="tMetHoseSet" />
       <End Role="tSpecification" EntitySet="tSpecificationSet" />
     </AssociationSet>
-    <EntitySet Name="tPosQuantNumbSet" EntityType="MetHose.tPosQuantNumb" />
-    <EntitySet Name="tSpecification_tPosQuantNumbSet" EntityType="MetHose.tSpecification_tPosQuantNumb" />
-    <AssociationSet Name="tPosQuantNumbtSpecification_tPosQuantNumb" Association="MetHose.tPosQuantNumbtSpecification_tPosQuantNumb">
-      <End Role="tPosQuantNumb" EntitySet="tPosQuantNumbSet" />
-      <End Role="tSpecification_tPosQuantNumb" EntitySet="tSpecification_tPosQuantNumbSet" />
+    <EntitySet Name="tAssemblySpSet" EntityType="MetHose.tAssemblySp" />
+    <EntitySet Name="tDetailSpSet" EntityType="MetHose.tDetailSp" />
+    <EntitySet Name="tAdapterSet" EntityType="MetHose.tAdapter" />
+    <AssociationSet Name="tDetailSptAdapter" Association="MetHose.tDetailSptAdapter">
+      <End Role="tDetailSp" EntitySet="tDetailSpSet" />
+      <End Role="tAdapter" EntitySet="tAdapterSet" />
     </AssociationSet>
-    <AssociationSet Name="tSpecificationtSpecification_tPosQuantNumb" Association="MetHose.tSpecificationtSpecification_tPosQuantNumb">
+    <EntitySet Name="tBuferSet" EntityType="MetHose.tBufer" />
+    <AssociationSet Name="tAssemblySptBufer" Association="MetHose.tAssemblySptBufer">
+      <End Role="tAssemblySp" EntitySet="tAssemblySpSet" />
+      <End Role="tBufer" EntitySet="tBuferSet" />
+    </AssociationSet>
+    <EntitySet Name="tAsDetSet" EntityType="MetHose.tAsDet" />
+    <AssociationSet Name="tAssemblySptAsDet" Association="MetHose.tAssemblySptAsDet">
+      <End Role="tAssemblySp" EntitySet="tAssemblySpSet" />
+      <End Role="tAsDet" EntitySet="tAsDetSet" />
+    </AssociationSet>
+    <AssociationSet Name="tDetailSptAsDet" Association="MetHose.tDetailSptAsDet">
+      <End Role="tDetailSp" EntitySet="tDetailSpSet" />
+      <End Role="tAsDet" EntitySet="tAsDetSet" />
+    </AssociationSet>
+    <EntitySet Name="tAsSpSet" EntityType="MetHose.tAsSp" />
+    <AssociationSet Name="tAssemblySptAsSp" Association="MetHose.tAssemblySptAsSp">
+      <End Role="tAssemblySp" EntitySet="tAssemblySpSet" />
+      <End Role="tAsSp" EntitySet="tAsSpSet" />
+    </AssociationSet>
+    <AssociationSet Name="tSpecificationtAsSp" Association="MetHose.tSpecificationtAsSp">
       <End Role="tSpecification" EntitySet="tSpecificationSet" />
-      <End Role="tSpecification_tPosQuantNumb" EntitySet="tSpecification_tPosQuantNumbSet" />
+      <End Role="tAsSp" EntitySet="tAsSpSet" />
     </AssociationSet>
-    <AssociationSet Name="tPosQuantNumbtSpecification_tCorrugSheath" Association="MetHose.tPosQuantNumbtSpecification_tCorrugSheath">
-      <End Role="tPosQuantNumb" EntitySet="tPosQuantNumbSet" />
-      <End Role="tSpecification_tCorrugSheath" EntitySet="tSpecification_CorrugSheathSet" />
+    <AssociationSet Name="tAdaptertLength" Association="MetHose.tAdaptertLength">
+      <End Role="tAdapter" EntitySet="tAdapterSet" />
+      <End Role="tLength" EntitySet="tLengthSet" />
     </AssociationSet>
-    <AssociationSet Name="tPosQuantNumbtSpecification_Braid" Association="MetHose.tPosQuantNumbtSpecification_Braid">
-      <End Role="tPosQuantNumb" EntitySet="tPosQuantNumbSet" />
-      <End Role="tSpecification_Braid" EntitySet="tSpecification_BraidSet" />
+    <AssociationSet Name="tBraidtAdapter" Association="MetHose.tBraidtAdapter">
+      <End Role="tBraid" EntitySet="tBraidSet" />
+      <End Role="tAdapter" EntitySet="tAdapterSet" />
     </AssociationSet>
-    <AssociationSet Name="tPosQuantNumbtSpecification_Glass" Association="MetHose.tPosQuantNumbtSpecification_Glass">
-      <End Role="tPosQuantNumb" EntitySet="tPosQuantNumbSet" />
-      <End Role="tSpecification_Glass" EntitySet="tSpecification_GlassSet" />
+    <AssociationSet Name="tRingtAdapter" Association="MetHose.tRingtAdapter">
+      <End Role="tRing" EntitySet="tRingSet" />
+      <End Role="tAdapter" EntitySet="tAdapterSet" />
     </AssociationSet>
-    <AssociationSet Name="tPosQuantNumbtSpecification_Ring" Association="MetHose.tPosQuantNumbtSpecification_Ring">
-      <End Role="tPosQuantNumb" EntitySet="tPosQuantNumbSet" />
-      <End Role="tSpecification_Ring" EntitySet="tSpecification_RingSet" />
+    <AssociationSet Name="tGlasstAdapter" Association="MetHose.tGlasstAdapter">
+      <End Role="tGlass" EntitySet="tGlassSet" />
+      <End Role="tAdapter" EntitySet="tAdapterSet" />
     </AssociationSet>
-    <AssociationSet Name="tPosQuantNumbtSpec_Sp_Assembly" Association="MetHose.tPosQuantNumbtSpec_Sp_Assembly">
-      <End Role="tPosQuantNumb" EntitySet="tPosQuantNumbSet" />
-      <End Role="tSpec_Sp_Assembly" EntitySet="tSpec_Sp_AssemblySet" />
+    <EntitySet Name="tDetSpSet" EntityType="MetHose.tDetSp" />
+    <AssociationSet Name="tDetailSptDetSp" Association="MetHose.tDetailSptDetSp">
+      <End Role="tDetailSp" EntitySet="tDetailSpSet" />
+      <End Role="tDetSp" EntitySet="tDetSpSet" />
+    </AssociationSet>
+    <AssociationSet Name="tSpecificationtDetSp" Association="MetHose.tSpecificationtDetSp">
+      <End Role="tSpecification" EntitySet="tSpecificationSet" />
+      <End Role="tDetSp" EntitySet="tDetSpSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="tCorrugSheath">
@@ -223,7 +206,7 @@
     <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tGlasstMaterial" FromRole="tGlass" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSpecification_Glass" Relationship="MetHose.tGlasstSpecification_Glass" FromRole="tGlass" ToRole="tSpecification_Glass" />
+    <NavigationProperty Name="tAdapter" Relationship="MetHose.tGlasstAdapter" FromRole="tGlass" ToRole="tAdapter" />
   </EntityType>
   <Association Name="tGlasstMaterial">
     <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="*" />
@@ -254,7 +237,7 @@
     <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tMaterial" Relationship="MetHose.tBraidtMaterial" FromRole="tBraid" ToRole="tMaterial" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSpecification_Braid" Relationship="MetHose.tSpecification_BraidtBraid" FromRole="tBraid" ToRole="tSpecification_Braid" />
+    <NavigationProperty Name="tAdapter" Relationship="MetHose.tBraidtAdapter" FromRole="tBraid" ToRole="tAdapter" />
   </EntityType>
   <Association Name="tBraidtMaterial">
     <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="*" />
@@ -301,7 +284,7 @@
     <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Executor" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="tMaterialID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSpecification_Ring" Relationship="MetHose.tSpecification_RingtRing" FromRole="tRing" ToRole="tSpecification_Ring" />
+    <NavigationProperty Name="tAdapter" Relationship="MetHose.tRingtAdapter" FromRole="tRing" ToRole="tAdapter" />
   </EntityType>
   <Association Name="tRingtMaterial">
     <End Type="MetHose.tRing" Role="tRing" Multiplicity="*" />
@@ -348,186 +331,18 @@
     </Key>
     <Property Name="ID_Specification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="tMetHose" Relationship="MetHose.tMetHosetSpecification" FromRole="tSpecification" ToRole="tMetHose" />
-    <NavigationProperty Name="tSpecification_tPosQuantNumb" Relationship="MetHose.tSpecificationtSpecification_tPosQuantNumb" FromRole="tSpecification" ToRole="tSpecification_tPosQuantNumb" />
-    <Property Name="Description" Type="String" Nullable="true" />
+    <Property Name="AssemblyG" Type="Int32" Nullable="true" />
+    <Property Name="DetailG" Type="Int32" Nullable="true" />
+    <Property Name="StandartProductsG" Type="Int32" Nullable="true" />
+    <Property Name="OtherProductsG" Type="Int32" Nullable="true" />
+    <Property Name="KitsG" Type="Int32" Nullable="true" />
     <Property Name="dateT" Type="DateTime" Nullable="false" />
     <Property Name="Drawing" Type="Binary" Nullable="true" />
+    <Property Name="Description" Type="String" Nullable="true" />
     <Property Name="Executor" Type="String" Nullable="true" />
+    <NavigationProperty Name="tAsSp" Relationship="MetHose.tSpecificationtAsSp" FromRole="tSpecification" ToRole="tAsSp" />
+    <NavigationProperty Name="tDetSp" Relationship="MetHose.tSpecificationtDetSp" FromRole="tSpecification" ToRole="tDetSp" />
   </EntityType>
-  <EntityType Name="tSpecification_tCorrugSheath">
-    <Key>
-      <PropertyRef Name="ID_SpecCorSh" />
-    </Key>
-    <Property Name="ID_SpecCorSh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_length" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSp_Assembly" Relationship="MetHose.tSp_AssemblytSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tSp_Assembly" />
-    <Property Name="tLengthID_length" Type="Int32" Nullable="false" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tLength" Relationship="MetHose.tLengthtSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tLength" />
-    <NavigationProperty Name="tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpecification_tCorrugSheath" FromRole="tSpecification_tCorrugSheath" ToRole="tPosQuantNumb" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tSpecification_Braid">
-    <Key>
-      <PropertyRef Name="ID_SpecBr" />
-    </Key>
-    <Property Name="ID_SpecBr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_braid" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tBraid" Relationship="MetHose.tSpecification_BraidtBraid" FromRole="tSpecification_Braid" ToRole="tBraid" />
-    <Property Name="tBraidID_braid" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSp_Assembly" Relationship="MetHose.tSp_AssemblytSpecification_Braid" FromRole="tSpecification_Braid" ToRole="tSp_Assembly" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpecification_Braid" FromRole="tSpecification_Braid" ToRole="tPosQuantNumb" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="Int32" Nullable="false" />
-  </EntityType>
-  <Association Name="tSpecification_BraidtBraid">
-    <End Type="MetHose.tSpecification_Braid" Role="tSpecification_Braid" Multiplicity="*" />
-    <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="tBraid">
-        <PropertyRef Name="ID_braid" />
-      </Principal>
-      <Dependent Role="tSpecification_Braid">
-        <PropertyRef Name="tBraidID_braid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tSpecification_Glass">
-    <Key>
-      <PropertyRef Name="ID_SpecGl" />
-    </Key>
-    <Property Name="ID_SpecGl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_glass" Type="String" Nullable="false" />
-    <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstSpecification_Glass" FromRole="tSpecification_Glass" ToRole="tGlass" />
-    <Property Name="tGlassID_glass" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSp_Assembly" Relationship="MetHose.tSp_AssemblytSpecification_Glass" FromRole="tSpecification_Glass" ToRole="tSp_Assembly" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpecification_Glass" FromRole="tSpecification_Glass" ToRole="tPosQuantNumb" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="Int32" Nullable="false" />
-  </EntityType>
-  <Association Name="tGlasstSpecification_Glass">
-    <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Glass" Role="tSpecification_Glass" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tGlass">
-        <PropertyRef Name="ID_glass" />
-      </Principal>
-      <Dependent Role="tSpecification_Glass">
-        <PropertyRef Name="tGlassID_glass" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tSpecification_Ring">
-    <Key>
-      <PropertyRef Name="ID_SpecRing" />
-    </Key>
-    <Property Name="ID_SpecRing" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_ring" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tRing" Relationship="MetHose.tSpecification_RingtRing" FromRole="tSpecification_Ring" ToRole="tRing" />
-    <Property Name="tRingID_ring" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSp_Assembly" Relationship="MetHose.tSp_AssemblytSpecification_Ring" FromRole="tSpecification_Ring" ToRole="tSp_Assembly" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpecification_Ring" FromRole="tSpecification_Ring" ToRole="tPosQuantNumb" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="Int32" Nullable="false" />
-  </EntityType>
-  <Association Name="tSpecification_RingtRing">
-    <End Type="MetHose.tSpecification_Ring" Role="tSpecification_Ring" Multiplicity="*" />
-    <End Type="MetHose.tRing" Role="tRing" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="tRing">
-        <PropertyRef Name="ID_ring" />
-      </Principal>
-      <Dependent Role="tSpecification_Ring">
-        <PropertyRef Name="tRingID_ring" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tSp_Assembly">
-    <Key>
-      <PropertyRef Name="ID_Sp_Assembly" />
-    </Key>
-    <Property Name="ID_Sp_Assembly" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_item_as" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Position" Type="Int16" Nullable="false" />
-    <Property Name="Quantity" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tSp_AssemblytSpecification_tCorrugSheath" FromRole="tSp_Assembly" ToRole="tSpecification_tCorrugSheath" />
-    <NavigationProperty Name="tSpecification_Braid" Relationship="MetHose.tSp_AssemblytSpecification_Braid" FromRole="tSp_Assembly" ToRole="tSpecification_Braid" />
-    <NavigationProperty Name="tSpecification_Glass" Relationship="MetHose.tSp_AssemblytSpecification_Glass" FromRole="tSp_Assembly" ToRole="tSpecification_Glass" />
-    <NavigationProperty Name="tSpecification_Ring" Relationship="MetHose.tSp_AssemblytSpecification_Ring" FromRole="tSp_Assembly" ToRole="tSpecification_Ring" />
-    <NavigationProperty Name="tSpec_Sp_Assembly" Relationship="MetHose.tSp_AssemblytSpec_Sp_Assembly" FromRole="tSp_Assembly" ToRole="tSpec_Sp_Assembly" />
-  </EntityType>
-  <Association Name="tSp_AssemblytSpecification_tCorrugSheath">
-    <End Type="MetHose.tSp_Assembly" Role="tSp_Assembly" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tSp_Assembly">
-        <PropertyRef Name="ID_Sp_Assembly" />
-      </Principal>
-      <Dependent Role="tSpecification_tCorrugSheath">
-        <PropertyRef Name="tSp_AssemblyID_Sp_Assembly" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tSp_AssemblytSpecification_Braid">
-    <End Type="MetHose.tSp_Assembly" Role="tSp_Assembly" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Braid" Role="tSpecification_Braid" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tSp_Assembly">
-        <PropertyRef Name="ID_Sp_Assembly" />
-      </Principal>
-      <Dependent Role="tSpecification_Braid">
-        <PropertyRef Name="tSp_AssemblyID_Sp_Assembly" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tSp_AssemblytSpecification_Glass">
-    <End Type="MetHose.tSp_Assembly" Role="tSp_Assembly" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Glass" Role="tSpecification_Glass" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tSp_Assembly">
-        <PropertyRef Name="ID_Sp_Assembly" />
-      </Principal>
-      <Dependent Role="tSpecification_Glass">
-        <PropertyRef Name="tSp_AssemblyID_Sp_Assembly" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tSp_AssemblytSpecification_Ring">
-    <End Type="MetHose.tSp_Assembly" Role="tSp_Assembly" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Ring" Role="tSpecification_Ring" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tSp_Assembly">
-        <PropertyRef Name="ID_Sp_Assembly" />
-      </Principal>
-      <Dependent Role="tSpecification_Ring">
-        <PropertyRef Name="tSp_AssemblyID_Sp_Assembly" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tSpec_Sp_Assembly">
-    <Key>
-      <PropertyRef Name="ID_Spec_Sp_Assembly" />
-    </Key>
-    <Property Name="ID_Spec_Sp_Assembly" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_Sp_Assembly" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSp_Assembly" Relationship="MetHose.tSp_AssemblytSpec_Sp_Assembly" FromRole="tSpec_Sp_Assembly" ToRole="tSp_Assembly" />
-    <Property Name="tSp_AssemblyID_Sp_Assembly" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpec_Sp_Assembly" FromRole="tSpec_Sp_Assembly" ToRole="tPosQuantNumb" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="Int32" Nullable="false" />
-  </EntityType>
-  <Association Name="tSp_AssemblytSpec_Sp_Assembly">
-    <End Type="MetHose.tSp_Assembly" Role="tSp_Assembly" Multiplicity="1" />
-    <End Type="MetHose.tSpec_Sp_Assembly" Role="tSpec_Sp_Assembly" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tSp_Assembly">
-        <PropertyRef Name="ID_Sp_Assembly" />
-      </Principal>
-      <Dependent Role="tSpec_Sp_Assembly">
-        <PropertyRef Name="tSp_AssemblyID_Sp_Assembly" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="tLength">
     <Key>
       <PropertyRef Name="ID_length" />
@@ -536,7 +351,7 @@
     <Property Name="LN" Type="Double" Nullable="false" />
     <NavigationProperty Name="tCorrugSheath" Relationship="MetHose.tLengthtCorrugSheath" FromRole="tLength" ToRole="tCorrugSheath" />
     <Property Name="tCorrugSheathID_corrugsheath" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tLengthtSpecification_tCorrugSheath" FromRole="tLength" ToRole="tSpecification_tCorrugSheath" />
+    <NavigationProperty Name="tAdapter" Relationship="MetHose.tAdaptertLength" FromRole="tLength" ToRole="tAdapter" />
   </EntityType>
   <Association Name="tLengthtCorrugSheath">
     <End Type="MetHose.tLength" Role="tLength" Multiplicity="*" />
@@ -550,133 +365,247 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tLengthtSpecification_tCorrugSheath">
-    <End Type="MetHose.tLength" Role="tLength" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tLength">
-        <PropertyRef Name="ID_length" />
-      </Principal>
-      <Dependent Role="tSpecification_tCorrugSheath">
-        <PropertyRef Name="tLengthID_length" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="tMetHosetSpecification">
     <End Type="MetHose.tMetHose" Role="tMetHose" Multiplicity="1" />
     <End Type="MetHose.tSpecification" Role="tSpecification" Multiplicity="1" />
   </Association>
-  <EntityType Name="tPosQuantNumb">
+  <EntityType Name="tAssemblySp">
     <Key>
-      <PropertyRef Name="ID_PosQuantNumb" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID_PosQuantNumb" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Position" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AssemblyRef" Type="Int32" Nullable="true" />
+    <Property Name="PosAssembly" Type="Int32" Nullable="true" />
+    <Property Name="NameAss" Type="String" Nullable="true" />
+    <Property Name="QuantityAss" Type="Int32" Nullable="false" />
+    <Property Name="Detail" Type="Int32" Nullable="true" />
+    <Property Name="StandProdAss" Type="Int32" Nullable="true" />
+    <Property Name="OtherProdAss" Type="Int32" Nullable="true" />
+    <Property Name="Kits" Type="Int32" Nullable="true" />
+    <Property Name="Description" Type="String" Nullable="true" />
+    <NavigationProperty Name="tBufer" Relationship="MetHose.tAssemblySptBufer" FromRole="tAssemblySp" ToRole="tBufer" />
+    <Property Name="tBuferID" Type="Int32" Nullable="true" />
+    <NavigationProperty Name="tAsDet" Relationship="MetHose.tAssemblySptAsDet" FromRole="tAssemblySp" ToRole="tAsDet" />
+    <NavigationProperty Name="tAsSp" Relationship="MetHose.tAssemblySptAsSp" FromRole="tAssemblySp" ToRole="tAsSp" />
+  </EntityType>
+  <EntityType Name="tDetailSp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumbGroup" Type="String" Nullable="false" />
+    <NavigationProperty Name="tAdapter" Relationship="MetHose.tDetailSptAdapter" FromRole="tDetailSp" ToRole="tAdapter" />
+    <NavigationProperty Name="tAsDet" Relationship="MetHose.tDetailSptAsDet" FromRole="tDetailSp" ToRole="tAsDet" />
+    <Property Name="QuantGroup" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tDetSp" Relationship="MetHose.tDetailSptDetSp" FromRole="tDetailSp" ToRole="tDetSp" />
+  </EntityType>
+  <EntityType Name="tAdapter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptAdapter" FromRole="tAdapter" ToRole="tDetailSp" />
+    <Property Name="NumbGroup" Type="Int32" Nullable="false" />
+    <Property Name="PosDetail" Type="Int32" Nullable="true" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="ID_Object" Type="Int32" Nullable="false" />
-    <Property Name="IsAssembly" Type="Boolean" Nullable="false" />
-    <Property Name="IsDetail" Type="Boolean" Nullable="false" />
-    <Property Name="IsStandProd" Type="Boolean" Nullable="false" />
-    <Property Name="IsOtherProd" Type="Boolean" Nullable="false" />
-    <Property Name="IsMaterials" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="tSpecification_tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpecification_tPosQuantNumb" FromRole="tPosQuantNumb" ToRole="tSpecification_tPosQuantNumb" />
-    <NavigationProperty Name="tSpecification_tCorrugSheath" Relationship="MetHose.tPosQuantNumbtSpecification_tCorrugSheath" FromRole="tPosQuantNumb" ToRole="tSpecification_tCorrugSheath" />
-    <NavigationProperty Name="tSpecification_Braid" Relationship="MetHose.tPosQuantNumbtSpecification_Braid" FromRole="tPosQuantNumb" ToRole="tSpecification_Braid" />
-    <NavigationProperty Name="tSpecification_Glass" Relationship="MetHose.tPosQuantNumbtSpecification_Glass" FromRole="tPosQuantNumb" ToRole="tSpecification_Glass" />
-    <NavigationProperty Name="tSpecification_Ring" Relationship="MetHose.tPosQuantNumbtSpecification_Ring" FromRole="tPosQuantNumb" ToRole="tSpecification_Ring" />
-    <NavigationProperty Name="tSpec_Sp_Assembly" Relationship="MetHose.tPosQuantNumbtSpec_Sp_Assembly" FromRole="tPosQuantNumb" ToRole="tSpec_Sp_Assembly" />
+    <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tLength" Relationship="MetHose.tAdaptertLength" FromRole="tAdapter" ToRole="tLength" />
+    <Property Name="tLengthID_length" Type="Int32" Nullable="true" />
+    <NavigationProperty Name="tBraid" Relationship="MetHose.tBraidtAdapter" FromRole="tAdapter" ToRole="tBraid" />
+    <Property Name="tBraidID_braid" Type="Int32" Nullable="true" />
+    <NavigationProperty Name="tRing" Relationship="MetHose.tRingtAdapter" FromRole="tAdapter" ToRole="tRing" />
+    <Property Name="tRingID_ring" Type="Int32" Nullable="true" />
+    <NavigationProperty Name="tGlass" Relationship="MetHose.tGlasstAdapter" FromRole="tAdapter" ToRole="tGlass" />
+    <Property Name="tGlassID_glass" Type="Int32" Nullable="true" />
   </EntityType>
-  <EntityType Name="tSpecification_tPosQuantNumb">
-    <Key>
-      <PropertyRef Name="ID_Sp_PQN" />
-    </Key>
-    <Property Name="ID_Sp_PQN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="tPosQuantNumb" Relationship="MetHose.tPosQuantNumbtSpecification_tPosQuantNumb" FromRole="tSpecification_tPosQuantNumb" ToRole="tPosQuantNumb" />
-    <Property Name="tPosQuantNumbID_PosQuantNumb" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tSpecification" Relationship="MetHose.tSpecificationtSpecification_tPosQuantNumb" FromRole="tSpecification_tPosQuantNumb" ToRole="tSpecification" />
-    <Property Name="tSpecificationID_Specification" Type="Int32" Nullable="false" />
-  </EntityType>
-  <Association Name="tPosQuantNumbtSpecification_tPosQuantNumb">
-    <End Type="MetHose.tPosQuantNumb" Role="tPosQuantNumb" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_tPosQuantNumb" Role="tSpecification_tPosQuantNumb" Multiplicity="*" />
+  <Association Name="tDetailSptAdapter">
+    <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
+    <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tPosQuantNumb">
-        <PropertyRef Name="ID_PosQuantNumb" />
+      <Principal Role="tDetailSp">
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tSpecification_tPosQuantNumb">
-        <PropertyRef Name="tPosQuantNumbID_PosQuantNumb" />
+      <Dependent Role="tAdapter">
+        <PropertyRef Name="tDetailSpID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tSpecificationtSpecification_tPosQuantNumb">
+  <EntityType Name="tBufer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tAssemblySp" Relationship="MetHose.tAssemblySptBufer" FromRole="tBufer" ToRole="tAssemblySp" />
+    <Property Name="D1" Type="Int16" Nullable="true" />
+    <Property Name="D2" Type="Int16" Nullable="true" />
+    <Property Name="D3" Type="Int16" Nullable="true" />
+    <Property Name="D4" Type="Int16" Nullable="true" />
+    <Property Name="D5" Type="Int16" Nullable="true" />
+    <Property Name="D6" Type="Int16" Nullable="true" />
+    <Property Name="D7" Type="Int16" Nullable="true" />
+    <Property Name="D8" Type="Int16" Nullable="true" />
+    <Property Name="D9" Type="Int16" Nullable="true" />
+    <Property Name="exp" Type="String" Nullable="true" />
+  </EntityType>
+  <Association Name="tAssemblySptBufer">
+    <End Type="MetHose.tAssemblySp" Role="tAssemblySp" Multiplicity="*" />
+    <End Type="MetHose.tBufer" Role="tBufer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tBufer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tAssemblySp">
+        <PropertyRef Name="tBuferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tAsDet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tAssemblySp" Relationship="MetHose.tAssemblySptAsDet" FromRole="tAsDet" ToRole="tAssemblySp" />
+    <Property Name="tAssemblySpID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptAsDet" FromRole="tAsDet" ToRole="tDetailSp" />
+    <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tAssemblySptAsDet">
+    <End Type="MetHose.tAssemblySp" Role="tAssemblySp" Multiplicity="1" />
+    <End Type="MetHose.tAsDet" Role="tAsDet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tAssemblySp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tAsDet">
+        <PropertyRef Name="tAssemblySpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tDetailSptAsDet">
+    <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
+    <End Type="MetHose.tAsDet" Role="tAsDet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDetailSp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tAsDet">
+        <PropertyRef Name="tDetailSpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tAsSp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tAssemblySp" Relationship="MetHose.tAssemblySptAsSp" FromRole="tAsSp" ToRole="tAssemblySp" />
+    <Property Name="tAssemblySpID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tSpecification" Relationship="MetHose.tSpecificationtAsSp" FromRole="tAsSp" ToRole="tSpecification" />
+    <Property Name="tSpecificationID_Specification" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tAssemblySptAsSp">
+    <End Type="MetHose.tAssemblySp" Role="tAssemblySp" Multiplicity="1" />
+    <End Type="MetHose.tAsSp" Role="tAsSp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tAssemblySp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tAsSp">
+        <PropertyRef Name="tAssemblySpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tSpecificationtAsSp">
     <End Type="MetHose.tSpecification" Role="tSpecification" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_tPosQuantNumb" Role="tSpecification_tPosQuantNumb" Multiplicity="*" />
+    <End Type="MetHose.tAsSp" Role="tAsSp" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tSpecification">
         <PropertyRef Name="ID_Specification" />
       </Principal>
-      <Dependent Role="tSpecification_tPosQuantNumb">
+      <Dependent Role="tAsSp">
         <PropertyRef Name="tSpecificationID_Specification" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tPosQuantNumbtSpecification_tCorrugSheath">
-    <End Type="MetHose.tPosQuantNumb" Role="tPosQuantNumb" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_tCorrugSheath" Role="tSpecification_tCorrugSheath" Multiplicity="*" />
+  <Association Name="tAdaptertLength">
+    <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
+    <End Type="MetHose.tLength" Role="tLength" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="tPosQuantNumb">
-        <PropertyRef Name="ID_PosQuantNumb" />
+      <Principal Role="tLength">
+        <PropertyRef Name="ID_length" />
       </Principal>
-      <Dependent Role="tSpecification_tCorrugSheath">
-        <PropertyRef Name="tPosQuantNumbID_PosQuantNumb" />
+      <Dependent Role="tAdapter">
+        <PropertyRef Name="tLengthID_length" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tPosQuantNumbtSpecification_Braid">
-    <End Type="MetHose.tPosQuantNumb" Role="tPosQuantNumb" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Braid" Role="tSpecification_Braid" Multiplicity="*" />
+  <Association Name="tBraidtAdapter">
+    <End Type="MetHose.tBraid" Role="tBraid" Multiplicity="0..1" />
+    <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tPosQuantNumb">
-        <PropertyRef Name="ID_PosQuantNumb" />
+      <Principal Role="tBraid">
+        <PropertyRef Name="ID_braid" />
       </Principal>
-      <Dependent Role="tSpecification_Braid">
-        <PropertyRef Name="tPosQuantNumbID_PosQuantNumb" />
+      <Dependent Role="tAdapter">
+        <PropertyRef Name="tBraidID_braid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tPosQuantNumbtSpecification_Glass">
-    <End Type="MetHose.tPosQuantNumb" Role="tPosQuantNumb" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Glass" Role="tSpecification_Glass" Multiplicity="*" />
+  <Association Name="tRingtAdapter">
+    <End Type="MetHose.tRing" Role="tRing" Multiplicity="0..1" />
+    <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tPosQuantNumb">
-        <PropertyRef Name="ID_PosQuantNumb" />
+      <Principal Role="tRing">
+        <PropertyRef Name="ID_ring" />
       </Principal>
-      <Dependent Role="tSpecification_Glass">
-        <PropertyRef Name="tPosQuantNumbID_PosQuantNumb" />
+      <Dependent Role="tAdapter">
+        <PropertyRef Name="tRingID_ring" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tPosQuantNumbtSpecification_Ring">
-    <End Type="MetHose.tPosQuantNumb" Role="tPosQuantNumb" Multiplicity="1" />
-    <End Type="MetHose.tSpecification_Ring" Role="tSpecification_Ring" Multiplicity="*" />
+  <Association Name="tGlasstAdapter">
+    <End Type="MetHose.tGlass" Role="tGlass" Multiplicity="0..1" />
+    <End Type="MetHose.tAdapter" Role="tAdapter" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tPosQuantNumb">
-        <PropertyRef Name="ID_PosQuantNumb" />
+      <Principal Role="tGlass">
+        <PropertyRef Name="ID_glass" />
       </Principal>
-      <Dependent Role="tSpecification_Ring">
-        <PropertyRef Name="tPosQuantNumbID_PosQuantNumb" />
+      <Dependent Role="tAdapter">
+        <PropertyRef Name="tGlassID_glass" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tPosQuantNumbtSpec_Sp_Assembly">
-    <End Type="MetHose.tPosQuantNumb" Role="tPosQuantNumb" Multiplicity="1" />
-    <End Type="MetHose.tSpec_Sp_Assembly" Role="tSpec_Sp_Assembly" Multiplicity="*" />
+  <EntityType Name="tDetSp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptDetSp" FromRole="tDetSp" ToRole="tDetailSp" />
+    <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tSpecification" Relationship="MetHose.tSpecificationtDetSp" FromRole="tDetSp" ToRole="tSpecification" />
+    <Property Name="tSpecificationID_Specification" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tDetailSptDetSp">
+    <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
+    <End Type="MetHose.tDetSp" Role="tDetSp" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tPosQuantNumb">
-        <PropertyRef Name="ID_PosQuantNumb" />
+      <Principal Role="tDetailSp">
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="tSpec_Sp_Assembly">
-        <PropertyRef Name="tPosQuantNumbID_PosQuantNumb" />
+      <Dependent Role="tDetSp">
+        <PropertyRef Name="tDetailSpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tSpecificationtDetSp">
+    <End Type="MetHose.tSpecification" Role="tSpecification" Multiplicity="1" />
+    <End Type="MetHose.tDetSp" Role="tDetSp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSpecification">
+        <PropertyRef Name="ID_Specification" />
+      </Principal>
+      <Dependent Role="tDetSp">
+        <PropertyRef Name="tSpecificationID_Specification" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

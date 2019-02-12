@@ -14,14 +14,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RCProject.exe.manifest" size="7998">
+    <dependentAssembly dependencyType="install" codebase="RCProject.exe.manifest" size="8391">
       <assemblyIdentity name="RCProject.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LmDL/58tBM5l3Ttfy94qBKoI96VS+wsvn3RjuUyw2jM=</dsig:DigestValue>
+        <dsig:DigestValue>u7a170ck7o7V350u4coeZJ0uvjcimmMvjAOsYHQFlOA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

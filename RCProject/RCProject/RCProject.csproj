@@ -93,8 +93,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
@@ -118,11 +121,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AssemblerWin.xaml.cs">
+      <DependentUpon>AssemblerWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MetHose.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyCollection.cs" />
     <Compile Include="tAdapter.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
@@ -147,6 +154,9 @@
     <Compile Include="tDetailSp.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Compile Include="tDetSp.cs">
+      <DependentUpon>MetHose.tt</DependentUpon>
+    </Compile>
     <Compile Include="tGlass.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
@@ -165,6 +175,10 @@
     <Compile Include="tSpecification.cs">
       <DependentUpon>MetHose.tt</DependentUpon>
     </Compile>
+    <Page Include="AssemblerWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -268,11 +282,21 @@
       <LastGenOutput>MetHose.cs</LastGenOutput>
       <DependentUpon>MetHose.edmx</DependentUpon>
     </Content>
+    <Content Include="TextTemplate1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TextTemplate1.txt</LastGenOutput>
+    </Content>
+    <Resource Include="TextTemplate1.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextTemplate1.tt</DependentUpon>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Res\ICON\sign.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

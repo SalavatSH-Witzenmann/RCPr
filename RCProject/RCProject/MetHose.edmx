@@ -20,6 +20,7 @@
     <EntitySet Name="tBuferSet" EntityType="MetHose.Store.tBuferSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tAsDetSet" EntityType="MetHose.Store.tAsDetSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tAsSpSet" EntityType="MetHose.Store.tAsSpSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tDetSpSet" EntityType="MetHose.Store.tDetSpSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="tGlasstMaterial" Association="MetHose.Store.tGlasstMaterial">
       <End Role="tGlass" EntitySet="tGlassSet" />
       <End Role="tMaterial" EntitySet="tMaterialSet" />
@@ -47,10 +48,6 @@
     <AssociationSet Name="tDetailSptAdapter" Association="MetHose.Store.tDetailSptAdapter">
       <End Role="tDetailSp" EntitySet="tDetailSpSet" />
       <End Role="tAdapter" EntitySet="tAdapterSet" />
-    </AssociationSet>
-    <AssociationSet Name="tDetailSptSpecification" Association="MetHose.Store.tDetailSptSpecification">
-      <End Role="tDetailSp" EntitySet="tDetailSpSet" />
-      <End Role="tSpecification" EntitySet="tSpecificationSet" />
     </AssociationSet>
     <AssociationSet Name="tAssemblySptBufer" Association="MetHose.Store.tAssemblySptBufer">
       <End Role="tAssemblySp" EntitySet="tAssemblySpSet" />
@@ -87,6 +84,14 @@
     <AssociationSet Name="tGlasstAdapter" Association="MetHose.Store.tGlasstAdapter">
       <End Role="tGlass" EntitySet="tGlassSet" />
       <End Role="tAdapter" EntitySet="tAdapterSet" />
+    </AssociationSet>
+    <AssociationSet Name="tDetailSptDetSp" Association="MetHose.Store.tDetailSptDetSp">
+      <End Role="tDetailSp" EntitySet="tDetailSpSet" />
+      <End Role="tDetSp" EntitySet="tDetSpSet" />
+    </AssociationSet>
+    <AssociationSet Name="tSpecificationtDetSp" Association="MetHose.Store.tSpecificationtDetSp">
+      <End Role="tSpecification" EntitySet="tSpecificationSet" />
+      <End Role="tDetSp" EntitySet="tDetSpSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="tCorrugSheathSet">
@@ -279,7 +284,6 @@
     <Property Name="Drawing" Type="varbinary(max)" Nullable="true" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Executor" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="tDetailSpID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tLengthSet">
     <Key>
@@ -310,18 +314,17 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PosDetail" Type="int" Nullable="true" />
-    <Property Name="ID_Object" Type="int" Nullable="false" />
-    <Property Name="TypeObject" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NameDet" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="NumbGroup" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="QuantGroup" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tAdapterSet">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NumbElement" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumbGroup" Type="int" Nullable="false" />
+    <Property Name="PosDetail" Type="int" Nullable="true" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
     <Property Name="tDetailSpID" Type="int" Nullable="false" />
     <Property Name="tLengthID_length" Type="int" Nullable="true" />
     <Property Name="tBraidID_braid" Type="int" Nullable="true" />
@@ -358,6 +361,14 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tAssemblySpID" Type="int" Nullable="false" />
+    <Property Name="tSpecificationID_Specification" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tDetSpSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tDetailSpID" Type="int" Nullable="false" />
     <Property Name="tSpecificationID_Specification" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="tGlasstMaterial">
@@ -440,18 +451,6 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="tAdapter">
-        <PropertyRef Name="tDetailSpID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="tDetailSptSpecification">
-    <End Role="tDetailSp" Type="MetHose.Store.tDetailSpSet" Multiplicity="1" />
-    <End Role="tSpecification" Type="MetHose.Store.tSpecificationSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tDetailSp">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="tSpecification">
         <PropertyRef Name="tDetailSpID" />
       </Dependent>
     </ReferentialConstraint>
@@ -564,6 +563,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="tDetailSptDetSp">
+    <End Role="tDetailSp" Type="MetHose.Store.tDetailSpSet" Multiplicity="1" />
+    <End Role="tDetSp" Type="MetHose.Store.tDetSpSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDetailSp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tDetSp">
+        <PropertyRef Name="tDetailSpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tSpecificationtDetSp">
+    <End Role="tSpecification" Type="MetHose.Store.tSpecificationSet" Multiplicity="1" />
+    <End Role="tDetSp" Type="MetHose.Store.tDetSpSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSpecification">
+        <PropertyRef Name="ID_Specification" />
+      </Principal>
+      <Dependent Role="tDetSp">
+        <PropertyRef Name="tSpecificationID_Specification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -608,10 +631,6 @@
             <End Role="tDetailSp" EntitySet="tDetailSpSet" />
             <End Role="tAdapter" EntitySet="tAdapterSet" />
           </AssociationSet>
-          <AssociationSet Name="tDetailSptSpecification" Association="MetHose.tDetailSptSpecification">
-            <End Role="tDetailSp" EntitySet="tDetailSpSet" />
-            <End Role="tSpecification" EntitySet="tSpecificationSet" />
-          </AssociationSet>
           <EntitySet Name="tBuferSet" EntityType="MetHose.tBufer" />
           <AssociationSet Name="tAssemblySptBufer" Association="MetHose.tAssemblySptBufer">
             <End Role="tAssemblySp" EntitySet="tAssemblySpSet" />
@@ -650,6 +669,15 @@
           <AssociationSet Name="tGlasstAdapter" Association="MetHose.tGlasstAdapter">
             <End Role="tGlass" EntitySet="tGlassSet" />
             <End Role="tAdapter" EntitySet="tAdapterSet" />
+          </AssociationSet>
+          <EntitySet Name="tDetSpSet" EntityType="MetHose.tDetSp" />
+          <AssociationSet Name="tDetailSptDetSp" Association="MetHose.tDetailSptDetSp">
+            <End Role="tDetailSp" EntitySet="tDetailSpSet" />
+            <End Role="tDetSp" EntitySet="tDetSpSet" />
+          </AssociationSet>
+          <AssociationSet Name="tSpecificationtDetSp" Association="MetHose.tSpecificationtDetSp">
+            <End Role="tSpecification" EntitySet="tSpecificationSet" />
+            <End Role="tDetSp" EntitySet="tDetSpSet" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="tCorrugSheath">
@@ -903,9 +931,8 @@
           <Property Name="Drawing" Type="Binary" Nullable="true" />
           <Property Name="Description" Type="String" Nullable="true" />
           <Property Name="Executor" Type="String" Nullable="true" />
-          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptSpecification" FromRole="tSpecification" ToRole="tDetailSp" />
-          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tAsSp" Relationship="MetHose.tSpecificationtAsSp" FromRole="tSpecification" ToRole="tAsSp" />
+          <NavigationProperty Name="tDetSp" Relationship="MetHose.tSpecificationtDetSp" FromRole="tSpecification" ToRole="tDetSp" />
         </EntityType>
         <EntityType Name="tLength">
           <Key>
@@ -957,14 +984,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PosDetail" Type="Int32" Nullable="true" />
-          <Property Name="ID_Object" Type="Int32" Nullable="false" />
-          <Property Name="TypeObject" Type="String" Nullable="false" />
-          <Property Name="NameDet" Type="String" Nullable="true" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="NumbGroup" Type="String" Nullable="false" />
           <NavigationProperty Name="tAdapter" Relationship="MetHose.tDetailSptAdapter" FromRole="tDetailSp" ToRole="tAdapter" />
-          <NavigationProperty Name="tSpecification" Relationship="MetHose.tDetailSptSpecification" FromRole="tDetailSp" ToRole="tSpecification" />
           <NavigationProperty Name="tAsDet" Relationship="MetHose.tDetailSptAsDet" FromRole="tDetailSp" ToRole="tAsDet" />
+          <Property Name="QuantGroup" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tDetSp" Relationship="MetHose.tDetailSptDetSp" FromRole="tDetailSp" ToRole="tDetSp" />
         </EntityType>
         <EntityType Name="tAdapter">
           <Key>
@@ -972,7 +996,9 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptAdapter" FromRole="tAdapter" ToRole="tDetailSp" />
-          <Property Name="NumbElement" Type="String" Nullable="false" />
+          <Property Name="NumbGroup" Type="Int32" Nullable="false" />
+          <Property Name="PosDetail" Type="Int32" Nullable="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tLength" Relationship="MetHose.tAdaptertLength" FromRole="tAdapter" ToRole="tLength" />
           <Property Name="tLengthID_length" Type="Int32" Nullable="true" />
@@ -991,18 +1017,6 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="tAdapter">
-              <PropertyRef Name="tDetailSpID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tDetailSptSpecification">
-          <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
-          <End Type="MetHose.tSpecification" Role="tSpecification" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tDetailSp">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="tSpecification">
               <PropertyRef Name="tDetailSpID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1149,6 +1163,40 @@
             </Principal>
             <Dependent Role="tAdapter">
               <PropertyRef Name="tGlassID_glass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tDetSp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tDetailSp" Relationship="MetHose.tDetailSptDetSp" FromRole="tDetSp" ToRole="tDetailSp" />
+          <Property Name="tDetailSpID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tSpecification" Relationship="MetHose.tSpecificationtDetSp" FromRole="tDetSp" ToRole="tSpecification" />
+          <Property Name="tSpecificationID_Specification" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tDetailSptDetSp">
+          <End Type="MetHose.tDetailSp" Role="tDetailSp" Multiplicity="1" />
+          <End Type="MetHose.tDetSp" Role="tDetSp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tDetailSp">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tDetSp">
+              <PropertyRef Name="tDetailSpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tSpecificationtDetSp">
+          <End Type="MetHose.tSpecification" Role="tSpecification" Multiplicity="1" />
+          <End Type="MetHose.tDetSp" Role="tDetSp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tSpecification">
+              <PropertyRef Name="ID_Specification" />
+            </Principal>
+            <Dependent Role="tDetSp">
+              <PropertyRef Name="tSpecificationID_Specification" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1352,7 +1400,6 @@
           <ScalarProperty Name="Drawing" ColumnName="Drawing" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Executor" ColumnName="Executor" />
-          <ScalarProperty Name="tDetailSpID" ColumnName="tDetailSpID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1386,11 +1433,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(MetHose.tDetailSp)">
         <MappingFragment StoreEntitySet="tDetailSpSet">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PosDetail" ColumnName="PosDetail" />
-          <ScalarProperty Name="ID_Object" ColumnName="ID_Object" />
-          <ScalarProperty Name="TypeObject" ColumnName="TypeObject" />
-          <ScalarProperty Name="NameDet" ColumnName="NameDet" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="NumbGroup" ColumnName="NumbGroup" />
+          <ScalarProperty Name="QuantGroup" ColumnName="QuantGroup" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1398,7 +1442,9 @@
       <EntityTypeMapping TypeName="IsTypeOf(MetHose.tAdapter)">
         <MappingFragment StoreEntitySet="tAdapterSet">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="NumbElement" ColumnName="NumbElement" />
+          <ScalarProperty Name="NumbGroup" ColumnName="NumbGroup" />
+          <ScalarProperty Name="PosDetail" ColumnName="PosDetail" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="tDetailSpID" ColumnName="tDetailSpID" />
           <ScalarProperty Name="tLengthID_length" ColumnName="tLengthID_length" />
           <ScalarProperty Name="tBraidID_braid" ColumnName="tBraidID_braid" />
@@ -1438,6 +1484,15 @@
         <MappingFragment StoreEntitySet="tAsSpSet">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="tAssemblySpID" ColumnName="tAssemblySpID" />
+          <ScalarProperty Name="tSpecificationID_Specification" ColumnName="tSpecificationID_Specification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDetSpSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tDetSp)">
+        <MappingFragment StoreEntitySet="tDetSpSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tDetailSpID" ColumnName="tDetailSpID" />
           <ScalarProperty Name="tSpecificationID_Specification" ColumnName="tSpecificationID_Specification" />
         </MappingFragment>
       </EntityTypeMapping>

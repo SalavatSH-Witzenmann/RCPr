@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -163,21 +164,21 @@ namespace RCProject
 
             string ATypGlassName;
             if (ATypicalNameGlass.Text != null) { ATypGlassName = ATypicalNameGlass.Text; }
-               else { ATypGlassName = null; }
+            else { ATypGlassName = null; }
 
-            
+
             double DinGlassAfter;
             if (nDinGlassAfterOper_kn.IsEnabled == true) { DinGlassAfter = Double.Parse(nDinGlassAfterOper_kn.Text); }
-                else { DinGlassAfter = -1; };
-               
-            
-            
+            else { DinGlassAfter = -1; };
+
+
+
             bool ExpRing;
             bool ComprRing;
-            if (ExpanRing_Glass.IsChecked == true & ComprRing_Glass.IsChecked ==false) { ExpRing = true; ComprRing = false;}
-               else if (ExpanRing_Glass.IsChecked == false & ComprRing_Glass.IsChecked == true) { ExpRing = false; ComprRing = true;}
-                    else { ExpRing = false; ComprRing = false; }
-           
+            if (ExpanRing_Glass.IsChecked == true & ComprRing_Glass.IsChecked == false) { ExpRing = true; ComprRing = false; }
+            else if (ExpanRing_Glass.IsChecked == false & ComprRing_Glass.IsChecked == true) { ExpRing = false; ComprRing = true; }
+            else { ExpRing = false; ComprRing = false; }
+
 
             var context = new MetHoseContainer();
             var glass_filling = new tGlass
@@ -208,34 +209,34 @@ namespace RCProject
             if (RightSideWelding_kn.IsChecked == true) { SideWeldRing = "R"; }
             else if (LeftSideWelding_kn.IsChecked == true) { SideWeldRing = "L"; }
             else { SideWeldRing = null; }
-                        
+
             var context = new MetHoseContainer();
             var GlassFillingBD = new tRing
             {
-                DN = Int16.Parse(nDNRing_kn.SelectedItem.ToString().Remove(0,40)),
-                PN = Double.Parse(nPNRing_kn.SelectedItem.ToString().Remove(0,40)),
+                DN = Int16.Parse(nDNRing_kn.SelectedItem.ToString().Remove(0, 40)),
+                PN = Double.Parse(nPNRing_kn.SelectedItem.ToString().Remove(0, 40)),
                 Name = nNameRing1_kn.Text,
-                Designation= nNameRing2_kn.Text,
+                Designation = nNameRing2_kn.Text,
                 Dout = Double.Parse(nDoutRing_kn.Text),
-                Th=Double.Parse(NThRing_kn.Text),
-                LN=Double.Parse(nLNRing_kn.Text),
+                Th = Double.Parse(NThRing_kn.Text),
+                LN = Double.Parse(nLNRing_kn.Text),
                 WeldingSide = SideWeldRing,
-                ChamExtR=Double.Parse(nChamfExtR_kn.Text),
-                ChamExtL=Double.Parse(nChamfExtL_kn.Text),
-                ChamIntR=Double.Parse(nChamfIntR_kn.Text),
-                ChamIntL=Double.Parse(nChamfIntL_kn.Text),
-                AngleExtR=Double.Parse(nAngleExtR_kn.Text),
-                AngleExtL=Double.Parse(nAngleExtL_kn.Text),
-                AngleIntR=Double.Parse(nAngleIntR_kn.Text),
-                AngleIntL=Double.Parse(nAngleIntL_kn.Text),
-                BoringExtR=Double.Parse(nBoringExtR_kn.Text),
-                BoringExtL=Double.Parse(nBoringEntL_kn.Text),
-                BoringIntR=Double.Parse(nBoringIntR_kn.Text),
-                AngleCoupExtR=Double.Parse(nAngleCoupExtR_kn.Text),
-                AngleCoupExtL=Double.Parse(nAngleCoupExtL_kn.Text),
-                AngleCoupIntR=Double.Parse(nAngleCoupIntR_kn.Text),
-                AngleCoupIntL=Double.Parse(nAngleCoupIntL_kn.Text),
-                Description=nDescriptionRing_kn.Text,
+                ChamExtR = Double.Parse(nChamfExtR_kn.Text),
+                ChamExtL = Double.Parse(nChamfExtL_kn.Text),
+                ChamIntR = Double.Parse(nChamfIntR_kn.Text),
+                ChamIntL = Double.Parse(nChamfIntL_kn.Text),
+                AngleExtR = Double.Parse(nAngleExtR_kn.Text),
+                AngleExtL = Double.Parse(nAngleExtL_kn.Text),
+                AngleIntR = Double.Parse(nAngleIntR_kn.Text),
+                AngleIntL = Double.Parse(nAngleIntL_kn.Text),
+                BoringExtR = Double.Parse(nBoringExtR_kn.Text),
+                BoringExtL = Double.Parse(nBoringEntL_kn.Text),
+                BoringIntR = Double.Parse(nBoringIntR_kn.Text),
+                AngleCoupExtR = Double.Parse(nAngleCoupExtR_kn.Text),
+                AngleCoupExtL = Double.Parse(nAngleCoupExtL_kn.Text),
+                AngleCoupIntR = Double.Parse(nAngleCoupIntR_kn.Text),
+                AngleCoupIntL = Double.Parse(nAngleCoupIntL_kn.Text),
+                Description = nDescriptionRing_kn.Text,
                 Executor = nExecutorRing_kn.Text,
                 tMaterialID = Convert.ToInt16(IDMaterialRing_kn.Text)
             };
@@ -248,7 +249,7 @@ namespace RCProject
 
         private void matdb_filling_click(object sender, RoutedEventArgs e)
         {
-            
+
             #region секция определения длятипа структуры стали
             string StructType;
             bool CheckAnnealedCond;
@@ -270,12 +271,12 @@ namespace RCProject
                 MessageBox.Show("Не выбирайте два CheckBox-а: сталь в отоженном состоянии и сталь в нормализованном состоянии одновременно. Заполнение БД не произойдет", "ATTENTION!!!");
                 return;
             }
-            else 
+            else
             {
-                var result = (int) MessageBox.Show("Не выбраны CheckBox-ы состояния стали, при данном варианте заполнение БД произойдет но не рекомендуется. " +
+                var result = (int)MessageBox.Show("Не выбраны CheckBox-ы состояния стали, при данном варианте заполнение БД произойдет но не рекомендуется. " +
                     "Нажмите НЕТ если хотите выбрать какое либо состояние. Нажмите ДА если Вам по барабану.", "ATTENTION!!!",
                     button: MessageBoxButton.YesNo);
-                if(result==2 || result ==7) { return; }
+                if (result == 2 || result == 7) { return; }
                 StructType = null;
                 CheckAnnealedCond = false;
                 CheckNormalState = false;
@@ -303,7 +304,7 @@ namespace RCProject
                 typeStPurp2 = "No Condition";
             }
             #endregion
-            
+
             string QSteel = nQualitySteel_kn.SelectedItem.ToString().Remove(0, 38);
             string DegDeox = nDegreeDeoxid_kn.SelectedItem.ToString().Remove(0, 38);
 
@@ -315,7 +316,7 @@ namespace RCProject
             if (nDifficultWeld_kn.IsChecked == true) { DiffWeld = true; } else { DiffWeld = false; }
             if (nFlxenosensitivity_kn.IsChecked == true) { FlxSens = true; } else { FlxSens = false; }
             #endregion
-            
+
             #region создание и заполнение БД материалов информацией
             var context = new MetHoseContainer();
             var MatDB_filling = new tMaterial
@@ -384,16 +385,17 @@ namespace RCProject
                 TypeStruct = StructType,
                 PurposeSteel = typeStPurp,
                 PurposeSteel2 = typeStPurp2,
-                QualitySteel=QSteel,
-                DegreeDeoxid=DegDeox
+                QualitySteel = QSteel,
+                DegreeDeoxid = DegDeox
             };
             context.tMaterialSet.Add(MatDB_filling);
             context.SaveChanges();
             #endregion
-            
+
         }
         #endregion
 
+        #region Секция для определения загрузки данных в элементы DataGrid при начальной загрузке страницы
         private void DataBase_loaded(object sender, RoutedEventArgs e)
         {
             var context = new MetHoseContainer();
@@ -409,11 +411,12 @@ namespace RCProject
             DataGridMaterial.ItemsSource = material;
 
             context.tMaterialSet.Load();
-            MaterialCorSh_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();            
+            MaterialCorSh_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
             MaterialBraid_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
             MaterialGlass_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
             MaterialRing_kn.ItemsSource = context.tMaterialSet.Local.ToBindingList();
         }
+        #endregion
 
         #region Checked and Unchecked для CheckBox определяющих нормализованное и отоженное состояние
 
@@ -507,18 +510,18 @@ namespace RCProject
 
         private void text_input_mask(object sender, TextCompositionEventArgs e)  // в разделе Гофрированная оболочка для толщины
         {
-            if (Char.IsDigit(e.Text, 0) || e.Text == ",") { e.Handled = false; } else { e.Handled = true; MessageBox.Show("Число либо запятая!!!"); } 
+            if (Char.IsDigit(e.Text, 0) || e.Text == ",") { e.Handled = false; } else { e.Handled = true; MessageBox.Show("Число либо запятая!!!"); }
         }
 
         private void Click_RingName(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Графа Наименование кольца заполняется соответственно именем, по типу - Кольцо, Оболочка, Втулка."+
-                 "Графа Обозначение кольца заполняется по типу - П12 DN32, П.65x1x36(x - латинская буква), RS325.001 DN25","Note!");           
+            MessageBox.Show("Графа Наименование кольца заполняется соответственно именем, по типу - Кольцо, Оболочка, Втулка." +
+                 "Графа Обозначение кольца заполняется по типу - П12 DN32, П.65x1x36(x - латинская буква), RS325.001 DN25", "Note!");
         }
 
         private void BasicDataMH_click(object sender, RoutedEventArgs e)   //В разделе Соединение для пояснения основных параметров
         {
-            MessageBox.Show("Заполнение полей Первичное наименование и Дополнительное наименование необязательно, но нужно если хотите в дальнейшем "+
+            MessageBox.Show("Заполнение полей Первичное наименование и Дополнительное наименование необязательно, но нужно если хотите в дальнейшем " +
                             "упростить ввод данных в РЦЗаявку", "Note!");
         }
 
@@ -529,5 +532,8 @@ namespace RCProject
             var strk = MaterialCorSh_kn.SelectedItem.ToString();
             MessageBox.Show(strk);
         }*/
+        
+        
+        
     }
 }

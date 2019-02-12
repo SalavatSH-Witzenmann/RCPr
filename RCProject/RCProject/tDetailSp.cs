@@ -18,22 +18,19 @@ namespace RCProject
         public tDetailSp()
         {
             this.tAdapter = new HashSet<tAdapter>();
-            this.tSpecification = new HashSet<tSpecification>();
             this.tAsDet = new HashSet<tAsDet>();
+            this.tDetSp = new HashSet<tDetSp>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> PosDetail { get; set; }
-        public int ID_Object { get; set; }
-        public string TypeObject { get; set; }
-        public string NameDet { get; set; }
-        public int Quantity { get; set; }
+        public string NumbGroup { get; set; }
+        public int QuantGroup { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tAdapter> tAdapter { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tSpecification> tSpecification { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tAsDet> tAsDet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tDetSp> tDetSp { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace RCProject
         public tSpecification()
         {
             this.tAsSp = new HashSet<tAsSp>();
+            this.tDetSp = new HashSet<tDetSp>();
         }
     
         public int ID_Specification { get; set; }
@@ -30,11 +31,11 @@ namespace RCProject
         public byte[] Drawing { get; set; }
         public string Description { get; set; }
         public string Executor { get; set; }
-        public int tDetailSpID { get; set; }
     
         public virtual tMetHose tMetHose { get; set; }
-        public virtual tDetailSp tDetailSp { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tAsSp> tAsSp { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tDetSp> tDetSp { get; set; }
     }
 }

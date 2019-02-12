@@ -186,75 +186,15 @@
       <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification)">
         <MappingFragment StoreEntitySet="tSpecificationSet">
           <ScalarProperty Name="ID_Specification" ColumnName="ID_Specification" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AssemblyG" ColumnName="AssemblyG" />
+          <ScalarProperty Name="DetailG" ColumnName="DetailG" />
+          <ScalarProperty Name="StandartProductsG" ColumnName="StandartProductsG" />
+          <ScalarProperty Name="OtherProductsG" ColumnName="OtherProductsG" />
+          <ScalarProperty Name="KitsG" ColumnName="KitsG" />
           <ScalarProperty Name="dateT" ColumnName="dateT" />
           <ScalarProperty Name="Drawing" ColumnName="Drawing" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Executor" ColumnName="Executor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_CorrugSheathSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_tCorrugSheath)">
-        <MappingFragment StoreEntitySet="tSpecification_CorrugSheathSet">
-          <ScalarProperty Name="ID_SpecCorSh" ColumnName="ID_SpecCorSh" />
-          <ScalarProperty Name="ID_length" ColumnName="ID_length" />
-          <ScalarProperty Name="tLengthID_length" ColumnName="tLengthID_length" />
-          <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
-          <ScalarProperty Name="tPosQuantNumbID_PosQuantNumb" ColumnName="tPosQuantNumbID_PosQuantNumb" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_BraidSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_Braid)">
-        <MappingFragment StoreEntitySet="tSpecification_BraidSet">
-          <ScalarProperty Name="ID_SpecBr" ColumnName="ID_SpecBr" />
-          <ScalarProperty Name="ID_braid" ColumnName="ID_braid" />
-          <ScalarProperty Name="tBraidID_braid" ColumnName="tBraidID_braid" />
-          <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
-          <ScalarProperty Name="tPosQuantNumbID_PosQuantNumb" ColumnName="tPosQuantNumbID_PosQuantNumb" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_GlassSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_Glass)">
-        <MappingFragment StoreEntitySet="tSpecification_GlassSet">
-          <ScalarProperty Name="ID_SpecGl" ColumnName="ID_SpecGl" />
-          <ScalarProperty Name="ID_glass" ColumnName="ID_glass" />
-          <ScalarProperty Name="tGlassID_glass" ColumnName="tGlassID_glass" />
-          <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
-          <ScalarProperty Name="tPosQuantNumbID_PosQuantNumb" ColumnName="tPosQuantNumbID_PosQuantNumb" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_RingSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_Ring)">
-        <MappingFragment StoreEntitySet="tSpecification_RingSet">
-          <ScalarProperty Name="ID_SpecRing" ColumnName="ID_SpecRing" />
-          <ScalarProperty Name="ID_ring" ColumnName="ID_ring" />
-          <ScalarProperty Name="tRingID_ring" ColumnName="tRingID_ring" />
-          <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
-          <ScalarProperty Name="tPosQuantNumbID_PosQuantNumb" ColumnName="tPosQuantNumbID_PosQuantNumb" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSp_AssemblySet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSp_Assembly)">
-        <MappingFragment StoreEntitySet="tSp_AssemblySet">
-          <ScalarProperty Name="ID_Sp_Assembly" ColumnName="ID_Sp_Assembly" />
-          <ScalarProperty Name="id_item_as" ColumnName="id_item_as" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Position" ColumnName="Position" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tSpec_Sp_AssemblySet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpec_Sp_Assembly)">
-        <MappingFragment StoreEntitySet="tSpec_Sp_AssemblySet">
-          <ScalarProperty Name="ID_Spec_Sp_Assembly" ColumnName="ID_Spec_Sp_Assembly" />
-          <ScalarProperty Name="ID_Sp_Assembly" ColumnName="ID_Sp_Assembly" />
-          <ScalarProperty Name="tSp_AssemblyID_Sp_Assembly" ColumnName="tSp_AssemblyID_Sp_Assembly" />
-          <ScalarProperty Name="tPosQuantNumbID_PosQuantNumb" ColumnName="tPosQuantNumbID_PosQuantNumb" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -267,26 +207,87 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tPosQuantNumbSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tPosQuantNumb)">
-        <MappingFragment StoreEntitySet="tPosQuantNumbSet">
-          <ScalarProperty Name="ID_PosQuantNumb" ColumnName="ID_PosQuantNumb" />
-          <ScalarProperty Name="Position" ColumnName="Position" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="ID_Object" ColumnName="ID_Object" />
-          <ScalarProperty Name="IsAssembly" ColumnName="IsAssembly" />
-          <ScalarProperty Name="IsDetail" ColumnName="IsDetail" />
-          <ScalarProperty Name="IsStandProd" ColumnName="IsStandProd" />
-          <ScalarProperty Name="IsOtherProd" ColumnName="IsOtherProd" />
-          <ScalarProperty Name="IsMaterials" ColumnName="IsMaterials" />
+    <EntitySetMapping Name="tAssemblySpSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tAssemblySp)">
+        <MappingFragment StoreEntitySet="tAssemblySpSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AssemblyRef" ColumnName="AssemblyRef" />
+          <ScalarProperty Name="PosAssembly" ColumnName="PosAssembly" />
+          <ScalarProperty Name="NameAss" ColumnName="NameAss" />
+          <ScalarProperty Name="QuantityAss" ColumnName="QuantityAss" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="StandProdAss" ColumnName="StandProdAss" />
+          <ScalarProperty Name="OtherProdAss" ColumnName="OtherProdAss" />
+          <ScalarProperty Name="Kits" ColumnName="Kits" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="tBuferID" ColumnName="tBuferID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tSpecification_tPosQuantNumbSet">
-      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tSpecification_tPosQuantNumb)">
-        <MappingFragment StoreEntitySet="tSpecification_tPosQuantNumbSet">
-          <ScalarProperty Name="ID_Sp_PQN" ColumnName="ID_Sp_PQN" />
-          <ScalarProperty Name="tPosQuantNumbID_PosQuantNumb" ColumnName="tPosQuantNumbID_PosQuantNumb" />
+    <EntitySetMapping Name="tDetailSpSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tDetailSp)">
+        <MappingFragment StoreEntitySet="tDetailSpSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumbGroup" ColumnName="NumbGroup" />
+          <ScalarProperty Name="QuantGroup" ColumnName="QuantGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAdapterSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tAdapter)">
+        <MappingFragment StoreEntitySet="tAdapterSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumbGroup" ColumnName="NumbGroup" />
+          <ScalarProperty Name="PosDetail" ColumnName="PosDetail" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="tDetailSpID" ColumnName="tDetailSpID" />
+          <ScalarProperty Name="tLengthID_length" ColumnName="tLengthID_length" />
+          <ScalarProperty Name="tBraidID_braid" ColumnName="tBraidID_braid" />
+          <ScalarProperty Name="tRingID_ring" ColumnName="tRingID_ring" />
+          <ScalarProperty Name="tGlassID_glass" ColumnName="tGlassID_glass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tBuferSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tBufer)">
+        <MappingFragment StoreEntitySet="tBuferSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="D1" ColumnName="D1" />
+          <ScalarProperty Name="D2" ColumnName="D2" />
+          <ScalarProperty Name="D3" ColumnName="D3" />
+          <ScalarProperty Name="D4" ColumnName="D4" />
+          <ScalarProperty Name="D5" ColumnName="D5" />
+          <ScalarProperty Name="D6" ColumnName="D6" />
+          <ScalarProperty Name="D7" ColumnName="D7" />
+          <ScalarProperty Name="D8" ColumnName="D8" />
+          <ScalarProperty Name="D9" ColumnName="D9" />
+          <ScalarProperty Name="exp" ColumnName="exp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAsDetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tAsDet)">
+        <MappingFragment StoreEntitySet="tAsDetSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tAssemblySpID" ColumnName="tAssemblySpID" />
+          <ScalarProperty Name="tDetailSpID" ColumnName="tDetailSpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAsSpSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tAsSp)">
+        <MappingFragment StoreEntitySet="tAsSpSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tAssemblySpID" ColumnName="tAssemblySpID" />
+          <ScalarProperty Name="tSpecificationID_Specification" ColumnName="tSpecificationID_Specification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDetSpSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MetHose.tDetSp)">
+        <MappingFragment StoreEntitySet="tDetSpSet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tDetailSpID" ColumnName="tDetailSpID" />
           <ScalarProperty Name="tSpecificationID_Specification" ColumnName="tSpecificationID_Specification" />
         </MappingFragment>
       </EntityTypeMapping>

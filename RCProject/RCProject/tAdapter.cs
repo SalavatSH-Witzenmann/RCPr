@@ -15,7 +15,9 @@ namespace RCProject
     public partial class tAdapter
     {
         public int ID { get; set; }
-        public string NumbElement { get; set; }
+        public int NumbGroup { get; set; }
+        public Nullable<int> PosDetail { get; set; }
+        public int Quantity { get; set; }
         public int tDetailSpID { get; set; }
         public Nullable<int> tLengthID_length { get; set; }
         public Nullable<int> tBraidID_braid { get; set; }
